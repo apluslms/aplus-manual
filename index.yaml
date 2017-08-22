@@ -37,6 +37,21 @@ modules:
         config: hello_scala/config.yaml
         type: prg
 
+  - key: chapter
+    name: Sample chapters
+    introduction: This module includes one sample chapter.
+    type: def
+    children:
+      - key: chp1
+        title: Chapter 1
+        static_content: chapter.html
+        category: chpcat
+        children:
+          - key: arithmetic
+            config: arithmetic_mcq/config.yaml
+            type: mcq
+            status: unlisted
+
 # Module and exercise types to control frequent configuration sets.
 # Any values can be overridden in the item specific configurationi above.
 module_types:
@@ -67,3 +82,5 @@ categories:
   prgcat:
     name: Programming exercises
     points_to_pass: 0
+  chpcat:
+    name: Chapters
