@@ -8,8 +8,9 @@ cd /submission/user
 # Append the required support files to test user solution.
 cp /exercise/*.py .
 
-# "capture" and "grade" description https://github.com/A-plus-LMS/grading-base
+# "capture" etc description in https://github.com/A-plus-LMS/grading-base
 
 capture python3 tests.py
 
+err-to-out
 grade

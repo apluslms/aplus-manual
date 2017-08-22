@@ -2,7 +2,6 @@
 title: Hello Scala!
 description: An example of grading with Scala code
 instructions: |
-    <h1>Hello Scala!</h1>
     <p>
         In this exercise you must implement <code>object HelloScala</code>
         in <code>package hello</code>. The object must have a method named

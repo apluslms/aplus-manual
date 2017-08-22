@@ -14,21 +14,21 @@ fieldgroups:
         type: radio
         points: 2
         options:
-          - label: 1
+          - label: "1"
             hint: Maby more?
-          - label: 2
+          - label: "2"
             correct: true
-          - label: 3
+          - label: "3"
             hint: Maby less?
 
       - title: 2. <var>2 * 7 = ?</var>
         type: dropdown
         points: 2
         options:
-          - label: 7
-          - label: 14
+          - label: "7"
+          - label: "14"
             correct: true
-          - label: 21
+          - label: "21"
 
       - title: 3. <var>2 * x = y</var>
         type: checkbox
@@ -50,5 +50,5 @@ fieldgroups:
           </p>
         type: text
         points: 3
-        correct: 15
+        correct: "15"
         hint: Check your arithmetic and exact answer text.

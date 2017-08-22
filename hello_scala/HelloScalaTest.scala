@@ -1,5 +1,11 @@
 package hello
 
+/**
+ * This is a very simple stand alone test program to produce feedback sample.
+ * In reality, we have used a unit test framework (scalatest) to render
+ * student feedback. A set of grading tools could be included in a container
+ * so it doesn't have to be repeated for different scala exercises.
+ */
 object HelloScalaTest {
 
   def main(args: Array[String]) {
