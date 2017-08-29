@@ -13,5 +13,5 @@ files:
 
 container:
   image: apluslms/grading-python:3.5
-  mount: hello_python
+  mount: exercises/hello_python
   cmd: /exercise/run.sh

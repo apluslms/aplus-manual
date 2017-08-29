@@ -1,0 +1,3 @@
+[submodule "a-plus-rst-tools"]
+	path = a-plus-rst-tools
+	url = git@github.com:Aalto-LeTech/a-plus-rst-tools.git

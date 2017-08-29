@@ -14,8 +14,10 @@
     * On first start, go `Edit Course` on left and click `Apply` on top.
       This configures the course modules and excercises according to index.yaml.
 
-4. Insert the course material in a new git repository for the course.
-Keep editing and test real time in browser.
+4. ./docker-compile.sh to compile changes in RST files.
+
+5. Insert the course material in a new git repository for the course.
+Keep editing and test in browser.
 
 Note! Docker downloads new container images when required. In this test system,
 the first exercise assessment using new container image will produce a one time

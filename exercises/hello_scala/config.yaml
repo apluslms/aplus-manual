@@ -18,5 +18,5 @@ files:
 
 container:
   image: apluslms/grading-scala:2.12
-  mount: hello_scala
+  mount: exercises/hello_scala
   cmd: /exercise/run.sh
