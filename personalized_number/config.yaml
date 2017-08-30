@@ -1,0 +1,35 @@
+---
+title: Personalized number
+max_points: 10
+instructions: |
+  <h1>Personalized number</h1>
+  <p>
+    Your personalized exercise is a number. You must submit the number
+    incremented by one.
+  </p>
+view_type: access.types.stdasync.acceptPost
+fields:
+  - name: solution
+    title: Solution
+    required: True
+  - name: number
+    title: Number
+    required: True
+
+template: default/personalized_number/template.html
+
+personalized: True
+generated_files:
+  - file: number
+    key: number
+    content_in_template: True
+    url_in_template: True
+    allow_download: True
+generator:
+  cmd: [ "python3", "generator.py" ]
+  cwd: default/personalized_number/
+
+container:
+  image: apluslms/grading-python:3.5
+  mount: personalized_number
+  cmd: /exercise/run.sh

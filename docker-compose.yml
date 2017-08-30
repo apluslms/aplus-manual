@@ -3,6 +3,9 @@ version: '3'
 services:
   grader:
     image: apluslms/run-mooc-grader
+    entrypoint: >
+      bash -c "python3 manage.py pregenerate_exercises default;
+               python3 manage.py runserver 0.0.0.0:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/srv/courses/default

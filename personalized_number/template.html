@@ -1,0 +1,17 @@
+{% extends 'access/exercise_frame.html' %}
+{% load i18n %}
+
+{% block exercise %}
+
+Your number: {{ generated_files.number.content }}.
+
+<form method="post" action="{{ post_url }}">
+  Solution:<br>
+  <input type="text" name="solution">
+  <input type="hidden" name="number" value="{{ generated_files.number.content }}">
+  <div class="form-group">
+    <input type="submit" value="{% trans 'Submit' %}" class="btn btn-primary aplus-submit" />
+  </div>
+</form>
+
+{% endblock %}

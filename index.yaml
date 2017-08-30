@@ -36,6 +36,9 @@ modules:
       - key: hello_scala
         config: hello_scala/config.yaml
         type: prg
+      - key: personalized_number
+        config: personalized_number/config.yaml
+        type: prg
 
   - key: chapter
     name: Sample chapters
