@@ -1,0 +1,13 @@
+__pycache__/
+
+_build/
+_data/
+
+.idea
+.settings
+.project
+.pydevproject
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*~
