@@ -8,6 +8,8 @@
     * https://docs.docker.com/engine/installation/
     * https://docs.docker.com/compose/install/
 
+2. Get a-plus-rst-tools: `git submodule init` and `git submodule update`
+
 3. ./docker-compile.sh to compile RST files to HTML and YAML.
 
 4. ./docker-up.sh to run A-plus system at http://localhost:8000
