@@ -12,8 +12,8 @@ else
     DOCKER_GID=$(stat -c '%g' $DOCKER_SOCK)
     docker_group_name=$(stat -c '%G' $DOCKER_SOCK)
     if ! id|grep -qsF "($docker_group_name)"; then
-        echo "Your user doesnn't belong to group $docker_group_name. Thus, you can't run dockers without sudo." >&2
-        echo "It's recommended that you add your self to that group." >&2
+        echo "Your user does not belong to group $docker_group_name. Thus, you can't run dockers without sudo." >&2
+        echo "It is recommended that you add yourself to that group (sudo adduser $USER docker; and then logout and login again)." >&2
         echo "Alternatively, you can execute this script as sudo." >&2
         exit 1
     fi
