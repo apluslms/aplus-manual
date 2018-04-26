@@ -7,5 +7,6 @@ Other content is not visible in A+.
 .. toctree::
   :maxdepth: 2
 
+  m01_introduction/index
   module01/index
   module02/index
