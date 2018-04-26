@@ -9,7 +9,7 @@ USER_GID=$(id -g)
 if [ $USER_ID -eq 0 ]; then
     DOCKER_GID=0
 else
-    if [ -w $DOCKER_SOCK ]; then
+    if ! [ -w $DOCKER_SOCK ]; then
         echo "Your user does not have write access to docker." >&2
         echo "It is recommended that you add yourself to that group (sudo adduser $USER docker; and then logout and login again)." >&2
         echo "Alternatively, you can execute this script as sudo." >&2
