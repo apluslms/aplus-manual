@@ -2,7 +2,9 @@
 
 ## A course template for A-plus learning environment
 
-1. Download the template files.
+1. Git clone this repository. Select branch `rst` for courses using RST materials and `master for simple exercise courses. E.g.:
+
+    `git clone --branch rst https://github.com/apluslms/course-templates.git my_new_course`
 
 2. Install Docker for Mac/Windows or docker-ce & docker-compose for Linux.
     * https://docs.docker.com/engine/installation/
