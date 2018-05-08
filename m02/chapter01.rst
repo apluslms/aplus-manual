@@ -23,7 +23,66 @@ Developing course material using reStructuredText (RST)
 In this chapter, we will take a look at different RST features, which allow you to develop course material.
 We will focus mostly on custom RST directives, developed specifically for A+ course material.
 The material will be compiled using `Sphinx`_, so all builtin Sphinx extensions are also available.
-Here is one tutorial on how to write RST, although many others probably exist: http://docutils.sourceforge.net/docs/user/rst/quickref.html
+
+What is RST and why is it used on A+
+------------------------------------
+
+RST (ReStructured Text) is a human-friendly text file format.
+Like HTML, it has markup for text formatting (headers, paragraphs, italics)
+and hyperlinks. With some extensions, it can also include images, videos and
+exercises. A software named Sphinx, which is originally made for documenting
+Python software, is used to convert RST files automatically into HTML pages
+showing in A+.
+
+Here is a simple example of RST source code:
+
+.. code-block:: none
+
+    Heading
+    =======
+
+    Level 2 heading
+    ---------------
+
+    This is the first paragraph. It is tiny.
+
+    This is the second paragraph. Note that paragraphs can span multiple
+    lines, but they are still rendered as one block after compilation.
+    *Italics* and **boldface** are produced this way.
+
+    `This is a hyperlink <http://www.aalto.fi>`_ which becomes also a hyperlink
+    in the final HTML version.
+
+    Another level 2 heading
+    -----------------------
+
+    - also lists can be made
+    - and they are very intuitive
+    - notice the lack of markup compared to HTML
+
+    Almost everything that exists in HTML can also be produced with RST.
+
+There are many tutorials on how to write RST. Here are just some.
+
+- http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+- http://docutils.sourceforge.net/docs/user/rst/quickref.html
+
+The benefits of writing course material in RST are:
+
+- the RST code is much simpler than HTML
+- the possibility to produce also LaTeX documents (PDF handouts) from the same source
+- it is possible to write new "RST commands" (called Sphinx directives)
+  for any kind of material
+- resulting HTML pages are automatically interlinked
+- one can use HTML templates to easily make many similar HTML pages
+- of course, custom web page styling can still be used with CSS
+
+
+A+ RST tools
+------------
+There are Sphinx extensions made for writing course material on A+. The
+name of this extension collection is *A+ RST tools*. The rest of the document
+concentrates on these.
 
 
 Bootstrap-styled-topic
