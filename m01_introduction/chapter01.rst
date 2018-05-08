@@ -4,7 +4,7 @@ First Steps
 In the start there was A-Plus. That was good, but developer though we needed something more. Thus, MOOC-Grader was created. Time passed and now we have many micro services that provice our new way of life, A+ LMS.
 
 Haluan oppia lisää
-..................
+------------------
 
 .. admonition:: File format
   :class: alert alert-info
