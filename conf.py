@@ -48,6 +48,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'aplus_setup',
     'bootstrap_styled_topic',
+    'div',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
