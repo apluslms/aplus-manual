@@ -1,6 +1,19 @@
-
-
 ## A course template for A-plus learning environment
+
+This is a codebase which teaches how to make a new course on
+[A+ e-learning system](https://github.com/Aalto-LeTech/a-plus>).
+A+ is currently used on many computer science courses on Aalto University.
+
+## Installation
+
+This tutorial is tested with Aalto Ubuntu Linux environment and it probably works
+on any Unix / Linux / Mac environment. It is assumed that you already have
+the following software.
+
+- [git](https://git-scm.com/)
+- [make](https://www.gnu.org/software/make/)
+
+All other software runs inside [Docker](https://www.docker.com/) containers.
 
 1. Git clone this repository. Select branch `rst` for courses using RST materials and `master for simple exercise courses. E.g.:
 
@@ -30,7 +43,7 @@ will disappear if you reload the submission page once the actual assessment has
 completed.
 
 For persistent A+ database and other storage, uncomment volume entries like
-`./_data:...` in the `docker-commpose.yml`.
+`./_data:...` in the `docker-compose.yml`.
 
 ## Developing new assessment environments as containers
 
