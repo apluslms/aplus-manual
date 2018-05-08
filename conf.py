@@ -32,6 +32,7 @@ static_host = os.environ.get('STATIC_CONTENT_HOST')
 #sys.path.insert(0, os.path.abspath('.'))
 
 sys.path.append(os.path.abspath('a-plus-rst-tools'))
+sys.path.append(os.path.abspath('extensions'))
 
 # -- General configuration ------------------------------------------------
 
@@ -46,6 +47,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'aplus_setup',
+    'bootstrap_styled_topic',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
