@@ -24,6 +24,16 @@ Käy läpi muuttuneet tiedostot ja editoi.
     git push [...]
 
 
+aplus-course-template
+=====================
+Oletuksena tietokanta ei ole päällä, koska silloin saa aina nollattua
+kaikki mahdolliset tietokantaan tallentuneet jutut. Näin ollen aina ajettaessa
+docker-up.sh kurssi näkyy sellaisena kuin se olisi uutena lisätty A+:aan.
+
+Jos tietokantaa haluaa käyttää, esimerkiksi jos haluaa testata tehtäviä,
+joissa opiskelijan pitää lähettää A+:aan tiedosto arvosteltavaksi, poista
+kommentit (#-merkit pois) tiedostosta docker-compose.yml.
+
 
 RST & Sphinx
 ============
@@ -73,4 +83,7 @@ JavaScript-kirjaston urli.
 Lisäksi Sphinxille pitää sanoa, että olemme lisänneet uuden layout-templaten:
 muokataan tiedostoa conf.py: templates_path:iin lisätään hakemisto _templates.
 
+Lisäksi conf.py:n kohtaan extensions: "sphinx.ext.mathjax".
 
+admonition on Sphinxin sisäänrakennettu direktiivi.
+styled-topic on Trak Y:n oma direktiivi.
