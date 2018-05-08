@@ -1,0 +1,76 @@
+Git
+===
+google: git lol
+
+    git merge origin/master
+tai
+    git rebase origin master
+
+git pull --rebase
+
+Hyvä workflow: päivän mittaan useampi pull, testaus, push.
+
+Jos tulee conflict
+------------------
+
+    git diff
+    git add -u
+
+Käy läpi muuttuneet tiedostot ja editoi.
+
+    git grep '>>>>'
+    git add -u
+    git commit
+    git push [...]
+
+
+
+RST & Sphinx
+============
+
+Melkein mikä tahansa erikoismerkki RST:ssä käy otsikoksi
+
+Otsikko
+-------
+
+Ensimmäinen löydetty on 1. tason otsikko, seuraava löydetty merkkityyppi
+on toisen tason otsikko, jne.
+
+Hyvä käytäntö:
+
+1. tason otsikko
+================
+
+2. tason otsikko
+----------------
+
+3. tason otsikko
+................
+
+
+
+Kommentit
+---------
+
+.. Tämä on kommentti. Se on hassu, koska kaksoispisteellä ilmaistaan myös
+   käytettävät Sphinx-direktiivit. Kommenttilohko pitää sisentää, jos se
+   on monirivinen.
+
+
+
+Kuinka lisätä ominaisuuksia A+-kurssiin
+---------------------------------------
+
+Kuinka lisätä JavaScript-kirjasto kurssiin. Esim. Trak Y:ssä on JavaScript-kirjasto,
+joka piirtää LaTeX-muotoisen matemaattisen notaation LaTeX-tyylillä.
+
+Pitää tehdä tiedosto _templates/layout.html. Templatet ovat Sphinxin
+ominaisuus: html-pohjia. Siihen laitetaan <script>, jossa on käytettävän
+JavaScript-kirjaston urli.
+
+---- 
+
+Lisäksi Sphinxille pitää sanoa, että olemme lisänneet uuden layout-templaten:
+muokataan tiedostoa conf.py: templates_path:iin lisätään hakemisto _templates.
+
+
