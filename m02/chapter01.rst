@@ -1,3 +1,29 @@
+.. styled-topic::
+
+  Main questions:
+      How to utilize RST-tools
+
+  Topics?
+      bootstrap-styled-topic, admonition, ...
+
+  What you are supposed to do?
+      If you have already installed aplus-manual, these features
+      should work just ok. However, there are also instructions
+      how to utilize them in other courses. 
+
+  Difficulty:
+      You might need to edit the course config files.
+
+  Laboriousness:
+      Installation might take a couple of hours.
+
+Bootstrap-styled-topic
+----------------------
+
+In order to add the above meta box...
+
+TODO: how to add
+
 Another chapter
 ---------------
 
