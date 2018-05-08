@@ -1,10 +1,10 @@
 First Steps
 ===========
 
-In the start there was A-Plus. That was good, but developer though we needed something more. Thus, MOOC-Grader was created. Time passed and now we have many micro services that provice our new way of life, A+ LMS.
-
-Haluan oppia lisää
-------------------
+In the start there was A-Plus.
+That was good, but developer though we needed something more.
+Thus, MOOC-Grader was created.
+Time passed and now we have many micro services that provice our new way of life, A+ LMS.
 
 .. admonition:: File format
   :class: alert alert-info
@@ -12,40 +12,47 @@ Haluan oppia lisää
   Everything is defined in
   `RST syntax <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_.
 
-The interactive part is up next.
 
-.. questionnaire:: keyword 7
+Getting started
+---------------
 
-  Some arithmetic multiple choice questions:
+Good way to start is by cloning this repository and working on it.
 
-  .. pick-one:: 2
+In aalto, you could use `version.aalto.fi repo <https://version.aalto.fi/gitlab/course/aplus-manual>`_.
+Please note that if you don't have access, then you can request one.
+In that case, you probably should be part of :code:`apluslms-cs@aalto.fi` email list too.
+So, to clone, execute command:
 
-    1 + 1 = ?
+.. code-block:: sh
 
-    a. 1
-    *b. 2
-    c. 3
+    git clone git@version.aalto.fi:course/aplus-manual.git
+    cd aplus-manual
 
-    a § Maybe more?
-    c § Maybe less?
+In public, you could use `github repo <https://github.com/apluslms/course-templates/tree/manual>`_.
 
-  .. pick-any:: 2
+.. code-block:: sh
 
-    2 * x = y
+    git clone --branch manual https://github.com/apluslms/course-templates.git
+    cd course-templates
 
-    *a. x = 3, y = 6
-    b. x = 4, y = 7
-    *c. x = 5, y = 10
+Next step, you need to get :code:`a-plus-rst-tools`.
 
-    b § Check your arithmetic.
+.. code-block:: sh
 
-  .. freetext:: 3 int
+    git submodule init
+    git submodule update
 
-    3 * 5 = ?
+Everytime the rst part changes, you need to recompile it.
 
-    15
-    16 § One too much!
+.. code-block:: sh
 
+    ./docker-compile.sh
+
+You can start test servers with:
+
+.. code-block:: sh
+
+    ./docker-up.sh
 
 The end
 -------
