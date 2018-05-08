@@ -11,3 +11,4 @@ _data/
 *.sublime-workspace
 .DS_Store
 *~
+*.sw[op]
