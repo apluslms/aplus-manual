@@ -77,6 +77,14 @@ The benefits of writing course material in RST are:
 - one can use HTML templates to easily make many similar HTML pages
 - of course, custom web page styling can still be used with CSS
 
+I want to know more
+-------------------
+========= ======= ======
+taulukko  arvo1   arvo2
+========= ======= ======
+otos1     3       3
+otos2     2       4
+========= ======= ======
 
 A+ RST tools
 ------------
