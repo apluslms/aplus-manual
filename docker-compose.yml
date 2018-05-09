@@ -8,14 +8,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/aplus:/tmp/aplus
       - .:/srv/courses/default:ro
-      #- ./_data/:/srv/data
+      - ./_data/:/srv/data
     ports:
       - "8080:8080"
   plus:
     image: apluslms/run-aplus-front
     user: $USER_ID:$USER_GID
-    #volumes:
-      #- ./_data/:/srv/data
+    volumes:
+      - ./_data/:/srv/data
     ports:
       - "8000:8000"
     depends_on:

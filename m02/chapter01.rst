@@ -77,14 +77,6 @@ The benefits of writing course material in RST are:
 - one can use HTML templates to easily make many similar HTML pages
 - of course, custom web page styling can still be used with CSS
 
-I want to know more
--------------------
-========= ======= ======
-taulukko  arvo1   arvo2
-========= ======= ======
-otos1     3       3
-otos2     2       4
-========= ======= ======
 
 A+ RST tools
 ------------
@@ -112,17 +104,20 @@ See for example ``bootstrap_styled_topic`` and ``div``.
 Admonition with embedded MathJax-syntax
 ---------------------------------------
 
-Builtin ``admonition`` directive with ``:math:`` elements:
+Builtin ``admonition`` directive is useful for defining new concepts:
 
-.. admonition:: Algoritmi
+.. admonition:: Algorithm
   :class: meta
 
-  Algoritmi on äärellinen jono yksikäsitteisiä, äärellisellä työllä suoritettavissa olevia käskyjä, jotka laskevat funktion
+  An *algorithm* is a finite sequence of unambiguous instructions, which
+  each can be executed with finite amount of work and which together
+  compute function
 
-  :math:`f: I \to O`, jossa
-  :math:`I` on syötejoukko,
-  :math:`O` on tulosjoukko ja
-  :math:`\forall i \in I`, algoritmi pysähtyy s.e., :math:`o = f(i) \in O`
+  :math:`f: I \to O`, where
+  :math:`I` is the input set,
+  :math:`O` is the output set,
+  :math:`\forall i \in I`, the algorithm will stop in a way that
+  :math:`o = f(i) \in O`
 
 Math formulas are rendered with the `MathJax`_ JavaScript library.
 Custom JavaScript can be added into the course layout template found in ``_templates/layout.html``.
