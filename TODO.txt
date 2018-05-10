@@ -1,0 +1,11 @@
+TODO
+====
+
+The following subjects should be covered at least somehow:
+
+- git, Linux terminal
+- Docker and A+ architecture for course authors
+    (not A+ software developers)
+
+- how to make a Docker version of an old A+ course which uses Python
+  sandbox
