@@ -24,7 +24,6 @@ In this chapter, we will take a look at different RST features, which allow you 
 We will focus mostly on custom RST directives, developed specifically for A+ course material.
 The material will be compiled using `Sphinx`_, so all builtin Sphinx extensions are also available.
 
-Just checking will I see this -Vesa
 
 What is RST and why is it used on A+
 ------------------------------------
