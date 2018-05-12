@@ -13,6 +13,10 @@
   margin-bottom: 5px;
 }
 
+.admonition a {
+  color: #33a1ff;
+}
+
 .admonition .collapse .well,
 .admonition .collapsing .well {
   margin-bottom: 0;

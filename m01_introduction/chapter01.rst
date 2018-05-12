@@ -24,6 +24,51 @@ used on some computer science courses on Aalto University.
 Getting started
 ---------------
 
+Knowledge prerequisites
+.......................
+
+This tutorial assumes you have some basic UNIX operating system skills;
+that you can use GNU/Linux (Ubuntu, Debian) or modern Mac OS.
+
+The software that will be used when authoring a course are:
+
+- UNIX shell
+- Text editor
+- git
+- Docker
+
+These will be introduced in a sufficient detail in this course.
+
+.. image:: /images/terminal.png
+
+.. admonition:: Software: UNIX Shell, Terminal emulator
+  :class: alert alert-info
+
+  This course assumes that you know some basic commands of Unix terminal.
+  The terminal is a text-based window where you type commands and the
+  terminal shows the results by printing one or more lines of text.
+  The above image shows listing the contents of the ``aplus-manual``
+  directory in a terminal emulator window. In practise, some terminal
+  commands are required for the usual workflow of writing
+  a new course for A+.
+
+  The terminal is used for moving and copying files, starting software
+  and examining their error messages. To be precise, there is the terminal
+  emulator window and inside it another program, `shell`, which reads
+  user commands and acts according to them. If you are new to this, read the
+  `"Learning the shell" LinuxCommand.org <http://linuxcommand.org/lc3_learning_the_shell.php>`_
+  tutorial parts 1-6.
+
+
+.. admonition:: Software: Python
+  :class: alert alert-info
+
+  A+ and software related to it are written in the
+  `Python programming language <https://www.python.org/>`_. If your course
+  needs exercises where a student submits a file to A+ and then it is
+  automatically graded, you will need to know some Python.
+
+
 Software prerequisites
 ......................
 
@@ -39,7 +84,7 @@ environment, you must install packages ``git`` and ``build-essential``.
 
 All other software runs inside `Docker <https://www.docker.com/>`_ containers.
 For short, Docker is the new software platform for running A+ and software
-related to it.
+related to it. This course will discuss Docker later more.
 
 Install Docker for Mac/Windows or docker-ce & docker-compose for Linux.
 

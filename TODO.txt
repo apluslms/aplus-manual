@@ -1,6 +1,8 @@
 TODO
 ====
 
+- all examples of A+ RST tools directives
+
 The following subjects should be covered at least somehow:
 
 - git, Linux terminal

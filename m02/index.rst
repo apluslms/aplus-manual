@@ -6,5 +6,6 @@ Other content is not visible in A+.
 
 .. toctree::
 
-  chapter01
-  customising
+  01_rst
+  git
+  02_css
