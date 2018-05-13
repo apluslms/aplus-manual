@@ -85,12 +85,9 @@ page and choose "settings".
 
 Next click "SSH Keys" on the sidebar on the left.
 
-.. image:: /images/gitlab-main.png
+.. image:: /images/gitlab-ssh-keys.png
 
 Click on the link "generate one" and follow the instructions.
-
-
-
 
 
 Recommendations for git workflow

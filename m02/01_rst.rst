@@ -34,7 +34,8 @@ What is RST and why is it used on A+
   RST (reStructured Text) is a human-friendly text file format.
   It has markup for text formatting (headers, paragraphs, italics)
   and hyperlinks and is thus similar to HTML for web pages. RST documents
-  can also include images, videos and exercises.
+  can also include images, videos and exercises. The filename suffix
+  for RST is ``.rst``.
 
 Here is a simple example of RST source code:
 
@@ -97,7 +98,7 @@ The benefits of writing course material in RST are:
 Workflow for editing RST files
 ------------------------------
 
-.. image:: /images/mousepad.png
+.. image:: /images/atom.png
 
 .. admonition:: Software: text editor
   :class: alert alert-info
@@ -105,8 +106,8 @@ Workflow for editing RST files
   To edit the files in the course directory, like the RST files, you will need
   a software called *text editor*. This is an application which shows
   the contents of the files as text with monospaced font (all characters have
-  equal height and width). In the picture above is the Mousepad text editor
-  showing file ``m01_introduction/chapter01.rst`` of this course. As you
+  equal height and width). In the picture above is the Atom text editor
+  showing file ``m01_introduction/01_rst.rst`` of this course. As you
   can see, it is nice, because it shows line numbers and colors different
   parts of the RST code. This is called `syntax highlighting`.
 
@@ -117,9 +118,9 @@ Workflow for editing RST files
   `Notepad++ <https://notepad-plus-plus.org/>`_ is similar to these in
   the Windows environment.
 
-  An advanced, modern editor is `Atom <https://atom.io/>`_. Two classic
-  editors with lots of features for programmers are
-  `Emacs <https://en.wikipedia.org/wiki/Emacs>`_ and
+  An advanced, modern editor is `Atom <https://atom.io/>`_, shown
+  in the picture above. Two classic editors with lots of features for
+  programmers are `Emacs <https://en.wikipedia.org/wiki/Emacs>`_ and
   `Vim <https://en.wikipedia.org/wiki/Vim_(text_editor)>`_, but those
   also have high learning curve.
 
@@ -211,5 +212,4 @@ Custom JavaScript can be added into the course layout template found in ``_templ
 This template extends the default A+ theme found in ``a-plus-rst-tools/theme/aplus/layout.html``.
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
-.. _Sphinx: http://www.sphinx-doc.org/en/1.6/
 
