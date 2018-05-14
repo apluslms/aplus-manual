@@ -154,7 +154,7 @@ which contains typically the following files:
   Exercise points will be given according to these.
 
 The grading-python container has other Python libraries, like
-`Hypothesis <https://pypi.org/project/hypothesis/`_ and
+`Hypothesis <https://pypi.org/project/hypothesis/>`_ and
 `A+ Python grader utils
 <https://github.com/Aalto-LeTech/python-grader-utils>`_.
 
@@ -188,4 +188,3 @@ files that you will need them. If your course needs software which is
 not yet available as containers for A+, see the
 `A-plus LMS Github page <https://apluslms.github.io/>`_ for
 contact information.
-
