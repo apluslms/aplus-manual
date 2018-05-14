@@ -40,6 +40,10 @@ There are many git tutorials for beginners. Try out these:
 
 - https://www.atlassian.com/git/tutorials/what-is-version-control
 
+If you haven't used git before, do a first-time git setup:
+
+- https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
 When you edit course material, the most needed git commands are:
 
 - ``git add``, ``git mv``
@@ -101,5 +105,3 @@ way it is easy to record what files were changed in each editing step.
 Essentially, ``git push`` backups your work to Aalto Gitlab.
 so if your laptop or workstation breaks or becomes stolen, you will only
 lose a work of a few hours.
-
-
