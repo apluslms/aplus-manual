@@ -6,7 +6,5 @@ Other content is not visible in A+.
 
 .. toctree::
 
-  01_rst
-  git
-  02_css
-  docker
+  01_programming_exercises
+  02_hello_world

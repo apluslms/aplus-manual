@@ -5,5 +5,8 @@ Introduction to developing course on A-Plus learning management service.
 
 .. toctree::
 
-  chapter01
-  chapter02
+  01_installation
+  02_rst
+  03_css
+  04_git
+  05_docker

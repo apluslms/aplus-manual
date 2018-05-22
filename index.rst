@@ -8,4 +8,4 @@ Other content is not visible in A+.
   :maxdepth: 2
 
   m01_introduction/index
-  m02/index
+  m02_programming_exercises/index
