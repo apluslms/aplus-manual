@@ -4,6 +4,9 @@ TODO
 - all examples of A+ RST tools directives
 
 - detailed documentation on making a graded Python exercise
+  (Artturi will write about this)
 
 - how to make a Docker version of an old A+ course which uses Python
-  sandbox
+  sandbox (Artturi will write about this)
+
+- how to include JSAV exercises

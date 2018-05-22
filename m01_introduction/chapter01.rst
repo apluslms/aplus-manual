@@ -13,12 +13,11 @@ used on some computer science courses on Aalto University.
 .. admonition:: File format
   :class: alert alert-info
 
-  The web pages of A+ courses are written in 
+  The web pages of A+ courses are written in
   `RST <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_.
   RST is simpler in syntax than HTML. A Python software called
   `Sphinx <http://www.sphinx-doc.org>`_ compiles bunch of RST files into
   HTML. We will come into writing RST files later.
-
 
 
 Getting started
@@ -59,16 +58,6 @@ These will be introduced in a sufficient detail in this course.
   `"Learning the shell" LinuxCommand.org <http://linuxcommand.org/lc3_learning_the_shell.php>`_
   tutorial parts 1-6.
 
-
-.. admonition:: Software: Python
-  :class: alert alert-info
-
-  A+ and software related to it are written in the
-  `Python programming language <https://www.python.org/>`_. If your course
-  needs exercises where a student submits a file to A+ and then it is
-  automatically graded, you will need to know some Python.
-
-
 Software prerequisites
 ......................
 
@@ -99,7 +88,7 @@ Aalto IT services at Computer Science building helps with this.
 Cloning this codebase with git
 ..............................
 
-A good way to start is to clone this repository with git and begin to work on it. 
+A good way to start is to clone this repository with git and begin to work on it.
 In Aalto, you could use `version.aalto.fi repo <https://version.aalto.fi/gitlab/course/aplus-manual>`_.
 Please note that if you don't have access, then you can request one.
 In that case, you probably should be part of :code:`apluslms-cs@aalto.fi` email list too.
