@@ -1,10 +1,26 @@
 First Steps
 ===========
 
-In the start there was A-Plus.
-That was good, but a developer thought we needed something more.
-Thus, MOOC-Grader was created.
-Time passed and now we have many micro services that provice our new way of life, A+ LMS.
+.. styled-topic::
+
+  Main questions:
+      How to install this course, A+ and related software to your computer.
+
+  Topics?
+      Installing Docker and Docker Compose
+
+  Difficulty:
+      You need basic UNIX shell skills.
+
+  Laboriousness:
+      Installation might take a couple of hours.
+
+
+| In the start there was A-Plus.
+| That was good, but a developer thought we needed something more.
+| Thus, MOOC-Grader was created.
+| Time passed and now we have many microservices that provice our new way of
+  life, A+ LMS.
 
 That is, this is a codebase which teaches how to make a new course on
 `A+ e-learning system <https://github.com/Aalto-LeTech/a-plus>`_. It is currently

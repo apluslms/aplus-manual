@@ -4,10 +4,10 @@ Developing course material using reStructuredText (RST)
 .. styled-topic::
 
   Main questions:
-      How to utilize RST-tools
+      What is RST? How to utilize RST-tools?
 
   Topics?
-      bootstrap-styled-topic, admonition, ...
+      RST, text editor, bootstrap-styled-topic, admonition, ...
 
   What you are supposed to do?
       If you have already installed aplus-manual, these features
@@ -18,7 +18,8 @@ Developing course material using reStructuredText (RST)
       You might need to edit the course config files.
 
   Laboriousness:
-      Installation might take a couple of hours.
+      A couple of hours for getting to know a little RST and installing a
+      text editor.
 
 In this chapter, we will take a look at different RST features, which allow you
 to develop course material.  We will focus mostly on custom RST directives,
@@ -83,7 +84,7 @@ There are many tutorials on how to write RST. Here are just some.
   if some specific layout or type of exercise is needed.
 
   YAML files will be discussed later.
-  
+
 
 The benefits of writing course material in RST are:
 
@@ -112,7 +113,7 @@ Workflow for editing RST files
   parts of the RST code. This is called `syntax highlighting`.
 
   For GNU/Linux environment, some simple editors are
-  `Kate <https://kate-editor.org/>`_, Mousepad included in the 
+  `Kate <https://kate-editor.org/>`_, Mousepad included in the
   `Xfce Desktop Environment <https://xfce.org/>`_ and
   `Gedit <https://wiki.gnome.org/Apps/Gedit>`_.
   `Notepad++ <https://notepad-plus-plus.org/>`_ is similar to these in
@@ -212,4 +213,3 @@ Custom JavaScript can be added into the course layout template found in ``_templ
 This template extends the default A+ theme found in ``a-plus-rst-tools/theme/aplus/layout.html``.
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
-

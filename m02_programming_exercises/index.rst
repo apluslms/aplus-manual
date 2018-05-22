@@ -6,5 +6,5 @@ Other content is not visible in A+.
 
 .. toctree::
 
-  01_programming_exercises
+  01_instructions
   02_hello_world

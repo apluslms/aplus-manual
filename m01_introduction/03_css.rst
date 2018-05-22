@@ -1,10 +1,29 @@
 Customising course pages
 ========================
 
+.. styled-topic::
+
+  Main questions:
+      How to alter the fonts, colors, sizes and spacing of text and images
+      in your course pages.
+
+  Topics?
+      HTML, CSS, Sphinx directives.
+
+  What you are supposed to do?
+      Read the introduction and try it out yourself.
+
+  Difficulty:
+      You need to know some HTML and CSS.
+
+  Laboriousness:
+      A couple of hours to get you started.
+
 The visual outlook and layout of the course pages can be altered.
 This requires basic knowledge of
 `HTML <https://www.w3schools.com/html/default.asp>`_ and
-`CSS <https://www.w3schools.com/css/default.asp>`_.
+`CSS <https://www.w3schools.com/css/default.asp>`_. If you don't know these,
+learning them outside the A+ and RST context is recommended.
 
 Configuring the CSS file for use
 --------------------------------
@@ -93,7 +112,9 @@ Here is the corresponding result in HTML:
     <p class="first admonition-title">Algorithm</p>
     <p>An <em>algorithm</em> is a finite sequence of unambiguous instructions, which
     each can be executed with finite amount of work and which together
-    compute function</p>
+    compute function</p>      If you have already installed aplus-manual, these features
+      should work just ok. However, there are also instructions
+      how to utilize them in other courses.
     <p class="last"><span class="math">\(f: I \to O\)</span>, where
     <span class="math">\(I\)</span> is the input set,
     <span class="math">\(O\)</span> is the output set,
@@ -153,4 +174,4 @@ the results immediately, but that is not wise, because those changes have to
 be copied to ``_static`` before recompiling the course! For faster CSS design
 one might want to try the `Firefox Developer Edition
 <https://www.mozilla.org/en-US/firefox/developer/>`_ which has builtin
-CSS editor. 
+CSS editor.
