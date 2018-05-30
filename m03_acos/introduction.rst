@@ -1,4 +1,4 @@
-Acos - Advanced Content Server
+ACOS - Advanced Content Server
 ==============================
 
 ACOS server and related sub-projects are a method of distributing browser-based smart learning content in a reusable and interoperable way. Activities created using the ACOS server can be embedded both in A+ and MyCourses.
@@ -46,13 +46,16 @@ Embedding ACOS activities into A+
     :url: https://acos.cs.hut.fi/html/draganddrop/draganddrop-example/revealdemo
     :ajax:
 
+EXPLANATIONS TO BE ADDED
 
-Installing Acos locally
+Installing ACOS locally
 -----------------------
+
+TO BE ADDED
 
 Workflow for generating drag-and-drop activities
 ------------------------------------------------
 
-
+TO BE ADDED
 
 
