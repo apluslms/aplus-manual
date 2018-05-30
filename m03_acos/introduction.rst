@@ -11,7 +11,7 @@ The source code is available in GibHub: https://github.com/acos-server/acos-serv
 Example activities
 ------------------
 
-The following ACOS activity types were illustrated in a A+ workshop on May 30, 2018.
+The following ACOS activity types were illustrated in an A+ workshop on May 30, 2018.
 
 jsparsons-python 
   Example exercise for constructing Python code by dragging code elements.
