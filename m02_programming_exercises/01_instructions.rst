@@ -92,6 +92,13 @@ This is a shell script which is run inside the grading container.
 
 TODO: example of this file
 
+Note! run.sh must have executing rights. That is, if you create the file from
+scratch, you must do the following:
+
+1. Open the terminal.
+2. `cd` to the directory of the exercise.
+3. `chmod a+x run.sh`
+
 test_config.yaml
 ----------------
 This is a specific setting file for
@@ -99,3 +106,34 @@ This is a specific setting file for
 which is a tool package for grading programming exercises in Python language.
 
 TODO: example of this file
+
+
+Typical problems
+----------------
+
+A+: "No grader feedback available for this submission."
+.......................................................
+
+Probable cause: the `run.sh` file of this exercise do not have execution
+rights.
+
+1. Open the terminal.
+2. `cd` to the directory of the exercise.
+3. `chmod a+x run.sh`
+
+A+: "Something went wrong with the grader tests..."
+...................................................
+
+Probable causes:
+
+- config.yaml is misconfigured: it cannot find some unit test module
+- config.yaml cannot render feedback_template
+- error on some Python file in the `/submission/user` directory (syntax error,
+  exception, or trying to `import` some library or function which does not
+  exist anymore
+
+To to add `exec 2>> /feedback/err` as the second line of `run.sh`.
+This should provide more feedback showing on A+.
+
+If that does not help, debug the exercise grader inside the grading container.
+TODO.
