@@ -1,0 +1,45 @@
+---
+title: Personalized number
+max_points: 10
+instructions: |
+  <h1>Personalized number</h1>
+  <p>
+    Your personalized exercise is a number. You must submit the number
+    incremented by one.
+  </p>
+view_type: access.types.stdasync.acceptPost
+fields:
+  - name: solution
+    title: Solution
+    required: True
+
+#template: ./exercises/personalized_number/template.html
+
+personalized: True
+generated_files:
+  - file: number
+    key: number
+    content_in_template: True
+    url_in_template: True
+    allow_download: True
+generator:
+  cmd: [ "python3", "generator.py" ]
+  cwd: default/exercises/personalized_number/
+max_submissions_before_regeneration: 3
+
+# configuration for the new Docker container grading sandbox
+# the container must have Python 3 installed
+container:
+  image: apluslms/grade-python:3.5-2.2
+  mount: exercises/personalized_number
+  cmd: /exercise/run.sh
+
+# old chroot sandbox configuration
+actions:
+  - type: grader.actions.prepare
+    expect_success: True
+    cp_generated: number->user/number
+    cp_exercises: exercises/personalized_number->user
+  - title: Check solution
+    type: grader.actions.sandbox
+    cmd: [ "python3", "check_number.py" ]

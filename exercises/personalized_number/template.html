@@ -1,0 +1,18 @@
+{% extends 'access/exercise_frame.html' %}
+
+{% block exercise %}
+<h1>Personalized number</h1>
+
+  <p>
+    Your personalized exercise is a number. You must submit the number
+    incremented by one.
+  </p>
+
+  <p>Your input: {{ generated_files.number.content  }}</p>
+  <p>Download generated file: <a href="{{ generated_files.number.url }}">link</a></p>
+
+  <p><small>This exercise description is defined in a separate template file.</small></p>
+
+  {% include 'access/accept_post_form.html' %}
+
+{% endblock %}

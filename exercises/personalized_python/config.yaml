@@ -1,0 +1,49 @@
+---
+title: Personalized Python function
+max_points: 10
+instructions: |
+  <h1>Personalized Python function</h1>
+  <p>
+    Your personalized exercise is to write a Python function named <code>hello</code>
+    that returns a certain string. The string follows the format
+    <code>"Hello, NAME!"</code>, in which NAME is what you see below.
+  </p>
+
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: solution
+    name: solution.py
+    required: True
+
+personalized: True
+generated_files:
+  - file: name
+    key: name
+    content_in_template: True
+    url_in_template: True
+    allow_download: True
+generator:
+  cmd: [ "python3", "generator.py" ]
+  cwd: default/exercises/personalized_python/
+max_submissions_before_regeneration: 3
+
+# configuration for the new Docker container grading sandbox
+# the container must have Python 3 installed
+container:
+  image: apluslms/grade-python:3.5-2.2
+  mount: exercises/personalized_python
+  cmd: /exercise/run.sh
+
+# old chroot grading sandbox configuration
+actions:
+  - type: grader.actions.prepare
+    expect_success: True
+    cp_generated: name->user/name
+    cp_exercises: exercises/personalized_python->user
+  - title: Check solution
+    type: grader.actions.sandbox
+    cmd: [ "python3", "check.py" ]
+    files: 4
+    # file descriptor limit can not be set to zero since the grader
+    # must read a file itself, but then it does not prevent the student's
+    # submission from reading files either
