@@ -10,3 +10,4 @@ Introduction to developing course on A-Plus learning management service.
   03_css
   04_git
   05_docker
+  06_languages
