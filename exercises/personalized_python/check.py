@@ -1,6 +1,8 @@
 import sys
 import solution # student's submission
 
+max_points = 10
+points = 0
 try:
     answer = solution.hello()
 
@@ -11,17 +13,16 @@ try:
         word = f.read().strip()
     correct_answer = "Hello, {0}!".format(word)
 
-    max_points = 10
-    points = 0
     if answer == correct_answer:
         points = max_points
 
-    print("TotalPoints: {}".format(points))
-    print("MaxPoints: {}".format(max_points))
-    
     print("Your hello function returned: {}".format(answer))
     print("The correct answer is: {}".format(correct_answer))
 
 except Exception as e:
-    print("ERROR:", e)
-    sys.exit(1)
+    print("ERROR:", file=sys.stderr)
+    print(e, file=sys.stderr)
+
+print("TotalPoints: {}".format(points))
+print("MaxPoints: {}".format(max_points))
+
