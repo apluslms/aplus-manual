@@ -12,6 +12,15 @@ refreshing the exercise page.
 
 A personalized exercise defines a generator program that generates N instances
 to the exercise. The instances are generated before the start of the course.
+The mooc-grader CLI command ``python manage.py pregenerate_exercises``
+runs the generator programs and saves the instance files in the correct
+directory under the mooc-grader. In theory, the instance files could also
+be created by some other way in the correct location.
+The CLI command has some arguments to modify its behaviour: they are printed
+with the ``--help`` argument. The ``run-mooc-grader`` container (used in local
+testing and development) should automatically call the generators
+if there are any personalized exercises in the course.
+
 An instance contains some files that the grader program can
 use while grading (the implementation of the exercise may decide freely how
 those instance files are used). The instance files may also be used to add content
@@ -25,16 +34,19 @@ That kind of regeneration of the instance is disabled by default.
 Example exercises
 -----------------
 
-The submit directives below are commented out in the RST code because
-personalized exercises require that the instances are generated
-beforehand in the MOOC grader. However, the current version of the
-``run-mooc-grader`` container does not generate any instances and
-thus, the personalized exercises do not work.
+.. commented out (run-mooc-grader has been updated and the exercises work)
+  The submit directives below are commented out in the RST code because
+  personalized exercises require that the instances are generated
+  beforehand in the MOOC grader. However, the current version of the
+  ``run-mooc-grader`` container does not generate any instances and
+  thus, the personalized exercises do not work.
 
-.. no :: after submit
+Here we have two very simple example personalized exercises.
+Their graders work in containers and the exercises define generator
+programs that create random instances.
 
-.. submit personalized_number 10
+.. submit:: personalized_number 10
   :config: exercises/personalized_number/config.yaml
 
-.. submit personalized_python 10
+.. submit:: personalized_python 10
   :config: exercises/personalized_python/config.yaml
