@@ -22,6 +22,11 @@ else
     fi
 fi
 
+if [ -z $(which docker-compose) ]; then
+    echo "ERROR: Unable to find docker-compose. Are you sure it is installed and on your path?" >&2
+    exit 1
+fi
+
 DATA_PATH=_data
 has_data=$(grep -F "$DATA_PATH" docker-compose.yml|grep -vE '^\s*#')
 [ "$has_data" ] && mkdir -p "$DATA_PATH"
