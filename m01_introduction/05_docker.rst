@@ -47,8 +47,7 @@ The Docker home page also has `a short explanation of containers
 The reasons for using Docker in A+ are the following:
 
 - Easy installation, part 1
-    Just install Docker and it will install all other
-    software for you.
+    Just install Docker and it will install all other software for you.
 
 - Easy installation, part 2
     The containers work the same way both on your own  computer and the
@@ -68,6 +67,11 @@ The reasons for using Docker in A+ are the following:
 - Scalability
     It is easy to build a large service which uses many different
     types of containers and runs on many server computers together.
+
+If you have an existing course in A+ which does not use Docker, see the chapter
+`Converting an existing A+ course to Docker
+<../m04_converting/01_virtualenv_to_docker>`_ for reasons to convert it to
+Docker.
 
 .. admonition:: File format: YAML
   :class: meta
