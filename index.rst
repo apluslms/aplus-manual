@@ -10,3 +10,4 @@ Other content is not visible in A+.
   m01_introduction/index
   m02_programming_exercises/index
   m03_acos/index
+  m04_converting/index
