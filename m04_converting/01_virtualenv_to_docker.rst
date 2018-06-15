@@ -177,29 +177,29 @@ custom Sphinx directives of *your* course are currently in the directory
 
    .. code-block:: none
 
-     atilante@t31300-lr124 ~/ohj/a-ole/tts
-      % cd old/extensions
-     atilante@t31300-lr124 ~/ohj/a-ole/tts/old/extensions
-      % ls -l
-     total 52
-     -rw-r--r-- 1 atilante domain users 1273 Jun  5 13:07 aplus_exercise.py
-     drwxr-xr-x 5 atilante domain users 4096 Jun  5 13:31 a_plus_rst_tools/
-     lrwxrwxrwx 1 atilante domain users   16 Jun  5 13:07 a-plus-rst-tools -> a_plus_rst_tools/
-     -rw-r--r-- 1 atilante domain users 4346 Jun  5 13:07 aplus_submit.py
-     -rw-r--r-- 1 atilante domain users 2715 Jun  5 13:07 bootstrap_button_collapse.py
-     -rw-r--r-- 1 atilante domain users 3487 Jun  5 13:07 bootstrap_panel_table.py
-     -rw-r--r-- 1 atilante domain users 1628 Jun  5 13:07 bootstrap_styled_topic.py
-     -rw-r--r-- 1 atilante domain users 3147 Jun  5 13:07 div.py
-     drwxr-xr-x 2 atilante domain users 4096 Jun  5 13:45 __pycache__/
-     -rw-r--r-- 1 atilante domain users 5060 Jun  5 13:07 sql_submit.py
-     -rw-r--r-- 1 atilante domain users 1809 Jun  5 13:07 submit_no_tests.py
-     -rw-r--r-- 1 atilante domain users 1116 Jun  5 13:07 yaml_extras.py
+       atilante@t31300-lr124 ~/ohj/a-ole/tts
+        % cd old/extensions
+       atilante@t31300-lr124 ~/ohj/a-ole/tts/old/extensions
+        % ls -l
+       total 52
+       -rw-r--r-- 1 atilante domain users 1273 Jun  5 13:07 aplus_exercise.py
+       drwxr-xr-x 5 atilante domain users 4096 Jun  5 13:31 a_plus_rst_tools/
+       lrwxrwxrwx 1 atilante domain users   16 Jun  5 13:07 a-plus-rst-tools -> a_plus_rst_tools/
+       -rw-r--r-- 1 atilante domain users 4346 Jun  5 13:07 aplus_submit.py
+       -rw-r--r-- 1 atilante domain users 2715 Jun  5 13:07 bootstrap_button_collapse.py
+       -rw-r--r-- 1 atilante domain users 3487 Jun  5 13:07 bootstrap_panel_table.py
+       -rw-r--r-- 1 atilante domain users 1628 Jun  5 13:07 bootstrap_styled_topic.py
+       -rw-r--r-- 1 atilante domain users 3147 Jun  5 13:07 div.py
+       drwxr-xr-x 2 atilante domain users 4096 Jun  5 13:45 __pycache__/
+       -rw-r--r-- 1 atilante domain users 5060 Jun  5 13:07 sql_submit.py
+       -rw-r--r-- 1 atilante domain users 1809 Jun  5 13:07 submit_no_tests.py
+       -rw-r--r-- 1 atilante domain users 1116 Jun  5 13:07 yaml_extras.py
 
    Likely you want to use the latest A+ RST tools with your custom Sphinx
    directives. In that case, create a symbolic link from the *new*
-   ``extensions directory
+   ``extensions`` directory
 
-    .. code-block:: none
+   .. code-block:: none
 
       ln -s ../a-plus-rst-tools a_plus_rst_tools
 
@@ -210,4 +210,26 @@ custom Sphinx directives of *your* course are currently in the directory
 Merging conf.py
 ---------------
 
-Next you will have to merge ``old/conf.py`` to ``conf.py``.
+Next you will have to merge ``old/conf.py`` to ``conf.py``. Copy lines from
+the former to the latter. Run ``./docker-compile.sh`` to ensure that nothing
+has broken.
+
+Possible errors encountered
+...........................
+
+.. code-block:: none
+
+  Extension error:
+  Could not import extension my_directive (exception: No module named 'my_directive')
+  Makefile:60: recipe for target 'html' failed
+  make: *** [html] Error 1
+
+You have ``my_directive`` in conf.py in the list ``extensions``, but Sphinx
+cannot find it. Have you moved the file to the right directory? Sphinx can
+only find custom directives from directories which are declared in conf.py
+with ``sys.path.append``. For example, if you need to place your directive
+into directory ``extensions/mydir``, put the following into conf.py:
+
+.. code-block:: python
+
+  sys.path.append(os.path.abspath('extensions/mydir'))
