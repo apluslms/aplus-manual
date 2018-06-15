@@ -139,7 +139,7 @@ The usual workflow for editing a course is the following:
 1. Open your text editor, a terminal and a web browser.
 2. Edit some RST files in your text editor.
 3. Give command ``./docker-compile.sh`` in the terminal.
-4. Give command ``./docker-up.sh`` in the terminal.
+4. Give command ``rm -rf _data && ./docker-up.sh`` in the terminal.
 5. Go to ``http://localhost:8000/`` in the web browser to view A+
    running on your machine.
 6. Examine the changes you made in A+.
@@ -213,3 +213,29 @@ Custom JavaScript can be added into the course layout template found in ``_templ
 This template extends the default A+ theme found in ``a-plus-rst-tools/theme/aplus/layout.html``.
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
+
+Tips for
+....
+
+When you are only writing learning material as RST which contains text, links
+and MathJax notation, you don't need to start A+ to see the results. The
+compiled material is in the subdirectory ``_data/html``, which you can view
+with your web browser.
+
+For example, print your working directory in the terminal with the ``pwd``
+command:
+
+.. code-block: none
+
+    atilante@t31300-lr124 ~/ohj/a-ole/aplus-manual
+     % pwd
+    /u/79/atilante/unix/ohj/a-ole/aplus-manual
+
+In this example the absolute path of the working directory is
+``/u/79/atilante/unix/ohj/a-ole/aplus-manual``. Copy-paste your result to
+the address bar of your web browser, add ``_build/html/index.html`` to the end
+and press Enter.
+
+.. image:: /images/_build-html-in-browser.png
+
+Notice that images and exercises do not work with this method.
