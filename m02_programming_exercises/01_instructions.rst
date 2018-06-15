@@ -21,11 +21,13 @@ Writing programming exercises
 This section is an introduction to creating programming exercises
 in A+.
 
+
 Writing a base code and unit tests
 ----------------------------------
 
 We will use the "Hello Python" exercise on this course as an example.
 The files related to this exercise are in directory ``exercises/hello_python``.
+
 
 Defining the exercise in an RST file
 ....................................
@@ -49,8 +51,10 @@ file ``exercises/hello_python/config.yaml`` which is defined with the
 of this directive is in the file ``a-plus-rst-tools/directives/submit.py``,
 but you don't need to understand the contents of that file.
 
-Next, let's look at the actual configuration file,
-``exercises/hello_python/config.yaml``.
+config.yaml
+-----------
+This file has the exercise configuration for Mooc-grader. The following is
+a copy of ``exercises/hello_python/config.yaml``.
 
 .. code-block:: yaml
 
@@ -72,68 +76,188 @@ Next, let's look at the actual configuration file,
     mount: exercises/hello_python
     cmd: /exercise/run.sh
 
-TODO
+Explanation of the settings:
 
-A docker container that includes a stable Debian Linux and convenience commands for grading a student submission. Commands include tools from capturing the test output to submitting a feedback back to the grading service.
+- title
+    The title of the exercise. The RST file having a reference to the
+    exercise may override this when using the "aplus-submit" directive.
+
+- description
+    This is not actually shown anywhere.
+
+- instructions
+    The HTML code for the instructions for the student.
+
+- view_type
+    value "access.types.stdasync.acceptFiles" defines that the
+    student must submit one or more files to complete the exercise.
+
+- files
+    This defines each file that the student can submit. Each file might have
+    different name at student's computer, but they are renamed by the "name"
+    field.
+
+- container
+    This specifies the Docker container which is used for grading.
+
+    **image** is the container image. Text ``apluslms/grade-python:3.5-2.2`` means
+    the container is grade-python made by organisation apluslms. The version of
+    https://github.com/apluslms/grading-base/blob/master/grade-wrapper.sh
+    the grade-python container is 3.5, and it is based on container
+    "grading-base" version 2.2. For full documentation, see:
+    https://github.com/apluslms/grading-base
+    https://github.com/apluslms/grade-python
+
+    **mount** is the relative path of the directory which will be at directory
+    ``/exercise`` inside the container (read only). This should be the directory
+    of the programming exercise having files config.yaml, run.sh,
+    test_config.yaml and various Python files (model solution, unit tests).
+
+    **cmd** describes what command is run inside the container. run.sh is the
+    actual grading script.
+
+`The documentation of grading-base
+<https://github.com/apluslms/grading-base/blob/master/README.md>`_ is a good
+starting point for understanding the grading system.
 
 - https://github.com/apluslms/grading-base/blob/master/README.md
 - https://hub.docker.com/r/apluslms/grade-python/
 
 
-config.yaml
------------
-This file has the exercise configuration for Mooc-grader.
-
- TODO: example of this file
-
 run.sh
 ------
 This is a shell script which is run inside the grading container.
 
-TODO: example of this file
+.. code-block:: bash
+
+    #!/bin/bash
+
+    # The uploaded user files are always in /submission/user
+    # and named identically to config.yaml regardless of the uploaded file names.
+    cd /submission/user
+
+    # The mount directory from config.yaml is in /exercise.
+    # Append the required support files to test user solution.
+    cp /exercise/*.py .
+
+    # "capture" etc description in https://github.com/A-plus-LMS/grading-base
+
+    capture python3 tests.py
+
+    err-to-out
+    grade
 
 Note! run.sh must have executing rights. That is, if you create the file from
-scratch, you must do the following:
+scratch, you must do the following:to
 
 1. Open the terminal.
 2. `cd` to the directory of the exercise.
 3. `chmod a+x run.sh`
 
-test_config.yaml
-----------------
-This is a specific setting file for
-`Python grader utils <https://github.com/aalto-letech/python-grader-utils>`_,
-which is a tool package for grading programming exercises in Python language.
 
-TODO: example of this file
+Python-grader-utils
+-------------------
+
+Python-grader-utils (just "Graderutils") is a Python library for test suite
+management, file validation and test feedback formatting. It is used with
+Python programming exercise. The source code and
+documentation is here: https://github.com/Aalto-LeTech/python-grader-utils
+
+By default, Graderutils uses the configuration file **test_config.yaml** in the
+exercise directory. A simple test_config.yaml looks like this:
+
+.. code-block:: none
+
+    test_modules_data:
+      - module: tests
+        description: Local tests
+      - module: grader_tests
+        description: Grader tests
+
+    validation:
+      - type: python_import
+        file: primes.py
+      - type: python_syntax
+        file: primes.py
 
 
-Typical problems
-----------------
+**test_modules_data** defines which Python unit test files are executed.
 
-A+: "No grader feedback available for this submission."
-.......................................................
+**module** is the name of the Python file (without .py)
 
-Probable cause: the `run.sh` file of this exercise do not have execution
+**description** is the purpose of the file.
+
+Typically there is file **tests.py** which is given to the student. It has some
+very basic unit tests. Typically some points are given for passing these
+tests. Another file is typically **grader_tests.py** which has the secret, more
+complex and thorough unit tests. Most of the exercise points are obtained
+by passing these grader tests.
+
+**validation** instructs Graderutils to make a syntax analysis tests of the
+submitted files before the unit tests are executed.
+
+In the example above these settings make Graderutils to do two checks:
+
+1. Attempt to import the file as a Python module and catch all exceptions
+   during import. Show exceptions with the error template if there are any.
+
+2. Read the contents of file, attempt to parse the contents using ast.parse
+   and catch all exceptions. Show exceptions with the error template if
+   there are any.
+
+With Graderutils it is possible to forbid some Python syntax or libraries in
+some particular exercise, like deny using the default sort function of Python
+in an exercise where the student must implement their own sorting method.
+
+
+
+Debugging Python exercise graders
+=================================
+
+General instructions
+--------------------
+
+If one needs to find out why a grader for some particular Python exercise
+does not work, here are general tips.
+
+- Add ``exec >> /feedback/err`` as the second line of **run.sh**. This should
+  print some error messages.
+
+- Add ``echo`` to **run.sh**. Then log into A+ as root and inspect the exercise
+  submission. You should see all the error messages.
+
+- Add ``ls -l`` to **run.sh** to show the contents of the grading directory
+  inside the grading container.
+
+If all these fail, one can run a shell `inside the grading container
+<05_debugging_in_container.html>`_.
+
+Error messages and probable causes
+----------------------------------
+
+
+A+ "No grader feedback available for this submission."
+......................................................
+
+Probable cause: the *run.sh* file of this exercise do not have execution
 rights.
 
 1. Open the terminal.
-2. `cd` to the directory of the exercise.
-3. `chmod a+x run.sh`
+2. ``cd`` to the directory of the exercise.
+3. ``chmod a+x run.sh``
+
 
 A+: "Something went wrong with the grader tests..."
 ...................................................
 
 Probable causes:
 
-- config.yaml is misconfigured: it cannot find some unit test module
-- config.yaml cannot render feedback_template
-- error on some Python file in the `/submission/user` directory (syntax error,
+- *config.yaml* is misconfigured: it cannot find some unit test module
+- *config.yaml* cannot render feedback_template
+- error on some Python file in the ``/submission/user`` directory (syntax error,
   exception, or trying to `import` some library or function which does not
-  exist anymore
+  exist anymore.
 
-To to add `exec 2>> /feedback/err` as the second line of `run.sh`.
-This should provide more feedback showing on A+.
 
 If that does not help, debug the exercise grader inside the grading container.
 TODO.

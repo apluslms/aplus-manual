@@ -10,3 +10,4 @@ Other content is not visible in A+.
   02_hello_world
   03_lti_matlab_grader
   04_personalized_exercises
+  05_debugging_in_container
