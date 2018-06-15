@@ -32,6 +32,7 @@ static_host = os.environ.get('STATIC_CONTENT_HOST')
 #sys.path.insert(0, os.path.abspath('.'))
 
 sys.path.append(os.path.abspath('a-plus-rst-tools'))
+sys.path.append(os.path.abspath('a-plus-rst-tools/directives'))
 sys.path.append(os.path.abspath('extensions'))
 
 # -- General configuration ------------------------------------------------
