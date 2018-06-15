@@ -214,7 +214,7 @@ This template extends the default A+ theme found in ``a-plus-rst-tools/theme/apl
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
 
-Tips for
+Tips
 ....
 
 When you are only writing learning material as RST which contains text, links
