@@ -40,5 +40,8 @@ file ``docker-compose.yml``: remove comment characters (``#``). Result:
 .. submit:: scala 10
   :config: exercises/hello_scala/config.yaml
 
+.. submit:: javascript 10
+  :config: exercises/hello_javascript/config.yaml
+
 Be careful with the RST and YAML syntaxes. They are too easy to break
 with blank space and indentations.
