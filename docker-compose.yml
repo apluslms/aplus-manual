@@ -20,3 +20,14 @@ services:
       - "8000:8000"
     depends_on:
       - grader
+  acos:
+    image: apluslms/run-acos-server
+    user: $USER_ID:$USER_GID
+    ports:
+      - "3000:3000"
+    # depends_on is only used to control the start-up order of the containers so that
+    # the ACOS container would more likely be assigned the IP address hardcoded into the course configuration
+    depends_on:
+      - plus
+      - grader
+

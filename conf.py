@@ -26,6 +26,12 @@ default_max_group_size = 1
 use_wide_column = True
 static_host = os.environ.get('STATIC_CONTENT_HOST')
 
+# Define the base URL of the ACOS exercises if the default value is incorrect.
+# The internal IP address of the ACOS container should be used in local testing
+# and in production, the URL of the ACOS production server.
+#acos_submit_base_url = 'https://acos.cs.aalto.fi'
+acos_submit_base_url = 'http://172.21.0.4:3000'
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -50,6 +56,7 @@ extensions = [
     'aplus_setup',
     'bootstrap_styled_topic',
     'div',
+    'acos_submit',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
