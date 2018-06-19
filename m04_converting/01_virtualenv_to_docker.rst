@@ -9,8 +9,8 @@ environment <https://docs.python.org/3/tutorial/venv.html>`_ (just
 "virtualenv"), this section describes how to convert it to the `Docker
 environment <../m01_introduction/05_docker>`_.
 
-An A+ course not using Docker does not have ``docker-compile.sh`` and
-``docker-up.sh`` scripts. Instead, the course is typically compiled with
+An A+ course not using Docker does not have **docker-compile.sh** and
+**docker-up.sh** scripts. Instead, the course is typically compiled with
 commands ``source venv/bin/activate`` and ``make html``. A Python virtualenv is
 more like a Python package manager compared to Docker; each virtualenv installs
 a specific version of Python and specific version of libraries. A+ Docker
@@ -39,7 +39,7 @@ for the Docker version.
     git checkout docker
 
 It is recommended to add a to-do document for making the Docker version, for
-example, ``Docker-TODO.txt`` in the main directory.
+example, **Docker-TODO.txt** in the main directory.
 
 .. code-block:: none
 
@@ -58,7 +58,7 @@ example, ``Docker-TODO.txt`` in the main directory.
 Some people and teams prefer to have their task lists in `Trello
 <https://trello.com/>`_. Do what suits you best.
 
-Create a directory ``old`` and move all the current files into it. This
+Create a directory **old** and move all the current files into it. This
 directory will have all the course material which is not yet converted to the
 Docker version. The idea is to move files back from there in small groups and
 test them. This way you will easily see what is done, and the rest of the files
@@ -69,13 +69,13 @@ will not cause Sphinx compilation errors or other trouble.
     mkdir old
     git mv -k * old
 
-Note that the hidden subdirectory ``.git``, and files ``.gitignore`` and
-``.gitmodules`` will not be moved, as they should.
+Note that the hidden subdirectory **.git**, and files **.gitignore** and
+**.gitmodules** will not be moved, as they should.
 
 Commit and push to `Github <https://github.com/>`_, `Aalto Gitlab
 <https://version.aalto.fi/>`_ or whatever git service you have. The
 ``--set-upstream`` option is used only this time; it allows you to later say
-just `git push` and it will automatically push your commits to the ``docker``
+just `git push` and it will automatically push your commits to the **docker**
 branch on the remote git service.
 
 .. code-block:: none
@@ -86,14 +86,14 @@ branch on the remote git service.
 Import aplus-manual
 ...................
 
-Copy files from the ``aplus-manual`` directory, excluding the ``.git``
+Copy files from the **aplus-manual** directory, excluding the **.git**
 directory, to the directory of your course. For example:
 
 .. code-block:: none
 
     cp -r ../aplus-manual/* .
 
-Add directory ``_data`` to the ``.gitignore`` file of your course. That
+Add directory **_data** to the **.gitignore** file of your course. That
 directory is a write-enabled directory for A+ and mooc-grader which can always
 be removed. Add latest A+ RST tools as submodule.
 
@@ -104,8 +104,8 @@ be removed. Add latest A+ RST tools as submodule.
     git submodule init
     git submodule update
 
-Add directory ``old`` to ``exclude_patterns`` in file ``conf.py``. This way
-Sphinx will not compile material which is in the ``old`` directory.
+Add directory **old** to ``exclude_patterns`` in file **conf.py**. This way
+Sphinx will not compile material which is in the **old** directory.
 
 **Note:** If your course has custom Sphinx directives, don't worry. This chapter
 will describe later how to include them into the Docker version of your course.
@@ -126,7 +126,7 @@ Finally, add all new files, commit and push.
 
 Congratulations! Now you have all the initial git voodoo done. You have a new
 branch on your course repository, which has a working copy of the A+ manual and
-your current course material in the ``old`` directory. You can compile the
+your current course material in the **old** directory. You can compile the
 material and run A+ and mooc-grader locally `as specified in the introductory
 module <../m01_introduction/02_rst.html#workflow-for-editing-rst-files>`_.
 
@@ -134,18 +134,18 @@ Custom Sphinx directives
 ------------------------
 
 Your course might have custom Sphinx directives. If you have those, they are
-probably now in the directory ``old/extensions`` the ``.py`` files. Some of them
+probably now in the directory **old/extensions** the **.py** files. Some of them
 might even require A+ RST tools, meaning that they have lines such as ``from
 a_plus_rst_tools import aplus_nodes``. This section describes how to include
 those to the Docker version of your course.
 
-Currently the A+ manual has two custom directives in the ``extensions``
-subdirectory: ``bootstrap_styled_topic.py`` and ``div.py``. Let's assume the
+Currently the A+ manual has two custom directives in the **extensions**
+subdirectory: **bootstrap_styled_topic.py** and **div.py**. Let's assume the
 custom Sphinx directives of *your* course are currently in the directory
-``old/extensions``.
+**old/extensions**.
 
-1. If there are Sphinx directives (``.py`` files) with similar name both in
-   ``extensions`` and ``old/extensions``, check whether they differ. That can
+1. If there are Sphinx directives (**.py** files) with similar name both in
+   **extensions** and **old/extensions**, check whether they differ. That can
    be done with your text editor, or with the command
    ``diff extensions/NAME.py old/extensions/NAME.py`` in the shell; see
    ``man diff`` or the `GNU Diffutils page
@@ -164,14 +164,14 @@ custom Sphinx directives of *your* course are currently in the directory
 
 3. For the custom Sphinx directives which have a couple of
    ``from a_plus_rst_tools import`` in them, chances are you have a symbolic
-   link ``a-plus-rst-tools`` in the
-   ``old/extensions`` directory, which points to the ``a_plus_rst_tools``
+   link **a-plus-rst-tools** in the
+   **old/extensions** directory, which points to the **a_plus_rst_tools**
    subdirectory. That latter directory may have some specific, maybe old
    version of A+ RST tools. This kind of hack has been made because normally
-   A+ RST tools exists as directory ``a-plus-rst-tools``. This is an invalid
+   A+ RST tools exists as directory **a-plus-rst-tools**. This is an invalid
    Python module name, and therefore the directory has been renamed to
-   ``a_plus_rst_tools`` in order to import Python functions from it in the
-   custom Sphinx directive. Moreover, a symbolic link ``a-plus-rst-tools`` has
+   **a_plus_rst_tools** in order to import Python functions from it in the
+   custom Sphinx directive. Moreover, a symbolic link **a-plus-rst-tools** has
    been created to it, because A+ RST is cloned from Github by default that
    name.
 
@@ -197,7 +197,7 @@ custom Sphinx directives of *your* course are currently in the directory
 
    Likely you want to use the latest A+ RST tools with your custom Sphinx
    directives. In that case, create a symbolic link from the *new*
-   ``extensions`` directory
+   **extensions** directory
 
    .. code-block:: none
 
@@ -210,7 +210,7 @@ custom Sphinx directives of *your* course are currently in the directory
 Merging conf.py
 ---------------
 
-Next you will have to merge ``old/conf.py`` to ``conf.py``. Copy lines from
+Next you will have to merge **old/conf.py** to **conf.py**. Copy lines from
 the former to the latter. Run ``./docker-compile.sh`` to ensure that nothing
 has broken.
 
@@ -228,7 +228,7 @@ You have ``my_directive`` in conf.py in the list ``extensions``, but Sphinx
 cannot find it. Have you moved the file to the right directory? Sphinx can
 only find custom directives from directories which are declared in conf.py
 with ``sys.path.append``. For example, if you need to place your directive
-into directory ``extensions/mydir``, put the following into conf.py:
+into directory **extensions/mydir**, put the following into conf.py:
 
 .. code-block:: python
 
