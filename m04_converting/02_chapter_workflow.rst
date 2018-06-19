@@ -121,9 +121,13 @@ config_old.yaml
       disk: 0
       html: True
 
-Then, create a new **config.yaml** file. Copy everything from
-**config_old.yaml** to this file except the part ``actions``. Instead, insert
-a new part ``container``:
+Then, create a new **config.yaml** file. Copy the ``view_type`` and ``files``
+sections from **config_old.yaml** to this file. **NOTE**: you don't need to
+define a ``feedback_template`` anymore if it is a typical template. If you
+need a specific template, see `pull request 19 of mooc-grader
+<https://github.com/Aalto-LeTech/mooc-grader/pull/19>`_.
+
+Write also a new part ``container``:
 
 config.yaml
 ...........
@@ -134,8 +138,6 @@ config.yaml
   files:
     - field: file1
       name: laskesumma.py
-
-  feedback_template: access/task_direct.html
 
   container:
     image: apluslms/grading-python:3.5
