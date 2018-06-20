@@ -30,4 +30,6 @@ services:
     depends_on:
       - plus
       - grader
+    #volumes:
+    #  - ./_data/acos/:/var/log/acos
 
