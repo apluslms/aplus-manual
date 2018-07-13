@@ -1,27 +1,18 @@
-Exercise in MATLAB Grader
-=========================
+MATLAB Grader exercises
+=======================
 
-This documentation explains how to create a new exercise with the MATLAB grader service.
-MATLAB grader is developed by MathWorks and it is connected to learning management
-systems via the standard LTI protocol.
+This documentation explains how to create a new exercise with the proprietary
+MATLAB grader service. MATLAB grader is developed by MathWorks and it is
+connected to learning management systems via the standard LTI protocol,
+version 1.1.
 
-Enabling an LTI service in the A+ site
---------------------------------------
-
-An A+ site administrator must first add the LTI service with its credentials to the site and then,
-in a course instance, a teacher may add exercises that connect to the LTI service.
-The LTI service needs to enabled only once for the site.
-
-The admin interface is located in the URL path `/admin <//localhost:8000/admin>`_.
-
-1. Find "Lti services" under "External services" and click "add".
-2. In the form, enter the URL of the service as well as the consumer key and secret.
-3. Click "save".
 
 Launching an exercise
 ---------------------
 
-In A-plus environment:
+In the A+ course, you may add new LTI exercises manually or the configurations
+may be imported from the MOOC grader (see previous chapters). The following
+describes how to add them manually under the "edit course" menu.
 
 1. Add a new learning object
 2. Choose 'LTI Exercise'
@@ -29,11 +20,16 @@ In A-plus environment:
    LTI-specific settings "context id", "resource link id", "resource link title", and "service url" can be left empty in order to use the defaults.
 4. Launch the exercise
 
+When a teacher launches the exercise for the first time, it initializes the
+exercise editor in the MATLAB grader. The teacher may then create the exercise
+and save it as final in order to open it to students. Exercises in the draft mode
+are not available to students.
+
 Defining the exercise parameters in MATLAB grader
 -------------------------------------------------
 
-MATLAB grader provides such an easy user interface for teacher to develop exercises.
-In MATLAB grader, there are multiple fields to define for the exercise:
+The MATLAB grader provides an easy-to-use user interface for teachers to develop exercises.
+In the MATLAB grader, there are multiple fields to define for the exercise:
 
 - Title
 - Problem Description and Instructions
@@ -58,9 +54,9 @@ Assessment can be executed with four different type:
 - Function or Keyword is Absent (for example, the student's code should not have a for-loop)
 - MATLAB code (Assessment system includes three built-in functions to check if answer is correct (assessVariableEqual, assessFunctionPresence, assessFunctionAbsence)).
 
-Examples of these methods can be found in 'Examples'.
+Examples of these methods can be found in the 'Examples' section below.
 
-Use 'Validate Reference Solution' to check that reference code and assessments are really working.
+Use 'Validate Reference Solution' to check that the reference code and assessments are really working.
 
 The image shows an example of assessment written in MATLAB code for a function type exercise.
 The student's function is called ``newton`` and it is called one hundred times with random input parameters.
