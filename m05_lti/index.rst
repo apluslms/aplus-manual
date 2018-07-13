@@ -7,4 +7,5 @@ Using LTI in A+
 
   introduction
   configuration
+  lti_matlab_grader
 
