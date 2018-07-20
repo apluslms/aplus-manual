@@ -4,8 +4,8 @@ The workflow for converting a chapter
 This section proposes a workflow for converting a chapter (or "module") in a
 non-Docker A+ course for the Docker version. It assumes that the initialisation
 described in `the previous chapter <01_virtualenv_to_docker.html>`_ is
-completed. See the earlier chapter ``Instructions
-<../m02_programming_exercises/instructions.html>``_ in the Programming exercises
+completed. See the earlier chapter `Instructions
+<../m02_programming_exercises/instructions.html>`_ in the Programming exercises
 module for more information.
 
 Add the RST files of the module
