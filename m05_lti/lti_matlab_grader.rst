@@ -2,13 +2,29 @@ MATLAB Grader exercises
 =======================
 
 This documentation explains how to create a new exercise with the proprietary
-MATLAB grader service. MATLAB grader is developed by MathWorks and it is
+MATLAB Grader service. MATLAB Grader is developed by MathWorks and it is
 connected to learning management systems via the standard LTI protocol,
 version 1.1.
 
 
-Launching an exercise
----------------------
+MATLAB Grader
+-------------
+
+One may log in directly to the MATLAB Grader at https://grader.mathworks.com/
+using a MathWorks account. It is possible to host MATLAB courses there without
+using any LMS, but this documentation is about using it with A+. Nonetheless,
+teachers may create MATLAB problems in the MATLAB grader before using any LMS.
+When the problems are stored in a collection in the MATLAB Grader, the teacher
+may just copy those existing exercises when integrating the A+ LMS to the
+MATLAB Grader. By doing that, the teacher could first concentrate on creating
+the exercises and only afterwards integrate them into A+. The teacher may also
+use the exercises in other LTI-compatible learning management systems when they
+are created in MATLAB Grader collections.
+
+Study the official `MATLAB Grader help`_ documentation to learn more of its features.
+
+Launching a MATLAB Grader exercise from A+
+------------------------------------------
 
 In the A+ course, you may add new LTI exercises manually or the configurations
 may be imported from the MOOC grader (see previous chapters). The following
@@ -18,15 +34,27 @@ describes how to add them manually under the "edit course" menu.
 2. Choose 'LTI Exercise'
 3. Enter the exercise settings and select 'MathWorks learning tool pilot' (https://learningtool.mathworks.com/launch) as the LTI Service.
    LTI-specific settings "context id", "resource link id", "resource link title", and "service url" can be left empty in order to use the defaults.
+   **N.B.** the name of the LTI service may change when the pilot phase is over and the MATLAB Grader is officially released.
 4. Launch the exercise
 
 When a teacher launches the exercise for the first time, it initializes the
-exercise editor in the MATLAB grader. The teacher may then create the exercise
-and save it as final in order to open it to students. Exercises in the draft mode
-are not available to students.
+exercise editor in the MATLAB grader. The teacher may create a new problem or
+copy an existing problem from the A+ course or a MATLAB Grader collection
+(exercises created directly in the MATLAB Grader site without A+).
+In order to copy an exercise from a collection, it is necessary to link to the
+MathWorks account (the link for doing that should be at the bottom of
+the 'Add problem' page when launching the MATLAB Grader from A+).
+The MATLAB Grader exercise must be saved as final in order to open it to students.
+Exercises in the draft mode are not available to students.
+
+Creating MATLAB Grader exercises
+--------------------------------
+
+The official `MATLAB Grader help`_ documentation provides more details about
+creating exercises, but this section gives a brief summary.
 
 Defining the exercise parameters in MATLAB grader
--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The MATLAB grader provides an easy-to-use user interface for teachers to develop exercises.
 In the MATLAB grader, there are multiple fields to define for the exercise:
@@ -45,7 +73,7 @@ Next, set up required values.
 In *Learner template*, it is possible to lock some rows (click the lock icon). It is helpful when there should be some rows that are not allowed to be edited by the student.
 
 Setting up the assessment
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assessment can be executed with four different type:
 
@@ -65,7 +93,7 @@ The return value is compared to the return value of the reference solution.
 .. image:: /images/matlab_grader_assessment.png
 
 Examples
---------
+~~~~~~~~
 
 Some examples of different exercise types:
 
@@ -100,8 +128,6 @@ There are currently some issues with grader.
 
 - Syntax check in the beginning of assessment would be nice. Now syntax errors trigger the first assessment defined by the teacher, which is a little misleading since the syntax error in the submission probably has nothing to do with the first assessment test.
 
-More information and full documentation
----------------------------------------
 
-More information can be found in MathWorks Learning Tool Documentation (in a MATLAB grader exercise, click ``?`` icon next to 'DRAFT').
+.. _MATLAB Grader help: https://se.mathworks.com/help/matlabgrader/index.html
 
