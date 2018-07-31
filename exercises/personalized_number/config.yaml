@@ -24,7 +24,7 @@ generated_files:
     allow_download: True
 generator:
   cmd: [ "python3", "generator.py" ]
-  cwd: exercises/personalized_number/
+  cwd: default/exercises/personalized_number/
 max_submissions_before_regeneration: 3
 
 # configuration for the new Docker container grading sandbox
