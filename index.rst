@@ -12,4 +12,4 @@ Other content is not visible in A+.
   m03_acos/index
   m04_converting/index
   m05_lti/index
-
+  m06_rubyric/index
