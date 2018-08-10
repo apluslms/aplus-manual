@@ -1,0 +1,12 @@
+test_modules:
+  - module: grader_tests
+    description: Grader tests
+
+feedback_template: feedback_plot_png.html
+
+validation:
+  - type: python_import
+    file: turtles.py
+
+  - type: python_syntax
+    file: turtles.py

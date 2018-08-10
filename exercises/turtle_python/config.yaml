@@ -1,0 +1,12 @@
+title: Turtle graphics
+description: An example of graded graphics exercise with Python
+
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: turtles.py
+
+container:
+  image: apluslms/grade-python:math-latest
+  mount: exercises/turtle_python
+  cmd: /exercise/run.sh

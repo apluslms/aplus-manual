@@ -11,3 +11,4 @@ Other content is not visible in A+.
   04_personalized_exercises
   05_debugging_in_container
   06_radar
+  07_graphics
