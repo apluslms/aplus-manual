@@ -26,12 +26,11 @@ add it to menu.
 
 TODO: Image of Add menu item
 
-.. admonition:: Rubyric login
-  :class: alert alert-info
+.. warning::
 
-  At Rubyric account you login with Haka login is not the same account you are
-  using when you login through A+. Which means you might not have access to same
-  courses with both login methods.
+  At Rubyric the account you login with Haka login is not the same account you
+  are using when you login through A+. Which means you might not have access to
+  same courses with both login methods.
 
 Configure course at Rubyric
 ---------------------------
@@ -68,10 +67,23 @@ TODO: image of shared variables with ids underlined and settings filled
 Create assignment
 .................
 
-Choose create new assignment. Fill in the form. LTI resource link ID should be
-same as Resource link id in A+ exercise. You don't have to fill in LTI resource
-link ID for peer review and LTI resource link ID for viewing feedback. Check out
+Check out
 `LTI configuration in A+ <http://localhost:8000/def/current/m05_lti/configuration/>`_
-to find out how to configure LTI exercise in A+.
+to find out how to configure LTI exercise in A+. To create exercise to Rubyric
+choose create new assignment. Fill in the form. LTI resource link ID should be
+same as Resource link id in A+ exercise. You don't have to fill in LTI resource
+link ID for peer review and LTI resource link ID for viewing feedback. They are
+used if you wish for students to use Rubyric to give peer reviews to each other.
+Service url is shown on exercise page after you have created exercise.
 
 TODO: create assignments
+
+Submissions
+...........
+
+Once you have configured exercise in both A+ and Rubyric submissions should be
+delivered to Rubyric where they can be assessed. The reviews in lti assignment
+should be delivered back to A+. If you want students to submit straight to
+Rubyric you can provide students with submission url which they can use. In
+non-lti course submission url is found where service url would be in lti course.
+When using regular submission the review will be delivered to student's email.
