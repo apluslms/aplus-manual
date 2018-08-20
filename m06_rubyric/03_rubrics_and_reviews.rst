@@ -18,6 +18,9 @@ Rubrics and Reviews
 Rubrics
 -------
 
+Settings
+........
+
 Rubyric rubrics have four grading modes: No grade, Mean, Sum and Always pass
 (only lti exercises). No grade mode does not give any grade for the submission
 instead it gives pure textual feedback. Normal requirements to finalize the
@@ -37,6 +40,9 @@ category. In final text everything written under one category is collected
 together.
 
 .. image:: /images/rubyric-rubric-settings.png
+
+Pages
+.....
 
 The pages contain the "rubric" itself. Pages can be used for example to separate
 different parts of assessment from each other, like one page contains criteria
@@ -125,4 +131,10 @@ On finalize page reviewer can write some final feedback on text field.
 Send reviews
 ............
 
-TODO: send reviews explanation
+At assignment page instructor can choose reviews they want to deliver to
+students. If submission has been made through A+, the review should be delivered
+back to A+. If submission is regular submission, the review will be send to
+student's email. The review will be delivered in both cases with slight delay
+and review will be shown with status "mailing". After a little while status
+should change to "mailed" and review should have been delivered (reload page
+to see status change).

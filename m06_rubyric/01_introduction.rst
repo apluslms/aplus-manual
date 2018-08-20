@@ -40,7 +40,18 @@ allows review to add comment on the exact place they want to comment on.
 
 TODO: images of plain text review and annotation review
 
-At the moment Rubyric cannot automatically configure a new course through LTI
-so you need to manually create courses and exercises to Rubyric and then connect
-them to A+. In following chapters we will discuss how to get started with
-Rubyric, define rubrics and review assignments.
+Haka and LTI login
+..................
+
+Rubyric allows you to login to Rubyric through Haka login as well as login from
+A+ with lti. In this manual we will be talking about lti configuration in
+Rubyric every once in a while. If you wish to use Rubyric without connecting it
+to A+ you can ignore lti related parts and focus on general Rubyric instructions.
+In following chapters we will discuss how to get started with Rubyric, define
+rubrics and review assignments.
+
+.. warning::
+
+  At Rubyric the account you login with Haka login is not the same account you
+  are using when you login through A+. Which means you might not have access to
+  same courses with both login methods.
