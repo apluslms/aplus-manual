@@ -1,9 +1,9 @@
-Examples of ACOS exercises
+Examples of Acos exercises
 ==========================
 
-This page contains examples of various ACOS exercises.
-When you are running the ACOS container locally in your computer,
-you may also access these and other demo exercises directly in the ACOS server
+This page contains examples of various Acos exercises.
+When you are running the Acos container locally in your computer,
+you may also access these and other demo exercises directly in the Acos server
 at http://localhost:3000.
 
 
