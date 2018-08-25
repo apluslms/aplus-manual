@@ -1,4 +1,4 @@
-Module 3: ACOS server
+Module 3: Acos server
 ---------------------
 
 This index lists entry for each learning chapter on module.
