@@ -78,6 +78,13 @@ to define the base URL of Acos server, for example,
 ``"https://acos.cs.aalto.fi"`` or ``"http://172.21.0.4:3000"``.
 The ``url`` option in the directive only defines the URL path of the exercise without the domain.
 
+.. code-block:: rst
+
+  .. acos-submit:: 1 150
+    :title: Reveal demo
+    :url: /aplus/draganddrop/draganddrop-example/revealdemo
+
+
 Docker and Mac computers
 ------------------------
 
@@ -99,13 +106,6 @@ In addition, the ``conf.py`` needs to modified as follows:
   acos_submit_base_url = 'http://acos:3000'
 
 After modifying the settings, execute ``./docker-compile.py``. More detailed information about modifying the ``hosts`` file can be found at https://www.imore.com/how-edit-your-macs-hosts-file-and-why-you-would-want and https://www.tekrevue.com/tip/edit-hosts-file-mac-os-x/.
-
-
-.. code-block:: rst
-
-  .. acos-submit:: 1 150
-    :title: Reveal demo
-    :url: /aplus/draganddrop/draganddrop-example/revealdemo
 
 
 Installing Acos locally
