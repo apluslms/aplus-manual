@@ -13,3 +13,4 @@ Other content is not visible in A+.
   m04_converting/index
   m05_lti/index
   m06_rubyric/index
+  m07_admin/index
