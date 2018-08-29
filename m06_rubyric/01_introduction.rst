@@ -4,10 +4,10 @@ Introduction to Rubyric
 .. styled-topic::
 
   Main questions:
-      What Rubyric is and what it is used for.
+      What Rubyric is and what it is used for?
 
   Topics?
-      Introduction to Rubyric
+      Introduction to Rubyric.
 
   Difficulty:
       Easy
@@ -23,7 +23,7 @@ pure numerical grades, especially when talking about certain exercise types,
 such as essays and bigger projects. Written feedback helps students to notice
 what exactly is wrong with the answers and students can take the feedback into
 consideration and use it to improve their answers next time.
-Rubyric is an online tool which strives to make
+`Rubyric <https://rubyric.cs.hut.fi>`_ is an online tool which strives to make
 giving written feedback easier and faster using 
 `rubrics <https://en.wikipedia.org/wiki/Rubric_(academic)>`_. Teachers can
 create assessment rubrics which reviewers use as a base to review submissions.
@@ -36,19 +36,18 @@ Rubyric allows you to do two different kinds of reviews, plain text reviews and
 annotation reviews. Plain text reviews are constructed by putting chosen phrases
 one after another and modifying the text. Annotation review allows the reviewer
 to drag comments on the submission where they are shown. Annotation review
-allows review to add comment on the exact place they want to comment on.
-
-TODO: images of plain text review and annotation review
+allows reviewer to add comment on the exact place they want to comment on.
 
 Haka and LTI login
 ..................
 
-Rubyric allows you to login to Rubyric through Haka login as well as login from
+It is possible to login to Rubyric through Haka login as well as login from
 A+ with lti. In this manual we will be talking about lti configuration in
-Rubyric every once in a while. If you wish to use Rubyric without connecting it
-to A+ you can ignore lti related parts and focus on general Rubyric instructions.
-In following chapters we will discuss how to get started with Rubyric, define
-rubrics and review assignments.
+Rubyric every once in a while. Rubyric courses can be connected to A+ regardless
+to login method. If you wish to use Rubyric without connecting it to A+ you can
+ignore lti related parts and focus on general Rubyric instructions. In following
+chapters we will discuss how to get started with Rubyric, define rubrics and
+review assignments.
 
 .. warning::
 

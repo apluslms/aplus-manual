@@ -4,10 +4,10 @@ Rubrics and Reviews
 .. styled-topic::
 
   Main questions:
-      How to create rubrics and how reviewing submissions work
+      How to create rubrics and how to review submissions?
 
   Topics?
-      Creating rubric and reviewing submissions
+      Creating rubrics and reviewing submissions.
 
   Difficulty:
       Easy

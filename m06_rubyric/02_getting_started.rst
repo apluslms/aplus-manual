@@ -4,11 +4,11 @@ Getting Started with Rubyric
 .. styled-topic::
 
   Main questions:
-      How to create courses and exercises in Rubyric, how they can be linked to
-      A+
+      How to create courses and assignments in Rubyric? How they can be linked
+      to A+?
 
   Topics?
-      Create and modify courses, course instances and exercises
+      Creating and modifying courses, course instances and assignments.
 
   Difficulty:
       Easy
@@ -31,9 +31,9 @@ Create course and course instance
 .................................
 
 Login to Rubyric. If course has yet to be created at Rubyric when logging in
-with lti, you will be redirected to create course form. If logging in with Haka
-choose to create new course. Creating a new course automatically creates also a
-course instance for the course. There can be several course instances at courses.
+with lti, you will be redirected to create course form. When logging in with Haka,
+choose to create new course. Creating a new course automatically also creates a
+course instance for the course. There can be several course instances at a course.
 To create new course instance to existing course navigate to course by clicking
 its name on front page and choose create new course instance. Course instances
 have their separate assignments, reviewers and students. Course has the
@@ -87,8 +87,8 @@ to send reviews immediately", reviewers are allowed to send reviews back to
 students right after finishing review. Otherwise instructors will have to
 send reviews afterwards. Rubyric also allows students to conduct peer reviews.
 If peer review count is left empty, no peer review is expected. On the other
-hand collaborative allows students to construct feedback for each other but they
-are not required to review other people's submissions.
+hand collaborative mode allows students to construct feedback for each other but
+they are not required to review other people's submissions.
 
 Check out
 `LTI configuration in A+ <../m05_lti/configuration>`_

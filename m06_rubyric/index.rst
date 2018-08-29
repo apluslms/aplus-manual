@@ -7,3 +7,4 @@ Documentation of Rubyric feedback service.
   01_introduction
   02_getting_started
   03_rubrics_and_reviews
+  04_roles_and_groups
