@@ -32,12 +32,15 @@ Create course and course instance
 
 Login to Rubyric. If course has yet to be created at Rubyric when logging in
 with lti, you will be redirected to create course form. When logging in with Haka,
-choose to create new course. Creating a new course automatically also creates a
-course instance for the course. There can be several course instances at a course.
-To create new course instance to existing course navigate to course by clicking
-its name on front page and choose create new course instance. Course instances
-have their separate assignments, reviewers and students. Course has the
-instructors who have rights to all the courses instances the course have.
+choose to create new course. Create course button might not be visible if you
+have previously only been a student or a reviewer in some course. In that case
+you can find create course form at https://rubyric.cs.hut.fi/course_instances/new.
+Creating a new course automatically also creates a course instance for the
+course. There can be several course instances at a course. To create new course
+instance to existing course navigate to course by clicking its name on frontpage
+and choose create new course instance. Course instances have their separate
+assignments, reviewers and students. Course has the instructors who have rights
+to all course instances the course has.
 
 Fill in the form. Choose "LTI integration" as submission policy if you wish to
 connect Rubyric and A+. "Anybody can submit without authenticating" allows anyone
@@ -51,6 +54,12 @@ ID and LTI context ID. They can be filled in if you have chosen LTI integration
 as submission policy. You can find the right context id and consumer id at
 A+ by choosing Rubyric at the menu and clicking "Show shared variables".
 Consumer id is shown as oauth_consumer_key and context id as context_id.
+
+In case you are redirected straight to Rubyric instead of having chance to
+choose "Show shared variables" or you do not want to include lti login you can
+try using "plus.cs" as consumer id and your course's address
+(plus.cs.hut.fi/something/something/) as context id. Notice missing https at the
+beginning and '/' at the end.
 
 .. image:: /images/rubyric-create-course.png
 
