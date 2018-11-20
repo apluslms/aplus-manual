@@ -83,15 +83,19 @@ branch on the remote git service.
     git commit -m "First commit of Docker version"
     git push --set-upstream origin docker
 
-Import aplus-manual
-...................
+Import apluslms course-templates
+................................
 
-Copy files from the **aplus-manual** directory, excluding the **.git**
-directory, to the directory of your course. For example:
-
-.. code-block:: none
-
-    cp -r ../aplus-manual/* .
+There is a minimal code template for a new A+ course using Docker. For your
+information, the A+ learning management system has its own
+`Github page <https://github.com/apluslms>_`, and one of the projects there is
+called `course-templates <https://github.com/apluslms/course-templates>`_.
+There are three branches: **master** is the minimal codebase, **rst** is master
+with support for RST material, and **manual** is the A+ manual. If your course
+has only exercises and the main index file for Sphinx is **index.yaml**, use
+the *master* branch. If your course has the **index.rst** file, use the
+*rst* branch. Download the ZIP file of the branch from Github and extract it to
+your course directory. Read the *README.md* file.
 
 Add directory **_data** to the **.gitignore** file of your course. That
 directory is a write-enabled directory for A+ and mooc-grader which can always
@@ -121,7 +125,7 @@ Finally, add all new files, commit and push.
 .. code-block:: python
 
     git add *
-    git commit -m "Added A+ manual codebase"
+    git commit -m "Added A+ course-template"
     git push
 
 Congratulations! Now you have all the initial git voodoo done. You have a new
