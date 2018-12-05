@@ -38,26 +38,58 @@ has_acos_log=$(grep -F "$ACOS_LOG_PATH" docker-compose.yml|grep -vE '^\s*#')
 export COMPOSE_PROJECT_NAME USER_ID USER_GID DOCKER_GID
 
 pid=
-clean() {
-    trap clean2 INT
+keep=
+onexit() {
+    trap - INT
     [ "$pid" ] && kill $pid || true
     wait
-    clean2
-}
-clean2() {
-    trap - INT
-    docker-compose down --volumes
+    if [ "$keep" = "" ]; then
+        clean
+    else
+        echo "Data was not removed. You can remove it with: $0 --clean"
+    fi
     rm -rf /tmp/aplus || true
     exit 0
 }
 
+clean() {
+    echo " !! Removing persistent data !! "
+    docker-compose down --volumes
+    if [ "$DATA_PATH" -a -e "$DATA_PATH" ]; then
+        echo "Removing $DATA_PATH"
+        rm -rf "$DATA_PATH" || true
+    fi
+}
+
+
+while [ "$1" ]; do
+    case "$1" in
+        -c|--clean)
+            clean
+            exit 0
+            ;;
+        *)
+            echo "Invalid option $1" >&2
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+
 mkdir -p /tmp/aplus
-trap clean INT
+trap onexit INT
 docker-compose up & pid=$!
 
 while kill -0 $pid 2>/dev/null; do
-    echo "  Press q, ESC or ^C to quit."
+    echo "  Press Q or ^C to quit and remove data"
+    echo "  Press S or ESC to quit and keep data"
     read -rsn1 i
-    [ "$i" = 'q' -o "$i" = 'Q' -o "$i" = $'\e' ] && break
+    if [ "$i" = 'q' -o "$i" = 'Q' ]; then
+        break
+    elif [ "$i" = 's' -o "$i" = 'S' -o "$i" = $'\e' ]; then
+        keep="x"
+        break
+    fi
 done
-clean
+onexit

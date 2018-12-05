@@ -1,21 +1,21 @@
 version: '3'
 
+volumes:
+  data:
 services:
   grader:
-    image: apluslms/run-mooc-grader
-    user: $USER_ID:$DOCKER_GID
+    image: apluslms/run-mooc-grader:1.4rc1
     volumes:
+      - data:/data
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/aplus:/tmp/aplus
       - .:/srv/courses/default:ro
-      - ./_data/:/srv/data
     ports:
       - "8080:8080"
   plus:
-    image: apluslms/run-aplus-front
-    user: $USER_ID:$USER_GID
+    image: apluslms/run-aplus-front:1.4rc1
     volumes:
-      - ./_data/:/srv/data
+      - data:/data
     ports:
       - "8000:8000"
     depends_on:
@@ -32,4 +32,3 @@ services:
       - grader
     #volumes:
     #  - ./_data/acos/:/var/log/acos
-
