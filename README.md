@@ -15,9 +15,9 @@ the following software.
 
 All other software runs inside [Docker](https://www.docker.com/) containers.
 
-1. Git clone this repository. Select branch `rst` for courses using RST materials and `master for simple exercise courses. E.g.:
+1. Git clone this repository. E.g.:
 
-    `git clone --branch rst https://github.com/apluslms/course-templates.git my_new_course`
+    `git clone https://github.com/apluslms/course-templates.git my_new_course`
 
 2. Install Docker for Mac/Windows or docker-ce & docker-compose for Linux.
     * https://docs.docker.com/engine/installation/
