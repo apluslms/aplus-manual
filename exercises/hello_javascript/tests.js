@@ -22,21 +22,22 @@ const testFunctions = [
 
 function testMain() {
     let testsOk = 0;
-    let testsRun = 0;
-    testFunctions.forEach(test => {
+    let success = true;
+    for (let test of testFunctions) {
         let msg = "Testing " + test + " ... ";
-        if (test()) {
-            msg += "ok";
-            testsOk++;
-        } else {
-            msg += "fail";
+        if (success) {
+            success = test();
         }
-        console.error(msg);
-        testsRun++;
-    });
+        if (success) {
+            testsOk++;
+            console.error(msg + "ok");
+        } else {
+            console.error(msg + "fail");
+        }
+    }
     return {
         totalPoints: testsOk,
-        maxPoints: testsRun
+        maxPoints: testFunctions.length
     };
 }
 
