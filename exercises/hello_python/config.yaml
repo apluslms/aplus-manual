@@ -12,6 +12,6 @@ files:
     name: functions.py
 
 container:
-  image: apluslms/grading-python:3.5
+  image: apluslms/grade-python:3.6-2.7
   mount: exercises/hello_python
   cmd: /exercise/run.sh
