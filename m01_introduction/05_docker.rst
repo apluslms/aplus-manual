@@ -117,14 +117,15 @@ to the directory ``_build`` in the course directory.
 Next, when you start A+ with ``docker-up.sh``, two containers are started.
 The container ``run-aplus-front`` is similar to the compile-rst container,
 but it contains the A+ software - the one you can access at
-http://localhost:8000. This container is allowed to read the HTML and YAML
-files at the ``_build`` directory. It is good to know that those files
-specify the actual structure and contents of the course.
+http://localhost:8000.
 
 Another container that ``docker-up.sh`` starts is ``run-mooc-grader``.
 It runs the typical work pair of A+, the **mooc-grader**.
+This container is allowed to read the HTML and YAML
+files at the ``_build`` directory. It is good to know that those files
+specify the actual structure and contents of the course.
 The share of work between A+ and mooc-grader is the following. A+ is
-a *front-end*, the piece that shows to the student. It knows who is
+a *front-end*, the component that students see. It knows who is
 logged in, which students are taking which course, which students
 have answered to some exercises and how many points they got. A+ does
 all the bookkeeping.
@@ -133,7 +134,7 @@ Meanwhile, mooc-grader receives exercise files from
 students. For each submit, it starts a Python grader in the container
 ``grading-python``. Inside that container the student's program is
 actually run and unit tests executed. The results of the unit tests
-are passed to mooc-grader which passes them to A+ Then A+ shows
+are passed to mooc-grader which passes them to A+. Then A+ shows
 the score and feedback to the student.
 
 This means that exercise solutions that students have submitted will not remain
