@@ -1,6 +1,6 @@
 ---
 title: Hello Python!
-description: An example of grading with Python code
+description: A simple grading example with Python code
 instructions: |
     <p>
         In this exercise you must implement a function <var>hello</var>
