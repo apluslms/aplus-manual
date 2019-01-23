@@ -5,7 +5,7 @@ This section proposes a workflow for converting a chapter (or "module") in a
 non-Docker A+ course for the Docker version. It assumes that the initialisation
 described in `the previous chapter <01_virtualenv_to_docker.html>`_ is
 completed. See the earlier chapter `Instructions
-<../m02_programming_exercises/instructions.html>`_ in the Programming exercises
+<../m02_programming_exercises/01_instructions>`_ in the Programming exercises
 module for more information.
 
 Add the RST files of the module
@@ -77,7 +77,7 @@ Add the RST files of the module
 
       ./docker-compile.sh && rm -rf _data && ./docker-up.sh
 
-    Check possible compilation errors in the reminal. Then view the course
+    Check possible compilation errors in the terminal. Then view the course
     at http://127.0.0.1:8000 in your web browser the usual way. The exercises
     coded directly in the RST files should work. If they don't work, the
     problem is likely either a typo in your RST code or something with the
@@ -140,7 +140,7 @@ config.yaml
       name: laskesumma.py
 
   container:
-    image: apluslms/grading-python:3.5
+    image: apluslms/grade-python:3.6-2.7
     mount: python1/laskesumma/
     cmd: graderutils
 
@@ -297,7 +297,7 @@ on the servers of Aalto Department of Computer Science have wall clock time
 limit of *some hours* for each exercise submission, which is still a limit, but
 too much in most cases.
 
-Also note that currently, if the CPU or wall clock time limits are it, the
+Also note that currently, if the CPU or wall clock time limits are hit, the
 student will only see a message "No grader feedback available for this
 submission". This likely causes confusion.
 

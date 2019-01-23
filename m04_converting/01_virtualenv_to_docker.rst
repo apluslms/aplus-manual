@@ -88,18 +88,23 @@ Import apluslms course-templates
 
 There is a minimal code template for a new A+ course using Docker. For your
 information, the A+ learning management system has its own
-`Github page <https://github.com/apluslms>_`, and one of the projects there is
+`Github page <https://github.com/apluslms>`_, and one of the projects there is
 called `course-templates <https://github.com/apluslms/course-templates>`_.
-There are three branches: **master** is the minimal codebase, **rst** is master
-with support for RST material, and **manual** is the A+ manual. If your course
-has only exercises and the main index file for Sphinx is **index.yaml**, use
-the *master* branch. If your course has the **index.rst** file, use the
-*rst* branch. Download the ZIP file of the branch from Github and extract it to
+It has one branch, **master**, which contains this A+ manual. (The repository
+used to have more branches for different kinds of examples.)
+If your course has only exercises and defines the main **index.yaml**
+configuration file, you do not need any RST files, Makefile for Sphinx nor
+the a-plus-rst-tools submodule.
+If your course has the **index.rst** file, use a similar structure for the course
+as the A+ manual has. Download the ZIP file of the branch from Github and extract it to
 your course directory. Read the *README.md* file.
 
-Add directory **_data** to the **.gitignore** file of your course. That
+(When A+ 1.3 is used,) add directory **_data** to the **.gitignore** file of your course. That
 directory is a write-enabled directory for A+ and mooc-grader which can always
-be removed. Add latest A+ RST tools as submodule.
+be removed. (Starting with A+ 1.4, the **_data** directory is usually not used
+anymore. Instead, the run-aplus-front and run-mooc-grader containers should
+write their data to a data volume, which is set in the docker-compose.yml file.)
+Add the latest A+ RST tools as a git submodule.
 
 .. code-block:: none
 
@@ -143,7 +148,7 @@ might even require A+ RST tools, meaning that they have lines such as ``from
 a_plus_rst_tools import aplus_nodes``. This section describes how to include
 those to the Docker version of your course.
 
-Currently the A+ manual has two custom directives in the **extensions**
+Currently, the A+ manual has two custom directives in the **extensions**
 subdirectory: **bootstrap_styled_topic.py** and **div.py**. Let's assume the
 custom Sphinx directives of *your* course are currently in the directory
 **old/extensions**.
