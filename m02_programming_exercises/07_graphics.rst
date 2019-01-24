@@ -76,7 +76,7 @@ Commentary on the turtle exercise
 .................................
 
 This is an actual exercise for the Aalto university course
-`CS-A1130 Tietotekniikka sovelluksissa (Applications of computing) <https://courses.aalto.fi/?search=cs-a1130>`_.
+`CS-A1130 Tietotekniikka sovelluksissa (Applications of computing) <https://courses.aalto.fi/course/CS-A1130>`_.
 
 The code for this exercise is found in the directory ``exercises/turtle_python``.
 Try to submit the file ``model.py``. The another file ``turtles.py`` is the

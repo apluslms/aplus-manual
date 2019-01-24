@@ -2,7 +2,6 @@
 title: Personalized Python function
 max_points: 10
 instructions: |
-  <h1>Personalized Python function</h1>
   <p>
     Your personalized exercise is to write a Python function named <code>hello</code>
     that returns a certain string. The string follows the format
@@ -27,10 +26,9 @@ generator:
   cwd: exercises/personalized_python/
 max_submissions_before_regeneration: 3
 
-# configuration for the new Docker container grading sandbox
-# the container must have Python 3 installed
+# configuration for the new container grading sandbox
 container:
-  image: apluslms/grade-python:3.5-2.2
+  image: apluslms/grade-python:3.6-2.7
   mount: exercises/personalized_python
   cmd: /exercise/run.sh
 
