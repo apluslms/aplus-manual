@@ -160,7 +160,7 @@ Python-grader-utils
 
 Python-grader-utils (just "Graderutils") is a Python library for test suite
 management, file validation and test feedback formatting. It is used with
-Python programming exercise. The source code and
+Python programming exercises. The source code and
 documentation is here: https://github.com/Aalto-LeTech/python-grader-utils
 
 By default, Graderutils uses the configuration file **test_config.yaml** in the
