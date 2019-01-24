@@ -219,7 +219,7 @@ Tips
 
 When you are only writing learning material as RST which contains text, links
 and MathJax notation, you don't need to start A+ to see the results. The
-compiled material is in the subdirectory ``_build/html``, which you can view
+compiled material is in the subdirectory ``_data/html``, which you can view
 with your web browser.
 
 For example, print your working directory in the terminal with the ``pwd``

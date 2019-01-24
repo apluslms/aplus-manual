@@ -13,6 +13,6 @@ files:
     name: functions.js
 
 container:
-  image: apluslms/grade-nodejs:11-2.7
+  image: apluslms/grading-nodejs:6.x
   mount: exercises/hello_javascript
   cmd: /exercise/run.sh

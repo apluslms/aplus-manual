@@ -60,7 +60,7 @@ a copy of ``exercises/hello_python/config.yaml``.
 
   ---
   title: Hello Python!
-  description: A simple grading example with Python code
+  description: An example of grading with Python code
   instructions: |
       <p>
           In this exercise you must implement a function <var>hello</var>
@@ -72,7 +72,7 @@ a copy of ``exercises/hello_python/config.yaml``.
       name: functions.py
 
   container:
-    image: apluslms/grade-python:3.6-2.7
+    image: apluslms/grading-python:3.5
     mount: exercises/hello_python
     cmd: /exercise/run.sh
 
@@ -100,12 +100,13 @@ Explanation of the settings:
 - container
     This specifies the Docker container which is used for grading.
 
-    **image** is the container image. The value ``apluslms/grade-python:3.6-2.7`` means
-    that the container is grade-python made by organisation apluslms. The container
-    has Python version 3.6 installed and it is based on version 2.7 of the
-    "grading-base" container. For full documentation, see the repositories for
-    `grading-base <https://github.com/apluslms/grading-base>`_ and
-    `grade-python <https://github.com/apluslms/grade-python>`_.
+    **image** is the container image. Text ``apluslms/grade-python:3.5-2.2`` means
+    the container is grade-python made by organisation apluslms. The version of
+    https://github.com/apluslms/grading-base/blob/master/grade-wrapper.sh
+    the grade-python container is 3.5, and it is based on container
+    "grading-base" version 2.2. For full documentation, see:
+    https://github.com/apluslms/grading-base
+    https://github.com/apluslms/grade-python
 
     **mount** is the relative path of the directory which will be at directory
     ``/exercise`` inside the container (read only). This should be the directory
@@ -113,8 +114,7 @@ Explanation of the settings:
     test_config.yaml and various Python files (model solution, unit tests).
 
     **cmd** describes what command is run inside the container. run.sh is the
-    actual grading script. The command may include parameters and it is not
-    required to be a shell script named run.sh.
+    actual grading script.
 
 `The documentation of grading-base
 <https://github.com/apluslms/grading-base/blob/master/README.md>`_ is a good
@@ -126,8 +126,7 @@ starting point for understanding the grading system.
 
 run.sh
 ------
-
-This is the shell script which is run inside the grading container.
+This is a shell script which is run inside the grading container.
 
 .. code-block:: bash
 
@@ -135,21 +134,15 @@ This is the shell script which is run inside the grading container.
 
     # The uploaded user files are always in /submission/user
     # and named identically to config.yaml regardless of the uploaded file names.
-    # The directory /submission/user is also the default working directory
-    # in the container.
+    cd /submission/user
 
     # The mount directory from config.yaml is in /exercise.
     # Append the required support files to test user solution.
+    cp /exercise/*.py .
 
-    # Add the working directory to the PYTHONPATH so that the grader
-    # can import the student's submission. The grader program is started
-    # under the path /exercise since there is no need to copy it to
-    # the working directory.
-    export PYTHONPATH=/submission/user
+    # "capture" etc description in https://github.com/A-plus-LMS/grading-base
 
-    # "capture" etc description in https://github.com/apluslms/grading-base
-
-    capture python3 /exercise/tests.py
+    capture python3 tests.py
 
     err-to-out
     grade
@@ -158,8 +151,8 @@ Note! run.sh must have executing rights. That is, if you create the file from
 scratch, you must do the following:to
 
 1. Open the terminal.
-2. ``cd`` to the directory of the exercise.
-3. ``chmod a+x run.sh``
+2. `cd` to the directory of the exercise.
+3. `chmod a+x run.sh`
 
 
 Python-grader-utils
@@ -167,13 +160,13 @@ Python-grader-utils
 
 Python-grader-utils (just "Graderutils") is a Python library for test suite
 management, file validation and test feedback formatting. It is used with
-Python programming exercises. The source code and
+Python programming exercise. The source code and
 documentation is here: https://github.com/Aalto-LeTech/python-grader-utils
 
 By default, Graderutils uses the configuration file **test_config.yaml** in the
 exercise directory. A simple test_config.yaml looks like this:
 
-.. code-block:: yaml
+.. code-block:: none
 
     test_modules_data:
       - module: tests
@@ -203,7 +196,7 @@ by passing these grader tests.
 **validation** instructs Graderutils to make a syntax analysis tests of the
 submitted files before the unit tests are executed.
 
-In the example above, Graderutils checks two items according to the validation settings:
+In the example above these settings make Graderutils to do two checks:
 
 1. Attempt to import the file as a Python module and catch all exceptions
    during import. Show exceptions with the error template if there are any.
@@ -212,8 +205,8 @@ In the example above, Graderutils checks two items according to the validation s
    and catch all exceptions. Show exceptions with the error template if
    there are any.
 
-With Graderutils, it is possible to forbid some Python syntax or libraries in
-some particular exercise, for example, deny using the default sort function of Python
+With Graderutils it is possible to forbid some Python syntax or libraries in
+some particular exercise, like deny using the default sort function of Python
 in an exercise where the student must implement their own sorting method.
 
 
@@ -246,7 +239,7 @@ Error messages and probable causes
 A+ "No grader feedback available for this submission."
 ......................................................
 
-Probable cause: the *run.sh* file of this exercise does not have execution
+Probable cause: the *run.sh* file of this exercise do not have execution
 rights.
 
 1. Open the terminal.
@@ -267,4 +260,4 @@ Probable causes:
 
 
 If that does not help, debug the exercise grader inside the grading container.
-
+TODO.

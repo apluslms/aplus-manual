@@ -1,5 +1,5 @@
-git: backing up and collaborating
-=================================
+git: backuping and collaborating
+================================
 
 .. styled-topic::
 
@@ -30,8 +30,8 @@ Introduction to git
   files have been moved. With git, many persons can edit the same collection
   of files at the same time and share their work.
 
-In Aalto University, git is also used for backing up the A+ course materials
-and publishing changes to the A+ production server https://plus.cs.aalto.fi .
+In Aalto University, git is also used for backuping the A+ course materials
+and publishing changes to the A+ production server https://plus.cs.hut.fi .
 Git is also useful on your own computer: if you delete some file on your
 course folder by mistake, or break the code and don't know how to repair
 it, you can revert back to an earlier version of your codebase.
@@ -55,7 +55,7 @@ When you edit course material, the most needed git commands are:
   :class: meta
 
   One can configure additional commands for git. Copypaste the following
-  command to the terminal to add the new command "git lol". It shows a nice,
+  command to the terminal to add new command "git lol". It shows a nice,
   semi-graphical tree view of your git history, as in the picture below.
 
 .. code-block:: none
@@ -78,7 +78,7 @@ Adding an SSH key
 .................
 
 If you have not used Aalto Gitlab before, you need to add an *SSH key*.
-This is a cryptographic key which enables the data exchange between your
+This is a cryptografic key which enables the data exchange between your
 computer and the Aalto Gitlab computer safely. It is required for making
 the commands ``git pull`` and ``git push`` work.
 
@@ -102,7 +102,6 @@ your working day with ``git pull``. Make many of small commits: edit a
 couple of files where the changes are related to each other, like adding
 a new chapter, picture or exercise. Do ``git push`` many times a day. This
 way it is easy to record what files were changed in each editing step.
-Essentially, ``git push`` backs up your work to Aalto Gitlab
-so if your laptop or workstation breaks or is stolen, you will only
+Essentially, ``git push`` backups your work to Aalto Gitlab.
+so if your laptop or workstation breaks or becomes stolen, you will only
 lose a work of a few hours.
-

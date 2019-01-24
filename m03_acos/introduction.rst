@@ -71,7 +71,7 @@ the location of the Acos server without modifying all submit directives of the
 Acos exercises in the course. This is useful when Acos exercises are first tested
 locally with ``localhost`` URLs and then deployed to a production server.
 The custom ``acos-submit`` directive has been installed in this course.
-It enables the ``ajax`` option automatically so it need not be given.
+It enables the ``ajax`` option automaticaly so it need not be given.
 
 The ``acos-submit`` directive uses the setting ``acos_submit_base_url`` (in the project's ``conf.py`` file)
 to define the base URL of Acos server, for example,

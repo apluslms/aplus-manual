@@ -22,7 +22,7 @@ try:
 except Exception as e:
     print("ERROR:", file=sys.stderr)
     print(e, file=sys.stderr)
-finally:
-    print("TotalPoints: {}".format(points))
-    print("MaxPoints: {}".format(max_points))
+
+print("TotalPoints: {}".format(points))
+print("MaxPoints: {}".format(max_points))
 

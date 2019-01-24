@@ -2,6 +2,7 @@
 title: Personalized number
 max_points: 10
 instructions: |
+  <h1>Personalized number</h1>
   <p>
     Your personalized exercise is a number. You must submit the number
     incremented by one.
@@ -29,7 +30,7 @@ max_submissions_before_regeneration: 3
 # configuration for the new Docker container grading sandbox
 # the container must have Python 3 installed
 container:
-  image: apluslms/grade-python:3.6-2.7
+  image: apluslms/grade-python:3.5-2.2
   mount: exercises/personalized_number
   cmd: /exercise/run.sh
 

@@ -76,7 +76,7 @@ File config.yaml defines what files the mooc-grader has received.
     ...
 
 In this case the submitted file would be placed in
-``/submission/user/palindrome.py``. However, because now you are not running mooc-
+``/submission/usr/palindrome.py``. However, because now you are not running mooc-
 grader, you have to create that file by yourself. Let's say there is already
 file /exercise/model.py, which has the correct answer. In this case, copy
 this to /submission/user.

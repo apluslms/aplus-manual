@@ -34,6 +34,13 @@ That kind of regeneration of the instance is disabled by default.
 Example exercises
 -----------------
 
+.. commented out (run-mooc-grader has been updated and the exercises work)
+  The submit directives below are commented out in the RST code because
+  personalized exercises require that the instances are generated
+  beforehand in the MOOC grader. However, the current version of the
+  ``run-mooc-grader`` container does not generate any instances and
+  thus, the personalized exercises do not work.
+
 Here we have two very simple example personalized exercises.
 Their graders work in containers and the exercises define generator
 programs that create random instances.
