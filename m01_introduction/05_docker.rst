@@ -54,9 +54,8 @@ The reasons for using Docker in A+ are the following:
     A+ production server which the students use.
 
 - Easy server updates
-    There are many containers running on the prodution server. One can
-    update just one container and it will surely not affect all other
-    containers.
+    There are many containers running on the production server. One can
+    update one container without affecting the others.
 
 - Fault-tolerance
     There can be multiple similar containers running, for example,
@@ -133,7 +132,7 @@ Meanwhile, mooc-grader receives exercise files from
 students. For each submit, it starts a Python grader in the container
 ``grading-python``. Inside that container the student's program is
 actually run and unit tests executed. The results of the unit tests
-are passed to mooc-grader which passes them to A+ Then A+ shows
+are passed to mooc-grader which passes them to A+. Then A+ shows
 the score and feedback to the student.
 
 This means that exercise solutions that students have submitted will not remain
