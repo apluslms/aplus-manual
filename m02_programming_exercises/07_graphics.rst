@@ -15,8 +15,8 @@ container is an exception.
 
 Second, mooc-grader gives the grading results and feedback to A+ as HTML
 document. The HTML document cannot refer to any image files inside the grading
-container, because that container is shut down before mooc-grader handles the
-results to A+. Therefore any pictures that must be shown to student must be
+container, because that container is shut down before mooc-grader hands the
+results off to A+. Therefore any pictures that must be shown to student must be
 *encoded into the HTML response* using `Data URI scheme
 <https://en.wikipedia.org/wiki/Data_URI_scheme>`_. In plain English, this means
 that the image file is converted into text that is placed in the HTML document.
@@ -92,7 +92,7 @@ The grader software uses another libraries, ``simpleturtle.py`` and
 for the exercise and creating a PNG file.
 
 Finally, in ``minipng.Image.write_to_file()`` the result is written to
-a file which is a base64 encoded PNG file. Then Python-grader-utils uses
+a Base64 encoded PNG file. Then Python-grader-utils uses the
 feedback template ``feedback_plot_png.html`` which has the following lines:
 
 .. code-block:: html
@@ -101,5 +101,5 @@ feedback template ``feedback_plot_png.html`` which has the following lines:
   {% include 'turtles.png.base64' %}
   " alt="Graphics" />
 
-That piece of code inserts the base64 encoded PNG image into the HTML
-as `Data URI scheme <https://en.wikipedia.org/wiki/Data_URI_scheme>`_.
+That piece of code inserts the Base64 encoded PNG image into the HTML
+using the `Data URI scheme <https://en.wikipedia.org/wiki/Data_URI_scheme>`_.

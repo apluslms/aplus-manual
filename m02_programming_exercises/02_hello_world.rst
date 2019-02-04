@@ -6,6 +6,13 @@ submission forms can exist anywhere and as many on one page as required.
 The automatic assessment of a submission is defined in the referenced
 YAML file.
 
+This is the configuration file ``docker-compose.yml``:  
+
+.. include:: ../docker-compose.yml
+  :code: yaml
+
+Note: acos is an optional component used for interactive exercises.
+
 .. submit:: python 10
   :config: exercises/hello_python/config.yaml
 
