@@ -180,16 +180,29 @@ input.
     aio
 
 
+Regular expressions are useful when there are multiple solutions, or when
+one wants to have some tolerance in numeric questions, like accept real
+numbers beginning with 0.014, 0.015, or 0.016.
+
 .. questionnaire:: questionnaire_regexp 20
   :title: Fun with regular expressions
   :submissions: 10
 
-  .. freetext:: 20 regexp
+  .. freetext:: 10 regexp
     :length: 7
 
     Type either "cat" or "dog".
 
     cat|dog
+
+  .. freetext:: 10 regexp
+    :length: 7
+
+    What is the value of :math:`\pi with four most significant digits?
+    This will accept ``3.141``, ``3.1415``, ``3.1416``, ``3.14159``, that is,
+    ``3.141`` and zero or more digits after that.
+
+    3\.141\d*
 
 
 Additional information
