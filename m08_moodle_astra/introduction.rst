@@ -61,3 +61,61 @@ imported again to Moodle in order to update the settings there.
 The import form remembers the previously entered values so that you only need to
 click the apply button in the form.
 
+
+Moodle course section and activity visibility
+---------------------------------------------
+
+In Moodle, it is possible to manually hide course sections or individual activities
+so that students may not access them. In Astra, modules (which correspond to
+activities) and learning objects may also be hidden by setting their status to
+hidden (in the course repository). There are some reasons for hiding content,
+for example:
+
+- The teacher wants to test the materials before releasing them to the students.
+- The materials are temporarily broken.
+
+Note that the module opening time prevents students from accessing the materials
+early even when the module is visible.
+
+When a Moodle course section is hidden, Moodle also hides the activities that exist
+in the section at that moment. Note that a hidden Moodle course section may
+contain visible activities, which the students may access even though they can
+not see the section. For example, the gradebook may contain links to any visible
+activities.
+
+
+Moodle gradebook
+----------------
+
+`Gradebook <https://docs.moodle.org/36/en/Grader_report>`_ (also known as
+the grader report) is a feature in Moodle that gathers a student's grades of
+the course assignments in one place.
+Astra stores the best points that a student has earned in each Astra exercise
+in the gradebook. In addition, the gradebook shows each exercise round with
+the total points the student has earned in the exercises of the round.
+
+The teacher may export grades from the gradebook in different formats, such as
+Excel spreadsheet. This is a standard Moodle feature unrelated to Astra.
+
+
+Export results in JSON
+----------------------
+
+The teacher may export Astra exercise results in JSON format by going to the
+"export course data" section in the Astra exercises setup block.
+The "export results" section there allows the teacher to download a JSON file
+that contains data about students submissions, in particular the points and
+submission times. There are filters for including only specific exercises,
+students, all submissions of a student or only the best submission.
+
+.. warning::
+
+  Note that the JSON file exported from Astra uses a different structure than
+  the JSON course data available in the REST API of the A+ frontend.
+  Keep this in mind if you run courses in both A+ and Astra.
+
+The export course data section also enables the teacher to download a ZIP archive
+of the files students have submitted to exercises. Likewise, the teacher may
+download the other inputs such as text fields and checkboxes entered by students
+into exercise forms.
+
