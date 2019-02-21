@@ -87,7 +87,7 @@ Examples
 
 .. questionnaire:: questionnaire_demo 20
   :title: A simple multiple-choice questionnaire
-  :submissions: 10
+  :submissions: 3
 
   .. pick-one:: 10
 
@@ -127,7 +127,7 @@ input.
 
 .. questionnaire:: questionnaire_text_demo 15
   :title: A simple multiple-choice questionnaire
-  :submissions: 10
+  :submissions: 3
 
   .. freetext:: 5
     :length: 10
@@ -157,6 +157,14 @@ input.
 
     0.378
     !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.924``.
+
+Testing the questionnaries
+..........................
+
+It is good practise to test your questionnaire, especially if there are
+several correct answers. Note that A+ will show the correct answers for the
+students who have submitted their answers maximum time (but not for anyone
+else).
 
 
 .. admonition:: String, int, or float?
