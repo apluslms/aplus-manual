@@ -125,11 +125,11 @@ Examples
 The ``freetext`` subdirective creates text boxes and grades based on their
 input.
 
-.. questionnaire:: questionnaire_text_demo 20
+.. questionnaire:: questionnaire_text_demo 15
   :title: A simple multiple-choice questionnaire
   :submissions: 10
 
-  .. freetext:: 4
+  .. freetext:: 5
     :length: 10
 
     This is the most basic free text questionnaire. The correct answer is
@@ -139,7 +139,7 @@ input.
     !test § Follow the instruction.
 
 
-  .. freetext:: 4 int
+  .. freetext:: 5 int
     :length: 7
 
     The answer can be a number, an integer. What is :math:`3 + 8`?
@@ -148,7 +148,7 @@ input.
     !11 § Follow the instructions.
 
 
-  .. freetext:: 4 float
+  .. freetext:: 5 float
     :length: 7
 
     The answer can also be a decimal number (floating point number).
@@ -159,7 +159,43 @@ input.
     !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.924``.
 
 
-  .. freetext:: 4 string-ignorews-ignorequotes
+.. admonition:: String, int, or float?
+  :class: info
+
+  Use the ``int`` answer type always when the answer is an integer. Of course
+  the answer could be compared to the right answer as a string. However, the
+  benefits of ``int`` over ``string`` are the following. First, extra space
+  characters are always ignored. Second, A+ shows a histogram of the numerical
+  answers to the teacher when they click on *View all submissions* on the
+  exercise box in A+, and then *Summary*. See Figure "the summary a
+  float-freetext questionnaire" below.
+
+  ``float`` works the same way as ``int``. Currently it considers the answer
+  to be correct if the difference between student's answer and the model
+  solution is at most 0.02.
+
+.. figure:: /images/questionnaire/summary-freetext-float.png
+   :alt: Screenshot of A+: summary of a float-type freetext question
+
+   **Figure:** *the summary of a float-freetext questionnaire*. In this case, 304
+   students (83 %) have answered the question and most of them (300) have
+   received 20 points. There is only one question whose correct answer is
+   between 4.8 and 5.0, with 300 students giving that answer. Four students
+   have an incorrect answer having value between 1.4 and 1.6.
+
+
+.. figure:: /images/questionnaire/summary-freetext-string.png
+  :alt: Screenshot of A+: summary of a string-type freetext question
+
+  **Figure:** *the summary of a string-freetext questionnaire*. The answer
+  is an SQL query, and A+ shows the unique answers. There are four identical
+  answers of one type and three identical answers of another type.
+
+..
+
+.. questionnaire:: questionnaire_text_demo_2 10
+
+  .. freetext:: 5 string-ignorews-ignorequotes
     :length: 10
 
 
@@ -171,7 +207,7 @@ input.
     !anothertest § Follow the instruction
     test § This was the answer to the first question.
 
-  .. freetext:: 4 unsortedchars-ignorews
+  .. freetext:: 5 unsortedchars-ignorews
     :length: 7
 
     An ``unsortedchars`` example. What are the unique vovels in the word
