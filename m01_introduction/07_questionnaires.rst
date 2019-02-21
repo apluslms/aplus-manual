@@ -18,9 +18,10 @@ The ``questionnaire`` directive implements a questionnaire exercise. Its
 arguments define the exercise key (exercise identifier for A+) and max points
 with the optional difficulty (``A``, ``B``, ``C``, etc.). For example,
 ``.. questionnaire:: easyexercise A50`` sets key to ``easyexercise``,
-maximum points to ``50`` and difficulty ``A``. The difficulty parameter is
+maximum points to ``50`` and difficulty ``A``. The difficulty parameter
 does not affect any scorekeeping, but only works as an indicator for the
-student.
+student. (The A+ REST API can group earned points by the difficulty so that
+the teacher may use the difficulties for computing final course grades.)
 
 The questionnaire directive accepts the following options:
 
@@ -51,7 +52,7 @@ The ``freetext`` directive also accepts the following options in addition to
 the common question options:
 
 * ``length``: (horizontal) length for the HTML text input in characters
-* `height`: vertical height of the text input in rows. If this is greater than
+* ``height``: vertical height of the text input in rows. If this is greater than
   1, the **textarea** HTML element is used. Otherwise, a text input is used.
 * Also other options are defined in the `questionnaire code of A+ RST tools
   <https://github.com/Aalto-LeTech/a-plus-rst-tools/blob/master/directives/questionnaire.py>`_,
@@ -151,10 +152,11 @@ input.
     :length: 7
 
     The answer can also be a decimal number (floating point number).
-    What is :math:`3 / 8` in decimal?
+    What is :math:`3 / 8` in decimal? (When the question uses the float type,
+    the grader accepts also answers that slightly differ from the model solution.)
 
     0.378
-    !24 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.924``.
+    !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.924``.
 
 
   .. freetext:: 4 string-ignorews-ignorequotes
@@ -193,16 +195,16 @@ numbers beginning with 0.014, 0.015, or 0.016.
 
     Type either "cat" or "dog".
 
-    cat|dog
+    ^(cat|dog)$
 
   .. freetext:: 10 regexp
     :length: 7
 
-    What is the value of :math:`\pi with four most significant digits?
+    What is the value of :math:`\pi` with four most significant digits?
     This will accept ``3.141``, ``3.1415``, ``3.1416``, ``3.14159``, that is,
     ``3.141`` and zero or more digits after that.
 
-    3\.141\d*
+    ^3\.141\d*$
 
 
 Additional information
