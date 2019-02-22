@@ -6,7 +6,7 @@ one-line text answers and multiple choice exercises. This page shows many
 examples on these.
 
 *Technical remark.* The most recent and complete documentation on this can
-be found at (`the source code of the A+ RST tools package
+be found at `the source code of the A+ RST tools package
 <https://github.com/Aalto-LeTech/a-plus-rst-tools>`_. Technically A+ RST tools
 provide specific Sphinx directives for writing course HTML and configuration
 files, and then A+ and mooc-grader implement the actual functionality.
@@ -163,7 +163,7 @@ Testing the questionnaries
 
 It is good practise to test your questionnaire, especially if there are
 several correct answers. Note that A+ will show the correct answers for the
-students who have submitted their answers maximum time (but not for anyone
+students who have submitted for the maximum number of times (but not for anyone
 else).
 
 
@@ -199,7 +199,6 @@ else).
   is an SQL query, and A+ shows the unique answers. There are four identical
   answers of one type and three identical answers of another type.
 
-..
 
 .. questionnaire:: questionnaire_text_demo_2 10
 
