@@ -1,0 +1,28 @@
+{% load i18n %}
+<div id="feedback">
+	{% if result.out or result.error or result.points > 0 %}
+		{% comment %}
+		{% if result.title %}
+		<h3>{{ result.title }}</h3>
+		{% endif %}
+		{% endcomment %}
+
+		{% if result.points > 0 and result.max_points > 0 %}
+		{% blocktrans with points=result.points max_points=result.max_points %}
+		Points {{ result.points }}/{{ result.max_points }}
+		{% endblocktrans %}
+		{% endif %}
+
+		{% if result.out %}
+		{% if exercise.feedback_html %}
+		{{ result.out|safe }}
+		{% else %}
+		  <pre>{{ result.out }}</pre>
+		{% endif %}
+		{% endif %}
+
+		{% if result.error %}
+		<pre class="alert alert-danger">{{ result.error }}</pre>
+		{% endif %}
+	{% endif %}
+</div>

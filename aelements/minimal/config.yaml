@@ -1,0 +1,18 @@
+---
+title: Minimal active element example
+description: Just echoes back the input text
+max_points: 0
+
+template: access/active_element_default.html
+feedback_template: ./aelements/ae_feedback.html
+view_type: access.types.stdasync.acceptGeneralForm
+
+fields:
+  - name: input
+    title: The only input
+    required: True
+
+container:
+  image: apluslms/grading-base:2.8
+  mount: aelements/minimal
+  cmd: /exercise/run.sh

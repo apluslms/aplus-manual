@@ -1,0 +1,22 @@
+---
+title: >-
+  Exponential distribution: probability density function and
+  the cumulative distribution function
+description: plot graphs with a parameter defined by the user
+max_points: 0
+
+template: access/active_element_default.html
+view_type: access.types.stdasync.acceptGeneralForm
+fields:
+  - name: exponentlambdain
+    # The name has the same value as the parameter of the ae-input RST directive.
+    title: Lambda
+    required: True
+
+container:
+  image: apluslms/grade-octave:latest
+  mount: aelements
+  cmd: /exercise/run_octave.sh exponentialdist exponentlambdain
+# We mount the whole aelements directory since some files are shared across many
+# visualizations and we do not want to copy those files into each subdirectory.
+# run_octave.sh parameters: the name of the exercise directory and the name of the input field

@@ -1,0 +1,24 @@
+---
+title: Probability density function of the bivariate normal distribution
+description: plot graphs with a parameter defined by the user
+max_points: 0
+
+template: access/active_element_default.html
+view_type: access.types.stdasync.acceptGeneralForm
+fields:
+  - name: twonormalmuin
+    # The name has the same value as the parameter of the ae-input RST directive.
+    title: mu
+    required: True
+  - name: twonormalsigmain
+    # The name has the same value as the parameter of the ae-input RST directive.
+    title: Sigma
+    required: True
+
+container:
+  image: apluslms/grade-octave:latest
+  mount: aelements
+  cmd: /exercise/run_octave.sh twodimnormaldist twonormalmuin twonormalsigmain
+# We mount the whole aelements directory since some files are shared across many
+# visualizations and we do not want to copy those files into each subdirectory.
+# run.sh parameters: the name of the exercise directory and the names of the input fields

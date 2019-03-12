@@ -15,4 +15,5 @@ Other content is not visible in A+.
   m06_rubyric/index
   m07_admin/index
   m08_moodle_astra/index
+  m09_active_elements/index
 
