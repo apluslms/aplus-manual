@@ -61,7 +61,7 @@ another supported language as her or his preference.
 .. admonition:: Content constraints
   :class: warning
 
-  Each language must have identical number of modules,
+  Each language must have an identical number of modules,
   identical number of chapters in each module,
   and exercises in each chapter that have identical keys.
   Furthermore the visibility, point, and group configuration
@@ -137,11 +137,11 @@ Recap
 
     Which of the following scenarios break the language content constraints?
 
-    *a. Course has 3 modules in english and 2 in spanish.
-    *b. Course skips one text only chapter in english that exists in the default finnish variation.
-    *c. Course defines 3 points exercise in english and 4 point exercise in chinese in the corresponding chapter using the same exercise key.
-    d. Course defines 3 points exercise in default language english and does not configure points for the corresponding exercise in chinese.
-    *e. Course supports larger groups in the default language exercises than in finnish that has presumably less students.
+    *a. Course has 3 modules in English and 2 in Spanish.
+    *b. Course skips one text only chapter in English that exists in the default Finnish variation.
+    *c. Course defines 3 points exercise in English and 4 point exercise in Chinese in the corresponding chapter using the same exercise key.
+    d. Course defines 3 points exercise in default language English and does not configure points for the corresponding exercise in Chinese.
+    *e. Course supports larger groups in the default language exercises than in Finnish that has presumably less students.
 
     d § Some configurations can be omitted in favor of implicit values from the default language.
     !e § A-plus does not support alternative limits based on language.

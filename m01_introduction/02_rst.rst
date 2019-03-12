@@ -139,11 +139,12 @@ The usual workflow for editing a course is the following:
 1. Open your text editor, a terminal and a web browser.
 2. Edit some RST files in your text editor.
 3. Give command ``./docker-compile.sh`` in the terminal.
-4. Give command ``rm -rf _data && ./docker-up.sh`` in the terminal.
+4. Give command ``./docker-up.sh`` in the terminal.
 5. Go to ``http://localhost:8000/`` in the web browser to view A+
    running on your machine.
 6. Examine the changes you made in A+.
-7. Press ``q`` or ``Ctrl+C`` in the terminal.
+7. Press ``Q`` or ``Ctrl+C`` in the terminal to quit and remove data 
+   or ``S`` or ``ESC`` to quit and keep data.
 8. Go to step 2 if you wish to continue editing.
 9. Give command ``git add -u`` in the terminal to mark all changed files to be
    added into your local git repository.
@@ -187,7 +188,7 @@ Adding custom RST directives
 ............................
 
 Custom RST directives can be added into the ``extensions`` directory.
-New extensions should be also be added the name of the implementing Python module in the ``extensions`` list in the Sphinx configuration file ``conf.py``.
+The name of the implementing Python module should also be added to the ``extensions`` list in the Sphinx configuration file ``conf.py``.
 See for example ``bootstrap_styled_topic`` and ``div``.
 
 Admonition with embedded MathJax-syntax
