@@ -107,6 +107,9 @@ The "export results" section there allows the teacher to download a JSON file
 that contains data about students submissions, in particular the points and
 submission times. There are filters for including only specific exercises,
 students, all submissions of a student or only the best submission.
+You may download :download:`an example Python script <scripts/results_before_exam.py>`
+for processing the data in the JSON file. The script may be modified
+according to your own needs.
 
 .. warning::
 
