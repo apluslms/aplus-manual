@@ -39,6 +39,10 @@ used on some computer science courses on Aalto University.
 Getting started
 ---------------
 
+If you are already running A+ on your computer and seeing this text in a web
+browser, congratulations! You can skip the rest of this page; it is only for
+reviewing the installation process.
+
 Knowledge prerequisites
 .......................
 
