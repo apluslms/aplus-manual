@@ -82,11 +82,11 @@ Contents of the CSS file
 ------------------------
 
 After compiling the course, open the files
-``_build/html/m02/chapter01.html`` and ``_static/course.css``
+``_build/html/m01_introduction/02_rst.html`` and ``_static/course.css``
 in a text editor.
 
 Here is the original ``admonition`` block from file
-``m02/chapter01.rst`` :
+``m01_introduction/02_rst.rst`` :
 
 .. code-block:: rst
 
@@ -112,9 +112,7 @@ Here is the corresponding result in HTML:
     <p class="first admonition-title">Algorithm</p>
     <p>An <em>algorithm</em> is a finite sequence of unambiguous instructions, which
     each can be executed with finite amount of work and which together
-    compute function</p>      If you have already installed aplus-manual, these features
-      should work just ok. However, there are also instructions
-      how to utilize them in other courses.
+    compute function</p>
     <p class="last"><span class="math">\(f: I \to O\)</span>, where
     <span class="math">\(I\)</span> is the input set,
     <span class="math">\(O\)</span> is the output set,
