@@ -26,14 +26,16 @@ generator:
   cwd: exercises/personalized_number/
 max_submissions_before_regeneration: 3
 
-# configuration for the new Docker container grading sandbox
-# the container must have Python 3 installed
+# Configuration for the new Docker container grading sandbox. This is an
+# alternative to the old chroot sandbox configuration. The container must have
+# Python 3 installed.
 container:
   image: apluslms/grade-python:3.6-2.7
   mount: exercises/personalized_number
   cmd: /exercise/run.sh
 
-# old chroot sandbox configuration
+# old chroot sandbox configuration. This is an alternative to the Docker
+# container grader.
 actions:
   - type: grader.actions.prepare
     expect_success: True
