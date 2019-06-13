@@ -49,9 +49,72 @@ programs that create random instances.
   :config: exercises/personalized_python/config.yaml
 
 
-
 Detailed description of the "Personalized number" exercise
 ----------------------------------------------------------
+
+Configuration
+.............
+
+The ``config.yaml`` file in the ``personalized_number`` directory contains the
+configuration of the exercise for A+ and mooc-grader, as usual. In addition to
+basic programming exercises, it has the following section, which defines the
+personalization.
+
+::
+
+  personalized: True
+  generated_files:
+    - file: number
+      key: number
+      content_in_template: True
+      url_in_template: True
+      allow_download: True
+  generator:
+    cmd: [ "python3", "generator.py" ]
+    cwd: exercises/personalized_number/
+  max_submissions_before_regeneration: 3
+
+The obvious ``personalized`` keyword tells A+ and mooc-grader that personalized
+exercise instances must be pregenerated and each user is then assigned an
+instance of the exercise.
+
+The ``generated_files`` section define a list of generated files for a
+personalized exercise. Each list item defines the following settings:
+
+- ``file``: filename of the generated file
+- ``key``: key for accessing the file in HTML templates
+- ``url_in_template``: if true, the exercise instructions shown to the student includes a HTML link to download the generated file
+- ``content_in_template``: if true, template variable includes the content of the generated file
+- ``allow_download``: if true, the student can download the generated file
+
+The ``generator`` section has settings for the generator program that
+creates one new instance of the exercise. At least ``cmd`` must be set. The
+generator command ``cmd`` will be run from course_key dir (that is, course_key
+is the cwd).
+
+``cmd`` is the command that is used to run the generator in the shell. Note
+that it is given as a `Python list <https://docs.python.org/3/tutorial/introduction.html#lists>`_
+where each word is its own item. Example: ``["generator_script.sh"]`` will run
+generator_script.sh from course_key dir. Example:
+``["python3", "script_dir/generator.py"]`` will run generator.py from
+course_key/script_dir but keep course_key as cwd. Mooc-grader appends the
+instance directory path to the argument list and the generator is expected to
+write files into the directory. The file names should be listed under
+``generated_files`` setting so that mooc-grader is aware of them.
+
+For A+ administrators, the Django command used to pregenerate exercises is
+``python manage.py pregenerate_exercises course_key <exercise_key>``.
+(The ``--help`` option prints all possible arguments).
+
+``cwd``: if set, this sets the current working directory for the generator
+program. Since the default cwd is course_key, this applies to directories
+in course_key. Example: ``cwd: "script_dir"`` will change the cwd to
+``course_key/script_dir`` and only after that run cmd.
+
+``max_submissions_before_regeneration`` defines how many times the student may
+submit before the personalized exercise is regenerated (the exercise instance is
+changed to another one). If unset, the exercise is never regenerated.
+
 
 Exercise instance generation
 ............................
@@ -125,6 +188,38 @@ inside the *mooc-grader container* looks like this:
       └── 9
           └── number
 
+.. admonition:: The role of the exercise generator and supported software
+  :class: info
+
+  The generator program is meant for creating exercise instances from
+  pseudorandom data or selecting subsets of some larger exercise dataset for
+  each exercise instance. Because the generator is run inside the mooc-grader
+  container, not a programming exercise grader container (such as
+  apluslms/grade-python), there are limitations on what software can be used on
+  the generator side.
+
+  The apluslms/run-mooc-grader container has the following software:
+
+  - minimal `Debian <https://www.debian.org>_` ("slim" version)
+    - shells: bash, dash, sh
+  - GCC, G++ `(GNU C and C++ compilers) <http://gcc.gnu.org/>`_
+  - libc6-dev (GNU C Library: Development Libraries and Header Files)
+  - make (GNU utility for compilation)
+  - `gettext <https://www.gnu.org/software/gettext/>`_
+  - `jq <https://stedolan.github.io/jq/>`_
+  - `Python 3 <https://www.python.org>`_ and its standard library
+  - `some Python tools <https://github.com/apluslms/service-base/blob/master/python3/Dockerfile>`_ as Debian packages
+
+  You will likely want to write your exercise generator in Python. Using a
+  shell such as bash is also possible. In theory, writing a generator in C or
+  C++ should also be possible, but the generator program should be either
+  precompiled, or then a shell script should compile the generator just once.
+
+  For more information, see Dockerfiles of `apluslms/run-mooc-grader <https://github.com/apluslms/run-mooc-grader/blob/master/Dockerfile>`_
+  and `apluslms/service-base <https://github.com/apluslms/service-base/blob/master/base/Dockerfile>`_
+  containers.
+
+
 
 Grading the exercise
 ....................
@@ -193,3 +288,49 @@ the solution. ``B`` is a positive integer: the maximum score that the
 grading script can give for the exercise. Note that ``B`` can be different that
 what is set in the ``max_points`` part of the **config.yaml** file of the
 exercise; A+ will rescale the points if necessary.
+
+Detailed description of the "Personalized Python" exercise
+----------------------------------------------------------
+
+This exercise is very similar to the "Personalized number" exercise. Instead of
+randomly chosen integer, the file ``names`` in the exercise directory has
+list of names, and one of the names is chosen randomly for each exercise
+instance. Similarly, each instance has a directory, numbered from ``0`` to
+``9``, and each of these directories has a text file named ``name``, which
+contains a randomly chosen name. Therefore the exercise instance directory
+inside the **mooc-grader container** has the following structure:
+
+::
+
+  /local/grader/ex-meta/default/pregenerated/
+  └── m02_programming_exercises_04_personalized_exercises_personalized_python
+      ├── 0
+      |   └── name
+      ├── 1
+      |   └── name
+      ├── 2
+      |   └── name
+      ├── 3
+      |   └── name
+      ├── 4
+      |   └── name
+      ├── 5
+      |   └── name
+      ├── 6
+      |   └── name
+      ├── 7
+      |   └── name
+      ├── 8
+      |   └── name
+      └── 9
+          └── name
+
+Note that **config.yaml** has very similar ``personalized`` section to the
+"Personalized number" exercise, but here the student's input is a file, not a
+text field, and therefore there is a ``files`` section instead of a ``fields``
+section.
+
+The grading script **check.py** imports the **solution.py** submitted by the
+student. **run.sh** modifies the ``PYTHONPATH`` environment variable for easy
+import. The output from the grading script is very similar to the one in the
+"Personalized number" exercise.
