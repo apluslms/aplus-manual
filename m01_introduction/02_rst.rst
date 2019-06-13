@@ -143,7 +143,7 @@ The usual workflow for editing a course is the following:
 5. Go to ``http://localhost:8000/`` in the web browser to view A+
    running on your machine.
 6. Examine the changes you made in A+.
-7. Press ``Q`` or ``Ctrl+C`` in the terminal to quit and remove data 
+7. Press ``Q`` or ``Ctrl+C`` in the terminal to quit and remove data
    or ``S`` or ``ESC`` to quit and keep data.
 8. Go to step 2 if you wish to continue editing.
 9. Give command ``git add -u`` in the terminal to mark all changed files to be
@@ -219,9 +219,16 @@ Tips
 ....
 
 When you are only writing learning material as RST which contains text, links
-and MathJax notation, you don't need to start A+ to see the results. The
-compiled material is in the subdirectory ``_build/html``, which you can view
-with your web browser.
+and MathJax notation, you don't need to run the "docker-compile - docker-up"
+cycle for each modification. This is only required if you add new RST files or
+exercises. One can just start A+ and mooc-grader with ``docker-up.sh". After
+that, one can just edit an RST file, run ``docker-compile.sh`` and the update
+the course page in the web browser. This cycle can be repeated without shutting
+down docker-up.sh.
+
+Another trick is that one does not even need to start A+ to see the HTML version
+of the RST material. The compiled material is in the subdirectory
+``_build/html``, which you can view with your web browser.
 
 For example, print your working directory in the terminal with the ``pwd``
 command:
@@ -239,4 +246,5 @@ and press Enter.
 
 .. image:: /images/_build-html-in-browser.png
 
-Notice that images and exercises do not work with this method.
+Notice that images and exercises do not show when viewing this static HTML
+material in the browser.
