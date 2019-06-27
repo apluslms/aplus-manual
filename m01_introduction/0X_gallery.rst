@@ -4,6 +4,21 @@ Gallery of features
 This section is a visual index of exercises and services that have been used
 with A+.
 
+Front page
+----------
+
+.. figure:: /images/gallery/aplus-front-page.jpg
+
+The above image shows a screenshot of the front page of `A+ at Aalto University
+<https://plus.cs.aalto.fi/>`_ from Summer 2019. The front page shows at most
+eight recent courses. Each course has optional logo image, name, course
+code and teaching time. All courses have a green "Aalto" tag to indicate that
+the course is for Aalto University students. The Ohjelmointistudio 2 course
+has also a blue "MOOC" tag to indicate the course is also a massive open online
+course. Sections `7.1 Settings a course on production servers
+<../m07_admin/01_setup>`_
+and `7.2 Course settings <../m07_admin/02_settings>`_ describe these in detail.
+
 Exercises
 ---------
 
@@ -51,6 +66,9 @@ Python
    The picture shows the feedback for the student from the automatic grader.
    There are Python unit tests which give points, and also visual comparison
    of the outputs of the student's program and the correct solution.
+
+`Section 2 <http://localhost:8000/def/current/m02_programming_exercises/01_instructions/>`_
+describes how to create Python programming exercises.
 
 
 Services

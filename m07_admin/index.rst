@@ -6,3 +6,4 @@ How to set up the course for students?
 .. toctree::
 
   01_setup
+  02_settings

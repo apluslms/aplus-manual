@@ -89,36 +89,7 @@ instance" tab of the new instance.
 
 \
 
-The fields are in English and quite self-explanatory.
-
-- Instance name: this is shown in the list of current and old courses
-  (``https://aplusdomain/archive``) to distinguish different instances from
-  each other.
-
-- Url: this is the identifier of course instance in the A+ url, for example
-  in URL ``https://plus.cs.hut.fi/a1141/2018/`` the ``2018/`` is the instance.
-
-- Image is the image showing on the A+ front page.
-
-- Enrollment audience: "Paikalliset käyttäjät" means local users. "Ulkoiset
-  käyttäjät" means external users, such as students at open Summer courses.
-  "Paikalliset ja ulkoiset käyttäjät" means both.
-
-- View content to: "Ilmoittautuneet opiskelijat" is enrolled students,
-  "Ilmoittautumisen kohdeyleisö" is potentially enrolling students,
-  "Kaikki rekisteröityneet käyttäjät" means all users registered on A+, and
-  "Julkisesti internetissä" is publicly visible to the Internet.
-
-- Head urls have description "External CSS and JS resources that will be
-  included into course pages. Separate the URLs by a newline."
-
-- Technical error emails has description "The technical errors of the exercises
-  will be sent to the course teachers' e-mails by default. If you want to
-  override this, write here the actual recipients' e-mails separated by
-  commas."
-
-The difference between teachers and assistants is that assistants can view
-students' exercise submissions and grade them, but they cannot edit the course.
+This part is documented in the next chapter, `Course settings <02_settings>`_.
 
 
 Updating the course instance
