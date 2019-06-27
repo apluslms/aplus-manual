@@ -1,5 +1,5 @@
-Customising course pages
-========================
+Style of course pages with CSS
+==============================
 
 .. styled-topic::
 
