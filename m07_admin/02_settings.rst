@@ -127,6 +127,37 @@ Chronologically, the times should be set as follows:
   Course starting time < course ending time < lifesupport time < archive time
 
 
+Module (exercise round) open and close times do not need to be enclosed within
+the course starting and ending times. This implies that an open module may
+accept normal submissions even after the course archive time, which is
+confusing. (Personal deadline extensions also affect the time when normal
+submissions are accepted, but the student may not submit during the extension if
+the archive time has passed.)
+
+.. admonition:: Bugs
+  :class: warning
+
+  Bug: Student can view the exercise model solution after the module deadline
+  even if he has a personal deadline extension and may submit and gain points.
+
+  Bug: the module late submission close time may be earlier than the module
+  close time, which makes no sense and also allows students to view the model
+  solution while the module is normally open.
+
+  These bugs will likely be corrected in the Autumn 2019 release.
+
+Student's access to course material over time
+.............................................
+
+.. image:: /images/course-visibility.png
+
+\
+
+(1) If the category has unofficial submissions enabled, the student may submit but no points will be gained.
+(2) Yes, may submit normally if the module is open. Unofficial submissions without points are allowed after the module deadline if the category has enabled unofficial submissions.
+(3) Yes, may submit if the module is open. Otherwise no.
+
+
 
 Course content visibility based on audience
 ...........................................
@@ -196,3 +227,101 @@ The **Index** tab controls how main page of the course is shown to the students.
 the index. One can enter either plain text or HTML here.
 
 **Footer** is similarly content swown after the index.
+
+
+The Menu tab
+------------
+
+A+ always shows the following menu items in the course menu on the left side of
+the page.
+
+Students see the *Course* menu group, which include:
+- the course main page (a home symbol and course code)
+- table of contents (a book symbol and text "Course materials")
+- Exercise results for the student
+
+The teacher and assistants see in addition the *Course staff* menu group:
+
+- Participants: enrolled students
+- Groups: possible student groups
+- All results: table of scores for each student and each exercise
+- Visualizations: learning analytics visualisations
+- Edit news: add a news item which is shown in the course main page and e-mailed to the enrolled students
+- Edit course: the course settings
+
+The **Menu** tab in the course settings allows adding new items to the course
+menu. When you click the *Add new menu item* button, a form is shown to
+create a menu item.
+
+**Access** defines who can see the menu item.
+
+**Service** allows to define an external web server where A+ links to *and*
+which `exchanges data with A+ via the LTI protocol <../m05_lti/introduction/>`_.
+Services described in this manual are
+`Radar <../m02_programming_exercises/06_radar/>`_ and
+`Rubyric <../m06_rubyric/01_introduction/>`_. The Aalto University CS department
+also has `Lab Queue (Neuvontajono) <../01_introduction/0X_gallery/#lab-queue>`_
+and Code Vault (Koodisäilö). Also the `Piazza forum <https://piazza.com>`_ has
+been used on at least Aalto courses "Data structures and algorithms Y" and
+"Tietotekniikka sovelluksissa". Ask for your A+ administrator for adding these
+servises for your course.
+
+**Menu url**: if an external service is configured for this menu item in the
+Service setting, then a URL starting with ``/`` overwrites path in service URL
+and extends it otherwise. Otherwise, a URL starting with ``/`` is absolute
+within A+ relative to the course path otherwise. Note that URL entered here
+can not include scheme or domain.
+
+.. admonition:: Examples of menu urls
+  :class: info
+
+  ``m02_programming_exercises/02_hello_world/`` (note: without starting ``/``)
+  is the way to make a menu link to a chapter inside the same course.
+  If you are running the A+ locally at *http://localhost:8000/*, this menu
+  url points to http://localhost:8000/def/current/m02_programming_exercises/02_hello_world/ .
+
+  ``m03_acos/demo_exercises/#point-and-click`` is the same, but with an
+  anchor to a header on a specific location on a course page.
+
+  ``/archive/`` trims everything after the domain and port in the url.
+  If you are running the A+ locally at *http://localhost:8000/*, this menu url
+  points to *http://localhost:8000/archive/*.
+
+  The menu urls for Radar, Rubyric, Piazza, Lab Queue, and Code Vault are left
+  empty, because all of these use the LTI protocol and thus they know which
+  user and which course should be used.
+
+**Menu group label**: this works wih the **Access** setting as follows.
+
++------------------+--------------------------+------------------------------+
+| Menu group label |  Access                  | Visible result               |
++==================+==========================+==============================+
+| (empty)          | All students, assistants | Shown in group "Course" for  |
+|                  | and teachers can access  | everyone                     |
++------------------+--------------------------+------------------------------+
+| (empty)          | Only teachers and        | Shown in group "Course staff"|
+|                  | assistants can access    | for teachers and assistants  |
++------------------+--------------------------+------------------------------+
+| (empty)          | Only teachers can        | Shown in group "Course staff"|
+|                  | access                   | for teachers                 |
++------------------+--------------------------+------------------------------+
+| ``Groupname``    | All students, assistants | Shown between "Course" and   |
+|                  | and teachers can access  | "Course staff" in group      |
+|                  |                          | "Groupname" for everyone     |
++------------------+--------------------------+------------------------------+
+| ``Groupname``    | Only teachers and        | Shown after "Course staff"   |
+|                  | assistants can access    | in group "Groupname"         |
+|                  |                          | for teachers and assistants  |
++------------------+--------------------------+------------------------------+
+| ``Groupname``    | Only teachers can        | Shown after "Course staff"   |
+|                  | access                   | in group "Groupname"         |
+|                  |                          | for teachers                 |
++------------------+--------------------------+------------------------------+
+
+**Menu icon class**: an icon for the menu item, if needed. Icons add decoration
+and help with visual search. The icons are Glyphicons(R) from the Bootstrap web
+framework; `see list of icons here <https://getbootstrap.com/docs/3.3/components/#glyphicons>`_.
+Enter the individual name of the icon. For example, ``cloud`` or ``hdd`` might
+be useful for external cloud storage, ``comment`` for discussion forum such as
+Piazza, ``screenshot`` for Radar, ``floppy-disk`` for Code Vault, and
+``question-sign`` for the Lab Queue.
