@@ -166,35 +166,10 @@ to this image:
 .. image:: /images/rst-sample.png
 
 
-A+ RST tools
-------------
-There are Sphinx extensions made for writing course material on A+. The
-name of this extension collection is *A+ RST tools*.
-
-
-
-
-Bootstrap-styled-topic
-......................
-
-The ``styled-topic`` feature seen above generates a description list wrapped in
-a ``div``-element with additional styling.
-
-* Implementation: ``extensions/bootstrap_styled_topic.py``
-* Styles: ``_static/course.css``
-
-
-Adding custom RST directives
-............................
-
-Custom RST directives can be added into the ``extensions`` directory.
-The name of the implementing Python module should also be added to the ``extensions`` list in the Sphinx configuration file ``conf.py``.
-See for example ``bootstrap_styled_topic`` and ``div``.
-
 Admonition with embedded MathJax-syntax
 .......................................
 
-Builtin ``admonition`` directive is useful for defining new concepts:
+The Sphinx-builtin ``admonition`` directive is useful for defining new concepts:
 
 .. admonition:: Algorithm
   :class: meta
@@ -215,8 +190,104 @@ This template extends the default A+ theme found in ``a-plus-rst-tools/theme/apl
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
 
+
+
+A+ RST tools
+------------
+
+There are Sphinx extensions made for writing course material on A+. The
+name of this extension collection is *A+ RST tools*. The latest documentation
+is at `the Github repository of A+ RST tools <https://github.com/Aalto-LeTech/a-plus-rst-tools>`_.
+However, this manual shows many examples.
+
+Chapter 1.7 discusses `Graded questionnaires <07_questionnaires>`_.
+
+**Feedback questionnaire**: see the A+ RST tools documentation.
+
+**Submittable exercise**: see chapter `Programming exercises <../m02_programming_exercises/01_instructions>`_.
+
+**External service**: see the `LTI chapter <../m05_lti/introduction.rst>`_.
+
+**Active elements**: see the `Active elements chapter <../m09_active_elements/introduction.rst>`_.
+
+Hidden block
+............
+
+Directive for creating hidden content blocks. The content can be shown/hidden
+by clicking the link. (This uses the Bootstrap collapse component.)
+
+::
+
+  .. hidden-block:: name (required)
+    :label: Optional text for the show/hide link (default Show/Hide)
+    :visible: # if this flag is present, the collapsible div starts out visible
+
+    Hidden content here.
+
+\
+
+.. hidden-block:: hidden-block-example
+  :label: Hidden block example
+
+  Peek-a-boo! You revealed the hidden content!
+
+
+More directives just mentioned here
+...................................
+
+
+**Point of interest**: see the A+ RST tools documentation.
+
+**Annotated code blocks**: see the A+ RST tools documentation.
+
+**Code blocks with line reference**: see the `A+ RST tools documentation.
+<https://github.com/Aalto-LeTech/a-plus-rst-tools#11-code-blocks-with-line-references>`_.
+
+**REPL sessions**: see the A+ RST tools documentation.
+
+
+Media directives
+................
+
+The media directives were developed basically for a single course and they may
+not be quite reusable for other usecases, but they are listed here anyway. This
+extension must be activated separately in the project conf.py:
+``(extensions = ["aplus_setup", "media"])``.
+
+YouTube video https://www.youtube.com/watch?v=HnQMDkUFzh4 embedded:
+
+.. youtube:: HnQMDkUFzh4
+  :video-height: 400
+  :video-width: 640
+
+
+
+Adding custom RST directives
+----------------------------
+
+Custom RST directives can be added into the ``extensions`` directory.
+The name of the implementing Python module should also be added to the ``extensions`` list in the Sphinx configuration file ``conf.py``.
+See for example ``bootstrap_styled_topic`` and ``div``.
+
+Bootstrap-styled-topic
+......................
+
+The ``styled-topic`` feature seen above generates a description list wrapped in
+a ``div``-element with additional styling.
+
+* Implementation: ``extensions/bootstrap_styled_topic.py``
+* Styles: ``_static/course.css``
+
+
+
+
+
+
+
+
+
 Tips
-....
+----
 
 When you are only writing learning material as RST which contains text, links
 and MathJax notation, you don't need to run the "docker-compile - docker-up"
@@ -248,3 +319,7 @@ and press Enter.
 
 Notice that images and exercises do not show when viewing this static HTML
 material in the browser.
+
+
+External media
+--------------

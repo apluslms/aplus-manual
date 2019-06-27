@@ -57,6 +57,7 @@ extensions = [
     'bootstrap_styled_topic',
     'div',
     'acos_submit',
+    'media',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
