@@ -36,12 +36,32 @@ below.
 
 The course settings page has several tabs.
 
-**Instances** alter the course instances. This is described in the
-`earlier chapter <01_setup>`_.
+- **Instances** alter the course instances. This is described in the
+  `earlier chapter <01_setup>`_.
 
-The **Course** tab allows editing the course details.
+- The **Course** tab allows editing the course details.
 
-The fields are in English and quite self-explanatory.
+- The **Index** tab controls how the table of contents of the course is shown
+  to the students.
+
+- The **Content** tab allows reorganising the course material and setting its
+  availability.
+
+- The **Menu** tab allows adding new items to the course menu on the left.
+
+- The **Tags** tab allows tagging students for specific purposes.
+
+- The **Deviations** tab allows setting deadline deviations for individual
+  students.
+
+- The **Batch assess** is left undocumented. It is related to the A+ API.
+
+
+The Course tab
+---------------
+
+The **Course** tab allows editing the course details. The fields are in English
+and quite self-explanatory.
 
 **Visible to students**: this checkbox allows hiding the course from students.
 This is useful when you are setting up a new instance of your course on a
@@ -66,8 +86,6 @@ to file ``fireworks.jpg`` found in the subdirectory ``images`` of the manual.
 
 Course content visibility and date settings
 ...........................................
-
-
 
 Students enroll to the course in A+. Enrollment is required for submitting
 solutions to exercises. Note that there is no integration to other university
@@ -113,32 +131,68 @@ Chronologically, the times should be set as follows:
 Course content visibility based on audience
 ...........................................
 
-The view content to setting of a course instance controls who may view the course content.
+**Enrollment audience** has three options.
+
+- *Internal users* means only internal students of the university may enroll.
+- *External users* means the course is MOOC only.
+- *Internal and external users* means both of the above groups can enroll.
+
+
+The **View content to** setting of a course instance controls who may view the
+course content.
+
 Alternatives:
-Enrolled students
-Enrollment audience (internal or external logged-in user; enrollment audience is configured separately)
-All registered users (any logged-in user)
-Public to internet (anonymous user)
 
-Bug: when set to “enrolled students”, unenrolled logged-in users may still view course content chapters and exercises. They may not open their old submissions, the course materials page nor the course results page, but they see everything on the course front page anyway and they can open the chapters and exercises.
+- Enrolled students: this is obvious.
+- Enrollment audience: this configured in the setting above.
+- All registered users: this isa ny logged-in user
+- Public to internet: anonymous user
 
+.. admonition:: Bug
+  :class: warning
 
-- Enrollment audience: "Paikalliset käyttäjät" means local users. "Ulkoiset
-  käyttäjät" means external users, such as students at open Summer courses.
-  "Paikalliset ja ulkoiset käyttäjät" means both.
+  When set to “enrolled students”, unenrolled logged-in users may still
+  view course content chapters and exercises. They may not open their old
+  submissions, the course materials page nor the course results page, but
+  they see everything on the course front page anyway and they can open the
+  chapters and exercises.
 
-- View content to: "Ilmoittautuneet opiskelijat" is enrolled students,
-  "Ilmoittautumisen kohdeyleisö" is potentially enrolling students,
-  "Kaikki rekisteröityneet käyttäjät" means all users registered on A+, and
-  "Julkisesti internetissä" is publicly visible to the Internet.
+**Head urls** define external CSS and JavaScript resources that are included on
+all course pages.
 
-- Head urls have description "External CSS and JS resources that will be
-  included into course pages. Separate the URLs by a newline."
+**Assistants** is a list of course assistants. The assistants do not need to be
+enrolled on the course. To add an assistant, enter their login in form
+``user@domain``, for example, ``userid@aalto.fi`` or ``userid@gmail.com``
+(not firstname.lastname@aalto.fi).
 
-- Technical error emails has description "The technical errors of the exercises
-  will be sent to the course teachers' e-mails by default. If you want to
-  override this, write here the actual recipients' e-mails separated by
-  commas."
+**Technical error emails**. By default exercise errors are reported to teacher
+email addresses. Set this field as comma separated emails to override the
+recipients.
 
 The difference between teachers and assistants is that assistants can view
 students' exercise submissions and grade them, but they cannot edit the course.
+
+
+The Index tab
+--------------
+
+The **Index** tab controls how main page of the course is shown to the students.
+
+**Index mode** has several options.
+
+- *User results* is an exercise-oriented view. It shows each course module
+  (usually a weekly chapter) separately and inside them, the submodules.
+  In addition to that, tt lists all the exercises on the course, and student's
+  submission and highest score for each exercise.
+
+- *Table of contents* shows the same information, but without exercises.
+  Thus it is more compact. This is the same view than the `Course materials
+  <toc/>`_ in the course menu.
+
+- *Link to last visited content* allows the student continue from the same
+  content submodule they were viewing last time.
+
+**Description** is a text shown on the main page of the course in top of
+the index. One can enter either plain text or HTML here.
+
+**Footer** is similarly content swown after the index.
