@@ -260,7 +260,7 @@ YouTube video https://www.youtube.com/watch?v=HnQMDkUFzh4 embedded:
   :video-height: 400
   :video-width: 640
 
-
+See more at the `A+ RST tools documentation <https://github.com/Aalto-LeTech/a-plus-rst-tools#13-media-directives>`_.
 
 Adding custom RST directives
 ----------------------------
@@ -292,7 +292,7 @@ Tips
 When you are only writing learning material as RST which contains text, links
 and MathJax notation, you don't need to run the "docker-compile - docker-up"
 cycle for each modification. This is only required if you add new RST files or
-exercises. One can just start A+ and mooc-grader with ``docker-up.sh". After
+exercises. One can just start A+ and mooc-grader with ``docker-up.sh``. After
 that, one can just edit an RST file, run ``docker-compile.sh`` and the update
 the course page in the web browser. This cycle can be repeated without shutting
 down docker-up.sh.
