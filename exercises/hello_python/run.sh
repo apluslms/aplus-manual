@@ -18,5 +18,12 @@ export PYTHONPATH=/submission/user
 
 capture python3 /exercise/tests.py
 
+# Python unit tests write output both to standard output stream and to
+# standard error output stream. The command 'err-to-out' appends the contents
+# of the error stream to the output stream so that the student can see all the
+# output the tests have created.
 err-to-out
+
+# This command collects the test output and points so that they can be
+# delivered to mooc-grader and further to A+.
 grade

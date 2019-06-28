@@ -66,3 +66,26 @@ operations in JavaScript
 .. submit:: clock 10
   :config: exercises/clock/config.yaml
   :title: Clock
+
+
+Model solution
+..............
+
+The model solution fto this exercise is in the aplus-manual directory
+**exercises/clock/model_answer.html**.
+
+
+Description of the grader
+.........................
+
+The exercise files are in the directory **exercises/clock/**.
+
+The grader uses Python and Graderutils, just like described in the
+`Instructions <01_instructions>`_. Essentially, it uses `Selenium
+<https://www.seleniumhq.org/>`_ and the `related Python package
+<https://pypi.org/project/selenium/>`_ to run the tests. This means that it
+starts a web browser which actually renders the web page and runs the
+JavaScript.
+
+**config.yaml** uses **apluslms/grading-python-web** as the grading container.
+This

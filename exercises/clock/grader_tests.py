@@ -10,9 +10,6 @@ class TestClock(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        #local paths
-        #cls.driver = webdriver.Firefox(executable_path='/u/22/koponel4/data/Documents/Workspace/tts-docker/html-2kierros/todo/geckodriver')
-        #cls.driver.get('file:///u/22/koponel4/data/Documents/Workspace/tts-docker/html-2kierros/kello/kello_malli.html')
         #docker paths
         cls.driver = webdriver.Firefox()
         cls.driver.get('file:///submission/user/clock.html')
