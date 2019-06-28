@@ -15,7 +15,6 @@
 export PYTHONPATH=/submission/user
 
 # "capture" etc description in https://github.com/apluslms/grading-base
-
 capture python3 /exercise/tests.py
 
 # Python unit tests write output both to standard output stream and to
@@ -23,7 +22,3 @@ capture python3 /exercise/tests.py
 # of the error stream to the output stream so that the student can see all the
 # output the tests have created.
 err-to-out
-
-# This command collects the test output and points so that they can be
-# delivered to mooc-grader and further to A+.
-grade
