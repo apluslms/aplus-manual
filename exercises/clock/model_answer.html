@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+function clock()
+{
+    // store current date
+    var date = new Date();
+    // get the heading by id "heading"
+    var head = document.getElementById("heading");
+
+    // compute hours, minutes, and seconds
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+
+    //muutetaan otsikko parillisilla sekunteilla punaiseksi ja parittomilla siniseksi
+    // color heading red at even seconds and blue at odd seconds
+    if (s % 2) {
+        head.style.color = "blue";
+    }
+    else {
+        head.style.color = "red";
+    }
+
+    // write the time to the heading
+    head.innerHTML = format(h) + ":" + format(m) + ":" + format(s);
+}
+
+function format(time)
+{
+    // If the given integer is less than 10, prepend it with a zero character.
+    // In this case the integer is converted into a string.
+    if (time < 10) {
+        return "0" + time;
+    }
+    return time;
+}
+</script>
+
+</head>
+<body>
+<h1 id="heading"></h1>
+
+<script>
+// call the function clock() with intervals of 100 milliseconds
+setInterval(clock, 100);
+</script>
+</body>
+</html>

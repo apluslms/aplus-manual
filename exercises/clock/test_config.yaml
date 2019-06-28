@@ -1,0 +1,7 @@
+test_modules:
+  - module: grader_tests
+    description: Grader tests
+
+validation:
+  - type: html
+    file: clock.html

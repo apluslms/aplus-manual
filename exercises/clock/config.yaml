@@ -1,0 +1,11 @@
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: clock.html
+
+#feedback_template: ./_templates/test_feedback_template.html
+
+container:
+  image: apluslms/grading-python-web:latest
+  mount: exercises/clock
+  cmd: /exercise/run.sh

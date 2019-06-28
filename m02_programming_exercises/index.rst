@@ -12,3 +12,4 @@ Other content is not visible in A+.
   05_debugging_in_container
   06_radar
   07_graphics
+  08_web_frontend
