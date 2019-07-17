@@ -107,10 +107,10 @@ Workflow for editing RST files
   To edit the files in the course directory, like the RST files, you will need
   a software called *text editor*. This is an application which shows
   the contents of the files as text with monospaced font (all characters have
-  equal height and width). In the picture above is the Atom text editor
+  equal height and width). In the picture above, you see the Atom text editor
   showing file ``m01_introduction/01_rst.rst`` of this course. As you
   can see, it is nice, because it shows line numbers and colors different
-  parts of the RST code. This is called `syntax highlighting`.
+  structures of the RST code. This is called `syntax highlighting`.
 
   For GNU/Linux environment, some simple editors are
   `Kate <https://kate-editor.org/>`_, Mousepad included in the
@@ -123,15 +123,15 @@ Workflow for editing RST files
   in the picture above. Two classic editors with lots of features for
   programmers are `Emacs <https://en.wikipedia.org/wiki/Emacs>`_ and
   `Vim <https://en.wikipedia.org/wiki/Vim_(text_editor)>`_, but those
-  also have high learning curve.
+  also have a high learning curve.
 
   Do **not** use word processors such as Microsoft Word or LibreOffice
   Writer. Their formatting commands are useless when one must edit pure
   text files.
 
   It is good to learn how to use your text editor: commenting multiple
-  lines, changing indentation of multiple lines, show line numbers,
-  search and replace.
+  lines, changing indentation of multiple lines, showing line numbers,
+  searching and replacing text.
 
 
 The usual workflow for editing a course is the following:
@@ -304,13 +304,13 @@ of the RST material. The compiled material is in the subdirectory
 For example, print your working directory in the terminal with the ``pwd``
 command:
 
-.. code-block: none
+.. code-block:: none
 
     atilante@t31300-lr124 ~/ohj/a-ole/aplus-manual
      % pwd
     /u/79/atilante/unix/ohj/a-ole/aplus-manual
 
-In this example the absolute path of the working directory is
+In this example, the absolute path of the working directory is
 ``/u/79/atilante/unix/ohj/a-ole/aplus-manual``. Copy-paste your result to
 the address bar of your web browser, add ``_build/html/index.html`` to the end
 and press Enter.

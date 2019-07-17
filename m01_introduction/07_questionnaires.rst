@@ -113,7 +113,7 @@ Examples
     *c. 3
     d. an irrational number
     e. -3
-    f. -5
+    *f. -5
 
     a § Rather close. Remember that you can add or subtract the same number to the both sides of the equation.
     b § Correct!

@@ -120,11 +120,11 @@ To clone, execute command:
     git clone git@version.aalto.fi:course/aplus-manual.git
     cd aplus-manual
 
-In public, you could use `github repo <https://github.com/apluslms/course-templates/tree/manual>`_.
+In public, you could use `github repo <https://github.com/apluslms/course-templates/>`_.
 
 .. code-block:: sh
 
-    git clone --branch manual https://github.com/apluslms/course-templates.git
+    git clone https://github.com/apluslms/course-templates.git
     cd course-templates
 
 Next step, you need to get :code:`a-plus-rst-tools`.

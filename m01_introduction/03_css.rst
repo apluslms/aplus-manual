@@ -59,7 +59,7 @@ Currently the file looks like this:
 This is a *template file* for Sphinx. It contains pieces of HTML code
 that will be inserted on each HTML page when Sphinx compiles the RST files.
 All commands between tags ``{%`` and ``%}`` are information for Sphinx:
-where should this piece of HTML to be put? Currently there are two extra
+where should this piece of HTML be put? Currently, there are two extra
 things: we will define that we will include the MathJax JavaScript library
 from the Internet and use style directives from file ``_static/course.css``
 inside the main directory of the course.
@@ -167,9 +167,9 @@ the produced HTML code and write corresponding CSS where needed.
 Note that if you edit CSS files at directory ``_static``, you must
 recompile the course, restart A+ and refresh the page in the web browser -
 the same way when you edit RST files and want to see the result.
-One ``can`` also modify CSS files at directory ``_build/html_static`` and see
+One can also modify CSS files at directory ``_build/html/_static`` and see
 the results immediately, but that is not wise, because those changes have to
-be copied to ``_static`` before recompiling the course! For faster CSS design
+be copied to ``_static`` before recompiling the course! For faster CSS design,
 one might want to try the `Firefox Developer Edition
-<https://www.mozilla.org/en-US/firefox/developer/>`_ which has builtin
+<https://www.mozilla.org/en-US/firefox/developer/>`_ which has a builtin
 CSS editor.

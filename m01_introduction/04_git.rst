@@ -1,5 +1,5 @@
-git: backing up and collaborating
-=================================
+git: version control and collaboration
+======================================
 
 .. styled-topic::
 
@@ -11,7 +11,7 @@ git: backing up and collaborating
       git: add, commit, push, pull
 
   What you are supposed to do?
-      Learn essential use of git version control
+      Learn the essential use of git version control
 
   Difficulty:
       You need basic UNIX terminal skills
@@ -30,9 +30,9 @@ Introduction to git
   files have been moved. With git, many persons can edit the same collection
   of files at the same time and share their work.
 
-In Aalto University, git is also used for backing up the A+ course materials
-and publishing changes to the A+ production server https://plus.cs.aalto.fi .
-Git is also useful on your own computer: if you delete some file on your
+At Aalto University, git is used for controlling the version history of the
+A+ course materials and publishing changes to the A+ production server https://plus.cs.aalto.fi .
+Git is also useful on your own computer: if you delete some file in your
 course folder by mistake, or break the code and don't know how to repair
 it, you can revert back to an earlier version of your codebase.
 
