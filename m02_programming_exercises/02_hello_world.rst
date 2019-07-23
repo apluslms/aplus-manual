@@ -1,5 +1,5 @@
 Hello Worlds
-=================
+============
 
 This chapter includes three exercises on one page. Questionnaires and
 submission forms can exist anywhere and as many on one page as required.
@@ -36,7 +36,7 @@ The sequence begins from the client side.
 
 1. The student submits the file **functions.py** to A+.
 
-The next is happening on the server side.
+The following occurs in the server side.
 
 2. A+ requests mooc-grader to grade a Hello Python exercise with the
    submitted file. Information about the student is not sent to the mooc-grader.
@@ -49,7 +49,7 @@ The next is happening on the server side.
    starts inside it. Because the aforementioned **config.yaml** has a
    ``container: mount:`` subsection, the directory **exercises/hello_python**
    in the aplus-manual directory is set visible inside the grade-python
-   containes in the directory **/exercise** (read-only).
+   container in the directory **/exercise** (read-only).
 
 5. The file **functions.py** is copied inside the grade-python container into
    ``/submission/user/functions.py``.
@@ -93,7 +93,7 @@ The following steps are executed inside the grade-python container.
 
 6. Docker runs the command ``/gw`` insinde the grade-python container. This
    is the main grading script, "grade wrapper", and it comes from the
-   grading-base container. The script is run in Dash (/bin/sh). The wrappe
+   grading-base container. The script is run in Dash (/bin/sh). The wrapper
    script will take care of redirecting output (stdout and stderr;
    see Wikipedia for "standard streams") from the programs it
    calls to the file ``/feedback/grading-script-errors``. In addition, the
@@ -257,10 +257,10 @@ The following steps are executed inside the grade-python container.
 
 
 21. After the grading script has been executed, the grade wrapper script
-    ``/gw``will execute script **grade** (in ``/bin/grade``). This will parse
+    ``/gw`` will execute script **grade** (in ``/bin/grade``). This will parse
     the data in **/feedback/out**: first points, then the text feedback.
 
-22. The exit code from the grade wrapper script ``/gw``is stored in
+22. The exit code from the grade wrapper script ``/gw`` is stored in
     ``/feedback/grading-script-errors``. The grade wrapper always exits with
     code 0.
 

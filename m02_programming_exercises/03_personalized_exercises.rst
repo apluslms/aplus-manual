@@ -153,7 +153,7 @@ argument which tells the directory to store the first instance:
 The script **generator.py** starts and stores the path string ``/local/grader/ ... /0``
 to its variable ``instance_dir``. It creates a directory with that path, if it
 does not exist. Then it generates a pseudorandom integer between 1 and 50,
-writes it to a text file named ``number` inside the directory at ``instance_dir``
+writes it to a text file named ``number`` inside the directory at ``instance_dir``
 and terminates.
 
 Next mooc-grader will call generator.py again, but this time with command line
@@ -261,7 +261,7 @@ and finally send it to mooc-grader and A+. ``pre`` wraps the text output inside
 HTML ``<pre>`` tags.
 
 The grading script **check_number.py** starts with current working directory as
-``/submission/user``. It reads both the files ``number``and ``solutions``, and
+``/submission/user``. It reads both the files ``number`` and ``solutions``, and
 compares their contents. Next check_number prints feedback to the standard
 output:
 

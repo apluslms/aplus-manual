@@ -1,5 +1,5 @@
 Writing programming exercises
-=======================================================
+=============================
 
 .. styled-topic::
 
@@ -107,9 +107,13 @@ Explanation of the settings:
     `grading-base <https://github.com/apluslms/grading-base>`_ and
     `grade-python <https://github.com/apluslms/grade-python>`_.
 
-    **mount** is the relative path of the directory which will be at directory
-    ``/exercise`` inside the container (read only). This should be the directory
-    of the programming exercise having files config.yaml, run.sh,
+    **mount** is the relative path of the directory which will be mounted to the directory
+    ``/exercise`` inside the container (read only). This directory should contain
+    the files required to run the grader program.
+    (The student's submission files will be mounted separately by the platform
+    to the path ``/submission/user``.)
+    If Python graderutils are used (covered later in this page), the mount directory
+    would contain, for example, the files config.yaml, run.sh,
     test_config.yaml and various Python files (model solution, unit tests).
 
     **cmd** describes what command is run inside the container. run.sh is the
@@ -121,6 +125,7 @@ Explanation of the settings:
 starting point for understanding the grading system.
 
 - https://github.com/apluslms/grading-base/blob/master/README.md
+- https://github.com/apluslms/grade-python/blob/master/README.md
 - https://hub.docker.com/r/apluslms/grade-python/
 
 
@@ -237,7 +242,7 @@ does not work, here are general tips.
   inside the grading container.
 
 If all these fail, one can run a shell `inside the grading container
-<05_debugging_in_container.html>`_.
+<04_debugging_in_container.html>`_.
 
 Error messages and probable causes
 ----------------------------------
@@ -263,7 +268,7 @@ Probable causes:
 - *config.yaml* cannot render feedback_template
 - error on some Python file in the ``/submission/user`` directory (syntax error,
   exception, or trying to `import` some library or function which does not
-  exist anymore.
+  exist anymore).
 
 
 If that does not help, debug the exercise grader inside the grading container.

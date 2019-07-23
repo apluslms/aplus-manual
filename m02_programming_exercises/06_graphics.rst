@@ -35,7 +35,7 @@ which moves leaving a line behind. A new turtle is created with command
 
 Example:
 
-  .. code-block:: python
+.. code-block:: python
 
     import turtle
     t = turtle.Turtle()
@@ -51,10 +51,10 @@ Your task is to draw a pattern with 1000 steps such that the turtle
 alternatingly moves 5 units forward and then turns 90 degrees either left
 or right.
 
-The direction of the *n*th turn is determined with the following
+The direction of the *n*\ th turn is determined with the following
 method. First divide the number *n* by 2 until the result is an odd
 number. Then, if the modulus of that number with four is 1, turn to the
-right. Otherwise turn to the left.
+right. Otherwise, turn to the left.
 
 .. submit:: turtles 100
   :config: exercises/turtle_python/config.yaml
