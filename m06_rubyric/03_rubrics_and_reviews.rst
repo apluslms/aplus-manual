@@ -24,26 +24,40 @@ Settings
 The rubrics of Rubyric have four grading modes: *No grade*, *Mean*, *Sum*,
 and *Always pass*. The last mode is only used with the LTI-connected exercises.
 
-The "No grade" mode does not give any grade for the submission instead it gives
+The *No grade* mode does not give any grade for the submission instead it gives
 pure textual feedback. The normal requirements to finalize the review don't
 hold, and the review can be *finalized* at any point.
 
-In the *mean* mode you can define the set of grades which can be either numbers
+The *Mean* mode allows you to define the set of grades which can be either numbers
 or strings. You set a grade to the feedback phrases, and at end of each page,
 the mean of grades is calculated. Rubyric offers the mean as a suggestion,
 although the reviewer can also choose one of the other given grades for the
-page.
+page. At the final page of review, reviewer chooses the final grade. If set of grades
+are "Good", "ok" and "Needs improvement" (in this order), the suggested mean of 
+"Good", "ok", "Needs improvement", "Needs improvement" and "Good" is "ok".
 
-At the final page of review reviewer chooses the final grade. If set of grades
-are "Good", "ok" and "Needs improvement" (in this order), the mean of "Good",
-"ok", "Needs improvement", "Needs improvement" and "Good" is "ok". In the
-*sum* mode the final grade is the sum of given points.
+The *Sum* mode allows you to type points for your phrases. The final grade is 
+sum of points from the chosen phrases in the review.
+
+The *Always pass* mode does not give any grade and can be used to give pure 
+textual feedback like the No grade mode. If the grading mode is Always pass, the
+points will always be sent to A+ as full points. 
 
 You can also define *feedback categories* if you wish.
 The feedback categories can be for example "Strengths", "Weaknesses" and
 "Other". In the plain text reviews (explained later), the chosen feedback
 phrases are sorted by their chosen category. In final text everything written
 under one category is collected together.
+
+Some courses need to be able to provide feedback in more than one language (e.g.
+in Finnish and in English). Rubrics can be defined with several *languages*. By 
+default all rubrics have one default language. More languages can be defined at
+by clicking "Add language" button at Languages section. Languages can be renamed 
+by clicking on their names and rearranged by dragging them to desired position 
+in the list. The first language in the list will be used as a default language 
+in reviews. For each language the rubric will have alternative text field 
+for translatable content, i.a. categories, page names and phrases. Deleting a 
+language deletes all texts associated with the language. 
 
 .. image:: /images/rubyric-rubric-settings.png
 
@@ -85,20 +99,27 @@ submissions* button at the exercise view. The button should be visible if
 the exercise hasn't yet received any real submissions. The "generate example
 submissions" option is also found at dropdown at top right of exercise page.
 
+If the rubric has been done in more than one language, new review defaults to
+using the first language at the language list. The language of review can be 
+changed at Overview page while editing review. If the language is changed, the 
+review should be saved and the page reloaded so that rubric changes its 
+language. The rubric and all its phrases will be loaded at only one language to 
+the review editor.
+
 Reviews have several different statuses. *Started* means that review has already
 some content but is not yet finished. *Finished* means that the review is done
 and it is ready to be delivered. *Mailed* means that review has been delivered
 to a student by e-mail. The *finished* status can be achieved by reaching
-the *finalize page* while reviewing. In the *no grade mode* the finalize page
+the *finalize page* while reviewing. In the *No grade* mode the finalize page
 is accessible all the time, because the review will receive no grade. In the
-*sum* and *mean* modes the finalize page is accessible once the reviewer has
+*Sum* and *Mean* modes the finalize page is accessible once the reviewer has
 chosen one phrase for every criteria and defined the grade for every page.
 
 .. warning::
 
   Moving to the finalize page finalizes the review and the previous pages can no
   longer be edited. Finalization can be cancelled on the Finalize page, but that
-  will destroy all the changes the reviewer has done.
+  will destroy all the changes the reviewer has done at the Finalize page.
 
 Plain text
 ..........
@@ -147,3 +168,15 @@ The review will be delivered in both cases with slight delay, during which
 the review will be shown with status "mailing". After a little while the status
 should be changed to "mailed" and the review should have been delivered.
 If necessary, reload the page to see the status change.
+
+When delivering reviews to A+, Rubyric needs to choose the number of points 
+associated with review text. If the grade is numerical the points will be set 
+to its value. The points will be scaled according to maximum grade of exercise 
+at Rubyric and maximum points at A+ exercise when the points are delivered. If
+the submission has several reviews you want to deliver, e.g. when using peer 
+review, you can choose either to send the best grade or average of grades of 
+reviews. Feedback from all chosen reviews for the submission will be included 
+regardless of which you choose. Non-numerical grades, e.g. "Failed" or 
+"Boomerang", cannot be sent to A+. Thus non-numerical grades will be ignored
+when calculating the sent points although the feedback text will still be 
+delivered.
