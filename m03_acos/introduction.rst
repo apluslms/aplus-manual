@@ -84,28 +84,82 @@ The ``url`` option in the directive only defines the URL path of the exercise wi
     :title: Reveal demo
     :url: /aplus/draganddrop/draganddrop-example/revealdemo
 
+.. _acos-docker-mac-windows:
 
-Docker and Mac computers
-------------------------
+Docker and Mac or Windows computers
+-----------------------------------
 
-When running Docker in Mac computers, the URLs pointing to the Acos server may not function correctly. This has been the case with the macOS High Sierra operating system. In such case, you may need to modify your ``hosts`` file settings at ``/private/etc/hosts`` by adding these lines at the end of the file:
+When running this manual course with Docker in Mac or Windows computers,
+the URLs pointing to the Acos server in the Acos exercises may not function
+correctly. On Mac and Windows, Docker runs containers inside an additional Linux
+virtual machine. Due to the virtual machine between the Mac/Windows host machine
+and the containers, the host machine can not reach the containers with their internal
+IP addresses. However, the Acos exercises in A+ require that the user's web browser
+can connect directly to the Acos server. A simple fix to this is to use the
+internal domain names of the containers in order to connect to them from the host.
+This requires some configuration in the host system so that it recognizes those
+domain names and associates them with the localhost loopback address (the system
+itself). Since docker-compose.yml sets port forwarding to the containers,
+the host can connect to the containers using the localhost address with the
+correct port number.
 
-.. code-block:: sh
-  
+The localhost address can not be used directly in the exercise URLs since the
+loopback address always refers to the container itself initiating a connection,
+but the containers need to be able to connect to each other. Therefore,
+the containers must use the internal domain names in the exercise URLs, and
+the host (web browser) may connect to the containers using the localhost address
+with port forwarding.
+
+
+Mac computers
+~~~~~~~~~~~~~
+
+The following has been tested in the macOS High Sierra operating system.
+You need to modify your ``hosts`` file settings at ``/private/etc/hosts`` by
+adding these lines at the end of the file::
+
   127.0.0.1  acos
   127.0.0.1  plus
   127.0.0.1  grader
 
-To ensure the new settings work properly, you may also need to flush the DNS cache by executing ``sudo killall -HUP mDNSResponder``.
+To ensure that the new settings work properly, you may also need to flush the
+DNS cache by executing ``sudo killall -HUP mDNSResponder``.
 
 In addition, the ``conf.py`` needs to modified as follows:
 
-.. code-block:: sh
+.. code-block:: python
 
+  # comment out the existing line that sets acos_submit_base_url and add the following:
   # local testing in containers
   acos_submit_base_url = 'http://acos:3000'
 
-After modifying the settings, execute ``./docker-compile.py``. More detailed information about modifying the ``hosts`` file can be found at https://www.imore.com/how-edit-your-macs-hosts-file-and-why-you-would-want and https://www.tekrevue.com/tip/edit-hosts-file-mac-os-x/.
+After modifying the settings, execute ``./docker-compile.py``. More detailed information
+about modifying the ``hosts`` file can be found at
+https://www.imore.com/how-edit-your-macs-hosts-file-and-why-you-would-want and
+https://www.tekrevue.com/tip/edit-hosts-file-mac-os-x/.
+
+Linux computers
+~~~~~~~~~~~~~~~
+
+In Linux computers, it is possible to use the internal IP addresses of the
+containers in order to connect to them from the host machine. However,
+if you want to use the domain names of the containers instead of the IP addresses,
+you may apply the instructions of the Mac section above with slight modifications.
+The hosts file is usually ``/etc/hosts`` in Linux and there is no need to flush
+any DNS cache after modifying it.
+
+Windows computers
+~~~~~~~~~~~~~~~~~
+
+The A+ containers have not yet been properly working in Windows. If they work
+correctly otherwise, but the Acos exercise URLs do not, then you could modify
+the hosts configuration so that the internal domain names of the containers
+are mapped to the localhost address. The conf.py file is modified like in the
+Mac section above.
+
+These linked instructions have not been tested and you may search the web for more instructions.
+
+- https://gist.github.com/zenorocha/18b10a14b2deb214dc4ce43a2d2e2992
 
 
 Installing Acos locally
@@ -113,11 +167,29 @@ Installing Acos locally
 
 If you use Docker, you do not need to install Acos server locally in your computer.
 
-TO BE ADDED
+If you still want to install the Acos server locally in your computer, you need
+to install Node.js (version 8 LTS) and NPM first.
+Then you clone the acos-server git repository::
 
-Workflow for generating drag-and-drop activities
-------------------------------------------------
+  git clone https://github.com/acos-server/acos-server.git
 
-TO BE ADDED
+You can install dependencies of the Acos server and other content types and
+content packages with NPM (in the acos-server directory)::
 
+  npm install
+  # install other packages according to your needs
+  npm install acos-pointandclick
+  npm install acos-pointandclick-example
+
+Run the Acos server with::
+
+  node bin/www
+
+Enter the address ``http://localhost:3000`` in your web browser.
+
+
+..
+  Workflow for generating drag-and-drop activities
+  ------------------------------------------------
+  TO BE ADDED
 
