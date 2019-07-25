@@ -149,15 +149,10 @@ to A+ instead of the correct service launch URL.
 .. code-block:: rst
 
   .. submit:: exercisekey 100
-    :lti: Rubyric+
+    :lti: Rubyric
+    :lti_open_in_iframe:
     :ajax:
 
-
-.. warning::
-
-  The RST submit directive does not yet support all of the listed LTI options.
-  While that is the case, the options can not be defined via RST. This is easily
-  fixed in the future.
 
 .. warning::
 

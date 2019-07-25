@@ -32,9 +32,8 @@ describes how to add them manually under the "edit course" menu.
 
 1. Add a new learning object
 2. Choose 'LTI Exercise'
-3. Enter the exercise settings and select 'MathWorks learning tool pilot' (https://learningtool.mathworks.com/launch) as the LTI Service.
+3. Enter the exercise settings and select 'MATLAB Grader' (https://lms-grader.mathworks.com/launch) as the LTI Service.
    LTI-specific settings "context id", "resource link id", "resource link title", and "service url" can be left empty in order to use the defaults.
-   **N.B.** the name of the LTI service may change when the pilot phase is over and the MATLAB Grader is officially released.
 4. Launch the exercise
 
 When a teacher launches the exercise for the first time, it initializes the

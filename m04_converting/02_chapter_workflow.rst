@@ -229,7 +229,7 @@ File **config.yaml** looks like this:
 The student must submit one file, which will be saved as
 ``/submission/user/hunt.py`` inside the grading container.
 ``template_files`` tells
-`Radar (plagiarism detector) <../m02_programming_exercises/06_radar>`_
+`Radar (plagiarism detector) <../m02_programming_exercises/05_radar>`_
 what parts of code is similar in all student submissions. The ``cmd`` setting
 under ``container`` instructs to run the **run.sh** file, which is located
 under directory ``/exercise`` inside the container.
