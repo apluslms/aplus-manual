@@ -39,6 +39,9 @@ reviewer to drag comments on the submission where they are shown. Annotation
 review allows reviewer to add comment on the exact place they want to comment
 on.
 
+You can also check out `Rubyric user guide <https://github.com/Aalto-LeTech/rubyric/blob/master/doc/user_guide.md>`_ 
+for more detailed instructions on how to use Rubyric.
+
 Standalone Rubyric vs. A+ integration with Haka and LTI login
 .............................................................
 
