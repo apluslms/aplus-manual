@@ -69,11 +69,11 @@ production server, but don't want the students to enroll and see the contents
 yet.
 
 **Instance name**: this is shown in the list of current and old courses
-(``https://aplusdomain/archive``) to distinguish different instances from
+(``https://APLUSDOMAIN/archive``) to distinguish different instances from
 each other.
 
-**Url**: this is the identifier of course instance in the A+ url, for example
-in URL ``https://plus.cs.hut.fi/a1141/2018/`` the ``2018/`` is the instance.
+**Url**: this is the identifier of course instance in the A+ URL, for example,
+in the URL ``https://plus.cs.hut.fi/a1141/2018/``, the ``2018/`` part is the instance.
 
 **Image** is the image showing on the A+ front page. See
 `Gallery of features <../m01_introduction/0X_gallery/#front-page>`_ for
@@ -95,11 +95,11 @@ must both enroll to the course in WebOodi *and* to the course in A+.
 **Enrollment starting time** and **Enrollment ending time** in the course
 settings indicate when the students can enroll to the course.
 
-**Starting time** and **Ending time** define when enrolled students can submit
-exercises and receive automatic grades from them.
+**Starting time** and **Ending time** define the starting and ending times for
+the course. They are also the default opening and closing times for course modules.
 
 The times and dates have the format ``YYYY-MM-DD HH:MM:SS``, that is, year-month-day
-hours-minutes-seconds in the 24 hour clock. For example, ``2016-06-01 12:00:00``
+hours-minutes-seconds in the 24-hour clock. For example, ``2016-06-01 12:00:00``
 means 1st June 2016 Noon.
 
 Enrollment starting and ending times do not need to be enclosed within the
@@ -114,10 +114,9 @@ students to submit solutions to exercises after the deadline, but those
 submissions are unofficial and their points are ignored. The submissions are
 stored in the database and the student may view the feedback.
 
-**Lifesupport time**: after this, the model answers are not visibile for
-students.
+**Lifesupport time**: after this, the model answers are not visible to students.
 
-**Archive time** is used to prevent exercise submissions at a certain time.
+**Archive time** is used to prevent all exercise submissions after a certain time.
 This is relevant for unofficial submissions.
 
 Chronologically, the times should be set as follows:
@@ -128,14 +127,12 @@ Chronologically, the times should be set as follows:
 
 
 Module (exercise round) open and close times do not need to be enclosed within
-the course starting and ending times. This implies that an open module may
-accept normal submissions even after the course archive time, which is
-confusing. (Personal deadline extensions also affect the time when normal
-submissions are accepted, but the student may not submit during the extension if
-the archive time has passed.)
+the course starting and ending times.
 
-.. admonition:: Bugs
+.. admonition:: Bugs (fixed in the Autumn 2019 release)
   :class: warning
+
+  Bug: Student may submit after the archive time if the module is still open.
 
   Bug: Student can view the exercise model solution after the module deadline
   even if he has a personal deadline extension and may submit and gain points.
@@ -144,19 +141,34 @@ the archive time has passed.)
   close time, which makes no sense and also allows students to view the model
   solution while the module is normally open.
 
-  These bugs will likely be corrected in the Autumn 2019 release.
 
 Student's access to course material over time
 .............................................
 
-.. image:: /images/course-visibility.png
+.. table:: Student's access to course material over time
+  :widths: auto
 
-\
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+  |                   | Before      | Module | After module close  | After module close  | After module     | During personal    | From course lifesupport | After course |
+  |                   | module open | open   | (no late sbms)      | (enabled late sbms) | late sbms close  | deadline extension | to archive time         | archive time |
+  +===================+=============+========+=====================+=====================+==================+====================+=========================+==============+
+  | Can view chapter  | No          | Yes    | Yes                 | Yes                 | Yes              | Yes                | Yes                     | Yes          |
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+  | Can view exercise | No          | Yes    | Yes                 | Yes                 | Yes              | Yes                | Yes                     | Yes          |
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+  | Can submit to     | No          | Yes    | No (1)              | Yes                 | No (1)           | Yes                | Yes/No (2)              | No           |
+  | exercise          |             |        |                     |                     |                  |                    |                         |              |
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+  | Can open model    | No          | No     | Yes                 | No                  | Yes              | No                 | No                      | No           |
+  | solution          |             |        |                     |                     |                  |                    |                         |              |
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+  | Can view his own  | No          | Yes    | Yes                 | Yes                 | Yes              | Yes                | Yes                     | Yes          |
+  | old submissions   |             |        |                     |                     |                  |                    |                         |              |
+  +-------------------+-------------+--------+---------------------+---------------------+------------------+--------------------+-------------------------+--------------+
+
 
 (1) If the category has unofficial submissions enabled, the student may submit but no points will be gained.
 (2) Yes, may submit normally if the module is open. Unofficial submissions without points are allowed after the module deadline if the category has enabled unofficial submissions.
-(3) Yes, may submit if the module is open. Otherwise no.
-
 
 
 Course content visibility based on audience
@@ -165,7 +177,7 @@ Course content visibility based on audience
 **Enrollment audience** has three options.
 
 - *Internal users* means only internal students of the university may enroll.
-- *External users* means the course is MOOC only.
+- *External users* means the course is MOOC only (users log in with Google accounts).
 - *Internal and external users* means both of the above groups can enroll.
 
 
@@ -176,10 +188,10 @@ Alternatives:
 
 - Enrolled students: this is obvious.
 - Enrollment audience: this configured in the setting above.
-- All registered users: this isa ny logged-in user
+- All registered users: this is any logged-in user
 - Public to internet: anonymous user
 
-.. admonition:: Bug
+.. admonition:: Bug (fixed in the Autumn 2019 release)
   :class: warning
 
   When set to “enrolled students”, unenrolled logged-in users may still
@@ -213,12 +225,12 @@ The **Index** tab controls how main page of the course is shown to the students.
 
 - *User results* is an exercise-oriented view. It shows each course module
   (usually a weekly chapter) separately and inside them, the submodules.
-  In addition to that, tt lists all the exercises on the course, and student's
-  submission and highest score for each exercise.
+  In addition to that, it lists all the exercises on the course, and student's
+  submissions and highest scores for each exercise.
 
 - *Table of contents* shows the same information, but without exercises.
-  Thus it is more compact. This is the same view than the `Course materials
-  <toc/>`_ in the course menu.
+  Thus, it is more compact. This is the same view as the `Course materials
+  <http://localhost:8000/def/current/toc/>`_ in the course menu.
 
 - *Link to last visited content* allows the student continue from the same
   content submodule they were viewing last time.
@@ -226,7 +238,7 @@ The **Index** tab controls how main page of the course is shown to the students.
 **Description** is a text shown on the main page of the course in top of
 the index. One can enter either plain text or HTML here.
 
-**Footer** is similarly content swown after the index.
+**Footer** is similarly content shown after the index.
 
 
 The Menu tab
@@ -235,7 +247,8 @@ The Menu tab
 A+ always shows the following menu items in the course menu on the left side of
 the page.
 
-Students see the *Course* menu group, which include:
+Students see the *Course* menu group, which includes:
+
 - the course main page (a home symbol and course code)
 - table of contents (a book symbol and text "Course materials")
 - Exercise results for the student
@@ -258,9 +271,9 @@ create a menu item.
 **Service** allows to define an external web server where A+ links to *and*
 which `exchanges data with A+ via the LTI protocol <../m05_lti/introduction/>`_.
 Services described in this manual are
-`Radar <../m02_programming_exercises/06_radar/>`_ and
+`Radar <../m02_programming_exercises/05_radar/>`_ and
 `Rubyric <../m06_rubyric/01_introduction/>`_. The Aalto University CS department
-also has `Lab Queue (Neuvontajono) <../01_introduction/0X_gallery/#lab-queue>`_
+also has `Lab Queue (Neuvontajono) <../m01_introduction/0X_gallery/#lab-queue>`_
 and Code Vault (Koodisäilö). Also the `Piazza forum <https://piazza.com>`_ has
 been used on at least Aalto courses "Data structures and algorithms Y" and
 "Tietotekniikka sovelluksissa". Ask for your A+ administrator for adding these
@@ -269,7 +282,7 @@ servises for your course.
 **Menu url**: if an external service is configured for this menu item in the
 Service setting, then a URL starting with ``/`` overwrites path in service URL
 and extends it otherwise. Otherwise, a URL starting with ``/`` is absolute
-within A+ relative to the course path otherwise. Note that URL entered here
+within A+ and relative to the course path otherwise. Note that the URL entered here
 can not include scheme or domain.
 
 .. admonition:: Examples of menu urls
