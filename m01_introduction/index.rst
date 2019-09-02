@@ -13,3 +13,4 @@ Introduction to developing course on A-Plus learning management service.
   05_docker
   06_languages
   07_questionnaires
+  enrollment_en
