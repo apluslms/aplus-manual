@@ -48,7 +48,6 @@ rst_prolog = '''.. |enroll-js-script| raw:: html
 
 sys.path.append(os.path.abspath('a-plus-rst-tools'))
 sys.path.append(os.path.abspath('a-plus-rst-tools/directives'))
-sys.path.append(os.path.abspath('extensions'))
 
 # -- General configuration ------------------------------------------------
 
@@ -63,10 +62,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'aplus_setup',
-    'bootstrap_styled_topic',
-    'div',
-    'acos_submit',
     'media',
+    'point_of_interest',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
