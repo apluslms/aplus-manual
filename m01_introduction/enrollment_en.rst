@@ -26,9 +26,13 @@ Enroll to the course by filling in this questionnaire.
 
   .. include:: /enrollment/bachelor_en.rst
 
+  .. include:: /enrollment/other_programme_bsc_en.rst
+
   .. include:: /enrollment/bsc_year_en.rst
 
   .. include:: /enrollment/master_en.rst
+
+  .. include:: /enrollment/other_programme_msc_en.rst
 
   .. include:: /enrollment/master_year_en.rst
 
