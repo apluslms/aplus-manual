@@ -13,3 +13,4 @@ Other content is not visible in A+.
   05_radar
   06_graphics
   07_web_frontend
+  08_ajax_exercise

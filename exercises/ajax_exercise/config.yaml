@@ -1,0 +1,13 @@
+title: Example AJAX exercise
+
+# The view_type is only used to load the exercise page with a custom
+# HTML template since the submission is posted by AJAX to the ajax_type
+# endpoint.
+view_type: access.types.stdsync.comparePostValues
+ajax_type: access.types.ajax.storeSubmission
+ajax_key: blsjbur73uigkUSgfkf8"kdfnMGisJIT&jsus72yejdjmdi
+
+template: ./exercises/ajax_exercise/template.html
+feedback_template: ./exercises/ajax_exercise/feedback_template.html
+
+max_points: 10

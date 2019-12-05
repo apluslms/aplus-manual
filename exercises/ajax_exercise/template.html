@@ -1,0 +1,26 @@
+{% extends 'access/exercise_frame.html' %}
+
+{% block exercise %}
+
+{% if exercise.instructions %}
+  <div class="instructions">
+  {{ exercise.instructions|safe }}
+  </div>
+{% endif %}
+
+<form method="POST" action="#" id="form_{{ exercise.key }}">
+  <div class="form-group">
+    <textarea name="submission"></textarea>
+  </div>
+  <div class="form-group">
+    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+  </div>
+  <input type="hidden" name="submission_url" value="{{ request.GET.submission_url }}">
+  <input type="hidden" name="ajax_key" value="{{ exercise.ajax_key }}">
+  <!-- FIXME: the request is used to define the domain of the MOOC-grader server here.
+              The request headers may be spoofed. -->
+  <input type="hidden" name="grader_url" value="{{ request.scheme }}://{% if request.get_host == "grader:8080" %}localhost:8080{% else %}{{ request.get_host }}{% endif %}/ajax/{{ course.key }}/{{ exercise.key }}">
+</form>
+
+{% endblock %}
+

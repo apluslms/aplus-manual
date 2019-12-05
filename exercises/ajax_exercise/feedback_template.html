@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="result">
+<p>
+{% blocktrans with points=result.points max_points=result.max_points %}
+  You got {{ points }}/{{ max_points }} for your answer.
+{% endblocktrans %}
+</p>
+<p>
+  Your answer was: {{ result.grading_data }}
+</p>
+</div>
