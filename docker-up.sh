@@ -61,12 +61,22 @@ clean() {
     fi
 }
 
+update() {
+    docker-compose pull
+    res=$?
+    [ $res -eq 0 ] && touch docker-compose.yml
+    return $res
+}
 
 while [ "$1" ]; do
     case "$1" in
         -c|--clean)
             clean
             exit 0
+            ;;
+        -u|--update)
+            update
+            exit $?
             ;;
         *)
             echo "Invalid option $1" >&2
@@ -76,6 +86,11 @@ while [ "$1" ]; do
     shift
 done
 
+
+if [ $(($(date +%s) - $(date -r docker-compose.yml +%s))) -gt 604800 ]; then
+    # pull updates weekly
+    update
+fi
 
 mkdir -p /tmp/aplus
 trap onexit INT
