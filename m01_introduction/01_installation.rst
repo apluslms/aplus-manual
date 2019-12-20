@@ -134,6 +134,11 @@ Next step, you need to get :code:`a-plus-rst-tools`.
     git submodule init
     git submodule update
 
+.. _localtests:
+
+Running A+ locally
+------------------
+
 Now all the course material is in RST format. Everytime the RST part changes,
 you need to recompile it. You must do it also in the first time:
 

@@ -1,3 +1,5 @@
+.. _programming:
+
 Writing programming exercises
 =============================
 
