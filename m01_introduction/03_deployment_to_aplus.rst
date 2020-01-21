@@ -34,8 +34,7 @@ In A+ Exam (tentit.cs.aalto.fi):
 
 1. Open your course and go to Exam Management page. Create a new exam session, one for every version of the exam .i.e. if you want to have thre different exams that get randomly served in Exam-room, create three new exam sessions
 2. Set the exam session to point to their corresponding "exam paper" (module you created earlier)
-3. Set the starting time to the EARLIEST time when the exam can be started
-4. Duration should cover the whole period when the exam can be taken. If the exam is taken in Exam-rooms say over an week, set duration to 168 (7 * 24). The duration is in hours.
+3. The exam session uses the opening and closing times of the module. Exam sessions in closed modules are not visible.
 
 Archiving old exams
 -------------------
