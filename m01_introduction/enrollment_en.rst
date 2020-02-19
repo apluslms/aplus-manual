@@ -15,6 +15,7 @@ Enroll to the course by filling in this questionnaire.
   :title: Enrollment
   :status: enrollment
   :submissions: 2
+  :category: enrollment
 
   Enroll to the course by filling in this questionnaire.
   Some questions may become hidden based on answers on previous questions, thus
@@ -48,6 +49,7 @@ from the course if the course is only offered to internal students.
   :title: Enrollment
   :status: enrollment_ext
   :submissions: 2
+  :category: enrollment
 
   Enroll to the course by filling in this questionnaire.
   Some questions may become hidden based on answers on previous questions, thus
