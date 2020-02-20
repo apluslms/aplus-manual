@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+from graderutils.graderunittest import points
 import sys
 import os
 import random
@@ -11,9 +12,9 @@ import simpleturtle
 from minipng import Image
 
 class TestTurtle(unittest.TestCase):
-
+    @points(40)
     def test1_get_direction(self):
-        """Function get_direction returns string 'right' or 'left' according to specification. (1p)"""
+        """Function get_direction returns string 'right' or 'left' according to specification."""
         count = 200
         for _ in range(count):
             n = random.randint(1, 4096)
@@ -26,12 +27,15 @@ class TestTurtle(unittest.TestCase):
                 .format(n, returned_answer, expected_answer)
             )
 
-    def test2_run_turtles_with_image(self):
-        """Function turtles draws the picture without error messages. (1p)"""
+    @points(60)
+    def test1_2_run_turtles_with_image(self):
+        """Function turtles draws the picture without error messages."""
         t = simpleturtle.Turtle()
         turtles.turtles(t)
 
         t.get_image().write_to_file('turtles.png.base64', 'base64')
+
+
 
 if __name__ in ("__main__", "tests"):
     from sys import version_info
