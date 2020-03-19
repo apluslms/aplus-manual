@@ -95,7 +95,7 @@ The following steps are executed inside the grade-python container.
    is the main grading script, "grade wrapper", and it comes from the
    grading-base container. The script is run in Dash (/bin/sh). The wrapper
    script will take care of redirecting output (stdout and stderr;
-   see Wikipedia for "standard streams") from the programs it
+   see `standard streams`_ on Wikipedia) from the programs it
    calls to the file ``/feedback/grading-script-errors``. In addition, the
    ``gw`` script will make sure that the working directory is set correctly.
 
@@ -283,3 +283,5 @@ The rest is executed at the client side.
     is ready. Thus the JavaScript shows the points and the feedback. The feedback
     is just interpreted as HTML. This is why it had to be wrapped into HTML
     <pre> tags.
+
+.. _standard streams: https://en.wikipedia.org/wiki/Standard_streams
