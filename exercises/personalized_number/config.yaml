@@ -33,14 +33,3 @@ container:
   image: apluslms/grade-python:3.6-2.7
   mount: exercises/personalized_number
   cmd: /exercise/run.sh
-
-# old chroot sandbox configuration. This is an alternative to the Docker
-# container grader.
-actions:
-  - type: grader.actions.prepare
-    expect_success: True
-    cp_generated: number->user/number
-    cp_exercises: exercises/personalized_number->user
-  - title: Check solution
-    type: grader.actions.sandbox
-    cmd: [ "python3", "check_number.py" ]
