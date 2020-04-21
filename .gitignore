@@ -12,3 +12,5 @@ _data/
 .DS_Store
 *~
 *.sw[op]
+
+*.vscode

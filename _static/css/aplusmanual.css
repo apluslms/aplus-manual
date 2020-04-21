@@ -1,0 +1,14 @@
+@import url("../default.css");
+
+/* Render box to show the HTML output for the rst syntax */
+.html-box {
+    box-sizing: border-box;
+    padding: 9.5px;
+    border-radius: 4px;
+    background: #fdfcfc;
+    border: 1px solid #CCCCCC;
+}
+
+div.sidebar {
+    background-color: #E0DCEE;
+}

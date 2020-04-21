@@ -1,0 +1,189 @@
+.admonition, .topic {
+  min-height: 42px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-left: 0em;
+  margin-right: 0em;
+  margin-top: 15px;
+}
+
+.admonition button {
+  margin-bottom: 5px;
+}
+
+.admonition a {
+  color: #33a1ff;
+  font-weight: 700;
+}
+
+.admonition .collapse .well,
+.admonition .collapsing .well {
+  margin-bottom: 0;
+}
+
+.admonition-title, .topic-title {
+  font-weight: 700;
+}
+
+.topic.dl-horizontal .topic-title {
+  display: none;
+}
+
+.topic.dl-horizontal dt {
+  width: 250px;
+  margin-top: 0.5em;
+}
+
+.topic.dl-horizontal dd {
+  margin-left: 270px;
+  margin-top: 0.5em;
+}
+
+.topic.dl-horizontal dt:first-of-type,
+.topic.dl-horizontal dd:first-of-type {
+  margin-top: 0;
+}
+
+.admonition, .topic {
+  /* default colors */
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+/* Small adjustment to the text-aligment of the styled-topic directive */
+.topic.dl-horizontal dd{
+  margin-bottom: 0px;
+}
+
+/* kbd is used to represents user keyboard input */
+code.kbd {
+  color: #212121;
+  background-color: #f2f2f2;
+  border: 1px solid #cbcbcb;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15), inset 0 0 0 2px #f4f4f4;
+}
+
+.kbd {
+  padding: 0.4rem 0.5rem;
+  font-size: 87.5%;
+  font-weight: 700;
+  color: #fff;
+  background-color: #212121;
+  border-radius: .4rem;
+  font-family: monospace;
+}
+
+/* Set the width of the highlight code with the lineos option to 100% */
+table.highlighttable {
+  width: 100%;
+  margin: 0px;
+}
+
+table.highlighttable td {
+  padding: 0px;
+}
+.linenodiv{
+  margin: -0.2em;
+}
+
+
+/* hover highlights for the annotated aplus-rst directive ------------------------------------------------------------------------ */
+.content div.codecomment,
+.content div.guicomment {
+    border-radius: 7px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    width: 80%;
+    padding: 10px 15px 10px 15px;
+    margin: 0px 12px 12px 45px;
+    background: #0069D9;
+    box-shadow: 2px 2px 2px 0px #868686;
+    border-color: #D6D8D9;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.content div.admonition.aside div.codecomment {
+    width: 90%;
+    font-size: 0.85em;
+}
+
+.content div.codecomment+p,
+.content div.guicomment+p {
+    margin-top: 18px;
+}
+
+.content div.codecomment.comment-now-highlighted,
+.content div.guicomment.comment-now-highlighted {
+    background:#0069d9;
+    box-shadow: 1px 1px 2px 2px #514f4f;
+    font-weight: 600;
+}
+
+.content div.codecomment.comment-now-locked {
+    box-shadow: 1px 1px 2px 2px #274158;
+    font-weight: 900;
+}
+
+.content span.loc-now-highlighted,
+.content div.highlight pre span.loc-now-highlighted,
+.content pre.repl span.loc-now-highlighted,
+.content pre.repl span.loc-now-highlighted strong,
+.content pre.repl span.loc-now-highlighted em,
+.content pre.pseudocode span.loc-now-highlighted,
+.content pre.pseudocode span.loc-now-highlighted em,
+.content div.console pre span.loc-now-highlighted,
+.content div.console pre span.loc-now-highlighted em,
+.content div.animation div.loc-now-highlighted {
+    background: #5b5e4c !important;
+    color: white !important;
+    font-weight: 600;
+    margin: 2px;
+}
+
+.content div.highlight pre span.loc-now-locked,
+.content pre.repl span.loc-now-locked,
+.content pre.repl span.loc-now-locked strong,
+.content pre.repl span.loc-now-locked em,
+.content pre.pseudocode span.loc-now-locked,
+.content pre.pseudocode span.loc-now-locked em,
+.content div.console pre span.loc-now-locked,
+.content div.console pre span.loc-now-locked em,
+.content div.animation div.loc-now-locked {
+    background: #25ff3d;
+    color: #2B2B2B;;
+    font-weight: 900;
+    margin: 2px;
+}
+
+/* The current version of A+ has not been updated, and it is still using Bootstrap 3. The following classes will emulate some of the changes that are implemented in Bootstrap 4  */
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  /* font-size:  1rem; */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+div.topic{
+  background-color: #ddf1fb;
+}
+
+div.topic a{
+  color: #33a1ff;
+  font-weight: 400;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}

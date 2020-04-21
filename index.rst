@@ -8,12 +8,14 @@ Other content is not visible in A+.
   :maxdepth: 2
 
   m01_introduction/index
-  m02_programming_exercises/index
-  m03_acos/index
-  m04_converting/index
-  m05_lti/index
-  m06_rubyric/index
-  m07_admin/index
-  m08_moodle_astra/index
-  m09_active_elements/index
+  m02_setup/index
+  m03_rst_guide/index
+  m04_programming_exercises/index
+  m05_acos/index
+  m06_upgrade_old_course/index
+  m07_lti/index
+  m08_rubyric/index
+  m09_admin/index
+  m10_moodle_astra/index
+  m11_active_elements/index
 
