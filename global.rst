@@ -3,6 +3,9 @@
 .. role:: important
   :class: text-danger font-weight-bold
 
+.. role:: list-item
+  :class: list-group-item
+
 .. role:: raw-html(raw)
    :format: html
 
@@ -20,3 +23,8 @@
 .. role:: glyphicon-certificate
   :class: glyphicon glyphicon-certificate
 
+.. role:: glyphicon-arrow-down
+  :class: glyphicon glyphicon-arrow-down
+
+.. role:: glyphicon-tasks
+  :class: glyphicon glyphicon-tasks
