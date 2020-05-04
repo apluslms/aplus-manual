@@ -67,7 +67,7 @@ code.kbd {
 }
 
 .kbd {
-  padding: 0.4rem 0.5rem;
+  padding: 0.2rem 0.4rem;
   font-size: 87.5%;
   font-weight: 700;
   color: #fff;
@@ -90,78 +90,6 @@ table.highlighttable td {
 }
 
 
-/* hover highlights for the annotated aplus-rst directive ------------------------------------------------------------------------ */
-.content div.codecomment,
-.content div.guicomment {
-    border-radius: 7px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-style: solid;
-    border-width: 1px 0px 1px 0px;
-    width: 80%;
-    padding: 10px 15px 10px 15px;
-    margin: 0px 12px 12px 45px;
-    background: #0069D9;
-    box-shadow: 2px 2px 2px 0px #868686;
-    border-color: #D6D8D9;
-    font-size: 0.9em;
-    color: #fff;
-}
-
-.content div.admonition.aside div.codecomment {
-    width: 90%;
-    font-size: 0.85em;
-}
-
-.content div.codecomment+p,
-.content div.guicomment+p {
-    margin-top: 18px;
-}
-
-.content div.codecomment.comment-now-highlighted,
-.content div.guicomment.comment-now-highlighted {
-    background:#0069d9;
-    box-shadow: 1px 1px 2px 2px #514f4f;
-    font-weight: 600;
-}
-
-.content div.codecomment.comment-now-locked {
-    box-shadow: 1px 1px 2px 2px #274158;
-    font-weight: 900;
-}
-
-.content span.loc-now-highlighted,
-.content div.highlight pre span.loc-now-highlighted,
-.content pre.repl span.loc-now-highlighted,
-.content pre.repl span.loc-now-highlighted strong,
-.content pre.repl span.loc-now-highlighted em,
-.content pre.pseudocode span.loc-now-highlighted,
-.content pre.pseudocode span.loc-now-highlighted em,
-.content div.console pre span.loc-now-highlighted,
-.content div.console pre span.loc-now-highlighted em,
-.content div.animation div.loc-now-highlighted {
-    background: #5b5e4c !important;
-    color: white !important;
-    font-weight: 600;
-    margin: 2px;
-}
-
-.content div.highlight pre span.loc-now-locked,
-.content pre.repl span.loc-now-locked,
-.content pre.repl span.loc-now-locked strong,
-.content pre.repl span.loc-now-locked em,
-.content pre.pseudocode span.loc-now-locked,
-.content pre.pseudocode span.loc-now-locked em,
-.content div.console pre span.loc-now-locked,
-.content div.console pre span.loc-now-locked em,
-.content div.animation div.loc-now-locked {
-    background: #25ff3d;
-    color: #2B2B2B;;
-    font-weight: 900;
-    margin: 2px;
-}
-
 /* The current version of A+ has not been updated, and it is still using Bootstrap 3. The following classes will emulate some of the changes that are implemented in Bootstrap 4  */
 body {
   margin: 0;
@@ -169,7 +97,7 @@ body {
   /* font-size:  1rem; */
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #212529;
   text-align: left;
   background-color: #fff;

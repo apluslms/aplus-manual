@@ -28,3 +28,8 @@
 
 .. role:: glyphicon-tasks
   :class: glyphicon glyphicon-tasks
+
+.. role:: glyphicon-console
+  :class: glyphicon glyphicon-console
+
+  

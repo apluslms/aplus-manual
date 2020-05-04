@@ -10,6 +10,7 @@ Other content is not visible in A+.
   :maxdepth: 1
 
   01_get_started
+  02_basic_syntax
 
 
 .. aplusmeta::

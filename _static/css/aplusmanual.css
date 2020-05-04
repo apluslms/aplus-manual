@@ -5,6 +5,7 @@
     box-sizing: border-box;
     padding: 9.5px;
     border-radius: 4px;
+    margin: 2px;
     background: #fdfcfc;
     border: 1px solid #CCCCCC;
 }
