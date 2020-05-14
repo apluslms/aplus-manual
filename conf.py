@@ -72,6 +72,7 @@ extensions = [
     'aplus_setup',
     'media',
     'point_of_interest',
+    'row',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
