@@ -16,4 +16,5 @@ Other content is not visible in A+.
   admin/index
   moodle_astra/index
   active_elements/index
+  point_of_interest/index
 
