@@ -7,13 +7,13 @@ Other content is not visible in A+.
 .. toctree::
   :maxdepth: 2
 
-  m01_introduction/index
-  m02_programming_exercises/index
-  m03_acos/index
-  m04_converting/index
-  m05_lti/index
-  m06_rubyric/index
-  m07_admin/index
-  m08_moodle_astra/index
-  m09_active_elements/index
+  introduction/index
+  programming_exercises/index
+  acos/index
+  converting/index
+  lti/index
+  rubyric/index
+  admin/index
+  moodle_astra/index
+  active_elements/index
 
