@@ -23,14 +23,18 @@ course_close_date = '2020-06-06'
 questionnaire_default_submissions = 5
 program_default_submissions = 10
 default_max_group_size = 1
-use_wide_column = True
+use_wide_column = False
 static_host = os.environ.get('STATIC_CONTENT_HOST')
 
 # Define the base URL of the ACOS exercises if the default value is incorrect.
 # The internal IP address of the ACOS container should be used in local testing
 # and in production, the URL of the ACOS production server.
-#acos_submit_base_url = 'https://acos.cs.aalto.fi'
-acos_submit_base_url = 'http://172.21.0.4:3000'
+on_container = static_host and '8080' in static_host
+if on_container:
+    # The static IP address can be defined in docker-compose.yml.
+    acos_submit_base_url = 'http://172.21.0.4:3000'
+else:
+    acos_submit_base_url = 'https://acos.cs.aalto.fi'
 
 # The JavaScript code used by the enrollment questionnaire is hosted in the course repo,
 # so we need to know the course key in order to craft the URL of the JS.
@@ -40,6 +44,10 @@ rst_prolog = '''.. |enroll-js-script| raw:: html
 
   <script src="/static/{course_key}/_static/enrollmentquiz.js"></script>
 '''.format(course_key=course_key)
+
+rst_prolog += '''.. role:: glyphicon-info-sign
+  :class: glyphicon glyphicon-info-sign
+'''
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
