@@ -19,4 +19,4 @@
 run_services aplus-course-update aplus-lti-services
 
 # Custom modifications to the Aplus database
-setuidgid aplus python3 /srv/test-bench-course-mod.py
+setuidgid aplus python3 /srv/simple_course.py

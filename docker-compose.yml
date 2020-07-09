@@ -17,7 +17,8 @@ services:
     volumes:
       - data:/data
       - ./tools/aplus-init.sh:/srv/aplus-init.sh:ro
-      - ./tools/test-bench-course-mod.py:/srv/test-bench-course-mod.py:ro
+      - ./tools/simple_course.py:/srv/simple_course.py:ro
+      - ${APLUS_SRC}:/src/aplus/:ro
     ports:
       - "8000:8000"
     depends_on:

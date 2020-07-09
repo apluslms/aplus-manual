@@ -35,7 +35,12 @@ ACOS_LOG_PATH=_data/acos
 has_acos_log=$(grep -F "$ACOS_LOG_PATH" docker-compose.yml|grep -vE '^\s*#')
 [ "$has_acos_log" ] && mkdir -p "$ACOS_LOG_PATH"
 
-export COMPOSE_PROJECT_NAME USER_ID USER_GID DOCKER_GID
+if [[ -z "$APLUS_SRC" ]]; then
+  APLUS_SRC=../a-plus/
+  echo "APLUS_SRC was not set. Default value is used instead: $APLUS_SRC"
+fi
+
+export COMPOSE_PROJECT_NAME USER_ID USER_GID DOCKER_GID APLUS_SRC
 
 pid=
 keep=
