@@ -55,7 +55,7 @@ onexit() {
 
 clean() {
     echo " !! Removing persistent data !! "
-    docker-compose down --volumes
+    docker-compose down --volumes --remove-orphans
     if [ "$DATA_PATH" -a -e "$DATA_PATH" ]; then
         echo "Removing $DATA_PATH"
         rm -rf "$DATA_PATH" || true
