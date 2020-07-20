@@ -41,7 +41,8 @@ pid=
 keep=
 onexit() {
     trap - INT
-    [ "$pid" ] && kill $pid || true
+    # send SIGINT (^C) to childs of the docker-compose and to the process itself
+    [ "$pid" ] && { pkill -2 -P $pid; kill -2 $pid; } || true
     wait
     if [ "$keep" = "" ]; then
         clean
