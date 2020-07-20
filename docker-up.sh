@@ -50,6 +50,7 @@ onexit() {
         echo "Data was not removed. You can remove it with: $0 --clean"
     fi
     rm -rf /tmp/aplus || true
+    while read -rs -t 0; do read -rs -t 0.1; done # flush input
     exit 0
 }
 
@@ -87,25 +88,38 @@ while [ "$1" ]; do
     shift
 done
 
+docker-compose --version
 
 if [ $(($(date +%s) - $(date -r docker-compose.yml +%s))) -gt 604800 ]; then
     # pull updates weekly
+    echo "Checking for updates to the service images..."
     update
+    echo
 fi
 
 mkdir -p /tmp/aplus
 trap onexit INT
 docker-compose up & pid=$!
 
+help_n=4 # show first info after 24 seconds
 while kill -0 $pid 2>/dev/null; do
-    echo "  Press Q or ^C to quit and remove data"
-    echo "  Press S or ESC to quit and keep data"
-    read -rsn1 i
-    if [ "$i" = 'q' -o "$i" = 'Q' ]; then
-        break
-    elif [ "$i" = 's' -o "$i" = 'S' -o "$i" = $'\e' ]; then
-        keep="x"
-        break
-    fi
+    while read -rs -t 0; do read -rs -t 0.1; done # flush input
+    read -rsn1 -t 6 i # read a byte
+    # (1 or 142) -> timeout (6s). Show help every 50 times (every 5 minutes)
+    [[ $? != 0 ]] && { ((--help_n > 0)) && continue || help_n=50; }
+    case "$i" in
+        q|Q) break ;;
+        s|S) keep="x" ; break ;;
+        $'\e') # escape (ESC or ANSI code)
+            read -rsn1 -t 0.01 i # try to read a second byte
+            [ $? -eq 142 ] && { keep="x"; break; } # timeout -> no second byte -> plain ESC
+            ;;
+    esac
+
+    # print status and help
+    echo
+    echo "  Press Q or ^C to stop all and to remove data"
+    echo "  Press S or ESC to stop all and to keep data"
+    echo
 done
 onexit
