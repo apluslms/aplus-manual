@@ -118,6 +118,9 @@ while kill -0 $pid 2>/dev/null; do
 
     # print status and help
     echo
+    echo "  List of alive containers:"
+    { docker container ls --filter "name=^${COMPOSE_PROJECT_NAME}_"  --format "{{.ID}}" | xargs docker container inspect --format '	{{.Name}}	{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}	{{range $p, $conf := .NetworkSettings.Ports}}{{$p}} {{end}}'; } 2>/dev/null || true
+    echo
     echo "  Press Q or ^C to stop all and to remove data"
     echo "  Press S or ESC to stop all and to keep data"
     echo
