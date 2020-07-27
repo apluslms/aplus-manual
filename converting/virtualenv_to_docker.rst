@@ -6,8 +6,8 @@ Introduction and motivation
 
 If you maintain an existing A+ course, and it uses a `Python virtual
 environment <https://docs.python.org/3/tutorial/venv.html>`_ (just
-"virtualenv"), this section describes how to convert it to the `Docker
-environment <../m01_introduction/05_docker>`_.
+"virtualenv"), this section describes how to convert it to the :doc:`Docker
+environment </introduction/docker/>`.
 
 An A+ course not using Docker does not have **docker-compile.sh** and
 **docker-up.sh** scripts. Instead, the course is typically compiled with
@@ -27,7 +27,7 @@ New branch
 ..........
 
 From now on, this text assumes that you have your current A+ course under
-`git version control <../m01_introduction/04_git>`_.
+:doc:`git version control </introduction/git>`.
 
 First, ``cd`` to the current directory of your course. Create a new `git branch
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_
@@ -137,7 +137,7 @@ Congratulations! Now you have all the initial git voodoo done. You have a new
 branch on your course repository, which has a working copy of the A+ manual and
 your current course material in the **old** directory. You can compile the
 material and run A+ and mooc-grader locally `as specified in the introductory
-module <../m01_introduction/02_rst.html#workflow-for-editing-rst-files>`_.
+module <../introduction/rst.html#workflow-for-editing-rst-files>`_.
 
 Custom Sphinx directives
 ------------------------

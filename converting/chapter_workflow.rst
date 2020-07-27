@@ -3,9 +3,9 @@ The workflow for converting a chapter
 
 This section proposes a workflow for converting a chapter (or "module") in a
 non-Docker A+ course for the Docker version. It assumes that the initialisation
-described in `the previous chapter <01_virtualenv_to_docker.html>`_ is
-completed. See the earlier chapter `Instructions
-<../m02_programming_exercises/01_instructions>`_ in the Programming exercises
+described in `the previous chapter <virtualenv_to_docker>`_ is
+completed. See the earlier chapter :doc:`Instructions
+</programming_exercises/instructions>` in the Programming exercises
 module for more information.
 
 Add the RST files of the module
@@ -229,7 +229,7 @@ File **config.yaml** looks like this:
 The student must submit one file, which will be saved as
 ``/submission/user/hunt.py`` inside the grading container.
 ``template_files`` tells
-`Radar (plagiarism detector) <../m02_programming_exercises/05_radar>`_
+`Radar (plagiarism detector) </programming_exercises/radar>`_
 what parts of code is similar in all student submissions. The ``cmd`` setting
 under ``container`` instructs to run the **run.sh** file, which is located
 under directory ``/exercise`` inside the container.

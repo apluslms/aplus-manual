@@ -161,7 +161,7 @@ asks for from students. You can choose submissions to be made as files, written
 in text area or both together.
 
 Review mode affects on what kind of reviews will be done. More about reviews on
-`Rubrics and reviews <03_rubrics_and_reviews>`_. If you cross "Allow reviewers
+:doc:`Rubrics and reviews </rubyric/rubrics_and_reviews>`. If you cross "Allow reviewers
 to send reviews immediately", reviewers are allowed to send reviews back to
 students right after finishing review. Otherwise instructors will have to
 send reviews afterwards. Crossing "Allow reviewers to review all submissions"
@@ -172,7 +172,7 @@ left empty, no peer review is expected. On the other hand collaborative mode
 allows students to construct feedback for each other but they are not required
 to review other people's submissions.
 
-Check out the chapter `LTI configuration in A+ <../m05_lti/configuration>`_
+Check out the chapter :doc:`LTI configuration in A+ </lti/configuration>`
 to find out how to configure an LTI exercise in A+. After configuring the
 exercise at A+ you still need to configure it at Rubyric. It can be done
 automatically or manually.

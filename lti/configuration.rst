@@ -18,8 +18,7 @@ in the site before adding any related course content. The sitewide
 configuration of the LTI service contains the key and secret obtained from the
 Tool Provider.
 
-The A+ site administrator accesses the admin interface in the URL path
-`/admin <//localhost:8000/admin>`_.
+The `A+ site administrator <https://plus.cs.aalto.fi/admin/>`_ accesses the admin interface.
 
 1. Find "Lti services" under "External services" and click "add".
 2. In the form, enter the launch URL of the service as well as the consumer key

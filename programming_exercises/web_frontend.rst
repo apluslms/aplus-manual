@@ -81,7 +81,7 @@ Description of the grader
 The exercise files are in the directory **exercises/clock/**.
 
 The grader uses Python and Graderutils, just like described in the
-`Instructions <01_instructions>`_. Essentially, it uses `Selenium
+:doc:`Instructions <instructions>`. Essentially, it uses `Selenium
 <https://www.seleniumhq.org/>`_ and the `related Python package
 <https://pypi.org/project/selenium/>`_ to run the tests. This means that it
 starts a web browser which actually renders the web page and runs the

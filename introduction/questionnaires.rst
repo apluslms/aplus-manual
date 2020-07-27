@@ -41,7 +41,7 @@ the points of the question as the first argument. The sum of the question points
 should be equal to the questionnaire max points. The question directives accept
 the following options:
 
-* ``class``: `CSS class <03_css>`_
+* ``class``: `CSS class <css>`_
 * ``required``: If set, the question is required and empty answers are rejected
 * ``key``: a manually set key for the question. This affects the HTML **input**
   element and the key in the submission data. If no key is set, note that
