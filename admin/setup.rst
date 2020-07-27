@@ -153,7 +153,7 @@ instance" tab of the new instance.
 
 \
 
-This part is documented in the next chapter, `Course settings <02_settings>`_.
+This part is documented in the next chapter, `Course settings <settings>`_.
 
 
 Updating the course instance

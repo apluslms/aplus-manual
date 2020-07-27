@@ -70,7 +70,7 @@ The reasons for using Docker in A+ are the following:
 
 If you have an existing course in A+ which does not use Docker, see the chapter
 `Converting an existing A+ course to Docker
-<../m04_converting/01_virtualenv_to_docker>`_ for reasons to convert it to
+</converting/virtualenv_to_docker>`_ for reasons to convert it to
 Docker.
 
 .. admonition:: File format: YAML

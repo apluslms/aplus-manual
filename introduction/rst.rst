@@ -107,8 +107,8 @@ Workflow for editing RST files
   To edit the files in the course directory, like the RST files, you will need
   a software called *text editor*. This is an application which shows
   the contents of the files as text with monospaced font (all characters have
-  equal height and width). In the picture above, you see the Atom text editor
-  showing file ``m01_introduction/01_rst.rst`` of this course. As you
+  equal height and width). In the picture above, you see the text editor
+  showing file ``introduction/rst.rst`` of this course. As you
   can see, it is nice, because it shows line numbers and colors different
   structures of the RST code. This is called `syntax highlighting`.
 
@@ -200,15 +200,15 @@ name of this extension collection is *A+ RST tools*. The latest documentation
 is at `the Github repository of A+ RST tools <https://github.com/Aalto-LeTech/a-plus-rst-tools>`_.
 However, this manual shows many examples.
 
-Chapter 1.7 discusses `Graded questionnaires <07_questionnaires>`_.
+Chapter 1.7 discusses `Graded questionnaires <questionnaires>`_.
 
 **Feedback questionnaire**: see the A+ RST tools documentation.
 
-**Submittable exercise**: see chapter `Programming exercises <../m02_programming_exercises/01_instructions>`_.
+**Submittable exercise**: see chapter :doc:`Programming exercises </programming_exercises/instructions>`.
 
-**External service**: see the `LTI chapter <../m05_lti/introduction.rst>`_.
+**External service**: see the :doc:`LTI chapter </lti/introduction>`.
 
-**Active elements**: see the `Active elements chapter <../m09_active_elements/introduction.rst>`_.
+**Active elements**: see the :doc:`Active elements chapter </active_elements/introduction>`.
 
 Hidden block
 ............

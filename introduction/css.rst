@@ -82,11 +82,11 @@ Contents of the CSS file
 ------------------------
 
 After compiling the course, open the files
-``_build/html/m01_introduction/02_rst.html`` and ``_static/course.css``
+``_build/html/introduction/rst.html`` and ``_static/course.css``
 in a text editor.
 
 Here is the original ``admonition`` block from file
-``m01_introduction/02_rst.rst`` :
+``introduction/rst.rst`` :
 
 .. code-block:: rst
 

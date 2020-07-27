@@ -6,11 +6,11 @@ Other content is not visible in A+.
 
 .. toctree::
 
-  01_instructions
-  02_hello_world
-  03_personalized_exercises
-  04_debugging_in_container
-  05_radar
-  06_graphics
-  07_web_frontend
-  08_ajax_exercise
+  instructions
+  hello_world
+  personalized_exercises
+  debugging_in_container
+  radar
+  graphics
+  web_frontend
+  ajax_exercise

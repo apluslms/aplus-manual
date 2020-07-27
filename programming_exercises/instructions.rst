@@ -32,7 +32,7 @@ The files related to this exercise are in directory ``exercises/hello_python``.
 Defining the exercise in an RST file
 ....................................
 
-The file ``m02_programming_exercises/02_hello_world.rst`` is a sample page
+The file ``programming_exercises/hello_world.rst`` is a sample page
 which contains two programming exercises: the classic "Hello world!" program
 for Python and Scala programming languages. Let's look at the "Hello Python!"
 exercise. It requires two lines:
@@ -242,7 +242,7 @@ does not work, here are general tips.
   inside the grading container.
 
 If all these fail, one can run a shell `inside the grading container
-<04_debugging_in_container.html>`_.
+<debugging_in_container>`_.
 
 Error messages and probable causes
 ----------------------------------

@@ -50,8 +50,8 @@ Create an Acos exercise
 Usability aspects
 .................
 Create an exercise is relatively easy. Basically, you only need to create an HTML file, add the content you would like to have and
-finally create a JSON configuration file with the `drag and drop settings <https://git.io/JfEQW>`_. However, the most challenging
-part is to design the flow and the appearance of your exercises.
+finally create a JSON configuration file with the `drag and drop settings <https://github.com/acos-server/acos-draganddrop#notation>`_.
+However, the most challenging part is to design the flow and the appearance of your exercises.
 
 .. hint::
 
@@ -60,7 +60,7 @@ part is to design the flow and the appearance of your exercises.
 
 Unfortunately, we cannot give you suggestions about the usability and the optimal flow of your exercises. Yet, we can provide you
 with a list of tools that may help improve the appearance of the Acos exercises. First, we suggest using a CSS framework for
-styling your activities such as `Bootstrap <https://getbootstrap.com/>`_,`Material <https://material.io/>`_, or
+styling your activities such as `Bootstrap <https://getbootstrap.com/>`_, `Material <https://material.io/>`_, or
 `Foundation <https://get.foundation/>`_. Secondly, we suggest making use of the
 `style editor <https://developer.mozilla.org/en-US/docs/Tools/Style_Editor>`_ embedded in your web browser. Finally, we suggest
 researching about `usability <https://www.nngroup.com/articles/usability-101-introduction-to-usability/>`_, especially usability

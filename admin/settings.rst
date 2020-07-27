@@ -37,7 +37,7 @@ below.
 The course settings page has several tabs.
 
 - **Instances** alter the course instances. This is described in the
-  `earlier chapter <01_setup>`_.
+  `earlier chapter <setup>`_.
 
 - The **Course** tab allows editing the course details.
 
@@ -76,7 +76,7 @@ each other.
 in the URL ``https://plus.cs.hut.fi/a1141/2018/``, the ``2018/`` part is the instance.
 
 **Image** is the image showing on the A+ front page. See
-`Gallery of features <../m01_introduction/0X_gallery/#front-page>`_ for
+:ref:`Gallery of features <front-page-image>` for
 an example. With a running copy of aplus-manual, try to set the course image
 to file ``fireworks.jpg`` found in the subdirectory ``images`` of the manual.
 
@@ -229,8 +229,8 @@ The **Index** tab controls how main page of the course is shown to the students.
   submissions and highest scores for each exercise.
 
 - *Table of contents* shows the same information, but without exercises.
-  Thus, it is more compact. This is the same view as the `Course materials
-  <http://localhost:8000/def/current/toc/>`_ in the course menu.
+  Thus, it is more compact. This is the same view as the Course materials
+  in the course menu.
 
 - *Link to last visited content* allows the student continue from the same
   content submodule they were viewing last time.
@@ -269,11 +269,11 @@ create a menu item.
 **Access** defines who can see the menu item.
 
 **Service** allows to define an external web server where A+ links to *and*
-which `exchanges data with A+ via the LTI protocol <../m05_lti/introduction/>`_.
+which :doc:`exchanges data with A+ via the LTI protocol </lti/introduction>`.
 Services described in this manual are
-`Radar <../m02_programming_exercises/05_radar/>`_ and
-`Rubyric <../m06_rubyric/01_introduction/>`_. The Aalto University CS department
-also has `Lab Queue (Neuvontajono) <../m01_introduction/0X_gallery/#lab-queue>`_
+`Radar <../programming_exercises/radar/>`_ and
+`Rubyric <../rubyric/introduction/>`_. The Aalto University CS department
+also has `Lab Queue (Neuvontajono) <../introduction/gallery/#lab-queue>`_
 and Code Vault (Koodisäilö). Also the `Piazza forum <https://piazza.com>`_ has
 been used on at least Aalto courses "Data structures and algorithms Y" and
 "Tietotekniikka sovelluksissa". Ask for your A+ administrator for adding these
@@ -288,12 +288,12 @@ can not include scheme or domain.
 .. admonition:: Examples of menu urls
   :class: info
 
-  ``m02_programming_exercises/02_hello_world/`` (note: without starting ``/``)
+  ``programming_exercises/hello_world/`` (note: without starting ``/``)
   is the way to make a menu link to a chapter inside the same course.
   If you are running the A+ locally at *http://localhost:8000/*, this menu
-  url points to http://localhost:8000/def/current/m02_programming_exercises/02_hello_world/ .
+  url points to http://localhost:8000/def/current/programming_exercises/hello_world/ .
 
-  ``m03_acos/demo_exercises/#point-and-click`` is the same, but with an
+  ``acos/demo_exercises/#point-and-click`` is the same, but with an
   anchor to a header on a specific location on a course page.
 
   ``/archive/`` trims everything after the domain and port in the url.

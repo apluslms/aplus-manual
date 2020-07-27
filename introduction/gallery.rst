@@ -7,6 +7,8 @@ with A+.
 Front page
 ----------
 
+.. _front-page-image:
+
 .. figure:: /images/gallery/aplus-front-page.png
    :alt: Front page of A+
 
@@ -19,8 +21,8 @@ Each course has optional image, name, instance name, course code and teaching sc
 All courses have a green "Aalto" tag to indicate that the course is for Aalto University students. 
 The "Data Structures and Algorithms" -course has also a blue "MOOC" tag to indicate
 that the course is also a massive open online course. 
-Sections :doc:`7.1 Setting up a course on production servers </admin/01_setup>`
-and :doc:`7.2 Course settings </admin/02_settings>` describe these in detail.
+Sections :doc:`7.1 Setting up a course on production servers </admin/setup>`
+and :doc:`7.2 Course settings </admin/settings>` describe these in detail.
 
 Exercises
 ---------
@@ -70,7 +72,7 @@ Python
    There are Python unit tests which give points, and also visual comparison
    of the outputs of the student's program and the correct solution.
 
-`Section 2 <http://localhost:8000/def/current/m02_programming_exercises/01_instructions/>`_
+:doc:`Section 2 </programming_exercises/instructions>`
 describes how to create Python programming exercises.
 
 
@@ -92,7 +94,7 @@ Essay grading
 
 .. figure:: /images/gallery/rubyric.png
 
-   `Rubyric is a tool for grading essays <../m06_rubyric/01_introduction>`_.
+   `Rubyric is a tool for grading essays <../rubyric/introduction>`_.
    The teacher creates a *rubric*,
    a grading template with scores and feedback text snippets. Then the students
    submits their essays and the teacher can grade them efficiently and
@@ -105,6 +107,6 @@ Plagiarism detection
 
 .. figure:: /images/gallery/radar.png
 
-   `Radar is a submission similarity matcher <../m02_programming_exercises/06_radar>`_
+   :doc:`Radar is a submission similarity matcher </programming_exercises/radar>`
    that helps detect plagiarism in programming exercises. The figure shows a
    comparison view for two submissions for the same programming exercise.

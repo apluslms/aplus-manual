@@ -131,12 +131,12 @@ The directory for the personalized exercises inside the
 ``/local/grader/ex-meta/default/pregenerated``, where ``default`` is the name
 of the course. Each personalized exercise has its own subdirectory named by
 ``module_page_key``, where ``module`` is the subdirectory for the RST file
-(here "m02_programming_exercises"), ``page`` is the RST file which refers to
+(here "programming_exercises"), ``page`` is the RST file which refers to
 the exercise (here "04_personalized_exercises"); and ``key`` is the unique
 identifier for the exercise (here "personalized_number" or
 "personalized_python"). The pregenerated instances for
 each exercise are inside these directories. For example, the directory
-`/local/grader/ex-meta/default/pregenerated/m02_programming_exercises_04_personalized_exercises_personalized_number/`
+`/local/grader/ex-meta/default/pregenerated/programming_exercises_04_personalized_exercises_personalized_number/`
 has subdirectories ``0``, ``1``, ..., ``9``, one for each ten instances, and
 each of those *instance directories* contains a text file named ``number``,
 which has the personalized data for the instance.
@@ -148,7 +148,7 @@ argument which tells the directory to store the first instance:
 
 ::
 
-  python3 generator.py /local/grader/ex-meta/default/pregenerated/m02_programming_exercises_04_personalized_exercises_personalized_number/0
+  python3 generator.py /local/grader/ex-meta/default/pregenerated/programming_exercises_04_personalized_exercises_personalized_number/0
 
 The script **generator.py** starts and stores the path string ``/local/grader/ ... /0``
 to its variable ``instance_dir``. It creates a directory with that path, if it
@@ -157,7 +157,7 @@ writes it to a text file named ``number`` inside the directory at ``instance_dir
 and terminates.
 
 Next mooc-grader will call generator.py again, but this time with command line
-argument ``/local/grader/ex-meta/default/pregenerated/m02_programming_exercises_04_personalized_exercises_personalized_number/1``.
+argument ``/local/grader/ex-meta/default/pregenerated/programming_exercises_04_personalized_exercises_personalized_number/1``.
 This procedure is repeated for all the ten exercise instances.
 
 Finally, the directory structure for the "Personalized number" exercise
@@ -243,14 +243,14 @@ essentially like this in the beginning:
       └── number
 
 As you can see, the directory structure is very similar to the
-`nonpersonalized Python programming exercise <02_hello_world>`_.
+`nonpersonalized Python programming exercise <hello_world>`_.
 The student's answer is at ``/submission/user/solution``. The directory
 ``/submission/user`` is also the starting directory for the **run.sh** script
 for the exercise. Also, inside that container, the personalized data for the
 exercise instance assigned to the student is initially at
 ``/personalized_exercise``. The contents of this directory is identical to the
 directory
-``/local/grader/ex-meta/default/pregenerated/m02_programming_exercises_04_personalized_exercises_personalized_number/X``
+``/local/grader/ex-meta/default/pregenerated/programming_exercises_04_personalized_exercises_personalized_number/X``
 in the *mooc-grader container*, where ``X`` is the number of the instance.
 
 Next, inside the grade-python container, the script **run.sh** copies the file
@@ -303,7 +303,7 @@ inside the **mooc-grader container** has the following structure:
 ::
 
   /local/grader/ex-meta/default/pregenerated/
-  └── m02_programming_exercises_04_personalized_exercises_personalized_python
+  └── programming_exercises_04_personalized_exercises_personalized_python
       ├── 0
       |   └── name
       ├── 1
