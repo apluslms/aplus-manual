@@ -76,7 +76,11 @@ extensions = [
     'media',
     'point_of_interest',
     'row',
+    'tabs',
 ]
+
+include_tab_js = True
+include_tab_css = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
