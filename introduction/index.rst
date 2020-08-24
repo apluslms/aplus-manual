@@ -1,5 +1,5 @@
-Module 1 - Introduction
------------------------
+Overview
+========
 
 Introduction to developing course on A-Plus learning management service.
 

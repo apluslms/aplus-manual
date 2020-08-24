@@ -1,5 +1,5 @@
-Module 6 - Rubyric
------------------------
+Rubyric
+=======
 
 Documentation of Rubyric feedback service.
 
