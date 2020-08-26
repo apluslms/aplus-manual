@@ -48,6 +48,9 @@ rst_prolog = '''.. |enroll-js-script| raw:: html
 rst_prolog += '''.. role:: glyphicon-info-sign
   :class: glyphicon glyphicon-info-sign
 '''
+rst_prolog += '''.. role:: glyphicon-certificate
+  :class: glyphicon glyphicon-certificate
+'''
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
