@@ -24,6 +24,24 @@ a new menu item in A+ choose Edit course and Menu and press Add new menu item.
 You can also choose to use Rubyric through Haka login. In that case you don't
 need to add Rubyric to menu.
 
+Set up Rubyric locally
+----------------------
+
+If you want to test Rubyric locally, you must follow the instructions on how
+to set up a Rubyric locally along with A+, presented in the `Official Rubyric
+documentation. <https://github.com/Aalto-LeTech/rubyric/blob/master/doc/rubyric.md#
+connect-local-rubyric-to-a-course-in-docker-optional>`_
+It is also worth mentioning that currently setting up Rubyric locally can be
+slightly difficult, and there may be some problems that will require you to
+solve some dependency issues. Therefore, we recommend reading the
+`Troubleshooting section <https://github.com/Aalto-LeTech/rubyric#troubleshooting>`_
+when setting up Rubyric on your computer.
+
+But, if you do not want to spend too much time setting up Rubyric locally, you
+could also test the Rubyric directly in a testing server, e.g.
+https://minus.cs.aalto.fi for the Aalto CS department, and verify that the
+exercises connect to Rubyric.
+
 Configure course at Rubyric
 ---------------------------
 
