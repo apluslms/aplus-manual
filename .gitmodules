@@ -1,6 +1,6 @@
 [submodule "a-plus-rst-tools"]
 	path = a-plus-rst-tools
-	url = https://github.com/Aalto-LeTech/a-plus-rst-tools.git
+	url = https://github.com/apluslms/a-plus-rst-tools.git
 [submodule "enrollment"]
 	path = enrollment
 	url = https://github.com/Aalto-Letech/aplus-enrollment-questionnaire.git
