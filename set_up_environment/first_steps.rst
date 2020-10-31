@@ -23,7 +23,7 @@ First steps
   Estimated working time:
     From 30 min to 1 hour.
 
-The first step to start authoring your own course is to download the `Aplus course Template`_ from GitHub. This course
+The first step to start authoring your own course is to download the `Aplus course template`_ from GitHub. This course
 template will be used as a blueprint to build your own course and subsequently publish it in the
 `A+ e-learning system <https://plus.cs.aalto.fi/>`_.
 
@@ -59,7 +59,7 @@ In this chapter, we will teach you how to install and how to use the software.
   :width: 80%
   :align: center
 
-  The above image list the content of the `Aplus course template <https://github.com/apluslms/aplus-course-template>`_
+  The above image list the content of the `Aplus course template`_
   directory, in a terminal window.
 
 .. admonition:: Important: UNIX Shell, Terminal emulator
@@ -108,13 +108,13 @@ Mac/Windows or docker-ce & docker-compose for Linux.
 - `Docker Compose <https://docs.docker.com/compose/install/>`_
 
 You also need to install a Text editor (`VS Code <https://code.visualstudio.com/>`_  is recommended). You can find more
- information about the most convenient text editor to create *RST* documents
- :ref:`at the end of this module <text-editor-and-ides>`.
+information about the most convenient text editor to create *RST* documents
+:ref:`at the end of this module <text-editor-and-ides>`.
 
 Cloning this codebase with git
 ------------------------------
 
-A good way to start is to clone the `Aplus course Template <https://github.com/apluslms/course-templates>`_ with
+A good way to start is to clone the `Aplus course template`_ with
 git and begin to work on it.
 
 To clone the course template using a SSH key, execute the following command:
@@ -193,20 +193,19 @@ The usual workflow for creating/editing a course is the following:
 3. Give command ``./docker-compile.sh`` in the terminal.
 4. Give command ``./docker-up.sh`` in the terminal.
 5. Go to ``http://localhost:8000/`` in the web browser to view A+
-    running on your machine.
+   running on your machine.
 6. Examine the changes you made in A+.
 7. Press :kbd:`Q` or :kbd:`Ctrl` ``+`` :kbd:`C` in the terminal to quit and remove data
-    or :kbd:`S` or :kbd:`ESC` to quit and keep data.
+   or :kbd:`S` or :kbd:`ESC` to quit and keep data.
 8. Go to step 2 if you wish to continue editing.
 9. Give command ``git add -u`` in the terminal to mark all changed files to be
-    added into your local git repository.
+   added into your local git repository.
 10. Give command ``git commit -m "message"`` in terminal. Replace ``message`` with a short description (preferably less
-than 60 characters) on what you have done.
+    than 60 characters) on what you have done.
 11. Create a repository in version.aalto.fi
 12. Add the remote branch
 13. Push the changes to version.aalto.fi by running the ``git push`` command.
 
 
-.. External links
 
 .. _`Aplus course template`:  https://github.com/apluslms/aplus-course-template

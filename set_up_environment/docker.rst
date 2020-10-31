@@ -71,7 +71,11 @@ The reasons for using Docker in A+ are the following:
 If you have an existing course in A+ which does not use Docker, see the chapter
 </converting/virtualenv_to_docker>`_ for reasons to convert it to
 Docker.
-  `YAML <http://yaml>`_ is a human-friendly language for defining data
+
+.. admonition:: File format: YAML
+  :class: meta
+
+  `YAML <https://en.wikipedia.org/wiki/YAML>`_ is a human-friendly language for defining data
   for computer programs. In Docker and A+ it is used for writing
   *configuration files*, that is, files which control the behaviour of
   A+ and some types of exercises. The file suffix is ``.yml`` or
