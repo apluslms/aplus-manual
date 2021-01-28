@@ -81,13 +81,30 @@ The question directive accepts also the following options:
   key in the submission data. If no key is set, note that automatically added keys change
   when the order and amount of questions is modified.
 
-**Hints:** Hints are set at the end of the question, possible answer options and correct
-options. The hints are targeted to specific choices and they are shown after answering.
-The format of the hints is ``chosen option or answer § feedback text or hint``.
-The value is the student's submission and it may be prepended with ``!`` in order to
-show the feedback when the student did not answer that value. In freetext questions,
-the value may be prepended with ``regexp``: in order to use regular expressions for matching
-the student's submission.
+**Hints:** Hints are added right after the selectable answers, and these must be linked to the selectable answers.
+Therefore, if we use latin letters to label the answers, we should use the same letters to label the hints. The
+following snippet of code illustrates how can we use of the labels to link the answers to the given hints.
+
+.. code-block:: rst
+
+  .. pick-one:: 10
+
+     Subdirective ``pick-one`` defines a single-choice question.
+     When :math:`(x + 1)^3 = 27`, what is :math:`x`?
+
+    a. 9
+    *b. 2
+    c. 3
+
+    a § Not quite. Remember the cube root.
+    !b § It this answers is not selected. We will show this hint to let you know that this is the correct answer.
+    c § Rather close. Remember that you can add or subtract the same number to the both sides of the equation.
+
+As we can see in the snippet above, the regular format for the hints is ``label used by the answer § feedback text or hint``.
+Hints may also be prepended with ``!`` in order to show the feedback when the student did not select that specific answer.
+In freetext questions, the label may be prepended with ``regexp``: in order to use regular expressions for matching
+the student's submission. Hints are displayed after the student has clicked the submit button and are used to help
+students while solving the questionnaire.
 
 Single-choice and multiple-choice questions
 -------------------------------------------
@@ -585,22 +602,14 @@ Example: Regex questionnaire
 
           ^3\.141\d*$
 
-Testing the questionnaires
---------------------------
-
-It is good practise to test your questionnaire, especially if there are
-several correct answers. Note that A+ will show the correct answers for the
-students who have submitted for the maximum number of times (but not for anyone
-else).
-
 
 Additional information
 ----------------------
 
-The most recent and complete documentation on this can
+* The most recent and complete documentation on this can
 be found at `the source code of the A+ RST tools package
 <https://github.com/apluslms/a-plus-rst-tools>`_.
-See the source code of `the A+ RST tools questionnaire directive
+* See the source code of `the A+ RST tools questionnaire directive
 <https://github.com/apluslms/a-plus-rst-tools/blob/master/directives/questionnaire.py>`_
-and the corresponding `form implementation in mooc-grader
+* Review the corresponding `form implementation in mooc-grader
 <https://github.com/apluslms/mooc-grader/blob/master/access/types/forms.py>`_.
