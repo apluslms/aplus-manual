@@ -97,7 +97,7 @@ following snippet of code illustrates how can we use of the labels to link the a
     c. 3
 
     a § Not quite. Remember the cube root.
-    !b § It this answers is not selected. We will show this hint to let you know that this is the correct answer.
+    !b § If this alternative is not selected, this hint will be shown.
     c § Rather close. Remember that you can add or subtract the same number to the both sides of the equation.
 
 As we can see in the snippet above, the regular format for the hints is ``label used by the answer § feedback text or hint``.
