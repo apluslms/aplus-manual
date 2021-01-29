@@ -607,9 +607,9 @@ Additional information
 ----------------------
 
 * The most recent and complete documentation on this can
-be found at `the source code of the A+ RST tools package
-<https://github.com/apluslms/a-plus-rst-tools>`_.
+  be found at `the source code of the A+ RST tools package
+  <https://github.com/apluslms/a-plus-rst-tools>`_.
 * See the source code of `the A+ RST tools questionnaire directive
-<https://github.com/apluslms/a-plus-rst-tools/blob/master/directives/questionnaire.py>`_
+  <https://github.com/apluslms/a-plus-rst-tools/blob/master/directives/questionnaire.py>`_
 * Review the corresponding `form implementation in mooc-grader
-<https://github.com/apluslms/mooc-grader/blob/master/access/types/forms.py>`_.
+  <https://github.com/apluslms/mooc-grader/blob/master/access/types/forms.py>`_.
