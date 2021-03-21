@@ -16,6 +16,16 @@ Note: acos is an optional component used for interactive exercises.
 .. submit:: python 10
   :config: exercises/hello_python/config.yaml
 
+The following exercise is a simple Python grader utils example.
+
+.. submit:: pythonutils 10
+  :config: exercises/primes/config.yaml
+  :submissions: 99
+
+  In this exercise, you must implement the function ``is_prime``
+  that returns ``True`` if the argument (integer) is a prime number,
+  ``False`` otherwise.
+
 .. submit:: scala 10
   :config: exercises/hello_scala/config.yaml
 

@@ -160,7 +160,7 @@ This is the shell script which is run inside the grading container.
     grade
 
 Note! run.sh must have executing rights. That is, if you create the file from
-scratch, you must do the following:to
+scratch, you must do the following:
 
 1. Open the terminal.
 2. ``cd`` to the directory of the exercise.
@@ -173,18 +173,18 @@ Python-grader-utils
 Python-grader-utils (just "Graderutils") is a Python library for test suite
 management, file validation and test feedback formatting. It is used with
 Python programming exercises. The source code and
-documentation is here: https://github.com/Aalto-LeTech/python-grader-utils
+documentation is here: https://github.com/apluslms/python-grader-utils
 
 By default, Graderutils uses the configuration file **test_config.yaml** in the
 exercise directory. A simple test_config.yaml looks like this:
 
 .. code-block:: yaml
 
-    test_modules_data:
+    test_groups:
       - module: tests
-        description: Local tests
+        display_name: Local tests
       - module: grader_tests
-        description: Grader tests
+        display_name: Grader tests
 
     validation:
       - type: python_import
@@ -193,11 +193,11 @@ exercise directory. A simple test_config.yaml looks like this:
         file: primes.py
 
 
-**test_modules_data** defines which Python unit test files are executed.
+**test_groups** defines which Python unit test files are executed.
 
 **module** is the name of the Python file (without .py)
 
-**description** is the purpose of the file.
+**display_name** is the title for the test group.
 
 Typically there is file **tests.py** which is given to the student. It has some
 very basic unit tests. Typically some points are given for passing these

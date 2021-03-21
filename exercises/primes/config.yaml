@@ -1,0 +1,27 @@
+---
+title: Primes with Python grader utils
+description: A simple grading example with Python grader utils
+instructions: |
+    <p>
+        In this exercise, you must implement the function <var>is_prime</var>
+        that returns <var>True</var> if the argument (integer) is a prime number,
+        <var>False</var> otherwise.
+    </p>
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: primes.py
+
+# Skeleton code for the students.
+template_files:
+  - exercises/primes/primes.py
+
+# Release the model solution to students after the deadline.
+model_files:
+  - exercises/primes/model.py
+
+container:
+  image: apluslms/grade-python:3.7-3.3-3.2u4
+  mount: exercises/primes
+  cmd: graderutils
+
