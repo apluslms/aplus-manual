@@ -41,10 +41,14 @@ rst_prolog = '''.. |enroll-js-script| raw:: html
   <script src="/static/{course_key}/_static/enrollmentquiz.js"></script>
 '''.format(course_key=course_key)
 
-rst_prolog += '''.. role:: glyphicon-info-sign
+rst_prolog += '''
+.. role:: glyphicon-info-sign
   :class: glyphicon glyphicon-info-sign
-'''
-rst_prolog += '''.. role:: glyphicon-certificate
+.. role:: raw-html(raw)
+   :format: html
+.. role:: glyphicon-pencil
+  :class: glyphicon glyphicon-pencil
+.. role:: glyphicon-certificate
   :class: glyphicon glyphicon-certificate
 '''
 
@@ -76,6 +80,8 @@ extensions = [
 
 include_tab_js = True
 include_tab_css = True
+include_annotated_js = True
+include_annotated_css = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
