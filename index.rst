@@ -9,6 +9,7 @@ Other content is not visible in A+.
 
   overview/index
   set_up_environment/index
+  rst_guide/index
   style_aplus/index
   questionnaires/index
   programming_exercises/index
