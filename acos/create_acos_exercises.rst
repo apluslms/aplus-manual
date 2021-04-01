@@ -97,7 +97,7 @@ start configuring the Acos content package of the `drag and drop example <https:
 4. Change the name of the module from ``DragandDropExample`` to whichever name you prefer for your exercise, e.g.,
    ``DragandDropDataManagement``.
 
-After making all the changes mentioned above, your ``coffee.index`` should look something like :ref:`the image below <acos-changes>`.
+After making all the changes mentioned above, your ``index.coffee`` should look something like :ref:`the image below <acos-changes>`.
 Note that in this example, we did not change the meta-information, but you should change it.
 
 .. figure:: /images/gallery/index.coffee.png
