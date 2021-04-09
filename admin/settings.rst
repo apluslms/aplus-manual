@@ -41,6 +41,8 @@ The course settings page has several tabs.
 
 - The **Course** tab allows editing the course details.
 
+- The **Teachers** tab allows adding and removing teachers from the course.
+
 - The **Index** tab controls how the table of contents of the course is shown
   to the students.
 
