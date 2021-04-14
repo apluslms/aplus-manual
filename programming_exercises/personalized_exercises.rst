@@ -201,7 +201,9 @@ inside the *mooc-grader container* looks like this:
   The apluslms/run-mooc-grader container has the following software:
 
   - minimal `Debian <https://www.debian.org>_` ("slim" version)
-    - shells: bash, dash, sh
+
+    * shells: bash, dash, sh
+
   - GCC, G++ `(GNU C and C++ compilers) <http://gcc.gnu.org/>`_
   - libc6-dev (GNU C Library: Development Libraries and Header Files)
   - make (GNU utility for compilation)
