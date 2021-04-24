@@ -5,6 +5,7 @@ RST Guide
   :maxdepth: 2
 
   get_started
+  basic_syntax
 
 .. aplusmeta::
   :introduction: <h3>The reStructuredText Guide</h3>
