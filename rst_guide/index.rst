@@ -7,6 +7,7 @@ RST Guide
   get_started
   basic_syntax
   advanced_syntax
+  additional_resources_and_cheatsheet
 
 .. aplusmeta::
   :introduction: <h3>The reStructuredText Guide</h3>
