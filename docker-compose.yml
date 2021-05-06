@@ -32,3 +32,18 @@ services:
       - grader
     #volumes:
     #  - ./_data/acos/:/var/log/acos
+  radar:
+    image: apluslms/run-radar
+    ports:
+      - "8001:8001"
+      # Django debug
+      - "5678:5678"
+      # Celery debug
+      - "5679:5679"
+      # Flower (celery dashboard)
+      - "5555:5555"
+    depends_on:
+      - plus
+      - grader
+    volumes:
+      - data:/data
