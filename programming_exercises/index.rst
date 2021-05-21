@@ -11,3 +11,4 @@ Programming exercises
   graphics
   web_frontend
   ajax_exercise
+  submit_from_git

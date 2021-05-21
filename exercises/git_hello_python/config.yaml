@@ -1,0 +1,19 @@
+---
+title: (Git) Hello Python!
+description: A simple grading example with Python code that is submitted from a Git repository
+instructions: |
+    <p>
+        In this exercise you must implement a function <var>hello</var>
+        that returns a string "<samp>Hello Python!</samp>".
+    </p>
+    <p>
+        Place the function in <code>functions.py</code> at the root of your personal
+        project stored at <a href="https://version.aalto.fi">version.aalto.fi</a>.
+    </p>
+view_type: access.types.stdasync.acceptGitAddress
+#require_gitlab: version.aalto.fi
+
+container:
+  image: apluslms/grade-python:3.7-3.2.3-3.0
+  mount: exercises/git_hello_python
+  cmd: /exercise/run.sh
