@@ -26,7 +26,7 @@ from their personal Git repository.
   manual except that the submission is configured via git. Students must
   be instructed at the beginning of the course to add the grading account
   (linked via the RSA key) as a reporter to their project members.
-  With this configuration **student must use SSH URL**.
+  **Without ``require_gitlab`` configuration students must use SSH URLs**.
 
 .. submit:: python 10
   :config: exercises/git_hello_python/config.yaml
@@ -36,9 +36,8 @@ Other remarks
 .............
 
 *  The setting ``require_gitlab`` in ``/exercises/git_hello_python/config.yaml``
-   can check that the URL is a GitLab URL from the given hostname. Other URLs
-   are rejected. *This should also allow to input GitLab HTTP URLs but it seems
-   to be broken in May 2021.*
+   allows to input GitLab HTTP URLs for the given domain.
+   Presumably it should reject other domains but doesn't in May 2021.
 
 *  GitLab API token may be inserted as the file ``/exercises/git_hello_python/git_api_token``
    and ``gitlab-api-query`` uncommented in the script ``/exercises/git_hello_python/run.sh``.
