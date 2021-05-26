@@ -1,8 +1,11 @@
-## A course template for A-plus learning environment
+## Course development manual for A-plus learning environment
 
-This is a codebase which teaches how to make a new course on
+This is an A+ course which teaches how to make a new course on
 [A+ e-learning system](https://github.com/apluslms/a-plus>).
-A+ is currently used on many computer science courses on Aalto University.
+A+ is currently used on many computer science courses at Aalto University.
+
+There is a simple [template](https://github.com/apluslms/aplus-course-template)
+for starting new courses.
 
 ## Installation
 
@@ -15,7 +18,7 @@ the following software.
 
 All other software runs inside [Docker](https://www.docker.com/) containers.
 
-1. Git clone this repository. E.g.:
+1. Git clone this repository:
 
     `git clone https://github.com/apluslms/aplus-manual.git`
 
