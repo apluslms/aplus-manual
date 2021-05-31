@@ -2,14 +2,14 @@ test_groups:
   - module: grader_tests
     display_name: Grader tests
 
-feedback_template: feedback_plot_png.html
-
 validation:
   display_name: Input validation
   tasks:
     - type: python_syntax
       display_name: "The submitted file has correct Python syntax"
-      file: turtles.py
+      file: functions.py
     - type: python_import
-      display_name: "The submitted file is a Python module that can be imported"
-      file: turtles.py
+      display_name: "The submitted file is a Python module that can be imported and defines the function hello"
+      file: functions.py
+      attrs:
+        hello: function

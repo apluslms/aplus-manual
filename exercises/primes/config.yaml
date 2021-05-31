@@ -14,14 +14,13 @@ files:
 
 # Skeleton code for the students.
 template_files:
-  - exercises/primes/primes.py
+  - exercises/primes/primes_template.py
 
 # Release the model solution to students after the deadline.
 model_files:
   - exercises/primes/model.py
 
 container:
-  image: apluslms/grade-python:3.7-3.3-3.2u4
+  image: apluslms/grade-python:3.7-3.5-3.4
   mount: exercises/primes
   cmd: graderutils
-

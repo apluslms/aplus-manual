@@ -7,6 +7,6 @@ files:
     name: turtles.py
 
 container:
-  image: apluslms/grade-python:3.7-3.2.3-3.0
+  image: apluslms/grade-python:3.7-3.5-3.4
   mount: exercises/turtle_python
   cmd: /exercise/run.sh
