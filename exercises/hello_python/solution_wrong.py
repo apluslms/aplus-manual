@@ -1,1 +1,2 @@
-"And now for something completely different."
+def hello():
+    "And now for something completely different."
