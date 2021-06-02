@@ -6,6 +6,7 @@ Programming exercises
   instructions
   hello_world
   personalized_exercises
+  template_extension
   debugging_in_container
   radar
   graphics

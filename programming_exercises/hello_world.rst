@@ -52,7 +52,7 @@ The following occurs in the server side.
    submitted file. Information about the student is not sent to the mooc-grader.
 
 3. Mooc-grader knows from **exercises/hello_python/config.yaml** that it must
-   start a new instance of Docker container **apluslms/grade-python:3.6-2.7**.
+   start a new instance of Docker container **apluslms/grade-python:3.7-3.5-3.4**.
 
 4. Docker reads the `grade-python <https://github.com/apluslms/grade-python>`_
    container image and starts it. A minimal Debian GNU/Linux operating system
@@ -79,9 +79,10 @@ this:
   |   ├── sh
   ├── exercise
   |   ├── config.yaml
-  |   ├── graderunittest.py
-  |   ├── run.sh
-  |   └── tests.py
+  |   ├── test_config.yaml
+  |   ├── grader_tests.py
+  |   ├── model.py
+  |   └── solution_wrong.py
   ├── feedback
   |   └── grading-script-errors
   ├── gw
@@ -93,7 +94,7 @@ this:
       |   └── python3
       └── local
           └── lib
-              └── python3.5
+              └── python3.7
                   └── dist-packages
                       └── graderutils
                           └── graderunittest.py
@@ -101,7 +102,7 @@ this:
 
 The following steps are executed inside the grade-python container.
 
-6. Docker runs the command ``/gw`` insinde the grade-python container. This
+6. Docker runs the command ``/gw`` inside the grade-python container. This
    is the main grading script, "grade wrapper", and it comes from the
    grading-base container. The script is run in Dash (/bin/sh). The wrapper
    script will take care of redirecting output (stdout and stderr;
@@ -117,49 +118,20 @@ The following steps are executed inside the grade-python container.
    in grading-base.)
 
 7. Because the config.yaml file has the subsection
-   ``container: cmd``, the command ``/exercise/run.sh`` is given to the ``gw``
-   script as a command line parameter. In this case, ``gw`` executes the
-   run.sh file.
+   ``container: cmd``, the command ``graderutils`` is given to the ``gw``
+   script as a command line parameter. In this case, ``gw`` runs ``graderutils``.
 
-8. The first line of **/exercise/run.sh** is ``#!/bin/bash``, therefore
-   a BASH shell is invoked to interpret the script.
 
-9. run.sh line ``export PYTHONPATH=/submission/user`` is executed. The
-   environment variable `PYTHONPATH <https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH>`_
-   is set.
+8. The `Python-grader-utils <https://github.com/apluslms/python-grader-utils>`_
+   framework performs the validation tasks defined in **test_config.yaml**
+   before running the unittests in **grader_tests.py**.
 
-10. run.sh line ``capture python3 /exercise/tests.py`` is executed. Because the
-    `Dockerfile of the container apluslms/grade-python
-    <https://github.com/apluslms/grade-python/blob/master/Dockerfile>`_ has
-    ``FROM apluslms/grading-base:$BASE_TAG``, it is based on another container
-    `apluslms/grading-base <https://github.com/apluslms/grading-base>`_.
 
-11. BASH finds the ``capture`` command at ``/bin/capture``. It is another BASH
-    script which is coming from the grading-base container. (`contents of the
-    script
-    <https://github.com/apluslms/grading-base/blob/master/bin/capture>`_).
+9. The current working directory is still ``/submission/user`` when ``graderutils``
+   runs the unittests.
 
-12. The first line of **/bin/capture** is the hashbang ``#!/bin/sh``, therefore
-    a Dash shell is invoked to interpret the script. This script defines two
-    variables:
-
-    ::
-
-      out = /feedback/out
-      err = /feedback/err
-
-    The **capture** script sets up to redirect the output from the Python
-    intepreter (command ``python3``): `standard output stream
-    <https://en.wikipedia.org/wiki/Standard_streams>`_ to the file
-    **/feedback/out** and the standard error stream to the file
-    **/feedback/err**. Both streams must be saved, because when Python is
-    running unit tests, it prints into both the standard output and standard
-    error streams.
-
-13. Now the Python intepreter is called with the parameter ``/exercise/tests.py``.
-    The current working directory is still ``/submission/user``.
-
-14. Inside **tests.py**, the main level script is executed:
+10. Inside **grader_tests.py**, the main level script is **NOT** executed
+    (this is only for running the unittests in terminal):
 
     ::
 
@@ -167,68 +139,58 @@ The following steps are executed inside the grade-python container.
           unittest.main(testRunner=graderunittest.PointsTestRunner(verbosity=2))
 
     The `Python unit testing framework <https://docs.python.org/3/library/unittest.html>`_
-    is invoked. However, the *test runner* is set to
-    ``graderunittest.PointsTestRunner``. This is from the `Python-grader-utils
-    <https://github.com/Aalto-LeTech/python-grader-utils>`_, which is included
-    in the apluslms/grade-python container. The class *PointsTestRunner* is
-    in the file `graderunittest.py <https://github.com/Aalto-LeTech/python-grader-utils/blob/master/graderutils/graderunittest.py>`_.
+    loads the tests from the module **grader_tests.py** as defined in **test_config.yaml**.
+    However, the *test runner* is set to ``graderunittest.PointsTestRunner``.
+    This is from the `Python-grader-utils <https://github.com/apluslms/python-grader-utils>`_,
+    which is included in the apluslms/grade-python container. The class *PointsTestRunner* is
+    in the file `graderunittest.py <https://github.com/apluslms/python-grader-utils/blob/master/graderutils/graderunittest.py>`_.
     For the details, Graderutils is inside the grade-python container at
-    ``/usr/local/lib/python3.5/dist-packages/graderutils``.
+    ``/usr/local/lib/python3.7/dist-packages/graderutils``.
 
-15. The Python module *graderutils* runs a *PointsTestRunner* instance. First it
-    uses the Python unit test framework to run the methods
-    ``test_function()``, ``test_import()``, and ``test_return()`` from the
-    class ``TestHelloPython`` in the **tests.py**. These test methods are
-    recognized as unit tests and run in alphabetical order, because their name
+11. The Python module *graderutils* runs a *PointsTestRunner* instance. First it
+    uses the Python unit test framework to run the method ``test_return()``
+    from the class ``TestHelloPython`` in the **grader_tests.py**. The test
+    methods are recognized as unit tests and run in alphabetical order, because their name
     begins with ``test``. (Reference: `Python unittest library
     <https://docs.python.org/3/library/unittest.html#organizing-test-code>`_)
 
-16. The Python unit testing framework will print a typical unit test output
+12. The Python unit testing framework will print a typical unit test output
     into standard error stream. In the following snippet the solution was correct.
 
     ::
 
-      test_function (__main__.TestHelloPython)
-      Check hello function exists (1p) ... ok
-      test_import (__main__.TestHelloPython)
-      Import the functions module (1p) ... ok
-      test_return (__main__.TestHelloPython)
-      Check hello function return value (3p) ... ok
+      test_return (grader_tests.TestHelloPython)
+      Check hello function return value (5p) ... ok
 
       ----------------------------------------------------------------------
-      Ran 3 tests in 0.001s
+      Ran 1 test in 0.001s
 
       OK
 
-17. Because ``test_function`` has the docstring
-    ``"""Check hello function exists (1p)"""``, Graderutils will print this
-    *and* count one point if the test passes. Similarly, ``test_import`` also
-    yields one point if it passes. ``test_return`` will yield three points if
-    it passes, because its docstring ends with ``(3p)``.
+13. Because ``test_return`` has the docstring
+    ``"""Check hello function return value"""``, Graderutils will show this
+    as the title of the test. The decorator ``@points(5)`` grants five points
+    if the test passes.
 
-18. Graderutils prints the points data into standard output stream:
+14. Graderutils prints the points data into standard output stream:
 
     ::
 
       TotalPoints: 5
       MaxPoints: 5
 
-19. The ``capture`` script will redirect the output. This results in two files
+15. The ``capture`` script will redirect the output. This results in two files
     as promised.
 
     **/feedback/err**:
 
     ::
 
-      test_function (__main__.TestHelloPython)
-      Check hello function exists (1p) ... ok
-      test_import (__main__.TestHelloPython)
-      Import the functions module (1p) ... ok
-      test_return (__main__.TestHelloPython)
-      Check hello function return value (3p) ... ok
+      test_return (grader_tests.TestHelloPython)
+      Check hello function return value (5p) ... ok
 
       ----------------------------------------------------------------------
-      Ran 3 tests in 0.001s
+      Ran 1 test in 0.001s
 
       OK
 
@@ -239,49 +201,23 @@ The following steps are executed inside the grade-python container.
       TotalPoints: 5
       MaxPoints: 5
 
-20. Now ``capture`` exits. The execution continues in **run.sh**, which will
-    next call ``err-to-out`` (in /bin/err-to-out; `source here <https://github.com/apluslms/grading-base/blob/master/bin/err-to-out>`_).
-    This uses the ``_prewrap`` to add HTML <pre> tags and append the standard
-    error output after the standard output. Result:
 
-    **/feedback/out**:
-
-    ::
-
-      TotalPoints: 5
-      MaxPoints: 5
-
-      <pre>
-      test_function (__main__.TestHelloPython)
-      Check hello function exists (1p) ... ok
-      test_import (__main__.TestHelloPython)
-      Import the functions module (1p) ... ok
-      test_return (__main__.TestHelloPython)The
-      Check hello function return value (3p) ... ok
-
-      ----------------------------------------------------------------------
-      Ran 3 tests in 0.001s
-
-      OK
-      </pre>
-
-
-21. After the grading script has been executed, the grade wrapper script
+16. After the grading script has been executed, the grade wrapper script
     ``/gw`` will execute script **grade** (in ``/bin/grade``). This will parse
     the data in **/feedback/out**: first points, then the text feedback.
 
-22. The exit code from the grade wrapper script ``/gw`` is stored in
+17. The exit code from the grade wrapper script ``/gw`` is stored in
     ``/feedback/grading-script-errors``. The grade wrapper always exits with
     code 0.
 
 The rest is executed outside the grade-python container.
 
-23. The container grade-python shuts down. Points and feedback are sent to
+18. The container grade-python shuts down. Points and feedback are sent to
     mooc-grader.
 
-24. Mooc-grader forwards the data to A+.
+19. Mooc-grader forwards the data to A+.
 
-25. A+ records the points and feedback as new exercise submission, which is
+20. A+ records the points and feedback as new exercise submission, which is
     unique for this particular user, course, exercise and submission attempt.
     A+ scales the points according to the maximum points setting in the
     **config.yaml** of the exercise (if the maximum score given by the grader
@@ -289,7 +225,7 @@ The rest is executed outside the grade-python container.
 
 The rest is executed at the client side.
 
-26. The JavaScript at the web browser gets a response from A+ that the grading
+21. The JavaScript at the web browser gets a response from A+ that the grading
     is ready. Thus the JavaScript shows the points and the feedback. The feedback
     is just interpreted as HTML. This is why it had to be wrapped into HTML
     <pre> tags.

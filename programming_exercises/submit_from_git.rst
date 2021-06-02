@@ -5,7 +5,7 @@ A-plus supports exercises where student solutions are retrieved
 from their personal Git repository.
 
 .. warning::
-  
+
   To test grading from Git, **a private RSA key MUST be appened to
   the file at ``exercises/git_hello_python/git_rsa``.**
   In May 2021, the access script in `grading-base`_ requires RSA key
@@ -20,7 +20,7 @@ from their personal Git repository.
 .. _grading-base: https://github.com/apluslms/grading-base/blob/master/bin/git-clone-submission
 .. _version.aalto.fi: https://version.aalto.fi
 
-.. admonition::
+.. admonition:: Notice
 
   Following is the Hello Python -exercise previously presented in this
   manual except that the submission is configured via git. Students must

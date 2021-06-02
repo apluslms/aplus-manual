@@ -42,4 +42,4 @@ inspect the results in the Radar service.
   :radar_tokenizer: js
   :radar_minimum_match_tokens: 1
 
-.. _Radar: https://github.com/Aalto-LeTech/radar
+.. _Radar: https://github.com/apluslms/radar
