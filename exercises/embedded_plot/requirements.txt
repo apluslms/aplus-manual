@@ -1,0 +1,2 @@
+# Plotting library producing stand-alone plots that can be embedded as-is into HTML documents
+bokeh==0.13

@@ -14,4 +14,4 @@ files:
 container:
   image: apluslms/grade-python:3.7-3.5-3.4
   mount: exercises/hello_python
-  cmd: graderutils
+  cmd: /exercise/run.sh

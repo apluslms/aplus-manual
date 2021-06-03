@@ -11,5 +11,5 @@ cat results.json | python3 -m graderutils_format.html --full-document > results.
 ```
 You can now view `results.html` in a browser.
 
-If you don't want to render the [base template](../../graderutils_format/templates/base.html), you can omit `--full-document`.
-This renders only the feedback body using the default [feedback template](../../graderutils_format/templates/feedback.html).
+If you don't want to render the [base template](https://github.com/apluslms/python-grader-utils/blob/master/graderutils_format/templates/base.html), you can omit `--full-document`.
+This renders only the feedback body using the default [feedback template](https://github.com/apluslms/python-grader-utils/blob/master/graderutils_format/templates/feedback.html).

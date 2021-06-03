@@ -10,12 +10,12 @@
 #then
 if sudo-capture pre git-clone-submission /exercise/git_rsa functions.py
 then
-  
+
   # The functions.py picked above is now in /submission/user directory.
   # The rest is grading as usual.
-  
+
   export PYTHONPATH=/submission/user
-  capture python3 /exercise/tests.py
+  capture python3 /exercise/grader_tests.py
   err-to-out
 
 fi
