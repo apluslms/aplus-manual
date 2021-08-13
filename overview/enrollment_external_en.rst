@@ -1,19 +1,20 @@
-Enrollment
-==========
+Enrollment for external students
+================================
 
 This chapter is hidden from students.
 The enrollment exercise is normally opened as an independent exercise instead
 of embedded within the chapter.
 Course staff may view this chapter and the embedded exercise too.
 
-Enroll to the course by filling in this questionnaire.
+The next questionnaire is only for external students and should be removed
+from the course if the course is only offered to internal students.
 
 .. aplusmeta::
   :hidden:
 
-.. questionnaire:: enrollexercise 0
+.. questionnaire:: enrollexternalexercise 0
   :title: Enrollment
-  :status: enrollment
+  :status: enrollment_ext
   :submissions: 2
   :category: enrollment
 
@@ -23,20 +24,7 @@ Enroll to the course by filling in this questionnaire.
 
   .. include:: /enrollment/prev_degree_en.rst
 
-  .. include:: /enrollment/student_en.rst
-
-  .. include:: /enrollment/bachelor_en.rst
-
-  .. include:: /enrollment/other_programme_bsc_en.rst
-
-  .. include:: /enrollment/bsc_year_en.rst
-
-  .. include:: /enrollment/master_en.rst
-
-  .. include:: /enrollment/other_programme_msc_en.rst
-
-  .. include:: /enrollment/master_year_en.rst
-
   .. include:: /enrollment/honour_code_en.rst
 
   |enroll-js-script|
+
