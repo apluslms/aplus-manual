@@ -13,6 +13,7 @@ Other content is not visible in A+.
   questionnaires/index
   programming_exercises/index
   acos/index
+  interactive_code/index
   converting/index
   lti/index
   rubyric/index

@@ -1,0 +1,7 @@
+Guide
+^^^^^
+
+.. toctree::
+
+  guide
+  advanced
