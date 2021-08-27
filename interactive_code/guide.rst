@@ -51,7 +51,9 @@ For the teacher
 After setting everything up (see next sections for details), the teacher has to use two commands in their rst files. The first is ``thebe-button`` which inserts the button that activates the code-blocks. The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button is pressed.
 
 Here is an example of how an interactive code block together with a button could be added to a course module
-::
+
+.. code-block:: rst
+
   .. thebe-button:: Custom button text (defaults to "Run code")
   
   .. code-block:: python
@@ -66,7 +68,7 @@ If you want the output to be calculated and shown as soon as the kernel has been
 
 Installing dependencies
 -----------------------
-It is possible to set up the environment in which the interactive code runs. In the case of python, this is done by setting up a git repostiory with a requirements file. It is also possible to define your own modules in the repository, which can then be imported in interactive code segments. The repostiory is set with a configuration option, see the next section. For a minimal example, see `requirements <https://github.com/binder-examples/requirements>`_.
+It is possible to set up the environment in which the interactive code runs. In the case of python, this is done by setting up a git repository with a requirements file. It is also possible to define your own modules in the repository, which can then be imported in interactive code segments. The repository is set with a configuration option, see the next section. For a minimal example, see `requirements <https://github.com/binder-examples/requirements>`_.
 
 Configuration
 -------------

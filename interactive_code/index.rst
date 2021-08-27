@@ -1,5 +1,5 @@
-Guide
-^^^^^
+Interactive code blocks
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
 

@@ -27,7 +27,9 @@ The testing environment is provided by `mybinder <https://mybinder.org/>`_, but 
 Using other programming languages
 ---------------------------------
 Only support for python has been tested, but Jupyter supports other programming languages as well. As documented `here <https://sphinx-thebe.readthedocs.io/en/latest/configure.html#setting-the-kernel>`_, it is possible to set the kernel using a meta tag. In aplus, this would mean adding the lines
-::
+
+.. code-block:: rst
+
   .. meta::
     :thebe-kernel data-aplus=yes: <KERNEL-NAME-HERE>
 

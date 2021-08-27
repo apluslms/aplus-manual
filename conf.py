@@ -71,6 +71,7 @@ extensions = [
     'row',
     'tabs',
     'annotated',
+    'thebe',
 ]
 
 include_tab_js = True
