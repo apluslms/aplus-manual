@@ -1,3 +1,16 @@
+:index-mode: toc
+:enrollment-audience: all
+:view-content-to: public
+:course-description: <p><b>This is the A+ manual for teachers that describes how to develop courses on the platform.</b>
+    The git repository of this course is available at
+    <a target="_blank" href="https://github.com/apluslms/aplus-manual">https://github.com/apluslms/aplus-manual</a>.</p>
+    <p>See also:</p>
+    <ul>
+    <li><a target="_blank" href="https://github.com/apluslms/aplus-course-template">Template for new courses</a></li>
+    <li><a target="_blank" href="https://apluslms.github.io/">A+ project web site</a></li>
+    </ul>
+
+
 A+ Manual
 =========
 

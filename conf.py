@@ -139,3 +139,5 @@ html_theme_path = ['a-plus-rst-tools/theme']
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Disable automatic quote and dash conversions.
+smartquotes = False
