@@ -6,6 +6,7 @@ import plot_helpers
 
 
 class Test(unittest.TestCase):
+
     @points(10)
     def test_all_values_in_band(self):
         """solution.produce returns at least 80 values that are in the range [20, 80]"""

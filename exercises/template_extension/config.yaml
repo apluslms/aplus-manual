@@ -12,6 +12,6 @@ files:
     name: file.py
 
 container:
-  image: apluslms/grade-python:3.7-3.5-3.4
+  image: apluslms/grade-python:3.7-4.2-3.5
   mount: exercises/template_extension
   cmd: graderutils

@@ -15,8 +15,10 @@ def make_base_figure(iterations):
     figure.rect(50, 50, iterations, 80 - 20, color="green", fill_alpha=0.1)
     return figure
 
+
 def add_circle(figure, x, y, color):
     figure.circle(x, y, line_alpha=0.8, fill_alpha=0.5, color=color, radius=1)
+
 
 def make_html_plot(figure):
     """

@@ -51,16 +51,10 @@ The following example shows how to embed arbitrary JavaScript into the feedback 
 .. figure:: /images/embedded_plot.png
   :align: center
 
-You need to first install the plotting library used by this example:
-``pip install -r requirements.txt``
-
-Then run the tests and render the results into HTML:
-``python3 -m graderutils.main test_config.yaml --develop-mode | python3 -m graderutils_format.html --full-document > results.html``
-You can now view **results.html** in a browser.
-
 .. submit:: plot 10
   :config: exercises/embedded_plot/config.yaml
   :title: Embedding a plot
 
-  A container image with ``bokeh`` installed does not currently exist,
-  so this exercise cannot be submitted.
+  Notice that this exercise uses the Docker image ``apluslms/grade-python:math-3.7-4.2-3.5`` because it includes the plotting library Bokeh.
+
+  You can submit the file **solution_wrong.py** to see the feedback.

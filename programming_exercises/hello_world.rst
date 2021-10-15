@@ -42,7 +42,7 @@ The following occurs in the server side.
    submitted file. Information about the student is not sent to the mooc-grader.
 
 3. Mooc-grader knows from **exercises/hello_python/config.yaml** that it must
-   start a new instance of Docker container **apluslms/grade-python:3.7-3.5-3.4**.
+   start a new instance of Docker container **apluslms/grade-python:3.7-4.2-3.5**.
 
 4. Docker reads the `grade-python <https://github.com/apluslms/grade-python>`_
    container image and starts it. A minimal Debian GNU/Linux operating system

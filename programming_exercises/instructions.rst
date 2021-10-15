@@ -72,7 +72,7 @@ a copy of ``exercises/hello_python/config.yaml``.
       name: functions.py
 
   container:
-    image: apluslms/grade-python:3.6-2.7
+    image: apluslms/grade-python:3.7-4.2-3.5
     mount: exercises/hello_python
     cmd: /exercise/run.sh
 
@@ -100,12 +100,13 @@ Explanation of the settings:
 - container
     This specifies the Docker container which is used for grading.
 
-    **image** is the container image. The value ``apluslms/grade-python:3.6-2.7`` means
+    **image** is the container image. The value ``apluslms/grade-python:3.7-4.2-3.5`` means
     that the container is grade-python made by organisation apluslms. The container
-    has Python version 3.6 installed and it is based on version 2.7 of the
-    "grading-base" container. For full documentation, see the repositories for
-    `grading-base <https://github.com/apluslms/grading-base>`_ and
-    `grade-python <https://github.com/apluslms/grade-python>`_.
+    has Python version 3.7 and python-grader-utils 4.2 installed and it is based on version
+    3.5 of the "grading-base" container. For full documentation, see the repositories for
+    `grading-base <https://github.com/apluslms/grading-base>`_,
+    `grade-python <https://github.com/apluslms/grade-python>`_ and
+    `python-grader-utils <https://github.com/apluslms/python-grader-utils>`_.
 
     **mount** is the relative path of the directory which will be mounted to the directory
     ``/exercise`` inside the container (read only). This directory should contain
@@ -153,11 +154,13 @@ This is the shell script which is run inside the grading container.
     export PYTHONPATH=/submission/user
 
     # "capture" etc description in https://github.com/apluslms/grading-base
+    capture python3 /exercise/grader_tests.py
 
-    capture python3 /exercise/tests.py
-
+    # Python unit tests write output both to standard output stream and to
+    # standard error output stream. The command 'err-to-out' appends the contents
+    # of the error stream to the output stream so that the student can see all the
+    # output the tests have created.
     err-to-out
-    grade
 
 Note! run.sh must have executing rights. That is, if you create the file from
 scratch, you must do the following:
@@ -181,23 +184,33 @@ exercise directory. A simple test_config.yaml looks like this:
 .. code-block:: yaml
 
     test_groups:
-      - module: tests
+      - module: local_tests
         display_name: Local tests
       - module: grader_tests
         display_name: Grader tests
 
     validation:
-      - type: python_import
-        file: primes.py
-      - type: python_syntax
-        file: primes.py
+      display_name: Input validation
+      tasks:
+        - type: python_syntax
+          display_name: "The submitted file has correct Python syntax"
+          file: primes.py
+        - type: python_import
+          display_name: "The submitted file is a Python module that can be imported and defines the function is_prime"
+          file: primes.py
+          attrs:
+            is_prime: function
 
+    testmethod_timeout: 5
 
 **test_groups** defines which Python unit test files are executed.
 
-**module** is the name of the Python file (without .py)
+**module** is the name of the Python file (without .py).
 
 **display_name** is the title for the test group.
+
+**testmethod_timeout** defines the maximum amount of time in seconds for how long each test method
+is allowed to run before it is timed out by Graderutils.
 
 Typically there is file **tests.py** which is given to the student. It has some
 very basic unit tests. Typically some points are given for passing these
@@ -210,12 +223,14 @@ submitted files before the unit tests are executed.
 
 In the example above, Graderutils checks two items according to the validation settings:
 
-1. Attempt to import the file as a Python module and catch all exceptions
-   during import. Show exceptions with the error template if there are any.
-
-2. Read the contents of file, attempt to parse the contents using ast.parse
+1. Read the contents of file, attempt to parse the contents using ast.parse
    and catch all exceptions. Show exceptions with the error template if
    there are any.
+
+2. Attempt to import the file as a Python module and catch all exceptions
+   during import. Also check that a function called "is_prime" is defined.
+   Show exceptions with the error template if there are any.
+
 
 With Graderutils, it is possible to forbid some Python syntax or libraries in
 some particular exercise, for example, deny using the default sort function of Python
@@ -272,4 +287,3 @@ Probable causes:
 
 
 If that does not help, debug the exercise grader inside the grading container.
-
