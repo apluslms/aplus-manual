@@ -59,6 +59,7 @@ def main():
         all_rolls = []
         for i in range(num_rolls):
             all_rolls.append(roll_dice_once(num_dice))
+        input("Press Enter to see the results.\n")
         print_results(all_rolls)
         print("Saving results to file 'results.csv'...")
         save_results(all_rolls)

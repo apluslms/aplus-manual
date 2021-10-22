@@ -1,6 +1,13 @@
 import random
 
 
+def ask_user(): # <-- mistake here
+    seed = int(input("What is the seed for the dice?\n"))
+    num_dice = int(input("How many dice are rolled?\n"))
+    num_rolls = int(input("How many times should the dice be rolled?\n"))
+    return seed, num_dice, num_rolls
+
+
 def init_dice(seed):
     random.seed(seed)
 
@@ -49,10 +56,8 @@ def save_results(all_rolls):
 
 
 def main():
-    seed = int(input("What is the seed for the dice?\n"))
+    seed, num_dice, num_rolls = ask_user() # <-- mistake here
     init_dice(seed)
-    num_dice = int(input("How many dice are rolled?\n"))
-    num_rolls = int(input("How many times should the dice be rolled?\n"))
     if num_dice > 0 and num_rolls > 0:
         print("Rolling dice...")
         all_rolls = []
@@ -65,4 +70,4 @@ def main():
     print("Done!")
 
 
-#main() # <-- mistake here
+main()

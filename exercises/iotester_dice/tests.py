@@ -61,16 +61,19 @@ inputs_main = [
         510,
         3,
         2,
+        ENTER, # Represents the user pressing the Enter key without inputting any characters (alias for '\n')
     ],
     [ # 3 rolls, 2 dice, random seed
         random.randint(100, 5000),
         2,
         3,
+        ENTER,
     ],
     [ # 4-5 rolls, 2-3 dice, random seed
         random.randint(100, 5000),
         random.randint(2, 3),
         random.randint(4, 5),
+        ENTER,
     ],
 ]
 
@@ -91,8 +94,9 @@ class TestCaseDice(unittest.TestCase):
         # Do not forget this, otherwise weird things might happen.
         iotester.restore()
 
+    # Make sure that all the points add up to the maximum amount defined in the exercise RST file
 
-    @points(20)
+    @points(10)
     def test_01_init_dice(self):
         """Test function 'init_dice'"""
         description1 = "Checking that you don't print anything\nin function 'init_dice'."
@@ -102,7 +106,7 @@ class TestCaseDice(unittest.TestCase):
             iotester.random_state_test(func_name="init_dice", args=args, desc=description2)
 
 
-    @points(20)
+    @points(15)
     def test_02_roll_dice_once(self):
         """Test function 'roll_dice_once'"""
         description1 = "Checking that you don't print anything\nin function 'roll_dice_once'."
@@ -113,7 +117,7 @@ class TestCaseDice(unittest.TestCase):
             iotester.return_value_test(func_name="roll_dice_once", args=args)
 
 
-    @points(20)
+    @points(15)
     def test_03_print_results_text_and_numbers(self):
         """Test text and numbers in the output of function 'print_results'"""
         # This test will pass if the student program's output has correct text and numbers.
@@ -123,7 +127,7 @@ class TestCaseDice(unittest.TestCase):
             iotester.numbers_test(func_name="print_results", args=args, compare_formatting=True)
 
 
-    @points(20)
+    @points(10)
     def test_04_print_results_whitespace(self):
         """Test whitespace in the output of function 'print_results'"""
         # This test will only pass if the student program's output has correct text,
@@ -132,7 +136,7 @@ class TestCaseDice(unittest.TestCase):
             iotester.complete_output_test(func_name="print_results", args=args)
 
 
-    @points(20)
+    @points(15)
     def test_05_save_results(self):
         """Test function 'save_results'"""
         description = "Checking that you don't print anything\nin function 'save_results'."
@@ -143,7 +147,7 @@ class TestCaseDice(unittest.TestCase):
             iotester.created_file_test(file_name="results.csv", func_name="save_results", args=args)
 
 
-    @points(20)
+    @points(25)
     def test_06_main(self):
         """Test function 'main'"""
         description = (
@@ -156,3 +160,10 @@ class TestCaseDice(unittest.TestCase):
             iotester.random_state_test(func_name="main", inputs=inputs, desc=description)
             iotester.complete_output_test(func_name="main", inputs=inputs)
             iotester.created_file_test(file_name="results.csv", func_name="main", inputs=inputs)
+
+
+    @points(10)
+    def test_07_amount_of_functions(self):
+        """Test the amount of functions you have defined"""
+        # Check that the student has defined exactly five functions:
+        iotester.amount_of_functions_test(op="==", amount=5)

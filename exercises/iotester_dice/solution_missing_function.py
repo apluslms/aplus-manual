@@ -1,8 +1,8 @@
 import random
 
 
-def init_dice(seed):
-    random.seed(seed)
+#def init_dice(seed): # <-- mistake here
+#    random.seed(seed)
 
 
 def roll_dice_once(num_dice):
@@ -50,7 +50,7 @@ def save_results(all_rolls):
 
 def main():
     seed = int(input("What is the seed for the dice?\n"))
-    init_dice(seed)
+    random.seed(seed) # <-- mistake here
     num_dice = int(input("How many dice are rolled?\n"))
     num_rolls = int(input("How many times should the dice be rolled?\n"))
     if num_dice > 0 and num_rolls > 0:
@@ -65,4 +65,4 @@ def main():
     print("Done!")
 
 
-#main() # <-- mistake here
+main()
