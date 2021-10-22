@@ -77,7 +77,8 @@ is given. Google's ``diff_match_patch`` is used for the detection and coloring o
 Tools for testing things like return values and classes/objects are also available, among
 other things.
 
-Below are some examples of the useful tests/tools:
+List of useful tests/tools
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **text_test**
 
@@ -156,7 +157,7 @@ Below are some examples of the useful tests/tools:
     Ignore everything except numbers.
     Match integers, decimals and numbers such as +1, 2e9, +2E+09, -2.0e-9.
 
-    Parameters (some of them already explained earlier):
+    Parameters (some of these already explained earlier):
 
     - ``func_name`` (default: ``""``)
 
@@ -186,7 +187,7 @@ Below are some examples of the useful tests/tools:
     Run a function from the model program and the student program and compare the return values of
     the two functions.
 
-    Parameters (some of them already explained earlier):
+    Parameters (some of these already explained earlier):
 
     - ``func_name`` (default: ``""``)
 
@@ -269,7 +270,7 @@ Below are some examples of the useful tests/tools:
     program does not create a file with the correct name specified by parameter ``file_name``
     (see below).
 
-    Parameters (some of them already explained earlier):
+    Parameters (some of these already explained earlier):
 
     - ``file_name`` (required)
 
@@ -325,9 +326,10 @@ Below are some examples of the useful tests/tools:
     Test that the student program contains the required amount of functions.
 
     ``NOTE:`` Breaks if `graderutils flag <https://github.com/apluslms/grade-python#utility-commands>`_
-    ``--use-rpyc`` is used while the module contains custom classes.
+    ``--use-rpyc`` is used in **config.yaml** and the student's Python module contains custom
+    classes.
 
-    Parameters (some of them already explained earlier):
+    Parameters (some of these already explained earlier):
 
     - ``op`` (required)
 
@@ -342,3 +344,220 @@ Below are some examples of the useful tests/tools:
         Integer that the number of found functions is compared against using operator ``op``.
 
     - ``desc`` (default: ``""``)
+
+- **class_structure_test**
+
+    Create an instance of the model class and the student class and compare the structure of the classes and objects.
+
+    ``NOTE:`` Breaks if `graderutils flag <https://github.com/apluslms/grade-python#utility-commands>`_
+    ``--use-rpyc`` is used in **config.yaml**.
+
+    Parameters (some of these already explained earlier):
+
+    - ``class_name`` (required)
+
+        Name of the class to be tested. This is shown in the feedback.
+
+    - ``args`` (default: ``()``)
+
+        Tuple or list of positional arguments that are used to initialize an instance of class with
+        name ``class_name``. This is shown in the feedback.
+
+    - ``kwargs`` (default: ``{}``)
+
+        Dictionary of keyword arguments that are used to initialize an instance of class with
+        name ``class_name``. This is shown in the feedback.
+
+    - ``checks`` (default: ``[]``)
+
+        List containing strings (see below), which specify the tests performed on the class structure.
+
+        ``"object_attrs"``: Check required instance/object attributes exist and that they are of the correct type
+
+        ``"class_attrs"``: Check required methods, functions and variables exist in the class and that they are of the correct type
+
+        ``"no_extra_object_attrs"``: Check that no extra instance/object attributes are found
+
+        ``"no_extra_class_attrs"``: Check that no extra methods, functions or variables are found in the class
+
+    - ``desc`` (default: ``""``)
+
+- **class_init_test**
+
+    Create an instance of the model class and the student class by running their ``__init__()``
+    functions and compare the values assigned to the objects' attributes.
+    The output of ``__init__()`` can also be tested in different ways by setting the corresponding
+    parameters to ``True``.
+
+    ``NOTE:`` Breaks if `graderutils flag <https://github.com/apluslms/grade-python#utility-commands>`_
+    ``--use-rpyc`` is used in **config.yaml**.
+
+    Parameters (some of these already explained earlier):
+
+    - ``class_name`` (required)
+
+        Name of the class to be tested. This is shown in the feedback.
+
+    - ``args`` (default: ``()``)
+
+        Tuple or list of positional arguments that are used to initialize an instance of class with
+        name ``class_name``. This is shown in the feedback.
+
+    - ``kwargs`` (default: ``{}``)
+
+        Dictionary of keyword arguments that are used to initialize an instance of class with
+        name ``class_name``. This is shown in the feedback.
+
+    - ``run_text_test`` (default: ``False``)
+
+        Run **text_test** on ``__init__()`` if set to ``True``.
+
+    - ``run_numbers_test`` (default: ``False``)
+
+        Run **numbers_test** on ``__init__()`` if set to ``True``.
+
+    - ``run_complete_output_test`` (default: ``False``)
+
+        Run **complete_output_test** on ``__init__()`` if set to ``True``.
+
+    - ``run_no_output_test`` (default: ``False``)
+
+        Run **no_output_test** on ``__init__()`` if set to ``True``.
+
+    - ``compare_capitalization`` (default: ``False``)
+
+    - ``compare_formatting`` (default: ``False``)
+
+    - ``desc`` (default: ``""``)
+
+- **class_str_call_test**
+
+    Test that an object's ``__str__()`` method is not called directly,
+    i.e., check that ``print(obj)`` is used instead of ``print(obj.__str__())``.
+
+    Parameters:
+
+    - ``object_name`` (required)
+
+        Name of the object that is used in the feedback text if the test fails.
+
+- **feedback**
+
+    Return a decorator for displaying better feedback than just the ``AssertionError`` message or
+    traceback. Do not call other ``IOTester`` tests inside a method that has been decorated with
+    this.
+    Can be used to improve the feedback of a normal test method that does basic assertion tests.
+
+    Parameters (some of these already explained earlier):
+
+    - ``func_name`` (default: ``""``)
+
+        Only used for showing in the feedback.
+
+    - ``args`` (default: ``()``)
+
+        Only used for showing in the feedback.
+
+    - ``kwargs`` (default: ``{}``)
+
+        Only used for showing in the feedback.
+
+    - ``inputs`` (default: ``[]``)
+
+    - ``simple`` (default: ``False``)
+
+        Produce more simple feedback if set to ``True``.
+
+    - ``show_used_inputs_and_params`` (default: ``False``)
+
+        Show ``inputs``, ``args`` and ``kwargs`` in the feedback if set to ``True``.
+
+    - ``message`` (default: ``""``)
+
+        Override the default feedback hint message with a custom one.
+
+        The default message is
+        ``Your program did not pass the assertion (comparison) of values.`` if parameter ``simple``
+        is set to ``False`` and ``Your program did not pass this test.`` if parameter ``simple``
+        is set to ``True``.
+
+    - ``desc`` (default: ``""``)
+
+- **model_directory**
+
+    Context manager for moving to the model directory so that model modules can be imported in test
+    methods that use the **feedback** decorator. Use together with **feedback** decorator in unit
+    tests that need to manually use model.
+
+Settings
+^^^^^^^^
+In order to use ``IOTester`` one must first create an instance of ``IOTester``. This is done in the
+beginning of the unit tests in the following way:
+
+.. code-block:: python
+
+  iotester = IOTester()
+
+Optionally, a dictionary of settings can be passed as parameter ``settings``.
+Below you can see the default settings.
+
+.. code-block:: python
+
+  DEFAULT_SETTINGS = {
+      # Maximum amount that floating-point numbers are allowed to differ (+-)
+      # in submission output/return value and model output/return value
+      "max_float_delta": 0.02,
+      # Maximum amount that integer numbers are allowed to differ (+-)
+      # in submission output/return value and model output/return value
+      "max_int_delta": 0,
+      # Maximum student/model program execution time in seconds (integer)
+      "max_exec_time": 30,
+      # Characters that should not trigger an AssertionError when comparing outputs
+      "ignored_characters": ['.', ',', '!', '?', ':', ';', '\''],
+      # Libraries that are allowed to be imported. Use list ['*'] to whitelist all libraries.
+      "import_whitelist": [
+          "collections",
+          "copy",
+          "csv",
+          "datetime",
+          "decimal",
+          "functools",
+          "itertools",
+          "math",
+          "numbers",
+          "random",
+          "re",
+          "statistics",
+          "string",
+          "time",
+      ],
+      # Libraries that are not allowed to be imported. Use list ['*'] to blacklist all libraries.
+      "import_blacklist": [],
+      # Files that are allowed to be opened. Use list ['*'] to whitelist all files.
+      "open_whitelist": [],
+      # Files that are not allowed to be opened. Use list ['*'] to blacklist all files.
+      "open_blacklist": ['*'],
+  }
+
+For example, you can override the default ``max_float_delta`` setting value of 0.02 with 0.01 if
+you initialize ``IOTester`` as below:
+
+.. code-block:: python
+
+  # Only max_float_delta setting will be changed. Other settings will stay as defaults.
+  iotester = IOTester(settings={"max_float_delta": 0.01})
+
+
+Example exercises using IOTester
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. submit:: iotester_exercise1 120
+  :config: exercises/iotester_dice/config.yaml
+  :title: Dice
+
+  In this exercise, dice are rolled using Python's pseudo-random number generator.
+  The program asks the user for input and it outputs the results of the dice rolls.
+  The results are also saved into a csv file.
+
+  You can submit the files **solution_*.py** to see the feedback generated by ``IOTester`` in
+  different scenarios.
