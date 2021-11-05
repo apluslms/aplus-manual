@@ -4,6 +4,7 @@ import random
 from graderutils.graderunittest import points
 from graderutils.iotester import IOTester, ENTER
 
+
 # Name of the Python module that is going to be tested
 module_to_test = "dice"
 
@@ -61,7 +62,7 @@ inputs_main = [
         510,
         3,
         2,
-        ENTER, # Represents the user pressing the Enter key without inputting any characters (alias for '\n')
+        ENTER, # Represents the user pressing the Enter key without inputting any characters (equal to string "[iotester-enter]")
     ],
     [ # 3 rolls, 2 dice, random seed
         random.randint(100, 5000),
@@ -94,7 +95,8 @@ class TestCaseDice(unittest.TestCase):
         # Do not forget this, otherwise weird things might happen.
         iotester.restore()
 
-    # Make sure that all the points add up to the maximum amount defined in the exercise RST file
+    # In this exercise the maximum amount of points is set to 100 in the exercise RST file,
+    # so we make sure that all the points from each test method add up to 100.
 
     @points(10)
     def test_01_init_dice(self):

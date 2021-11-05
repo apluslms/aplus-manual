@@ -1,0 +1,3 @@
+test_groups:
+  - module: tests
+    display_name: Grader tests
