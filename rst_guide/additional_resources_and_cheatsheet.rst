@@ -1,5 +1,5 @@
-Additional resources and CheatSheet
-===================================
+Additional resources and cheat sheet
+====================================
 
 .. styled-topic::
 
@@ -10,10 +10,10 @@ Additional resources and CheatSheet
       This section will show the most common directives in RST
 
       * `RST and Sphinx Official Documentation`_
-      * `CheatSheet`_
+      * `Cheat Sheet`_
 
   Material:
-      You will need a copy of the `course template`_.
+      You may use the A+ `course template`_ as a starting point for creating a new course.
 
   Requirements:
       You need to have a good understanding of RST.
@@ -41,8 +41,8 @@ websites.
 
 ::::
 
-CheatSheet
-----------
+Cheat Sheet
+-----------
 
 Sometimes you will need to have a sheet with the list of directives that you can use. For that, you
 can check the links below.
@@ -51,6 +51,6 @@ can check the links below.
 * https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
 
 
-.. The following links are being used in this document, and therefore, these should not been deleted.
+.. The following links are being used in this document, and therefore, these should not be deleted.
 
-.. _`Course Template`: https://github.com/apluslms/course-templates/
+.. _`Course Template`: https://github.com/apluslms/aplus-course-template/

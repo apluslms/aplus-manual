@@ -2,7 +2,7 @@ Advanced Syntax
 ===============
 
 :Author: Aplus Team
-:Last-modified: |today|
+:Last-modified: 11.11.2021
 
 .. styled-topic::
 
@@ -38,13 +38,24 @@ share blocks of code with highlighted syntax, and add downloadable files.
 
 Structural elements
 --------------------
+
 Toctree
 .......
+
 Toctree stands for "Table of Content Tree", and it is perhaps one of the most important directives
 for creating navigable content. This directive allows to organise and include the files that are
-going to be part of the course. Therefore, the files that are not included in any toctree directive will not be  rendered and therefore, will not be visible in the web browser.
+going to be part of the course.
+Therefore, the files that are not included in any toctree directive will not be  rendered and therefore, will not be visible in the web site.
 
-The toctree directive can point to other toctree directives and thus create the tree structure of the files. Typically, each course has an ``index.rst`` file with the toctree directive which points to all the modules ``index.rst`` files. Subsequently, each module ``index.rst`` file point to the chapters of the course. This grouping allows to have a tree structure in the course content and organize the course more logically. :ref:`The image below <toctree-visualization>` shows the folder structure Aplus manual of the  manual and the way it is rendered in the web browser. The ``index.rst`` file located in the line 2 contains the ``toctree`` with all the modules of the course, while the ``index.rst`` files presented in lines 3, 9, 16 and 22 contain the ``index.rst`` files with the ``toctree`` that points each chapter inside such module.
+The toctree directive can point to other toctree directives and thus create the tree structure of the files.
+Typically, each course has an ``index.rst`` file with the toctree directive which points to each module's ``index.rst`` file.
+Subsequently, each module ``index.rst`` file points to the chapters of the module.
+This grouping allows to have a tree structure in the course content and organize the course more logically.
+:ref:`The image below <toctree-visualization>` shows the directory structure of the Aplus manual and
+the way it is rendered in the web browser.
+The ``index.rst`` file located in the line 2 contains the ``toctree`` with all the modules of the course,
+while the ``index.rst`` files presented in lines 5, 12, 18, 21 and 24 contain the ``index.rst`` files
+with the ``toctree`` directives that point to each chapter inside the module.
 
 .. div:: row contrast-tree
   :name: toctree-visualization
@@ -54,12 +65,13 @@ The toctree directive can point to other toctree directives and thus create the 
     .. code-block:: bash
       :linenos:
       :caption: Folder structure section of the Aplus manual.
-      :emphasize-lines: 1,3,9,16,22
+      :emphasize-lines: 2,5,12,18,21,24
 
       aplus-manual
       ├── index.rst
       ├── overview
       │   ├── gallery.rst
+      ├── ├── index.rst
       ├── set_up_environment
       │   ├── first_steps.rst
       │   ├── git.rst
@@ -92,14 +104,15 @@ The toctree directive can point to other toctree directives and thus create the 
 
 .. warning::
 
-    * Only the *RST* files included inside a toctree directive are render in the course menu.
-    * The toctree directive refers to the files by name, but such names should not include the files extension, i.e. ``.rst``.
-    * You should use relative document names (not beginning with a slash). The toctree should be relative to the files. You can review or documentation about the `structure of the course <https://plus.cs.aalto.fi/aplus-manual>`_.
+    * Only the *RST* files included inside a toctree directive are included in the course structure.
+    * The toctree directive refers to the files by name, but such names should **not** include the file extension, i.e. ``.rst``.
+    * You should use relative document names (not beginning with a slash). The toctree should be relative to the files. You can review our documentation about the `structure of the course <https://plus.cs.aalto.fi/aplus-manual>`_.
 
 Toctree :important:`syntax` consists of the ``toctree`` directive, optional directive options and the list of files that will be included in the tables of content.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
+
 .. rst-tabs::
 
   .. tab-content:: tab1-toctree
@@ -113,7 +126,7 @@ Toctree :important:`syntax` consists of the ``toctree`` directive, optional dire
 
           get_started
           basic_syntax
-          extended_syntax
+          advanced_syntax
           additional_resources_and_cheatsheet
 
   .. tab-content:: tab2-toctree
@@ -126,18 +139,19 @@ Toctree :important:`syntax` consists of the ``toctree`` directive, optional dire
       :raw-html:`<ul class="toc">`
       :raw-html:`<li><a href="/def/current/rst_guide/get_started/" ">3.1 Get Started</a></li>`
       :raw-html:`<li><a href="/def/current/rst_guide/basic_syntax/">3.2 Basic Syntax</a></li>`
-      :raw-html:`<li><a href="/def/current/rst_guide/extended_syntax/">3.3 Extended Syntax</a></li>`
-      :raw-html:`<li><a href="/def/current/rst_guide/additional_resources_and_cheatsheet/">3.3 Extended Syntax</a></li>`
+      :raw-html:`<li><a href="/def/current/rst_guide/advanced_syntax/">3.3 Advanced Syntax</a></li>`
+      :raw-html:`<li><a href="/def/current/rst_guide/additional_resources_and_cheatsheet/">3.4 Additional resources and cheat sheet</a></li>`
       :raw-html:`</ul></div>`
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `transitions <https://www.sphinx-doc.org/en/1.6/markup/toctree.html?highlight=toctree#the-toc-tree>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree>`_.
 
 |
 
 Container
----------
+.........
+
 The container represents an HTML ``div`` with the container class in it. It can be used to group certain body elements. It can also be used to add some styles to your course.
 
 .. warning::
@@ -146,8 +160,9 @@ The container represents an HTML ``div`` with the container class in it. It can 
 
 Images and figures :important:`syntax` consist of the directive name, the image URI, and some directive options.
 
-:glyphicon-console:`\ ` Code example
-''''''''''''''''''''''''''''''''''''
+Code example
+''''''''''''
+
 .. rst-tabs::
 
   .. tab-content:: tab1-container
@@ -184,7 +199,7 @@ Images and figures :important:`syntax` consist of the directive name, the image 
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `images <https://docutils.sourceforge.io/docs/ref/rst/directives.html#images>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `containers <https://docutils.sourceforge.io/docs/ref/rst/directives.html#container>`_.
 
 |
 
@@ -192,15 +207,22 @@ Body elements
 -------------
 Images
 ......
-In order to include images in *RST*, it is possible to make use of two *RST* directives figures and images. Both of them have similar options. However, the figure directive couple more options that the image directive.
+In order to include images in *RST*, it is possible to make use of two *RST* directives, ``figure`` and ``image``.
+Both of them have similar options.
+However, the figure directive has a couple more options than the image directive.
 
-Images are a great tool to illustrate some step by step procedures. In addition, you can make use of animated images to make your content even more dynamic. `Animated Gifs <https://gifs-as-documentation.readthedocs.io/en/latest/>`_. Note , that the example below make use of the ``div`` directive to group the images in the same line. You can always make use of the bootstrap classes to organize images and any other components in your course.
+Images are a great tool to illustrate some step by step procedures.
+In addition, you can make use of animated images to make your content even more dynamic:
+`animated gifs <https://gifs-as-documentation.readthedocs.io/en/latest/>`_.
+Note, that the example below makes use of the ``div`` directive to group the images in the same line.
+You can always make use of the Bootstrap classes to organize images and any other components in your course.
 
 .. warning::
 
     * You can use relative or absolute paths to your images.
 
-Images and figures :important:`syntax` consist of the directive name, the image URI, and some directive options. Read the official documentation for adjusting th image size and the aligment.
+The :important:`syntax` of images and figures consists of the directive name, the image URI, and some directive options.
+Read the official documentation for adjusting the image size and the aligment.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
@@ -240,12 +262,12 @@ Images and figures :important:`syntax` consist of the directive name, the image 
 
       :raw-html:`<div class="row">`
       :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<a class="img-responsive img-circle reference internal image-reference" href="http://localhost:8080/static/default/_images/Linux.svg"><img alt="This is a sample image." class="img-responsive img-circle align-center" src="http://localhost:8080/static/default/_images/Linux.svg" style="width: 380px;"></a>`
+      :raw-html:`<a class="img-responsive img-circle reference internal image-reference" href="http://localhost:8080/static/default/_images/snippets.png"><img alt="This is a sample image." class="img-responsive img-circle align-center" src="http://localhost:8080/static/default/_images/snippets.png" style="width: 380px;"></a>`
       :raw-html:`<p>This is not a caption, this is only a paragraph below the image</p>`
       :raw-html:`</div>`
       :raw-html:`<div class="col-12 col-md-6">`
       :raw-html:`<div class="figure align-center" id="id8">`
-      :raw-html:`<a class="img-responsive img-thumbnail reference internal image-reference" href="http://localhost:8080/static/default/_images/Linux.svg"><img alt="This is a sample figure." class="img-responsive img-thumbnail" src="http://localhost:8080/static/default/_images/Linux.svg" style="width: 326.40000000000003px; height: 244.8px;"></a>`
+      :raw-html:`<a class="img-responsive img-thumbnail reference internal image-reference" href="http://localhost:8080/static/default/_images/snippets.png"><img alt="This is a sample figure." class="img-responsive img-thumbnail" src="http://localhost:8080/static/default/_images/snippets.png" style="width: 326.40000000000003px; height: 244.8px;"></a>`
       :raw-html:`<p class="caption"><span class="caption-text"><strong>Image X.</strong> This is the caption.</span></p>`
       :raw-html:`</div>`
       :raw-html:`</div>`
@@ -267,11 +289,6 @@ Field list
 ...........
 
 The field list are good to resemble database records. This type of list can have different applications, but those applications are better covered in the official documentation.
-
-.. warning::
-
-    *
-    *
 
 Field list :important:`syntax` consist of the term surrounded by colons, a whitespace and the information related to that term.
 
@@ -323,14 +340,11 @@ Field list :important:`syntax` consist of the term surrounded by colons, a white
 
 Option list
 ...........
-The option list is widely used for explaining command-line options. This list has already a set of built-in options for this type of list. However, we will not covered thos options are not discussed here, but you can the information in the offcial documentation.
+The option list is widely used for explaining command-line options.
+This list has already a set of built-in options for this type of list.
+However, we will not cover those options here, but you can find the information in the official documentation.
 
-.. warning::
-
-    *
-    *
-
-Option list :important:`syntax` consist of the option parameter, followed by the argument placeholder, the description.
+Option list's :important:`syntax` consists of the option parameter, followed by the argument placeholder, and the description.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
@@ -383,11 +397,12 @@ In the previous chapter, we saw how to create tables using markup. However, *RST
 
 List Table
 ..........
-List tables allows to  the number of columns and the headers through the directive options. This type of tables reduce the need of manual typing needed in the  basic tables.
+List tables allow to set the number of columns and the headers through the directive options.
+This type of table reduces the amount of manual typing needed in the basic tables.
 
 .. warning::
 
-    * Each sublist must contain the same umber of items. Otherwise, the table will not be rendered.
+    * Each sublist must contain the same number of items. Otherwise, the table will not be rendered.
     * Cells cannot be combined.
 
 List tables :important:`syntax` consist of the directive name, the table title, the table options, and the list of items, which are split by rows.
@@ -447,21 +462,22 @@ List tables :important:`syntax` consist of the directive name, the table title, 
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `images <https://docutils.sourceforge.io/docs/ref/rst/directives.html#images>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `list tables <https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table>`_.
 
 |
 
 A CSV table
 ...........
 
-CSV tables are a convenient directive for importing csv files and render them inside the course content. Neverthless, you could also use this directive by creating the table manually inside the *RST* document using *csv* notation(comma-separated values).
+CSV tables are a convenient directive for importing CSV files and rendering them inside the course content.
+Nevertheless, you could also use this directive by creating the table manually inside the *RST* document using *csv* notation (comma-separated values).
 
 .. warning::
 
     * There is no support for checking that the number of columns in each row is the same.
     * Block markup and inline markup within the cell are supported.
 
-CSV tables :important:`syntax` consist of the directive name, the table title, some options and the content or file/url.
+CSV tables' :important:`syntax` consists of the directive name, the table title, some options and the content or file/URL.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
@@ -478,7 +494,7 @@ CSV tables :important:`syntax` consist of the directive name, the table title, s
         :header-rows: 1
 
       .. csv-table:: CSV table extracted from the people.sc.fsu.edu
-        :header: "Firsr Name", "Last Name", "Street", "County", "State", "Postal Code"
+        :header: "First Name", "Last Name", "Street", "County", "State", "Postal Code"
         :widths: 25, 25, 15, 15, 10, 10
 
         John,Doe,120 Jefferson st.,Riverside, NJ, 08075
@@ -526,21 +542,19 @@ CSV tables :important:`syntax` consist of the directive name, the table title, s
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `CSV tables <https://docutils.sourceforge.io/docs/ref/rst/directives.html#id4>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `CSV tables <https://docutils.sourceforge.io/docs/ref/rst/directives.html#csv-table>`_.
 
 |
 
 Block code
 ..........
 
-This is another directive provided by Sphinx. This snippet of code use the `Pygments <https://pygments.org/>`_  to highlight the specified language. Nevertheless, there is a limited number of `supported languages <https://pygments.org/languages/>`_. The example below shows a snippet of code that is render through the ``code-block`` directive. In this example, we can see that we have numbered the code lines and also highlighted the lines 14, 18 and 22. All of this is possible thanks to the built-in options of the ``code-block`` directive.
-
-.. warning::
-
-    *
-    *
-
-Images and figures :important:`syntax` consists of the directive name, the image URI, and some directive options. Read the official documentation for adjusting the image size and the the aligment.
+This is another directive provided by Sphinx.
+This snippet of code use the `Pygments <https://pygments.org/>`_ to highlight the specified language.
+Nevertheless, there is a limited number of `supported languages <https://pygments.org/languages/>`_.
+The example below shows a snippet of code that is rendered through the ``code-block`` directive.
+In this example, we can see that we have numbered the code lines and also highlighted the lines 14, 18 and 22.
+All of this is possible thanks to the built-in options of the ``code-block`` directive.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
@@ -660,22 +674,25 @@ Images and figures :important:`syntax` consists of the directive name, the image
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `code block <https://www.sphinx-doc.org/en/1.5/markup/code.html#directive-code-block#images>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `code block <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-code-block>`_.
 
 |
 
-Literal included
-................
-The ``literalincluded`` directive allows you to include code files and show then as snnipets of code within the course content. This is ideal for showing code examples stored in external files. In addition, this directive allows to emulate file comparison.
+Literal include
+...............
+
+The ``literalinclude`` directive allows you to include code files and show then as snippets of code within the course content.
+This is ideal for showing code examples stored in external files.
+In addition, this directive allows to emulate file comparison.
 
 .. warning::
 
   * The path of the file is relative to the path of the chapter file. However, you can also use absolute paths.
-  * this support many of the code-block options such as lineos and emphasize-lines.
-  * You can included only some selected lines of the file.
+  * This supports many of the code-block options such as lineos and emphasize-lines.
+  * You may include only some selected lines of the file.
   * This can be used to compare two different files.
 
-literalinclude :important:`syntax` consist of the directive name, the filepath and the code-block options.
+The literalinclude :important:`syntax` consists of the directive name, the filepath and the code-block options.
 
 .. literalinclude:: /course_material/python_examples/example.py
   :caption: Python diff example
@@ -773,7 +790,7 @@ literalinclude :important:`syntax` consist of the directive name, the filepath a
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `Literal includes <https://www.sphinx-doc.org/en/1.6/markup/code.html#includes>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `literal include <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude>`_.
 
 |
 
@@ -784,17 +801,26 @@ Inline elements
 Cross-reference
 ...............
 
-Hyperlinks can be used to link external websites or to link to different part of the course. However, for linking to different sections or chapters of the course, we use the ``:ref:`` and the ``doc`` roles. These two roles create a ling to the determined target indicated by the role. However, in order to make these cross-references work we should create or have specific targets.
+Hyperlinks can be used to link external websites or to link to different part of the course.
+However, for linking to different sections or chapters of the course, we use the ``:ref:`` and the ``:doc:`` roles.
+These two roles create a link to the determined target indicated by the role.
+However, in order to make these cross-references work, we should create or have specific targets.
 
-In the case of the ``ref:`` role, we define the target as ``.. _target-name:``. These syntax add an id to the element that is immediately below and create the target for the link.
+In the case of the ``:ref:`` role, we define the target as ``.. _target-name:``.
+This syntax adds an id to the element that is immediately followed by and creates the target for the link.
 
 .. warning::
-  * You may add the targets above titles.
-  * The `name property <https://docutils.sourceforge.io/docs/ref/rst/directives.html#name>`_ add an id to the respective element and can be use as a target.
 
-In the case of the ``:doc:`` role the targets are the documents themselves. Therefore, the link to those documents should be an absolute or relative path.
+  * You may add targets above titles.
+  * The `name property <https://docutils.sourceforge.io/docs/ref/rst/directives.html#name>`_ adds an id to the respective element and can be used as a target.
+  * All the headings/titles create target links automatically,
+    therefore you should try to avoid having the same title twice throughout the whole course since it can cause conflicts.
+    If this is the case, you can override the target with an explicit target on top of the title.
 
-Cross-referencing :important:`syntax` consists of the ``:ref:`` or ``:doc:`` role, with the target as the interpreted text of the roles.
+In the case of the ``:doc:`` role, the targets are the documents themselves.
+Therefore, the link to those documents should be an absolute or relative path.
+
+Cross-referencing :important:`syntax` consists of the ``:ref:`` or ``:doc:`` roles, with the target as the interpreted text of the roles.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
@@ -806,31 +832,58 @@ Cross-referencing :important:`syntax` consists of the ``:ref:`` or ``:doc:`` rol
 
     .. code-block:: rst
 
-      `Hyperlink`_
+      .. _examples:
+
+      Examples
+      --------
+
+      This is the text of the section.
+
+      It refers to the section itself, see :ref:`examples`.
+
+      In addition, see the chapter :doc:`questionnaires </questionnaires/questionnaires>`.
 
   .. tab-content:: tab2-cross-reference
     :title: rendered: HTML
 
     .. div:: html-box
 
-      :raw-html:`<a class="reference internal" href="#hyperlink">Hyperlink</a>`
+      :raw-html:`<span id="id1"></span>`
+      :raw-html:`<h2>Examples</h2>`
+      :raw-html:`<p>This is the text of the section.</p>`
+      :raw-html:`<p>It refers to the section itself, see <a href="#id1" class="reference internal">Examples</a>.</p>`
+      :raw-html:`<p>In addition, see the chapter <a data-aplus-chapter="yes" href="../../questionnaires/questionnaires" class="reference internal">questionnaires</a>.</p>`
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about** `cross-referencing <https://www.sphinx-doc.org/en/1.6/markup/inline.html?highlight=cross%20reference>`_.
+| :glyphicon-info-sign:`\ ` **Read more about** `cross-referencing <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role>`_.
 
 |
 
 Substitution reference
 ......................
-Substitution references are an *RST* element that allows referencing certain text through the use of reference text. The sustitution reference can be use in pair with hyperlinks by appendding undersore to the end, the substitution element can be also use to replace images and some other applications can be possible.
+
+Substitution references allow you to define some value once and
+use it in multiple locations without copy-pasting the same value manually everywhere.
+The substition could, for example, contain some often repeated phrase.
+
+You could compare substitutions to constant variables in programming.
+You define the constant once and then you use it anywhere.
+If you change the value of the constant, it automatically affects all the locations where the constant has been used.
+
+The substitution reference can be used in pair with hyperlinks by appending an underscore to the end.
+The substitution element can also be used to replace images.
+
 
 .. warning::
 
-    * In order to use a sustitution reference, you need a sustitution definition.
+    * In order to use a substitution reference, you need a sustitution definition.
     * Substitution references are case-sensitive.
 
-Substitution reference :important:`syntax` consist of the a reference text surrounded by vartical bars. In case of implementing links the underscore should be added at the end. On the other hand, the :important:`syntax` for the substitution definition consist of two consecutive dots followed by a whitespace, the reference name wrapped in vertical bars, followed by some directive type and the data
+Substitution reference's :important:`syntax` consists of the reference text surrounded by vertical bars.
+In case of implementing links, the underscore should be added at the end.
+On the other hand, the :important:`syntax` for the substitution definition consists of two consecutive dots followed by a whitespace,
+the reference name wrapped in vertical bars, followed by some directive type and the data.
 
 .. |RST| replace:: reStructuredText
 .. _RST: http://docutils.sourceforge.net/rst.html
@@ -866,19 +919,16 @@ Substitution reference :important:`syntax` consist of the a reference text surro
 |
 
 Download
---------
+........
 
-This role allows you to attach downloadable files to your course. You can use this directive to provide the students with extra material such as pdf files and code templates.
+This role allows you to attach downloadable files to your course.
+You can use this directive to provide the students with extra material such as PDF files and code templates.
 
-.. warning::
+The following :download:`file </course_material/example_file.txt>` can be downloaded.
 
-    *
-    *
+Code example
+''''''''''''
 
-Images and figures :important:`syntax` consist of the directive name, the image URI, and some directive options. Read the official documentation for adjusting th image size and the the aligment.
-
-:glyphicon-console:`\ ` Code example
-''''''''''''''''''''''''''''''''''''
 .. rst-tabs::
 
   .. tab-content:: tab1-download
@@ -886,205 +936,118 @@ Images and figures :important:`syntax` consist of the directive name, the image 
 
     .. code-block:: rst
 
-      The following :download:`file </course_material/rst_guide/example_file.txt>` can be downloaded.
+      The following :download:`file </course_material/example_file.txt>` can be downloaded.
 
   .. tab-content:: tab2-download
     :title: rendered: HTML
 
     .. div:: html-box
 
-      :raw-html:`<div class="row">`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<a class="img-responsive img-circle reference internal image-reference" href="http://localhost:8080/static/default/_images/sample.jpeg"><img alt="This is a sample image." class="img-responsive img-circle align-center" src="http://localhost:8080/static/default/_images/sample.jpeg" style="width: 380px;"></a>`
-      :raw-html:`<p>This is not a caption, this is only a paragraph below the image</p>`
-      :raw-html:`</div>`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<div class="figure align-center" id="id8">`
-      :raw-html:`<a class="img-responsive img-thumbnail reference internal image-reference" href="http://localhost:8080/static/default/_images/sample.jpeg"><img alt="This is a sample figure." class="img-responsive img-thumbnail" src="http://localhost:8080/static/default/_images/sample.jpeg" style="width: 326.40000000000003px; height: 244.8px;"></a>`
-      :raw-html:`<p class="caption"><span class="caption-text"><strong>Image X.</strong> This is the caption.</span></p>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
+      :raw-html:`<p>The following <a href="http://localhost:8080/static/default/_downloads/6bc52a79122de11a1ea430ad7d4a4c62/example_file.txt" class="reference download internal">file</a> can be downloaded.</p>`
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `images <https://docutils.sourceforge.io/docs/ref/rst/directives.html#images>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `download <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-download>`_.
 
 |
 
-Dictionary
-..........
+Dictionary/Glossary
+...................
 
-The dictionary directive is useful for defining terms that are used throughout the course. Having a dictionary may be help the students to get familiar with the terminology used in the course. We recommend to have and independent chapter at the end of your course with the dictionary directive.
+The ``glossary`` directive is useful for defining terms that are used throughout the course.
+Having a glossary may help the students get familiar with the terminology used in the course.
+We recommend to have an independent chapter at the end of your course with the ``glossary`` directive.
 
-On the other hand, the question on how to use the dictionary in your document remain. For that, we will use the ``term`` role. This role allows you to create a link between the term and the definition in your dictionary. Once again you should be careful with the links that are being created in your course
+You use the ``term`` role to link terms in the text content to the glossary with the definition of the term.
+You use the ``glossary`` directive in some chapter in order to define all the terms.
 
-.. warning::
-
-    *
-    *
-
-Images and figures :important:`syntax` consist of the directive name, the image URI, and some directive options. Read the official documentation for adjusting th image size and the the aligment.
 
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
-.. rst-tabs::
 
-  .. tab-content:: tab1-dictionary
-    :title: input: RST
-
-    .. code-block:: rst
-
-      .. div:: row
-
-        .. div:: col-12 col-md-6
-
-          .. image:: /images/gallery/sample.jpeg
-            :alt: This is a sample image.
-            :width: 380px
-            :align: center
-            :class: img-responsive img-circle
-
-          This is not a caption, this is only a paragraph below the image.
-
-        .. div:: col-12 col-md-6
-
-          .. figure:: /images/gallery/sample.jpeg
-            :alt: This is a sample figure.
-            :scale: 10%
-            :align: center
-            :class: img-responsive img-thumbnail
-
-            **Image X.** This is the caption.
-
-  .. tab-content:: tab2-dictionary
-    :title: rendered: HTML
-
-    .. div:: html-box
-
-      :raw-html:`<div class="row">`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<a class="img-responsive img-circle reference internal image-reference" href="http://localhost:8080/static/default/_images/sample.jpeg"><img alt="This is a sample image." class="img-responsive img-circle align-center" src="http://localhost:8080/static/default/_images/sample.jpeg" style="width: 380px;"></a>`
-      :raw-html:`<p>This is not a caption, this is only a paragraph below the image</p>`
-      :raw-html:`</div>`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<div class="figure align-center" id="id8">`
-      :raw-html:`<a class="img-responsive img-thumbnail reference internal image-reference" href="http://localhost:8080/static/default/_images/sample.jpeg"><img alt="This is a sample figure." class="img-responsive img-thumbnail" src="http://localhost:8080/static/default/_images/sample.jpeg" style="width: 326.40000000000003px; height: 244.8px;"></a>`
-      :raw-html:`<p class="caption"><span class="caption-text"><strong>Image X.</strong> This is the caption.</span></p>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
-
-.. rst-class:: pull-right
-
-| :glyphicon-info-sign:`\ ` **Read more about**  `images <https://docutils.sourceforge.io/docs/ref/rst/directives.html#images>`_.
-
-|
-
-Dictionary can add a hover window |Sphinx| :term:`def term <Sphinx>`
-
-.. |Sphinx| replace:: :term:`def term <Sphinx>`
+This chapter has included many features of :term:`Sphinx`.
+Have you tried the :term:`Sublime Text` editor yet?
 
 .. glossary::
 
   Sphinx
-    Sphinx is a tool that makes it easy to create intelligent and beautiful documentation. It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages.
+    Sphinx is a tool that makes it easy to create intelligent and beautiful documentation.
+    It was originally created for the Python documentation, and
+    it has excellent facilities for the documentation of software projects in a range of languages.
 
   Sublime Text
-    Sublime Text is a sophisticated text editor for code, markup and prose. You'll love the slick user interface, extraordinary features and amazing performance.
-
-Error management
-
-
-This is a standalone link https://docutils.sourceforge.io/docs/.
-
-This is a link with an `Alias <https://docutils.sourceforge.io/docs/>`_
-
-.. warning::
-  * All the headings/titles create target links automatically, therefore you should try to avoid having the same title twice throughout the whole course since it can cause conflicts. If this is the case, you can override the target with and explicit target on top of the title.
-
-The external links are easy to use and can be used through the use of snippets in VS Code.
-
+    Sublime Text is a sophisticated text editor for code, markup and prose.
+    You'll love the slick user interface, extraordinary features and amazing performance.
 
 .. code-block:: rst
 
-  `Title <https://plus.cs.aalto.fi/>`_
+  This chapter has included many features of :term:`Sphinx`.
+  Have you tried the :term:`Sublime Text` editor yet?
 
-::::
+  .. glossary::
 
-**Good practices at using links**
+    Sphinx
+      Sphinx is a tool that makes it easy to create intelligent and beautiful documentation.
+      It was originally created for the Python documentation, and
+      it has excellent facilities for the documentation of software projects in a range of languages.
 
-1. In order to improve the readability of your code you should create a list of links at the bottom of the page and refer to those links using tag names.
+    Sublime Text
+      Sublime Text is a sophisticated text editor for code, markup and prose.
+      You'll love the slick user interface, extraordinary features and amazing performance.
 
-  Example
-
-You can use this |geo_link|.
-
-.. |geo_link| raw:: html
-
-   <a href="http://geoiptool.com" target="_blank">Geo Link</a>
-
-.. warning::
-
-    *
-    *
-
-Hyperlink :important:`syntax` consists of open and closed quote marks, the target inside the quote marks and an underscore at the end.
-
-:glyphicon-console:`\ ` **Code example**
-''''''''''''''''''''''''''''''''''''''''
-
-.. rst-tabs::
-
-  .. tab-content:: tab1
-    :title: input: RST
-
-    .. code-block:: rst
-
-      `Hyperlink`_
-
-  .. tab-content:: tab2
-    :title: rendered: HTML
-
-    :raw-html:`<a class="reference internal" href="#hyperlink">Hyperlink</a>`
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about** `Hyperlink <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#inline-markup>`_.
+| :glyphicon-info-sign:`\ ` **Read more about**  `term <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-term>`_ and `glossary <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-glossary>`_.
 
 |
+
+
+::::
+
+Good practices for using links
+------------------------------
+
+1. In order to improve the readability of your RST markup,
+   you should create a list of links in the bottom of the page and refer to those links using substitution names.
+
+
+Example
+.......
+
+Link to the `Aplus manual`_ git repo.
+
+|sphinx|_ is the best.
+
+You can use this |geolink|_.
+
+.. _Aplus manual: https://github.com/apluslms/aplus-manual
+
+.. |geolink| replace:: Geo Link
+.. _geolink: http://geoiptool.com
+
+.. |sphinx| replace:: Sphinx
+.. _sphinx: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
 Internal
 ........
 
-We can find internal links, like hyperlink_ . However, due to this type of links make use of the literal to
-present the text,
-it might be better to use links making use of the backticks like this -> ```image_examples`_`` or ```Images`_``.
+We can use internal links, like `Good practices for using links`_, referring to a section.
+However, since the link text uses the heading text verbatim,
+it breaks when the heading is changed later.
+It might be better to use your own labels above the headings and refer to the labels.
+Example :ref:`link to the cross-reference section <cross-reference>`.
 
-.. warning:: Remember that changing the title of your chapters an headings can break your references.
+.. warning:: Remember that changing the title of your chapters and headings can break your references.
 
-.. warning::
-
-  This internal links needs a target.
-
-  .. code-block:: bash
-
-    we can find internal links, like example_.
-
-    .. _example:
 
 .. hint:: It is always a good idea to place the targets to these links above a heading.
 .. The titles do not need a reference
 
-Is is also important to notice than in case of having targets compound by more than one word is neccesary to surround the word with
-backticks ```<any word>```.
+It is also important to notice than in case the targets consist of more than one word,
+it is necessary to surround the word with backticks ```<any word>```.
 
 .. warning::
 
-  Be careful using your links. Design the flow of your webpage and create a template for your links. It will help you to avoid breaking your links once they are defined.
-
-.. warning::
-
-    *
-    *
-
+  Be careful using your links. Design the flow of your webpage and create a template for your links.
+  It will help you to avoid breaking your links once they are defined.

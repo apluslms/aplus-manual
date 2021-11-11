@@ -50,6 +50,10 @@ rst_prolog += '''
   :class: glyphicon glyphicon-pencil
 .. role:: glyphicon-certificate
   :class: glyphicon glyphicon-certificate
+.. role:: glyphicon-console
+  :class: glyphicon glyphicon-console
+.. role:: important
+  :class: important
 '''
 
 # If extensions (or modules to document with autodoc) are in another directory,

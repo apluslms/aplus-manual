@@ -2,7 +2,7 @@ Basic Syntax
 ============
 
 :Author: Aplus Team
-:Last-modified: |today|
+:Last-modified: 11.11.2021
 
 .. styled-topic::
 
@@ -31,13 +31,18 @@ Basic Syntax
 
 Introduction
 ------------
+
 In order to start authoring a course in A+, you should initiate with the most basic *RST* directives
 and roles. This chapter will provide you with the fundamentals of *RST*. All the directives and
 roles presented in this chapter will give you the necessary skills to create static course content.
-Most advance course content will be covered in :doc:`chapter 5 </questionnaires/questionnaires>`,
-:doc:`chapter 6 </programming_exercises/instructions>`, :doc:`chapter 7 </acos/introduction>`,
-:doc:`chapter 9 </rubyric/introduction>`, :doc:`chapter 14 </active_elements/introduction>` and
-:doc:`chapter 15 </point_of_interest/introduction>` of this manual.
+Most advanced course content will be covered in the modules
+:doc:`questionnaires </questionnaires/questionnaires>`,
+:doc:`programming exercises </programming_exercises/instructions>`,
+:doc:`Acos exercises </acos/introduction>`,
+:doc:`Rubyric (manual assessment with rubrics) </rubyric/introduction>`,
+:doc:`active elements </active_elements/introduction>` and
+:doc:`points of interest </point_of_interest/introduction>`
+of this manual.
 
 .. hint::
 
@@ -90,7 +95,7 @@ text of the hyperlink target (reference name) is the title itself, but the white
 words are replaced by hyphens. We will see more about this in the :ref:`Links section
 <cross-reference>`.
 
-Title :important:`syntax` consist of underline adornments. All the adornments should remain
+Title :important:`syntax` consists of underline adornments. All the adornments should remain
 consistent throughout your chapters. Therefore, you should use the adornments following the order
 suggested in the table below.
 
@@ -108,7 +113,7 @@ suggested in the table below.
   * - ``.`` (dot)
     - Subsubtitle
   * - ``'`` (apostrophe)
-    - Subsubsubtitle. We do not recommend the use deeper level of headings.
+    - Subsubsubtitle. We do not recommend using deeper level of headings.
 
 :glyphicon-console:`\ ` **Code example**
 
@@ -222,7 +227,7 @@ Paragraphs are simple blocks of text.
   * Paragraphs should be left-aligned
   * Blank lines separate paragraphs
 
-Paragraphs :important:`syntax:` consist of plain text and `Inline markup`_ elements.
+Paragraphs :important:`syntax` consists of plain text and `Inline markup`_ elements.
 
 :glyphicon-console:`\ ` **Code example**
 
@@ -323,7 +328,7 @@ Remember that the directive argument is required for the sidebar.
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about** `side bars <https://docutils.sourceforge.io/docs/ref/rst/directives.html#sidebar>`_
+| :glyphicon-info-sign:`\ ` **Read more about** `sidebars <https://docutils.sourceforge.io/docs/ref/rst/directives.html#sidebar>`_
 
 |
 
@@ -558,8 +563,8 @@ several enumerated literals, as you can see in the table below.
 
     :raw-html:`<ol class="arabic simple"><li>First Item</li><li>Second Item</li></ol>`
     :raw-html:`</br>`
-    :raw-html:`<ol class="upperalpha simple"><li>Fisrt Item</li><li>Second Item</li></ol>`
-    :raw-html:`<ol class="loweralpha simple"><li>Fisrt Item</li><li>Second Item</li></ol>`
+    :raw-html:`<ol class="upperalpha simple"><li>First Item</li><li>Second Item</li></ol>`
+    :raw-html:`<ol class="loweralpha simple"><li>First Item</li><li>Second Item</li></ol>`
 
 .. rst-class:: pull-right
 
@@ -592,16 +597,16 @@ lists use different literals, among the bullet literal we can find the following
 
     .. code-block:: rst
 
-      * Fisrt Item
+      * First Item
       * Second Item
 
-      - Fisrt Item
+      - First Item
       - Second Item
 
   .. tab-content:: tab2-ul
     :title: rendered: HTML
 
-    :raw-html:`<ul class="simple"><li>Fisrt Item</li><li>Second Item</li></ul>`
+    :raw-html:`<ul class="simple"><li>First Item</li><li>Second Item</li></ul>`
     :raw-html:`<ul class="simple"><li>First Item</li><li>Second Item</li></ul>`
 
 .. rst-class:: pull-right
@@ -664,8 +669,6 @@ the term, and may contain multiple paragraphs and other body elements.
     :raw-html:`<dt>term 4 <span class="classifier-delimiter">:</span> <span class="classifier">classifier one</span> <span class="classifier-delimiter">:</span> <span class="classifier">classifier two</span></dt>`
     :raw-html:`<dd>Definition 4.</dd>`
     :raw-html:`</dl>`
-    :raw-html:`<ul class="simple"><li>Fisrt Item</li><li>Second Item</li></ul>`
-    :raw-html:`<ul class="simple"><li>First Item</li><li>Second Item</li></ul>`
 
 .. rst-class:: pull-right
 
@@ -679,7 +682,7 @@ In *RST*, it is possible to create tables using a variety of directives and mark
 we will present you with two types of tables. The first one is the so-called grid table, and the
 second one is the simple table. Both tables are based on the ``table`` directive. The table
 directive can be used to add an id, classes, and a label. The table directive also allows defining
-the alignment, the width of the cells, and the widht of the table itself.
+the alignment, the width of the cells, and the width of the table itself.
 
 .. hint::
     Creating this type of tables can be cumbersome. Therefore, we suggest using some sort of table
@@ -734,9 +737,9 @@ your table, each individual cell is considered a miniature document.
     :raw-html:`<table border="1" class="colwidths-auto docutils" id="grid-table-example">`
     :raw-html:`<caption><span class="caption-text">Grid table example</span></caption>`
     :raw-html:`<colgroup>`
-    :raw-html:`<col width="33%">`
-    :raw-html:`<col width="33%">`
-    :raw-html:`<col width="33%">`
+    :raw-html:`<col>`
+    :raw-html:`<col>`
+    :raw-html:`<col>`
     :raw-html:`</colgroup>`
     :raw-html:`<tbody valign="top">`
     :raw-html:`<tr class="row-odd"><td>Header A</td>`
@@ -770,7 +773,7 @@ However, with this simpler approach comes some limitations in terms of cell layo
 can be used for simple data sets where a row contains a single data item.
 
 .. warning::
-  * Blank lines are required before the and after the simple table
+  * Blank lines are required before and after the simple table.
   * Simple tables allow column spans, but not row spans.
 
 Simple table :important:`syntax` is determined by the use of the ASCII characters.
@@ -832,7 +835,7 @@ Highlight directive
 
 The most basic directive to add code snippets to your course content is the ``highlight`` directive.
 This directive makes use of the built-in pygments library provided by Sphinx. As a result, the
-snippets of code are render with an predefined code syntax higlighting.
+snippets of code are rendered with a predefined code syntax higlighting.
 
 Code highlighting can be enabled on a document-wide basis using the `highlight directive
 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-highlight>`_.
@@ -847,7 +850,7 @@ the **conf.py** file in your course.
     used.
 
 Highlighting :important:`syntax` consists of the directive name, the language identifier, and some
-directive options. After the ``highlight`` directive has been configured, you can start addidng code
+directive options. After the ``highlight`` directive has been configured, you can start adding code
 snippets by adding double unindented colons ``::``. After the double colons you should add the
 indented snippet of code.
 
@@ -957,7 +960,7 @@ as, add extra information, advise about some good practices, point out or alert 
   * The content of the admonition can be placed as a directive argument. However, that is considered
     a bad practice. It is better to place the content as directive content.
 
-Specific admonitions :important:`syntax` consist of the admonition type directive followed by the
+Specific admonition's :important:`syntax` consists of the admonition type directive followed by the
 admonition content.
 
 :glyphicon-console:`\ ` **Code example**
@@ -990,16 +993,16 @@ admonition content.
 
 .. rst-class:: pull-right
 
-| :glyphicon-info-sign:`\ ` **Read more about**  `specifc admonitions <https://docutils.sourceforge.io/docs/ref/rst/directives.html#specific-admonitions>`_
+| :glyphicon-info-sign:`\ ` **Read more about**  `specific admonitions <https://docutils.sourceforge.io/docs/ref/rst/directives.html#specific-admonitions>`_
 
 |
 
 Generic
 '''''''
-Generic admonitions allow you to define the title and the content of the admonition. As well as the
-specific admonitions the generic admonition are rendered as an offset block in the document.
+Generic admonitions allow you to define the title and the content of the admonition.
+Similarly to the specific admonitions, the generic admonitions are rendered as an offset block in the document.
 
-Generic admonitions :important:`syntax` consist of the admonition type directive, a title and the
+Generic admonition's :important:`syntax` consists of the admonition type directive, a title and the
 admonition content.
 
 :glyphicon-console:`\ ` **Code example**
@@ -1046,8 +1049,8 @@ Inline markup applies to words or phrases within a text block.
 
 Inline markup :important:`syntax` consists of open and closed charactered with some text between
 them. The characters that can be used to create inline semantic elements are: asterisk ``*``,
-double asterisk ``**`` and backticks ``````. The HTML representation od these inline elements are
-the ``<strong>`` tag, the ``<em>`` tag and the ``<code>`` tag respecively.
+double asterisk ``**`` and backticks ``````. The HTML representations of these inline elements are
+the ``<strong>``, ``<em>`` and ``<code>`` tags, respectively.
 
 :glyphicon-console:`\ ` **Code example**
 
@@ -1065,8 +1068,8 @@ the ``<strong>`` tag, the ``<em>`` tag and the ``<code>`` tag respecively.
   .. tab-content:: tab2-inline
     :title: rendered: HTML
 
-    :raw-html:`<strong>emphasis</strong><br>`
-    :raw-html:`<em>strong emphasis</em><br>`
+    :raw-html:`<em>emphasis</em><br>`
+    :raw-html:`<strong>strong emphasis</strong><br>`
     :raw-html:`<code>inline literals</code>`
 
 .. rst-class:: pull-right
@@ -1081,8 +1084,8 @@ Abbreviation provides basic functionality for defining term on the fly. This *RS
 end-user to hover over the specified term and see the metainformation related to that abbreviation
 in a tooltip.
 
-Abbreviation :important:`syntax` is represente with the ``:abrr:`` keyword. Within that backticks
-that wrap the role content, you shloud place the abbreviation or term that you want to define, then
+Abbreviation :important:`syntax` is represented with the ``:abrr:`` keyword. Within that backticks
+that wrap the role content, you should place the abbreviation or term that you want to define, then
 leave a whitespace, and then use parentheses to enclose the definition of the term.
 
 :glyphicon-console:`\ ` **Code example**
@@ -1111,8 +1114,8 @@ kbd roles
 .........
 Kbd roles are used to specify a textual user input from a keyboard.
 
-kbd :important:`syntax` is represented with the ``:abrr:`` keyword. Within that backticks that wrap
-the role content, you shloud place the keystroke you want to represent.
+kbd :important:`syntax` is represented with the ``:kbd:`` keyword. Within the backticks that wrap
+the role content, you should place the keystroke you want to represent.
 
 :glyphicon-console:`\ ` **Code example**
 
@@ -1143,15 +1146,18 @@ Hyperlinks can be used to link external websites or to link to different parts o
 In this section, we will cover hyperlinks that lead the users to external websites. For more
 information about internal links, you can see the :ref:`cross-reference` section.
 
-.. warning::
-  **The embedded links with aliases**
-  * A whitespace cannot be placed after the opening backtick.
-  * A whitespace cannot be placed before the closing backtick.
-
-We have **standalone links** and **embedded links with aliases**. The standalone links :important:`syntax`
-consist of a plain URI. The embedded links with aliases :important:`syntax` consist of an opening
+We have **standalone links** and **embedded links with aliases**. The standalone link's :important:`syntax`
+consists of a plain URI. The :important:`syntax` of the embedded links with aliases consists of an opening
 backtick, the alias text, whitespace, the less-than sign ``<``, the URI, the greater-than
 sign ``>``, the closing backtick and finally an underscore.
+
+.. warning::
+
+  **The embedded links with aliases**
+
+  * No whitespace may be placed after the opening backtick.
+  * No whitespace may be placed before the closing backtick.
+
 
 :glyphicon-console:`\ ` **Code example**
 
@@ -1163,13 +1169,13 @@ sign ``>``, the closing backtick and finally an underscore.
     .. code-block:: rst
 
       This is a standalone link https://docutils.sourceforge.io/docs/.
-      This is a link with an `Alias <https://docutils.sourceforge.io/docs/>`_
+      This is a link with an `alias <https://docutils.sourceforge.io/docs/>`_.
 
   .. tab-content:: tab2-links
     :title: rendered: HTML
 
     :raw-html:`<p>This is a standalone link <a class="reference external" href="https://docutils.sourceforge.io/docs/">https://docutils.sourceforge.io/docs/</a>.</p>`
-    :raw-html:`<p>This is a link with an <a class="reference external" href="https://docutils.sourceforge.io/docs/">Alias</a></p>`
+    :raw-html:`<p>This is a link with an <a class="reference external" href="https://docutils.sourceforge.io/docs/">alias</a>.</p>`
 
 .. rst-class:: pull-right
 

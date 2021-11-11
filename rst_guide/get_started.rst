@@ -2,12 +2,12 @@ Get Started
 ===========
 
 :Author: Aplus Team
-:Date: |today|
+:Date: 11.11.2021
 
 .. styled-topic::
 
   Main questions:
-  	What are RST and Sphinx?
+    What are RST and Sphinx?
 
   Topics:
     In this section, we will present the following topics:
@@ -25,7 +25,7 @@ Get Started
     #. A basic environment setup, as detailed in :doc:`Module "Set up environment" </set_up_environment/first_steps>`
 
   Estimated working time:
-  	30 min.
+    30 min.
 
 ::::
 
@@ -141,8 +141,8 @@ equivalent representation in HTML.
         :align: center
         :class: img-responsive
 
-      1«Second Section
-      --------------»
+      Second Section
+      --------------
       Lists can also be made in RST.
       - Lists do not require much markup.
       - Create lists is intuitive.
@@ -370,7 +370,7 @@ If you want to know more about *RST* and Sphinx, we recommend you to **Watch the
     :video-height: 432
     :video-width: 768
 
-How should I read the reStructuredText official Documentation?
+How should I read the reStructuredText official documentation?
 --------------------------------------------------------------
 
 *RST* has two types of elements that are widely used to create *RST* documents. The first element is
@@ -402,8 +402,8 @@ example in |ninja_website| or use VS Code in conjunction with the `Aplus tools o
 
 .. hint:: If you want to have custom directives in your course, you can create a GitHub
   issue and suggest your ideas to the A+ Team in the `Aplus-RST-Tools GitHub repository
-  <https://git.io/JfYIX>`_. Of course, you can also create the directive and share it with the A+
-  team.
+  <https://github.com/apluslms/a-plus-rst-tools/issues>`_.
+  Of course, you can also create the directive and share it with the A+ team.
 
 Role
 ....
@@ -436,7 +436,7 @@ consists of four chapters, and each chapter discusses specific topics.
 
 #. :doc:`Get started <get_started>`: Introduction to *RST* and Sphinx
 #. :doc:`Basic syntax <basic_syntax>`: The most basic *RST* directives and roles
-#. :doc:`Extended syntax <extended_syntax>`: Advanced *RST* directives and roles, which are used to
+#. :doc:`Advanced syntax <advanced_syntax>`: Advanced *RST* directives and roles, which are used to
    add complex material to the course.
 #. :doc:`Additional resources <additional_resources_and_cheatsheet>`: List of resources that
    contains valuable information about the module topic.
