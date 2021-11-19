@@ -77,6 +77,9 @@ is given. Google's ``diff_match_patch`` is used for the detection and coloring o
 Tools for testing things like return values and classes/objects are also available, among
 other things.
 
+.. figure:: /images/iotester_example.png
+  :align: center
+
 List of useful tests/tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
