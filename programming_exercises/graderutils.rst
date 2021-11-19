@@ -552,6 +552,19 @@ you initialize ``IOTester`` as below:
   # Only max_float_delta setting will be changed. Other settings will stay as defaults.
   iotester = IOTester(settings={"max_float_delta": 0.01})
 
+The settings can also be changed later, for example, inside test methods. However, note that the
+settings will change for all the subsequent test methods as well, so you should reset them at the
+start of the other test methods, if you only wish to have different settings for one specific test.
+
+.. code-block:: python
+
+  # Overwrites some or all of the current settings with the provided settings.
+  # Automatically verifies that the settings are of the correct type etc. by doing assertions.
+  iotester.update_settings({"max_exec_time": 60})
+
+  # Directly edit the current settings. Does not verify that the settings will work correctly.
+  iotester.settings["ignored_characters"].remove('?')
+
 
 Generating data files
 ^^^^^^^^^^^^^^^^^^^^^
