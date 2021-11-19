@@ -10,6 +10,6 @@ model_files:
   - exercises/iotester_wallet/model/wallet_program.py
 
 container:
-    image: apluslms/grade-python:3.7-4.2-3.5
+    image: apluslms/grade-python:3.9-4.3-4.0
     mount: exercises/iotester_wallet
     cmd: graderutils --use-iotester

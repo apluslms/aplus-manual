@@ -28,6 +28,6 @@ max_submissions_before_regeneration: 3
 
 # configuration for the new container grading sandbox
 container:
-  image: apluslms/grade-python:3.7-3.5-3.4
+  image: apluslms/grade-python:3.9-4.3-4.0
   mount: exercises/personalized_python
   cmd: /exercise/run.sh

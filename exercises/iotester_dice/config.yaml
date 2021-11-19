@@ -7,6 +7,6 @@ model_files:
   - exercises/iotester_dice/model/dice.py
 
 container:
-    image: apluslms/grade-python:3.7-4.2-3.5
+    image: apluslms/grade-python:3.9-4.3-4.0
     mount: exercises/iotester_dice
     cmd: graderutils --use-iotester # For running model program in a separate process: --use-rpyc

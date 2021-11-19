@@ -42,7 +42,7 @@ The following occurs in the server side.
    submitted file. Information about the student is not sent to the mooc-grader.
 
 3. Mooc-grader knows from **exercises/hello_python/config.yaml** that it must
-   start a new instance of Docker container **apluslms/grade-python:3.7-4.2-3.5**.
+   start a new instance of Docker container **apluslms/grade-python:3.9-4.3-4.0**.
 
 4. Docker reads the `grade-python <https://github.com/apluslms/grade-python>`_
    container image and starts it. A minimal Debian GNU/Linux operating system
@@ -84,7 +84,7 @@ this:
       |   └── python3
       └── local
           └── lib
-              └── python3.7
+              └── python3.9
                   └── dist-packages
                       └── graderutils
                           └── graderunittest.py
@@ -164,7 +164,7 @@ The following steps are executed inside the grade-python container.
     in the apluslms/grade-python container. The class *PointsTestRunner* is
     in the file `graderunittest.py <https://github.com/apluslms/python-grader-utils/blob/master/graderutils/graderunittest.py>`_.
     For the details, Graderutils is inside the grade-python container at
-    ``/usr/local/lib/python3.7/dist-packages/graderutils``.
+    ``/usr/local/lib/python3.9/dist-packages/graderutils``.
 
 15. The Python module *graderutils* runs a *PointsTestRunner* instance. First it
     uses the Python unit test framework to run the methods
