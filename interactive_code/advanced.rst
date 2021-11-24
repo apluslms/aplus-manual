@@ -1,5 +1,5 @@
-Tehnical details of interactive code
-====================================
+Technical details of interactive code
+=====================================
 
 .. styled-topic::
 

@@ -1,5 +1,5 @@
-Style of course pages with CSS
-==============================
+Style course pages with CSS
+===========================
 
 .. styled-topic::
 
