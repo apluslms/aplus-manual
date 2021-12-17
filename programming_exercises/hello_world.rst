@@ -155,7 +155,13 @@ The following steps are executed inside the grade-python container.
     ::
 
       if __name__ == '__main__':
-          unittest.main(testRunner=graderunittest.PointsTestRunner(verbosity=2))
+          # Run tests from the test case and get result
+          loader = unittest.defaultTestLoader
+          suite = loader.loadTestsFromTestCase(TestHelloPython)
+          runner = graderunittest.PointsTestRunner(verbosity=2)
+          result = runner.run(suite)
+          # Points are read from stdout and saved
+          print("TotalPoints: {}\nMaxPoints: {}".format(result.points, result.max_points))
 
     The `Python unit testing framework <https://docs.python.org/3/library/unittest.html>`_
     is invoked. However, the *test runner* is set to
@@ -198,7 +204,7 @@ The following steps are executed inside the grade-python container.
     yields one point if it passes and ``test_return`` will yield three points if
     it passes.
 
-18. Graderutils prints the points data into standard output stream:
+18. The points data is printed into standard output stream:
 
     ::
 

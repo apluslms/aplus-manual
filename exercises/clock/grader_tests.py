@@ -1,8 +1,10 @@
 import unittest
-import graderunittest
+from graderutils import graderunittest
+from graderutils.graderunittest import points
 from selenium import webdriver
 from datetime import datetime
 import time
+
 
 class TestClock(unittest.TestCase):
 
@@ -100,24 +102,34 @@ class TestClock(unittest.TestCase):
             "Check the colors and how the colors are updated."
             )
 
+    @points(1)
     def test_1_elements_found(self):
-        """The page contains expected elements. (1p)"""
+        """The page contains expected elements"""
         self._assert_elements_found({'tag': 'h1',
             })
 
+    @points(1)
     def test_2_clock_time(self):
-        """The clock has correct time. (1p)"""
+        """The clock has correct time"""
         self._assert_correct_time()
 
+    @points(1)
     def test_3_colors(self):
-        """The colors change as expected. (1p)"""
+        """The colors change as expected"""
         self._assert_colors_change()
 
+    @points(1)
     def test_4_clock_updates(self):
-        """The time updates correctly. (1p)"""
+        """The time updates correctly"""
         for _ in range(3):
             time.sleep(1)
             self._assert_correct_time()
 
 if __name__ == '__main__':
-    unittest.main(testRunner=graderunittest.PointsTestRunner(verbosity=2))
+    # Run tests from the test case and get result
+    loader = unittest.defaultTestLoader
+    suite = loader.loadTestsFromTestCase(TestClock)
+    runner = graderunittest.PointsTestRunner(verbosity=2)
+    result = runner.run(suite)
+    # Points are read from stdout and saved
+    print("TotalPoints: {}\nMaxPoints: {}".format(result.points, result.max_points))
