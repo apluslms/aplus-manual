@@ -31,4 +31,10 @@ class TestHelloPython(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(testRunner=graderunittest.PointsTestRunner(verbosity=2))
+    # Run tests from the test case and get result
+    loader = unittest.defaultTestLoader
+    suite = loader.loadTestsFromTestCase(TestHelloPython)
+    runner = graderunittest.PointsTestRunner(verbosity=2)
+    result = runner.run(suite)
+    # Points are read from stdout and saved
+    print("TotalPoints: {}\nMaxPoints: {}".format(result.points, result.max_points))
