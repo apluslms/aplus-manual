@@ -2,6 +2,8 @@ version: '3'
 
 volumes:
   data:
+  rubyricdb:
+
 services:
   grader:
     image: apluslms/run-mooc-grader:1.11
@@ -22,16 +24,13 @@ services:
       - "8000:8000"
     depends_on:
       - grader
+      - acos
+      - rubyric
   acos:
     image: apluslms/run-acos-server
     user: $USER_ID:$USER_GID
     ports:
       - "3000:3000"
-    # depends_on is only used to control the start-up order of the containers so that
-    # the ACOS container would more likely be assigned the IP address hardcoded into the course configuration
-    depends_on:
-      - plus
-      - grader
     #volumes:
     #  - ./_data/acos/:/var/log/acos
   radar:
@@ -49,3 +48,20 @@ services:
       - grader
     volumes:
       - data:/data
+  rubyric:
+    image: apluslms/run-rubyric
+    volumes:
+      - data:/data
+    ports:
+      - "8091:8091"
+    depends_on:
+      - rubyricdb
+  rubyricdb:
+    image: postgres:13-bullseye
+    restart: always
+    environment:
+      POSTGRES_USER: rubyric
+      POSTGRES_PASSWORD: rubyric
+      POSTGRES_DB: rubyric
+    volumes:
+      - rubyricdb:/var/lib/postgresql/data
