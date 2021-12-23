@@ -6,7 +6,7 @@ volumes:
 
 services:
   grader:
-    image: apluslms/run-mooc-grader:1.11
+    image: apluslms/run-mooc-grader:1.12
     volumes:
       - data:/data
       - /var/run/docker.sock:/var/run/docker.sock
@@ -15,7 +15,7 @@ services:
     ports:
       - "8080:8080"
   plus:
-    image: apluslms/run-aplus-front:1.11
+    image: apluslms/run-aplus-front:1.12
     environment:
       APLUS_ENABLE_DJANGO_DEBUG_TOOLBAR: 'false'
     volumes:
