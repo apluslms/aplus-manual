@@ -42,7 +42,7 @@ the `download <https://code.visualstudio.com/download>`_ section of the official
 Install the recommended VS Code extensions
 ------------------------------------------
 
-The `Aplus Tools extension <https://marketplace.visualstudio.com/items?itemName=jaguarfi.aplus-tools>`_ created for VS
+The `Aplus Tools extension <https://marketplace.visualstudio.com/items?itemName=apluslms.aplus-tools-official>`_ created for VS
 Code provides a set of functionalities that will reduce the time needed for creating course content. Some of the
 most relevant features are listed below:
 
@@ -70,7 +70,7 @@ most relevant features are listed below:
 
     Syntax Highlighting capability of the Aplus Tools extension.
 
-* `Snippets <https://marketplace.visualstudio.com/items?itemName=jaguarfi.aplus-tools#snippets>`_ (Insert complex
+* `Snippets <https://marketplace.visualstudio.com/items?itemName=apluslms.aplus-tools-official#snippets>`_ (Insert complex
   directives by using key words).
 
   .. figure:: /images/gallery/snippets.png
@@ -80,7 +80,7 @@ most relevant features are listed below:
     Small list of snippets available in the Aplus Tools extension.
 
 In order to install the **Aplus tools extension** you should visit the
-`VS Code Marketplace <https://marketplace.visualstudio.com/items?itemName=jaguarfi.aplus-tools#getting-starteds>`_ and
+`VS Code Marketplace <https://marketplace.visualstudio.com/items?itemName=apluslms.aplus-tools-official#getting-started>`_ and
 follow the instructions presented in the getting started section. If you experience any problem during the
 installation or setup of your extension please contact aplusguru@cs.aalto.fi
 
