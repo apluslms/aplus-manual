@@ -1,0 +1,18 @@
+---
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: primes.py
+
+# Skeleton code for the students.
+template_files:
+  - exercises/primes/primes_template.py
+
+# Release the model solution to students after the deadline.
+model_files:
+  - exercises/primes/model.py
+
+container:
+  image: apluslms/grade-python:3.9-4.3-4.0
+  mount: exercises/primes
+  cmd: graderutils

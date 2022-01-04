@@ -1,0 +1,19 @@
+test_groups:
+  - module: local_tests
+    display_name: Local tests
+  - module: grader_tests
+    display_name: Grader tests
+
+validation:
+  display_name: Input validation
+  tasks:
+    - type: python_syntax
+      display_name: "The submitted file has correct Python syntax"
+      file: primes.py
+    - type: python_import
+      display_name: "The submitted file is a Python module that can be imported and defines the function is_prime"
+      file: primes.py
+      attrs:
+        is_prime: function
+
+testmethod_timeout: 5

@@ -13,8 +13,8 @@ from minipng import Image
 
 class TestTurtle(unittest.TestCase):
     @points(40)
-    def test1_get_direction(self):
-        """Function get_direction returns string 'right' or 'left' according to specification."""
+    def test_01_get_direction(self):
+        """Function get_direction returns string 'right' or 'left' correctly"""
         count = 200
         for _ in range(count):
             n = random.randint(1, 4096)
@@ -28,8 +28,8 @@ class TestTurtle(unittest.TestCase):
             )
 
     @points(60)
-    def test1_2_run_turtles_with_image(self):
-        """Function turtles draws the picture without error messages."""
+    def test_02_run_turtles_with_image(self):
+        """Function turtles draws the picture without error messages"""
         t = simpleturtle.Turtle()
         turtles.turtles(t)
 

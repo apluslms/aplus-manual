@@ -15,7 +15,7 @@
 export PYTHONPATH=/submission/user
 
 # "capture" etc description in https://github.com/apluslms/grading-base
-capture python3 /exercise/tests.py
+capture python3 /exercise/grader_tests.py
 
 # Python unit tests write output both to standard output stream and to
 # standard error output stream. The command 'err-to-out' appends the contents

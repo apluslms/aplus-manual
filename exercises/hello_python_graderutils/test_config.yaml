@@ -1,0 +1,15 @@
+test_groups:
+  - module: grader_tests
+    display_name: Grader tests
+
+validation:
+  display_name: Input validation
+  tasks:
+    - type: python_syntax
+      display_name: "The submitted file has correct Python syntax"
+      file: functions.py
+    - type: python_import
+      display_name: "The submitted file is a Python module that can be imported and defines the function hello"
+      file: functions.py
+      attrs:
+        hello: function

@@ -1,0 +1,15 @@
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: wallet.py
+  - field: file2
+    name: wallet_program.py
+
+model_files:
+  - exercises/iotester_wallet/model/wallet.py
+  - exercises/iotester_wallet/model/wallet_program.py
+
+container:
+    image: apluslms/grade-python:3.9-4.3-4.0
+    mount: exercises/iotester_wallet
+    cmd: graderutils --use-iotester

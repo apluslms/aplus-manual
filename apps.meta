@@ -1,1 +1,3 @@
 grader_config = _build/yaml
+build_image = apluslms/compile-rst:4.1
+build_command = legacy_build

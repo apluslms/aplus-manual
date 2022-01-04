@@ -1,0 +1,23 @@
+{% extends feedback_template %}
+
+{# Inject plotting libraries #}
+{% block feedback_start %}
+<link href="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js"></script>
+{% endblock feedback_start %}
+
+{# grader_tests creates a Bokeh plot embedded into a single script-element, available through result.userData.plotScript #}
+{% block result_panel_after_output %}
+{% if result.userData and result.userData.plotScript %}
+<div id="plot-placeholder"><pre>Drawing plot... (Please refresh the submission feedback, if the plot does not appear.)</pre></div>
+{{ result.userData.plotScript }}
+{% endif %}
+{% endblock %}
+
+{# Draw plot with _runBokehPlot, which is defined by grader_tests and is included in result.userData.raw_html #}
+{% block feedback_end %}
+<script>
+_runBokehPlot();
+document.getElementById("plot-placeholder").hidden = true;
+</script>
+{% endblock feedback_end %}

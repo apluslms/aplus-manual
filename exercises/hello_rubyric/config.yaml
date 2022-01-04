@@ -1,0 +1,12 @@
+_external: true
+title: Hello Rubyric
+description: Submit a text file (.txt) with the contain "Hello Rubyric"
+max_submissions: 10
+max_points: 10
+points_to_pass: 6
+min_group_size: 1
+max_group_size: 2
+lti: Rubyric
+lti_aplus_get_and_post: true
+url: /aplus_exercise
+
