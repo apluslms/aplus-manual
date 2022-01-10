@@ -72,7 +72,7 @@ a copy of ``exercises/hello_python/config.yaml``.
       name: functions.py
 
   container:
-    image: apluslms/grade-python:3.9-4.3-4.0
+    image: apluslms/grade-python:3.9-4.4-4.0
     mount: exercises/hello_python
     cmd: /exercise/run.sh
 
@@ -100,9 +100,9 @@ Explanation of the settings:
 - container
     This specifies the Docker container which is used for grading.
 
-    **image** is the container image. The value ``apluslms/grade-python:3.9-4.3-4.0`` means
+    **image** is the container image. The value ``apluslms/grade-python:3.9-4.4-4.0`` means
     that the container is grade-python made by organisation apluslms. The container
-    has Python version 3.9 and python-grader-utils 4.3 installed and it is based on version
+    has Python version 3.9 and python-grader-utils 4.4 installed and it is based on version
     4.0 of the "grading-base" container. For full documentation, see the repositories for
     `grading-base <https://github.com/apluslms/grading-base>`_,
     `grade-python <https://github.com/apluslms/grade-python>`_ and

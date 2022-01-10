@@ -30,6 +30,6 @@ max_submissions_before_regeneration: 3
 # alternative to the old chroot sandbox configuration. The container must have
 # Python 3 installed.
 container:
-  image: apluslms/grade-python:3.9-4.3-4.0
+  image: apluslms/grade-python:3.9-4.4-4.0
   mount: exercises/personalized_number
   cmd: /exercise/run.sh

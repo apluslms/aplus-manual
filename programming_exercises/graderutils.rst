@@ -57,7 +57,7 @@ and make data from grader tests available for the scripts.
   :title: Embedding a plot
 
   Notice that this exercise uses the Docker container image
-  ``apluslms/grade-python:math-3.9-4.3-4.0`` because it includes the plotting library Bokeh.
+  ``apluslms/grade-python:math-3.9-4.4-4.0`` because it includes the plotting library Bokeh.
 
   You can submit the file **solution_wrong.py** to see the feedback.
 
