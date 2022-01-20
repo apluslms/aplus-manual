@@ -553,7 +553,13 @@ Example: Regex questionnaire
       :title: Questionnaire using regular expressions
       :submissions: 5
 
-      Regular expressions are useful when there are multiple solutions, or when
+      Regular expressions can provide several alternative correct answers
+      for a single question such as in the first example. Both cat and dog
+      give full points. You can also give an example of correct answers
+      by following the regexp with " °=° " and some of the alternatives
+      (which is visible in the model answer instead of the whole regexp).
+
+      Regular expressions are also useful when there are multiple solutions, or when
       one wants to have some tolerance in numeric questions, like accept real
       numbers beginning with 0.014, 0.015, or 0.016.
 
@@ -562,7 +568,7 @@ Example: Regex questionnaire
 
         Type either "cat" or "dog".
 
-        ^(cat|dog)$
+        ^(cat|dog)$ °=° cat
 
       .. freetext:: 10 regexp
         :length: 7
@@ -582,6 +588,12 @@ Example: Regex questionnaire
         :title: Questionnaire using regular expressions
         :submissions: 5
 
+        Regular expressions can provide several alternative correct answers
+        for a single question such as in the first example. Both cat and dog
+        give full points. You can also give an example of correct answers
+        by following the regexp with " °=° " and some of the alternatives
+        (which is visible in the model answer instead of the whole regexp).
+
         Regular expressions are useful when there are multiple solutions, or when
         one wants to have some tolerance in numeric questions, like accept real
         numbers beginning with 0.014, 0.015, or 0.016.
@@ -591,7 +603,7 @@ Example: Regex questionnaire
 
           Type either "cat" or "dog".
 
-          ^(cat|dog)$
+          ^(cat|dog)$ °=° cat
 
         .. freetext:: 10 regexp
           :length: 7
@@ -601,7 +613,6 @@ Example: Regex questionnaire
           ``3.141`` and zero or more digits after that.
 
           ^3\.141\d*$
-
 
 Additional information
 ----------------------
