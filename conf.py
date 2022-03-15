@@ -21,7 +21,7 @@ questionnaire_default_submissions = 5
 program_default_submissions = 10
 default_max_group_size = 1
 use_wide_column = False
-static_host = os.environ.get('STATIC_CONTENT_HOST')
+static_host = os.environ.get('STATIC_CONTENT_HOST', 'http://localhost:8080/static/default')
 
 # Define the base URL of the ACOS exercises if the default value is incorrect.
 # The internal IP address of the ACOS container should be used in local testing
@@ -38,8 +38,8 @@ else:
 course_key = os.environ.get('COURSE_KEY', 'default')
 rst_prolog = '''.. |enroll-js-script| raw:: html
 
-  <script src="/static/{course_key}/_static/enrollmentquiz.js"></script>
-'''.format(course_key=course_key)
+  <script src="{static_host}/_static/enrollmentquiz.js"></script>
+'''.format(static_host=static_host)
 
 rst_prolog += '''
 .. role:: glyphicon-info-sign
