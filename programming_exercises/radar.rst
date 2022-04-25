@@ -10,8 +10,10 @@ results can be viewed using the Radar UI, accessible via the A+ menu.
 .. admonition:: Configuration
     :class: default
 
-    Radar is not yet available as a Docker container, and therefore requires
-    manual configuration in order to be used with the exercises on this course.
+    Radar is available as a Docker container for local testing.
+    The container is included in the
+    `docker-compose.yml <https://github.com/apluslms/aplus-manual/blob/master/docker-compose.yml>`_
+    file in the git repo of this manual.
 
 The following exercises are identical to the example exercises from chapter 2.2,
 except that we have specified the programming language used in the exercise by
@@ -41,6 +43,11 @@ inspect the results in the Radar service.
   :config: exercises/hello_javascript/config.yaml
   :radar_tokenizer: js
   :radar_minimum_match_tokens: 1
+
+.. submit:: primes_radar 10
+    :config: exercises/primes/config.yaml
+    :radar_tokenizer: python
+    :radar_minimum_match_tokens: 1
 
 .. _Radar: https://github.com/apluslms/radar
 
