@@ -21,12 +21,11 @@ This feature provides a low-effort way for students to run instructive pieces of
 
 This is useful for when you want to accompany your explanations with code, and also for giving complete beginners an easy way to run code without installing anything themselves.
 
-Currently only python is supported. You can look at the advanced section if you want to try enabling other languages.
+Currently only python, R and C/C++ are supported (see readme of `aplus-rst-tools <https://github.com/apluslms/a-plus-rst-tools>`_ for more information). You can look at the advanced section if you want to try enabling other languages.
 
-An example is given below
+An example of a code cell:
 
-.. thebe-button::
-
+.. thebe-precell-button::
 .. code-block:: python
    :class: thebe
 
@@ -35,6 +34,9 @@ An example is given below
    c = a + b
    print(c)
 
+and a standalone launch button:
+
+.. thebe-button:: 
 
 Usage
 -----
@@ -48,14 +50,16 @@ The edits the student does are not saved, and will be lost when the page is refr
 
 For the teacher
 ...............
-After setting everything up (see next sections for details), the teacher has to use two commands in their rst files. The first is ``thebe-button`` which inserts the button that activates the code-blocks. The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button is pressed.
+After setting everything up (see next sections for details), the teacher has to do two things in their rst files. The first is to insert a button that activates the coede-blocks:
+- The directive ``thebe-button`` for a standalone button
+- The directive ``thebe-precell-button`` for a button integrated to a code cell. These can be placed just before every code cell so that the students can start running code from anywhere.
+The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button is pressed.
 
 Here is an example of how an interactive code block together with a button could be added to a course module
 
 .. code-block:: rst
 
-  .. thebe-button:: Custom button text (defaults to "Run code")
-  
+  .. thebe-precell-button:: Custom button text (defaults to "Activate")
   .. code-block:: python
     :class: thebe
 
@@ -63,6 +67,9 @@ Here is an example of how an interactive code block together with a button could
     b = 2
     c = a + b
     print(c)
+
+    Standalone launch button:
+    .. thebe-button:: Custom buttom text (defaults to "Run code")
 
 If you want the output to be calculated and shown as soon as the kernel has been requested and set up, you can add the ``thebe-init`` class (``:class: thebe, init-thebe``).
 
