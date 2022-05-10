@@ -21,7 +21,7 @@ This feature provides a low-effort way for students to run instructive pieces of
 
 This is useful for when you want to accompany your explanations with code, and also for giving complete beginners an easy way to run code without installing anything themselves.
 
-Currently only python, R and C/C++ are supported (see readme of `aplus-rst-tools <https://github.com/apluslms/a-plus-rst-tools>`_ for more information). You can look at the advanced section if you want to try enabling other languages.
+Currently only Python, R, C/C++ and Octave are supported (see readme of `aplus-rst-tools <https://github.com/apluslms/a-plus-rst-tools>`_ for more information). You can look at the advanced section if you want to try enabling other languages.
 
 An example of a code cell:
 
@@ -50,7 +50,7 @@ The edits the student does are not saved, and will be lost when the page is refr
 
 For the teacher
 ...............
-After setting everything up (see next sections for details), the teacher has to do two things in their rst files. The first is to insert a button that activates the coede-blocks:
+After setting everything up (see next sections for details), the teacher has to do two things in their rst files. The first is to insert a button that activates the code-blocks:
 - The directive ``thebe-button`` for a standalone button
 - The directive ``thebe-precell-button`` for a button integrated to a code cell. These can be placed just before every code cell so that the students can start running code from anywhere.
 The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button is pressed.
