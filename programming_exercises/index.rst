@@ -13,3 +13,4 @@ Programming exercises
   web_frontend
   ajax_exercise
   submit_from_git
+  designing
