@@ -199,7 +199,7 @@ The following steps are executed inside the grade-python container.
 
 17. Because ``test_function`` has the docstring
     ``"""Check hello function exists"""``, Graderutils will show this
-    as the title of the test. The decorator ``@points(1)`` grants five points
+    as the title of the test. The decorator ``@points(1)`` grants one point
     if the test passes. Similarly, ``test_import`` also
     yields one point if it passes and ``test_return`` will yield three points if
     it passes.
