@@ -26,6 +26,12 @@ services:
       - grader
       - acos
       - rubyric
+  jutut:
+    image: apluslms/run-mooc-jutut:2.3.0
+    volumes:
+      - data:/data
+    ports:
+      - "8082:8082"
   acos:
     image: apluslms/run-acos-server
     user: $USER_ID:$USER_GID
