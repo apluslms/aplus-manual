@@ -41,4 +41,5 @@ Other content is not visible in A+.
   moodle_astra/index
   active_elements/index
   point_of_interest/index
+  jutut/index
   sphinx_extensions/index
