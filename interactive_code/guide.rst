@@ -50,10 +50,12 @@ The edits the student does are not saved, and will be lost when the page is refr
 
 For the teacher
 ...............
-After setting everything up (see next sections for details), the teacher has to do two things in their rst files. The first is to insert a button that activates the code-blocks:
+After setting everything up (see next sections for details), the teacher has to do two things in their rst files. The first is to insert a button that activates the coede-blocks:
+
 - The directive ``thebe-button`` for a standalone button
 - The directive ``thebe-precell-button`` for a button integrated to a code cell. These can be placed just before every code cell so that the students can start running code from anywhere.
-The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button is pressed.
+
+The second one is the class ``thebe``. Any code-block that has this class set will become interactive when the button` is pressed.
 
 Here is an example of how an interactive code block together with a button could be added to a course module
 
@@ -88,9 +90,47 @@ To set up interactive code, you have to set up a few things in the ``conf.py`` f
 
    # Thebe configuration
     thebe_config = {
-      "binderUrl": "https://mybinder.org" # For testing; replace this with a binderhub server provided by your instution for production
-      # "repository_url": ""
-      # "repostiory_branch": ""
-    }   
+      "binderUrl": "https://mybinder.org" # For testing only
+      # "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+      # "repository_branch": "master",
+      "selector": "div.highlight",
+      "codemirror-config": {
+          "theme": "eclipse",
+          "electricChars": "true"
+          "lineNumbers": "true",
+          "indentWithTabs": "true",
+          "indentUnit": 4,
+      }
+    }
 
+Kernel and code cell configuration
+...................................
+``"binderUrl"``
+    A url to a BinderHub server. ``mybinder.org`` should only be used for testing, and should be replaced by a binderhub server provided by your instution when running a course. (*For Aalto Users:* you can use the BinderHub server at ``https://csej4404-binderhub.aalto.fi``)
+``"repository_url"``
+    A valid `binderhub repository <https://mybinder.readthedocs.io/en/latest/examples/sample_repos.html>`_ to base the code environment on. Should be a public GitHub repostiory. Defaults to `Jupyter datascience image <https://github.com/binder-examples/jupyter-stacks-datascience>`_. (*For Aalto users:* if you want to this repository to be private, please contact ``aplusguru@cs.aalto.fi`` and ask for a ``version.aalto.fi`` gitlab repository in the group binderhub-code).
+``"repository_branch"``
+    The branch to use from the repository above. Defaults to master.`
+``"selector"``
+    Which ``rst`` code blocks should be converted to interactive code elements. Defaults to ``".thebe"``. Some examples
 
+    - ``"selector": "div.highlight"`` all the code blocks in ``rst`` files starting or containing ``:thebe-kernel: <KERNEL-NAME-HERE>`` directive will be converted to interactive code blocks.
+    - ``"selector": ".thebe"`` the code blocks containing ``:class: thebe`` option will be converted to interactive code blocks. This is the default option, and if it is desired to have all code blocks to be interactive code blocks ``"selector": "div.highlight"`` should be explicitly configured.
+
+Editable code area behaviour configuration
+..........................................
+``"theme": "eclipse"``
+    The editor code style theme. We support only two options for now: 
+
+    - ``"theme": "eclipse"`` (default). This theme is very similar to the default theme of Eclipse IDE, and has a light background, which makes it a natural choice for the default A+ style in general.
+    - ``"theme": "abcdef"``. This is a colorful theme with a dark background.
+``"electricChars": "true"`` 
+    Whether the editor (interactive code block) should re-indent the current line when a character is typed. Change this configuration to ``"false"`` if you prefer the students to practice proper indentation. Default is ``"true"``.
+``"lineNumbers": "true"`` 
+    Whether line numbering is enabled. When enabled, the editor will have a left gutter area with line numbers. The default is ``"true"``, and should be explicitly set to ``"false"`` if you do not want to have line numbers.
+``"indentWithTabs": "true"``
+    Whether indentation with tabs is enabled. The default configuration is ``"true"``, and should be set to ``"false"`` if you prefer to use spaces for indentation. A tab has ``4`` characters width.
+``"indentUnit": 4`` 
+    How many spaces define an indented block. The default is ``4`` spaces, and should be explicitly configured to change the indentation experience.
+
+In addition to the settings above, the matching braces are highlighted when one of (``}``, ``)`` or ``]``) is typed.
