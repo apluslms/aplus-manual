@@ -5,5 +5,5 @@ docker run --rm \
   -u $(id -u):$(id -g) \
   -e "STATIC_CONTENT_HOST=http://localhost:8080/static/default" \
   -e "COURSE_KEY=default" \
-  apluslms/compile-rst:4.1 \
+  apluslms/compile-rst:4.3 \
   make touchrst html
