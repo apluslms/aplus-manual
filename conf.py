@@ -12,6 +12,7 @@
 
 import sys
 import os
+import socket
 
 
 # -- Aplus configuration --------------------------------------------------
@@ -32,14 +33,21 @@ if on_container:
 else:
     acos_submit_base_url = 'https://acos.cs.aalto.fi'
 
+if on_container:
+    jutut_url = 'http://jutut:8082/feedback/aplusmanual/{key}'
+elif 'minus' in socket.gethostname():
+    jutut_url = 'https://jutut.minus.cs.aalto.fi/feedback/aplusmanual/{key}'
+else:
+    jutut_url = 'https://jutut.cs.aalto.fi/feedback/aplusmanual/{key}'
+
 override = {
     'jututfeedback': {
-        'url': ('http://jutut:8082/feedback/testcoursemultilang/{key}' if on_container
-                else 'https://jutut.minus.cs.aalto.fi/feedback/testcoursemultilang/{key}'),
+        'url': jutut_url,
         'max_points': 2,
         'points_to_pass': 1,
     },
 }
+
 # The JavaScript code used by the enrollment questionnaire is hosted in the course repo,
 # so we need to know the course key in order to craft the URL of the JS.
 # This RST substitution is used to insert the script in the questionnaire RST code.

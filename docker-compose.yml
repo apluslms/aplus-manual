@@ -27,7 +27,7 @@ services:
       - acos
       - rubyric
   jutut:
-    image: apluslms/run-mooc-jutut:2.3.0
+    image: apluslms/run-mooc-jutut:2.4
     volumes:
       - data:/data
     ports:

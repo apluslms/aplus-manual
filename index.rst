@@ -32,6 +32,7 @@ Other content is not visible in A+.
   questionnaires/index
   programming_exercises/index
   acos/index
+  jutut/index
   interactive_code/index
   converting/index
   lti/index
@@ -41,5 +42,4 @@ Other content is not visible in A+.
   moodle_astra/index
   active_elements/index
   point_of_interest/index
-  jutut/index
   sphinx_extensions/index
