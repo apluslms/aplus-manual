@@ -1,10 +1,11 @@
-Jutut
-===========
+Jutut service for feedback and messaging
+========================================
 
 .. toctree::
 
   introduction
 
 .. aplusmeta::
-  :introduction: <h3>Jutut</h3>
-    <p>In this section we will cover the following topics</p>
+  :introduction: <p><b>Jutut</b> is a tool that enables teachers to <strong>collect feedback continuously</strong> during a course,
+    to prompt students to <strong>comment on specific parts of course content</strong>, and
+    to encourage <strong>messaging between students and course staff</strong>.</p>
