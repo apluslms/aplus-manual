@@ -12,6 +12,12 @@ Second, A+ allows you to freely develop the online learning materials:
 you can control the HTML markup of the course web pages as well as the JavaScript code and CSS styles.
 For example, you may develop interactive visualizations in JavaScript and easily embed them into the course materials.
 
+A+ is a complementary system to `Moodle <https://moodle.org>`_, the official LMS provided by Aalto Learning Services (LES) as `MyCourses <https://mycourses.aalto.fi>`_.
+You could think the difference between the two like MS Word (Moodle) and LaTeX (A+) - at least if we forget about VBScript for now.
+Moodle gives you a GUI with low threshold adoption, a wide range of tools for basic needs in teaching (sharing course material and assignments, collecting student submissions, quizzes, peer feedback and discussions) and, at Aalto, a number of licensed or free add-ins, like Panopto for creating and sharing videos, Stack for mathematical assignments, CodeRunner for programming assignments, and H5P for creating interactive contents.
+Compared to Moodle, A+ provides you with additional features for producing course material including assignments with automatic assessment for Computer Science needs, with the drawback of a high threshold learning curve.
+It is also possible to use the automatic graders with limited functionality via a Moodle plugin called `Astra <https://github.com/apluslms/moodle-mod_astra/blob/master/astra/README.md>`_.
+
 A+ has been used to automatically grade *various kinds of assignments*, for example:
 
 * Programming in Python, Scala, C, C++, JavaScript and MATLAB to name a few.

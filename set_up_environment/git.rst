@@ -225,7 +225,26 @@ Then, click on the link "generate one" and follow the instructions.
   :align: center
   :width: 90%
 
+Course group
+............
 
+The course repository in `version.aalto.fi <https://version.aalto.fi>`_ must have the user "apluslms" as a member with the "Reporter" role (read access).
+Otherwise, the servers are not able to download the course git repository.
+Courses in the `course group <https://version.aalto.fi/gitlab/course>`_ owned by EDIT (A+ team) already have this set up automatically.
+
+* If the course repository in `version.aalto.fi <https://version.aalto.fi>`_ is not under our course group, then add the user "apluslms" with the "Reporter" role and Markku Riekkinen and Jimmy Ihalainen as members with the "Maintainer" role so that we can change the project settings when necessary.
+* Note: `version.aalto.fi <https://version.aalto.fi>`_ may have a user "aplus", but that is the wrong one. The correct one is "apluslms".
+* Adding members to the project in `version.aalto.fi <https://version.aalto.fi>`_: open your course project, then in the left-side menu, open Project information -> Members.
+* We strongly suggest to transfer your repository to the Aplus course group in `version.aalto.fi <https://version.aalto.fi>`_. If you are interested, please ask us about the course group by emailing aplusguru@cs.aalto.fi.
+
+Transfer an existing course git repository to the course group
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1. Contact aplusguru@cs.aalto.fi
+2. A+ support will add you as an owner to the course-transfer group (https://version.aalto.fi/gitlab/course-transfer).
+3. You can then transfer your course git repository to the course-transfer group (namespace in GitLab). The transfer is done in the project page in `version.aalto.fi <https://version.aalto.fi>`_. Go to Settings -> General -> expand the Advanced section -> Transfer project.
+4. A+ support transfers the repository from the course-transfer group to the course group.
+5. Anyone who has cloned the git repository to their computer needs to update the remote URL in the local repository. In the terminal, go to the repository directory and update the URL with the command ``git remote set-url origin NEW_URL`` (the remote name "origin" is the default name but you may have used a different name). You can check your git remotes and URLs with the command ``git remote -v``.
 
 Recommendations for git workflow
 ................................
