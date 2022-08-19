@@ -1,6 +1,12 @@
 Setting up a course on production servers
 =========================================
 
+.. admonition:: Outdated page
+  :class: error
+
+  This page is very outdated. It will be updated or removed in the future.
+
+
 This section discusses how to set up a course on a production server. Some
 information here might be specific to Aalto University, Gitlab or other
 software, not particularly A+ and mooc-grader.
