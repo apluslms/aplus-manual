@@ -98,3 +98,11 @@ generation, such as `Hypothesis <https://hypothesis.readthedocs.io/en/latest/>`_
 for Python. However, beware that the APIs for the libraries may change, which
 then complicates the maintenance of the automatic grader for your programming
 exercise.
+
+Ideas for assignments in research literature
+--------------------------------------------
+
+`Nifty assignments <http://nifty.stanford.edu/>`_: a collection of
+well-designed programming assigments presented yearly at
+`SIGCSE conference <https://dl.acm.org/conference/sigcse>`_.
+
