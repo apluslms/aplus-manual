@@ -13,4 +13,5 @@ Programming exercises
   web_frontend
   ajax_exercise
   submit_from_git
+  grader_lti_params
   designing

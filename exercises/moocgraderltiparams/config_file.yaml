@@ -1,0 +1,20 @@
+title: Using the student's name in the assignment feedback - file upload
+max_points: 10
+instructions: |
+  Upload a plain text file that contains a greeting.
+  The feedback will show the greeting with your name appended to it.
+
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: greeting
+    name: greeting
+    required: true
+
+lti: Grader
+lti_aplus_get_and_post: true
+
+container:
+  image: apluslms/grading-base:4.5
+  mount: exercises/moocgraderltiparams
+  cmd: /exercise/run.sh
+

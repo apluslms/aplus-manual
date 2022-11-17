@@ -1,0 +1,18 @@
+title: Using the student's name in the assignment feedback
+max_points: 10
+
+view_type: access.types.stdasync.acceptPost
+fields:
+  - name: greeting
+    title: Greeting
+    more: Write a greeting here. The feedback will show it with your name appended to it.
+    required: true
+
+lti: Grader
+lti_aplus_get_and_post: true
+
+container:
+  image: apluslms/grading-base:4.5
+  mount: exercises/moocgraderltiparams
+  cmd: /exercise/run.sh
+
