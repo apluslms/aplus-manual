@@ -313,10 +313,17 @@ The freetext directive also accepts the following options in addition to
 the common question options:
 
 - ``length``: (horizontal) length for the HTML text input. If the height is not defined, the length is translated to
-  the `size attribute of the input field <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefsize>`_, but if the height is defined the length represents the number of columns of
+  the `size attribute of the input field <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#size>`_,
+  but if the height is defined, the length represents the number of columns of
   the `textarea input field <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea>`_.
 - ``height``: If greater than 1, the textarea HTML element is used. Otherwise,
   a text input is used.
+
+.. admonition:: ``Length`` does not work
+  :class: error
+
+  Due to an old issue in the platform,
+  the ``length`` option is effectively ignored and it does not change anything.
 
 **Instructions and correct answer:** The body of the freetext question is
 expected to be its model solution. However, the question instructions can be
