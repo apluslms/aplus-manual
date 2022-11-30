@@ -360,11 +360,11 @@ The following modifiers are available:
   benefits of ``int`` over ``string`` are the following. First, extra space
   characters are always ignored. Second, A+ shows a histogram of the numerical
   answers to the teacher when they click on *View all submissions* on the
-  exercise box in A+, and then *Summary*. See Figure "the summary a
-  float-freetext questionnaire" below.
-  ``float`` works the same way as ``int``. Currently it considers the answer
-  to be correct if the difference between student's answer and the model
-  solution is at most 0.02.
+  exercise box in A+, and then *Summary*.
+
+  ``float`` works the same way as ``int``. Currently, it considers the answer
+  to be correct if the difference between the student's answer and the model
+  solution is at most 2% (relative to the larger absolute value).
 
 Example: Free-text questionnaire
 ................................
