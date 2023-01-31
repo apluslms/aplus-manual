@@ -43,3 +43,4 @@ Other content is not visible in A+.
   active_elements/index
   point_of_interest/index
   sphinx_extensions/index
+  lti_tool/index
