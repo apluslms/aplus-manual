@@ -369,9 +369,17 @@ The following modifiers are available:
   answers to the teacher when they click on *View all submissions* on the
   exercise box in A+, and then *Summary*.
 
-  ``float`` works the same way as ``int``. Currently, it considers the answer
-  to be correct if the difference between the student's answer and the model
-  solution is at most 2% (relative to the larger absolute value).
+  ``float`` works the same way as ``int``.
+  ``float`` also accepts answers that are close to the model solution, but not necessarily equal.
+  The default relative tolerance is very small, :math:`10^{-9}`,
+  which assures that the two values are the same within about 9 decimal digits.
+  You may change the absolute and relative tolerances in A-plus-rst-tools versions v1.6 and newer (and MOOC-Grader v1.19).
+  The ``freetext`` directive used in questionnaires has options ``float-rel-tol`` and ``float-abs-tol``.
+  The options correspond to the parameters of the ``math.isclose()``
+  `function <https://docs.python.org/3/library/math.html#math.isclose>`_.
+
+  In A-plus-rst-tools versions before v1.6, the tolerances could not be changed.
+  The comparison always used the relative tolerance of 2%.
 
 Example: Free-text questionnaire
 ................................
@@ -426,12 +434,22 @@ Example: Free-text questionnaire
         11
         !11 § Hint to be shown when the student's answer is not 11.
 
-      .. freetext:: 5 float
+      .. freetext:: 2 float
         :length: 7
 
         The answer can also be a decimal number (floating point number).
         What is :math:`3 / 8` in decimal? (When the question uses the float type,
         the grader accepts also answers that slightly differ from the model solution.)
+
+        0.378
+        !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+
+      .. freetext:: 3 float
+        :length: 7
+        :float-rel-tol: 0.05
+
+        What is :math:`3 / 8` in decimal?
+        (Now the accepted relative tolerance is 5% and the accepted range of correct answers is quite wide.)
 
         0.378
         !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
@@ -486,12 +504,22 @@ Example: Free-text questionnaire
           11
           !11 § Hint to be shown when the student's answer is not 11.
 
-        .. freetext:: 5 float
+        .. freetext:: 2 float
           :length: 7
 
           The answer can also be a decimal number (floating point number).
           What is :math:`3 / 8` in decimal? (When the question uses the float type,
           the grader accepts also answers that slightly differ from the model solution.)
+
+          0.378
+          !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+
+        .. freetext:: 3 float
+          :length: 7
+          :float-rel-tol: 0.05
+
+          What is :math:`3 / 8` in decimal?
+          (Now the accepted relative tolerance is 5% and the accepted range of correct answers is quite wide.)
 
           0.378
           !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
