@@ -27,7 +27,7 @@ static_host = os.environ.get('STATIC_CONTENT_HOST', 'http://localhost:8080/stati
 # Define the base URL of the ACOS exercises if the default value is incorrect.
 # The internal IP address of the ACOS container should be used in local testing
 # and in production, the URL of the ACOS production server.
-on_container = static_host and '8080' in static_host
+on_container = static_host and (':8080' in static_host or ':8070' in static_host)
 if on_container:
     acos_submit_base_url = 'http://acos:3000'
 else:
