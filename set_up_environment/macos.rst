@@ -107,6 +107,12 @@ Your ``docker-compose.yml`` file should now look similar to the following exampl
 When you open the A+ site in the web browser (address http://localhost:8000/) you should now
 be able to view and submit assignments and also receive the feedback in A+.
 
+.. note::
+  If you have an Apple Silicon computer, be sure to use container image version ``1.19`` or higher for
+  ``apluslms/run-aplus-front`` and ``apluslms/run-mooc-grader``, since the older images do not feature support for the
+  arm64 processor architecture of Apple Silicon computers. Native containers run faster than the x86_64 containers
+  that are run via the Rosetta translation layer.
+
 Troubleshooting
 ---------------
 
