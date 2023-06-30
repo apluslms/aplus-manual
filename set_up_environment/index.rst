@@ -8,6 +8,7 @@ Set up your environment
   docker
   editors
   vs_code
+  macos
 
 
 .. aplusmeta::
