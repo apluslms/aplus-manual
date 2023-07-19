@@ -26,7 +26,6 @@ services:
       - grader
       - acos
       - rubyric
-      - redis
   jutut:
     image: apluslms/run-mooc-jutut:2.4
     volumes:
@@ -72,6 +71,3 @@ services:
       POSTGRES_DB: rubyric
     volumes:
       - rubyricdb:/var/lib/postgresql/data
-  redis:
-    image: redis:6
-    command: redis-server --save 60 1 --loglevel warning

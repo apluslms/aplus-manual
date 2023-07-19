@@ -92,7 +92,6 @@ Your ``docker-compose.yml`` file should now look similar to the following exampl
         - "8000:8000"
       depends_on:
         - grader
-        - redis
     socat:
       image: alpine/socat
       command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
@@ -100,9 +99,6 @@ Your ``docker-compose.yml`` file should now look similar to the following exampl
         - /var/run/docker.sock:/var/run/docker.sock
       expose:
         - "2375"
-    redis:
-      image: redis:6
-      command: redis-server --save 60 1 --loglevel warning
 
 When you open the A+ site in the web browser (address http://localhost:8000/) you should now
 be able to view and submit assignments and also receive the feedback in A+.
