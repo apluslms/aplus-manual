@@ -1,0 +1,72 @@
+---
+title: Question groups - arithmetic questionnaire
+description: Some arithmetic multiple choice questions
+max_points: 15
+
+view_type: access.types.stdsync.createForm
+
+fieldgroups:
+
+  - title: Group 1. All questions must be answered correctly to earn points
+    group_errors: true
+    fields:
+
+      - title: \( 1 + 1 = ? \)
+        type: radio
+        points: 2
+        options:
+          - label: "1"
+          - label: "2"
+            correct: true
+          - label: "3"
+
+      - title: \( 2 * 7 = ? \)
+        type: dropdown
+        points: 2
+        options:
+          - label: "7"
+          - label: "14"
+            correct: true
+          - label: "21"
+
+      - title: \( 2 * x = y \)
+        type: checkbox
+        points: 3
+        options:
+          - label: \( x=3, y=6 \)
+            correct: true
+          - label: \( x=4, y=7 \)
+          - label: \( x=5, y=10 \)
+            correct: true
+
+      - title: \( 3 * 5 = ? \)
+        more: |
+          <p class="help-block">
+            Type the answer using numbers.
+          </p>
+        type: text
+        compare_method: int
+        points: 3
+        correct: "15"
+
+  - title: Group 2. All questions must be answered correctly to earn points
+    group_errors: true
+    fields:
+
+      - title: \( 3 + 5 = ? \)
+        type: radio
+        points: 2
+        options:
+          - label: "7"
+          - label: "8"
+            correct: true
+          - label: "9"
+
+      - title: \( 4 * 8 = ? \)
+        type: dropdown
+        points: 3
+        options:
+          - label: "28"
+          - label: "32"
+            correct: true
+          - label: "48"
