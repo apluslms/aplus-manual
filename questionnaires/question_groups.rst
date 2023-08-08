@@ -16,6 +16,8 @@ in the config.yaml file of the questionnaire.
   students receive points from question groups that have not been fully answered correctly
   and they see which questions were answered incorrectly.
 
+  This will be fixed in August 2023.
+
 .. admonition:: Only YAML
   :class: warning
 
