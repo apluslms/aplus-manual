@@ -1,0 +1,115 @@
+---
+title: Question groups - HTML content
+description: Questionnaire defined in yaml
+max_points: 30
+
+view_type: access.types.stdsync.createForm
+
+fieldgroups:
+
+- title: All questions must be answered correctly to earn points
+  group_errors: true
+  fields:
+
+  - type: static
+    more: |
+      <p>This questionnaire includes longer descriptions for each question.
+      It is also possible to write <strong>content outside questions</strong> like
+      in this paragraph using <code class="docutils literal notranslate"><span class="pre">static</span></code>
+      fields.
+      The content can use HTML formatting, for example, to insert images and tables.</p>
+
+      <p>Look at the following tree and answer the questions below.</p>
+      <img alt="tree data structure" src="../_static/small_tree.png">
+    title: ''
+
+  - type: checkbox
+    extra_info:
+      class: form-group
+    more: <p>In the tree shown above, which nodes are leaves?</p>
+    options:
+    - label: '1'
+      value: a
+    - label: '2'
+      value: b
+    - correct: true
+      label: '3'
+      value: c
+    - correct: true
+      label: '4'
+      value: d
+    - correct: true
+      label: '5'
+      value: e
+    points: 10
+    title|i18n:
+      en: Question 1
+      fi: Kysymys 1
+    feedback:
+    - label: Remember that leaf nodes can not have any children.
+      value: a
+    - label: Remember that leaf nodes can not have any children.
+      value: b
+    - label: Remember that leaf nodes can not have any children.
+      not: true
+      value: c
+    - label: Remember that leaf nodes can not have any children.
+      not: true
+      value: d
+    - label: Remember that leaf nodes can not have any children.
+      not: true
+      value: e
+
+  - type: radio
+    extra_info:
+      class: form-group
+    more: <p>In the tree shown above, which node is the root?</p>
+    options:
+    - correct: true
+      label: '1'
+      value: a
+    - label: '2'
+      value: b
+    - label: '3'
+      value: c
+    - label: '4'
+      value: d
+    - label: '5'
+      value: e
+    points: 10
+    title|i18n:
+      en: Question 2
+      fi: Kysymys 2
+    feedback:
+    - label: The root node has no parent. It is often drawn to the top.
+      value: a
+    - label: The root node has no parent.
+      not: true
+      value: a
+
+  - type: radio
+    extra_info:
+      class: form-group
+    more: |
+      <p>Read this code snippet. What does it print?</p>
+
+      <pre><code class="language-python">x = 3
+      x = x ** 2
+      y = x - 1
+      print(f"x = {x} and y = {y}")
+      </code></pre>
+
+    options:
+    - label: x = x and y = y
+      value: a
+    - label: x = 3 and y = 2
+      value: b
+    - correct: true
+      label: x = 9 and y = 8
+      value: c
+    - label: fx = 3 ** 2 and fy = 2
+      value: d
+    points: 10
+    title|i18n:
+      en: Question 3
+      fi: Kysymys 3

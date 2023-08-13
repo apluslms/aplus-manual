@@ -51,3 +51,11 @@ The config.yaml file of the questionnaire is also highlighted below.
       .. submit:: questiongroups 15
         :config: exercises/quiz_question_group/config.yaml
         :quiz:
+
+
+Another example
+---------------
+
+.. submit:: questiongroupsmorecontent 30
+  :config: exercises/quiz_question_group/config_more_html.yaml
+  :quiz:
