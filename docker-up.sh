@@ -51,6 +51,7 @@ onexit() {
     fi
     rm -rf /tmp/aplus || true
     while read -rs -t 0; do read -rs -t 0.1; done # flush input
+    stty sane
     exit 0
 }
 
