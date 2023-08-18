@@ -33,12 +33,12 @@ with the format ``:option: possible value``:
 - ``feedback``: If set, assumes the defaults for a feedback questionnaire
 - ``title``: exercise title
 - ``no-override``: If set, the conf.py override setting is ignored
-- ``pick_randomly``: integer. The questionnaire selects N questions randomly for the
+- ``pick-randomly``: integer. The questionnaire selects N questions randomly for the
   user instead of showing all questions. The random selection changes after the user submits,
   but persists without changes if the user just reloads the web page. (The questionnaire should
   not include any static text fields between the questions since the text fields are part of
   the pool from which the questions are randomly selected.)
-- ``preserve-questions-between-attempts``: If set, the questions in a ``pick_randomly``
+- ``preserve-questions-between-attempts``: If set, the questions in a ``pick-randomly``
   questionnaire are preserved between submission attempts, instead of being resampled
   after each attempt.
 - ``category``: exercise category. If you do not define a category the default value will be used. For questionnaires
