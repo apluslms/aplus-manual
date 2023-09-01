@@ -4,6 +4,7 @@ Jutut service for feedback and messaging
 .. toctree::
 
   introduction
+  features_and_hints
 
 .. aplusmeta::
   :introduction: <p><b>Jutut</b> is a tool that enables teachers to <strong>collect feedback continuously</strong> during a course,
