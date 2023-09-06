@@ -8,15 +8,6 @@ if they answer all questions inside the question group correctly.
 This grading behavior is enabled by the setting ``group_errors``
 in the config.yaml file of the questionnaire.
 
-.. admonition:: Broken feature
-  :class: danger
-
-  The feature is currently broken.
-  Even though they shouldn't,
-  students receive points from question groups that have not been fully answered correctly
-  and they see which questions were answered incorrectly.
-
-  This will be fixed in August 2023.
 
 .. admonition:: Only YAML
   :class: warning
