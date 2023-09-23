@@ -5,7 +5,7 @@ When you have opened the Jutut teacher portal and selected the correct course in
 Here you can read, respond and tag feedback that is considered unread.
 
 .. hint::
-    If you would like to mark a feedback as unread without responding, respond with an empty message.
+    If you would like to mark a feedback as read without responding, respond with an empty message.
     This does not send a notification to the student and the message will be considered read.
 
 You can access most of the other features through the menu by clicking on **More**:
@@ -95,7 +95,7 @@ Despite which operator is being used, if a conversation has any of the tags spec
     :width: 100%
     :alt: If the user selects that the *DONE* tag is to be excluded and the *Respond* tag to be included in the search, when filtering, conversations that have been tagged with the *Respond* tag and do not have the *DONE* tag will be returned.
 
-    *Filter conversations excluding those with the **DONE** tag and including those with the **Respond** tag.*
+    *Filter conversations excluding those with the DONE tag and including those with the Respond tag.*
 
 
 Context tags
@@ -132,7 +132,7 @@ When filtering using student tags, the same things apply as described for filter
 .. questionnaire::
   :feedback:
   :title: Feedback questionnaire
-  :category: feedback
+  :category: jututfeedback
 
   .. pick-one::
     :required:
@@ -148,7 +148,7 @@ When filtering using student tags, the same things apply as described for filter
 
   .. freetext::
     :main-feedback:
-    :key: 
+    :key: comments
     :length: 100
     :height: 8
 
