@@ -68,11 +68,11 @@ Head over to the **Git manager** section under **A+ Edit course section** and ge
 **Hook** and **Webhook secret** fields to the GitLab repository in the web interface of the project.
 
 In the GitLab project home page of your course, go to **Settings → Webhooks** in the left-side menu.
-Fill in the form:
+Click **Add new webhook** and fill in the form:
 
 1. Enter the hook URL in the **URL** field.
 2. Enter the webhook secret in the **Secret token** field.
-3. Select trigger for **Push events**, enter the Git branch name in the field
+3. Select trigger for **Push events**, choose the **Wildcard pattern** option, and enter the Git branch name in the field
    (the same branch that you input previously in the course instance creation form) and
    select **Enable SSL verification**.
 4. Click the **Add webhook** button.
