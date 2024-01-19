@@ -39,6 +39,11 @@ while [ "$1" ]; do
     esac
 done
 
+if [ ! -d "./_build" ]; then
+  echo "ERROR: Course must be built before personalized exercise instances can be pregenerated."
+  exit 1
+fi
+
 if [ -n "$exercise_key" ] && [ "$keep_old" = false ]; then
     rm -rf "./personalized_exercises/$exercise_key"
 elif [ "$keep_old" = false ]; then
