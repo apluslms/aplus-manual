@@ -441,8 +441,8 @@ Example: Free-text questionnaire
         What is :math:`3 / 8` in decimal? (When the question uses the float type,
         the grader accepts also answers that slightly differ from the model solution.)
 
-        0.378
-        !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+        0.375
+        !0.375 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
 
       .. freetext:: 3 float
         :length: 7
@@ -451,8 +451,8 @@ Example: Free-text questionnaire
         What is :math:`3 / 8` in decimal?
         (Now the accepted relative tolerance is 5% and the accepted range of correct answers is quite wide.)
 
-        0.378
-        !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+        0.375
+        !0.375 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
 
   .. tab-content:: tab-code-
     :title: RST Code
