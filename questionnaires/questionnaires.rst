@@ -149,7 +149,7 @@ Example: Single and multiple choices questionnaire
     .. questionnaire:: questionnaire_demo A40
       :title: Single-choice and multiple-choice questions
       :points-to-pass: 30
-      :submissions: 3
+      :submissions: 10
 
       The difficulty of this questionnaire is set as A. Maximum points are 40,
       but only 30 are required to pass.
@@ -230,7 +230,7 @@ Example: Single and multiple choices questionnaire
       .. questionnaire:: questionnaire_demo A40
         :title: Single-choice and multiple-choice questions
         :points-to-pass: 30
-        :submissions: 3
+        :submissions: 10
 
         The difficulty of this questionnaire is set as A. Maximum points are 40,
         but only 30 are required to pass.

@@ -27,7 +27,7 @@ This renders only the feedback body using the default `feedback template <https:
 
 .. submit:: primes 10
   :config: exercises/primes/config.yaml
-  :submissions: 99
+  :submissions: 10
   :title: Primes with Python grader utils
 
   In this exercise, you must implement the function ``is_prime``
