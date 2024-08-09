@@ -1,0 +1,19 @@
+---
+title: Questions about learners' code python
+description: Example of a QLC exercise in python
+instructions: |
+    <p>
+        Return a python file, and follow up questions will be generated.
+    </p>
+view_type: access.types.stdasync.acceptFiles
+files:
+  - field: file1
+    name: functions.py
+
+container:
+  image: apluslms/grade-python:3.11-4.9-4.9u1
+  mount: exercises/qlc_python
+  cmd: qlc_wrap /exercise/run.sh
+
+qlc:
+  cmd: ["qlcpy", "--json", "-un", "3", "functions.py"]

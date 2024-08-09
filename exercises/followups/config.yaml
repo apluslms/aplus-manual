@@ -1,0 +1,28 @@
+---
+view_type: access.types.stdsync.comparePostValues
+template: ./exercises/followups/template.html
+max_points: 5
+values:
+  qlc:
+    accept:
+      - true
+  p1:
+    accept:
+      - true
+    points: 1
+  p2:
+    accept:
+      - true
+    points: 1
+  p3:
+    accept:
+      - true
+    points: 1
+  p4:
+    accept:
+      - true
+    points: 1
+  p5:
+    accept:
+      - true
+    points: 1
