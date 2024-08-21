@@ -1,0 +1,48 @@
+{% extends 'access/exercise_frame.html' %}
+{% block exercise %}
+{% if not result.error %}    
+<form method="post" action="{{ post_url }}" data-grade="{% if LANGUAGE_CODE == "fi" %}Arvostele vastaukset{% else %}Grade the answers{% endif %}">
+{% if request.POST.qlc %}
+<script type="application/json" data-id="qlc-data">{% autoescape off %}{{ request.POST.qlc }}{% endautoescape %}</script>
+<script>
+function qlcViewAnswers(evt) {
+  evt.preventDefault();
+  const wrap = evt.target.parentElement.parentElement;
+  const data = JSON.parse(wrap.querySelector('[data-id="qlc-data"]').textContent);
+  const many = data.qlcs.map(qSpec => qSpec.options.filter(o => o.correct).length > 1);
+  const selected = data.qlcs.map(qSpec => qSpec.options.map(_ => false));
+  data.log.filter(e => e.type == 'change').forEach(({q, o, checked}) => {
+    selected[q] = selected[q].map((old, oo) => oo === o ? checked : (many[q] ? old : false));
+  });
+  let text = '';
+  data.qlcs.forEach((qSpec, q) => {
+    text += `${qSpec.question}\n`;
+    qSpec.options.forEach((oSpec, o) => {
+      text += `${selected[q][o] ? '⮽' : '☐'} ${oSpec.answer} ${selected[q][o] && !oSpec.correct ? '❌' : ''}\n`;
+    });
+  });
+  data.files.forEach(([name, body]) => {
+    text += `------\n${name}:\n------\n${body}\n`;
+  });
+  const view = document.createElement('pre');
+  view.innerText = text;
+  wrap.querySelector('button').remove();
+  wrap.append(view);
+}
+</script>
+<p>
+<button class="qlc-answers" onClick="qlcViewAnswers(event)">
+  {% if LANGUAGE_CODE == "fi" %}Näytä vastaukset{% else %}View answers{% endif %}
+</button>
+</p>
+{% else %}
+<p>{% if LANGUAGE_CODE == "fi" %}Voit aloittaa tämän tehtävään sen jälkeen, kun ohjelmointitehtävä on läpäisty.{% else %}You can start this exercise after the programming exercise is successfully completed.{% endif %}</p>
+<p>
+<button class="qlc-generate">
+   {% if LANGUAGE_CODE == "fi" %}Luo minulle kysely{% else %}Generate my questionnaire{% endif %}
+</button>
+</p>
+{% endif %}
+</form>
+{% endif %}
+{% endblock %}

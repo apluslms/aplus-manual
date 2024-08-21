@@ -4,7 +4,7 @@ from graderutils.graderunittest import points
 
 class TestHelloPython(unittest.TestCase):
 
-    @points(5)
+    @points(10)
     def test_return(self):
         """Check hello function return value"""
         # Calls the function "hello" and examines its return value.
