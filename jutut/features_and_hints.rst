@@ -219,6 +219,7 @@ Despite which operator is being used, if a conversation has any of the tags spec
 Feedback tags can be imported also from other courses (or course instances) that are visible to you.
 This can be cone on the *Import feedback tags from another course* page (*More* -> *Import feedback tags*).
 
+.. _jutut_context_tags:
 
 Context tags
 ------------
