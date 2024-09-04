@@ -70,8 +70,8 @@ and opens a new tab with the results. Reports are deleted an hour after submissi
     :width: 1000px
 
 Dolos shows an overview of the report on the first page. Radar is configured to send reports to
-Dolos such that the Labels correspond to student numbers. This allows the graph visualisation (Accessible 
-from the left side menu) to show more clearly clusters of student with similiar submissions. If a cluster
+Dolos such that the labels correspond to student numbers. This allows the graph visualisation (accessible 
+from the left side menu) to show more clearly clusters of students with similar submissions. If a cluster
 has multiple different colours, then different students' submissions are similar to each other.
 
 .. image:: /images/dolos_graph_view.png
