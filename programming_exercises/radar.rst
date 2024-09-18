@@ -5,7 +5,10 @@ It is possible to enable automatic program code similarity analysis for
 programming exercises by adding the `Radar`_ web service for an A+ course
 instance. When enabled, Radar will periodically fetch new submissions using the
 A+ API, and perform syntax level similarity analysis for the submissions. The
-results can be viewed using the Radar UI, accessible via the A+ menu.
+results can be viewed using the Radar UI, accessible via the A+ menu. 
+
+Radar also has the ability to generate reports using the Dolos service which produces
+higher quality similarity reports with more advanced visualisations.
 
 .. admonition:: Configuration
     :class: default
@@ -50,6 +53,29 @@ inspect the results in the Radar service.
     :radar_minimum_match_tokens: 1
 
 .. _Radar: https://github.com/apluslms/radar
+
+Dolos integration
+----------------
+
+Dolos is a modern service for generating similarity reports for source code. It is open source
+and the code is available `here <https://github.com/dodona-edu/dolos>`_. A local Dolos instance is running
+alongside Radar to allow for generating reports using data from Radar.
+
+.. image:: /images/radar_dolos_view_button.png
+
+In the user interface click the button with the label 'View in Dolos'. This generates a report
+and opens a new tab with the results. Reports are deleted an hour after submission to Dolos.
+
+.. image:: /images/dolos_menu.png
+    :width: 1000px
+
+Dolos shows an overview of the report on the first page. Radar is configured to send reports to
+Dolos such that the labels correspond to student numbers. This allows the graph visualisation (accessible 
+from the left side menu) to show more clearly clusters of students with similar submissions. If a cluster
+has multiple different colours, then different students' submissions are similar to each other.
+
+.. image:: /images/dolos_graph_view.png
+    :width: 1000px
 
 How to use Radar
 ----------------
