@@ -4,6 +4,7 @@ Jutut service for feedback and messaging
 .. toctree::
 
   introduction
+  setting_up
   features_and_hints
 
 .. aplusmeta::
