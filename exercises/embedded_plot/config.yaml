@@ -5,6 +5,6 @@ files:
     name: solution.py
 
 container:
-  image: apluslms/grade-python:math-3.9-4.4-4.0
+  image: apluslms/grade-python:math-3.11-4.10-4.10
   mount: exercises/embedded_plot
   cmd: graderutils
