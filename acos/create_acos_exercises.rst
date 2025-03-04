@@ -67,7 +67,7 @@ researching about `usability <https://www.nngroup.com/articles/usability-101-int
 related to the exercise you are developing. In this case, we should read about the main considerations needed while using
 `drag and drop <https://uxdesign.cc/drag-and-drop-for-design-systems-8d40502eb26d>`_ elements.
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 :glyphicon-info-sign:`\ ` **Read more about**  `How to use the web inspector <https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to>`_
 

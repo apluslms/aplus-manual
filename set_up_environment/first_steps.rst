@@ -131,7 +131,7 @@ You can also clone the public GitHub repository by executing the following comma
     git clone https://github.com/apluslms/course-templates.git
     cd course-templates
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 :glyphicon-info-sign:`\ ` **Read more about**  `how to clone GitHub repositories
 <https://docs.github.com/en/free-pro-team@latest/github/using-git/which-remote-url-should-i-use>`_

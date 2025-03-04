@@ -143,7 +143,7 @@ Toctree :important:`syntax` consists of the ``toctree`` directive, optional dire
       :raw-html:`<li><a href="/def/current/rst_guide/additional_resources_and_cheatsheet/">3.4 Additional resources and cheat sheet</a></li>`
       :raw-html:`</ul></div>`
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree>`_.
 
@@ -170,17 +170,17 @@ Code example
 
     .. code-block:: rst
 
-      .. container:: bg-success
+      .. container:: admonition success 
 
         .. div:: row
 
           .. div:: col-sm-12 col-md-6 border
 
-            This is div inside a container. This div occupied half of the container in medium to big screens and the whole container in small to extra small screens.
+            This is div inside a container. This div occupied half of the container in medium to extra large screens and the whole container in small to extra small screens.
 
           .. div:: col-sm-12 col-md-6 border
 
-            This is a second div inside the same container. This div occupied half of the container in medium to big screens and the whole container in small to extra small screens.
+            This is a second div inside the same container. This div occupied half of the container in medium to extra large screens and the whole container in small to extra small screens.
 
 
   .. tab-content:: tab2-container
@@ -188,16 +188,19 @@ Code example
 
     .. div:: html-box
 
-      :raw-html:`<div class="bg-success docutils container">`
-      :raw-html:`<div class="row">`
-      :raw-html:`<div class="col-sm-12 col-md-6">`
-      :raw-html:`This is div inside a container. This div occupied half of the container in medium to big screens and the whole container in small to extra small screens.</div>`
-      :raw-html:`<div class="col-sm-12 col-md-6">`
-      :raw-html:`This is a second div inside the same container. This div occupied half of the container in medium to big screens and the whole container in small to extra small screens.</div>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
+      .. container:: admonition success
 
-.. rst-class:: pull-right
+        .. div:: row
+
+          .. div:: col-sm-12 col-md-6 border
+
+            This is div inside a container. This div occupied half of the container in medium to extra large screens and the whole container in small to extra small screens.
+
+          .. div:: col-sm-12 col-md-6 border
+
+            This is a second div inside the same container. This div occupied half of the container in medium to extra large screens and the whole container in small to extra small screens.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `containers <https://docutils.sourceforge.io/docs/ref/rst/directives.html#container>`_.
 
@@ -237,21 +240,21 @@ Read the official documentation for adjusting the image size and the aligment.
 
         .. div:: col-12 col-md-6
 
-          .. image:: /images/gallery/Linux.svg
+          .. image:: /images/fireworks.jpg
             :alt: This is a sample image.
             :width: 380px
             :align: center
-            :class: img-responsive img-circle
+            :class: img-fluid rounded-circle
 
           This is not a caption, this is only a paragraph below the image.
 
         .. div:: col-12 col-md-6
 
-          .. figure:: /images/gallery/Linux.svg
+          .. figure:: /images/fireworks.jpg
             :alt: This is a sample figure.
-            :scale: 10%
+            :scale: 50%
             :align: center
-            :class: img-responsive img-thumbnail
+            :class: img-fluid img-thumbnail
 
             **Image X.** This is the caption.
 
@@ -260,20 +263,29 @@ Read the official documentation for adjusting the image size and the aligment.
 
     .. div:: html-box
 
-      :raw-html:`<div class="row">`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<a class="img-responsive img-circle reference internal image-reference" href="http://localhost:8080/static/default/_images/snippets.png"><img alt="This is a sample image." class="img-responsive img-circle align-center" src="http://localhost:8080/static/default/_images/snippets.png" style="width: 380px;"></a>`
-      :raw-html:`<p>This is not a caption, this is only a paragraph below the image</p>`
-      :raw-html:`</div>`
-      :raw-html:`<div class="col-12 col-md-6">`
-      :raw-html:`<div class="figure align-center" id="id8">`
-      :raw-html:`<a class="img-responsive img-thumbnail reference internal image-reference" href="http://localhost:8080/static/default/_images/snippets.png"><img alt="This is a sample figure." class="img-responsive img-thumbnail" src="http://localhost:8080/static/default/_images/snippets.png" style="width: 326.40000000000003px; height: 244.8px;"></a>`
-      :raw-html:`<p class="caption"><span class="caption-text"><strong>Image X.</strong> This is the caption.</span></p>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
-      :raw-html:`</div>`
+      .. div:: row
 
-.. rst-class:: pull-right
+        .. div:: col-12 col-md-6
+
+          .. image:: /images/fireworks.jpg
+            :alt: This is a sample image.
+            :width: 380px
+            :align: center
+            :class: img-fluid rounded-circle
+
+          This is not a caption, this is only a paragraph below the image.
+
+        .. div:: col-12 col-md-6
+
+          .. figure:: /images/fireworks.jpg
+            :alt: This is a sample figure.
+            :scale: 50%
+            :align: center
+            :class: img-fluid img-thumbnail
+
+            **Image X.** This is the caption.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `images <https://docutils.sourceforge.io/docs/ref/rst/directives.html#images>`_.
 
@@ -315,24 +327,16 @@ Field list :important:`syntax` consist of the term surrounded by colons, a white
 
     .. div:: html-box
 
-      :raw-html:`<table class="docutils field-list" frame="void" rules="none">`
-      :raw-html:`<colgroup><col class="field-name"><col class="field-body">`
-      :raw-html:`</colgroup><tbody valign="top">`
-      :raw-html:`<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body"><p class="first">May 08, 2020</p></td></tr>`
-      :raw-html:`<tr class="field-even field"><th class="field-name">Version:</th><td class="field-body"><p class="first">1.0</p></td></tr>`
-      :raw-html:`<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body"><ul class="first simple">`
-      :raw-html:`<li>Author One</li>`
-      :raw-html:`<li>Author Two</li>`
-      :raw-html:`</ul>`
-      :raw-html:`</td>`
-      :raw-html:`</tr>`
-      :raw-html:`<tr class="field-even field"><th class="field-name">Indentation:</th><td class="field-body"><p class="first last">Since the field marker may be quite long, the second and subsequent lines of the field body do not have to line up with the first line, but they must be indented relative to the field name marker, and they must line up with each other.</p>`
-      :raw-html:`</td>`
-      :raw-html:`</tr>`
-      :raw-html:`</tbody>`
-      :raw-html:`</table>`
+      :Date: May 08, 2020
+      :Version: 1.0
+      :Authors: - Author One
+                - Author Two
+      :Indentation: Since the field marker may be quite long, the second
+        and subsequent lines of the field body do not have to line up
+        with the first line, but they must be indented relative to the
+        field name marker, and they must line up with each other.
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `field lists <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#field-lists>`_.
 
@@ -369,23 +373,16 @@ Option list's :important:`syntax` consists of the option parameter, followed by 
 
     .. div:: html-box
 
-      :raw-html:`<table class="docutils option-list" frame="void" rules="none">`
-      :raw-html:`<colgroup><col class="option"><col class="description">`
-      :raw-html:`</colgroup><tbody valign="top">`
-      :raw-html:`<tr><td class="option-group"><kbd><span class="option">-a</span></kbd></td>`
-      :raw-html:`<td>Output all.</td></tr>`
-      :raw-html:`<tr><td class="option-group"><kbd><span class="option">-b</span></kbd></td>`
-      :raw-html:`<td>Output both (this description is quite long).</td></tr>`
-      :raw-html:`<tr><td class="option-group"><kbd><span class="option">-c <var>arg</var></span></kbd></td>`
-      :raw-html:`<td>Output just arg.</td></tr>`
-      :raw-html:`<tr><td class="option-group"><kbd><span class="option">--long</span></kbd></td>`
-      :raw-html:`<td>Output all day long.</td></tr>`
-      :raw-html:`<tr><td class="option-group"><kbd><span class="option">-p</span></kbd></td>`
-      :raw-html:`<td>This option has two paragraphs in the description. This is the first.</td></tr>`
-      :raw-html:`</tbody>`
-      :raw-html:`</table>`
+      -a         Output all.
+      -b         Output both (this description is
+                quite long).
+      -c arg     Output just arg.
+      --long     Output all day long.
 
-.. rst-class:: pull-right
+      -p         This option has two paragraphs in the description.
+                This is the first.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `option lists <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#option-lists>`_.
 
@@ -416,7 +413,7 @@ List tables :important:`syntax` consist of the directive name, the table title, 
 
     .. code-block:: rst
 
-      .. rst-class:: table-striped table-bordered table-hover
+      .. rst-class:: table table-success table-striped table-striped-columns table-hover
 
       .. list-table:: This is a List Title
         :widths: 25 25 50
@@ -437,30 +434,23 @@ List tables :important:`syntax` consist of the directive name, the table title, 
 
     .. div:: html-box
 
-      :raw-html:`<table class="colwidths-given table-striped table-bordered table-hover docutils" id="id33" border="1">`
-      :raw-html:`<caption><span class="caption-text">This is a List Title</span><a class="headerlink" href="#id33" title="Permalink to this table">¶</a></caption>`
-      :raw-html:`<colgroup><col width="25%"></colgroup>`
-      :raw-html:`<colgroup><col width="25%"></colgroup>`
-      :raw-html:`<colgroup><col width="50%"></colgroup>`
-      :raw-html:`<thead valign="bottom">`
-      :raw-html:`<tr class="row-odd"><th class="head">Heading row 1, column 1</th>`
-      :raw-html:`<th class="head">Heading row 1, column 2</th>`
-      :raw-html:`<th class="head">Heading row 1, column 3</th>`
-      :raw-html:`</tr>`
-      :raw-html:`</thead>`
-      :raw-html:`<tbody valign="top">`
-      :raw-html:`<tr class="row-even"><td>Row 1, column 1</td>`
-      :raw-html:`<td>&nbsp;</td>`
-      :raw-html:`<td>Row 1, column 3</td>`
-      :raw-html:`</tr>`
-      :raw-html:`<tr class="row-odd"><td>Row 2, column 1</td>`
-      :raw-html:`<td>Row 2, column 2</td>`
-      :raw-html:`<td>Row 2, column 3</td>`
-      :raw-html:`</tr>`
-      :raw-html:`</tbody>`
-      :raw-html:`</table>`
+      .. rst-class:: table table-success table-striped table-striped-columns table-hover
 
-.. rst-class:: pull-right
+      .. list-table:: This is a List Title
+        :widths: 25 25 50
+        :header-rows: 1
+
+        * - Heading row 1, column 1
+          - Heading row 1, column 2
+          - Heading row 1, column 3
+        * - Row 1, column 1
+          -
+          - Row 1, column 3
+        * - Row 2, column 1
+          - Row 2, column 2
+          - Row 2, column 3
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `list tables <https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table>`_.
 
@@ -488,59 +478,52 @@ CSV tables' :important:`syntax` consists of the directive name, the table title,
 
     .. code-block:: rst
 
-      .. csv-table:: This is a CSV Table imported from a file.
-        :file: ../course_material/file.csv
-        :widths: 30, 70, 30
-        :header-rows: 1
+      .. rst-class:: table table-secondary table-striped
 
-      .. csv-table:: CSV table extracted from the people.sc.fsu.edu
-        :header: "First Name", "Last Name", "Street", "County", "State", "Postal Code"
-        :widths: 25, 25, 15, 15, 10, 10
+        .. csv-table:: This is a CSV Table imported from a file.
+          :file: ../course_material/file.csv
+          :widths: 30, 70, 30
+          :header-rows: 1
 
-        John,Doe,120 Jefferson st.,Riverside, NJ, 08075
-        Jack,McGinnis,220 hobo Av.,Phila, PA,09119
-        "John ""Da Man""",Repici,120 Jefferson St.,Riverside, NJ,08075
-        Stephen,Tyler,"7452 Terrace ""At the Plaza"" road",SomeTown,SD, 91234
-        Anne, Blankman,,SomeTown, SD, 00298
-        "Joan ""the bone""",Jet,"9th, at Terrace plc",Desert City,CO,00123
+      .. rst-class:: table table-bordered table-hover table-striped-columns
+
+        .. csv-table:: CSV table extracted from the people.sc.fsu.edu
+          :header: "First Name", "Last Name", "Street", "County", "State", "Postal Code"
+          :widths: 25, 25, 15, 15, 10, 10
+
+          John,Doe,120 Jefferson st.,Riverside, NJ, 08075
+          Jack,McGinnis,220 hobo Av.,Phila, PA,09119
+          "John ""Da Man""",Repici,120 Jefferson St.,Riverside, NJ,08075
+          Stephen,Tyler,"7452 Terrace ""At the Plaza"" road",SomeTown,SD, 91234
+          Anne, Blankman,,SomeTown, SD, 00298
+          "Joan ""the bone""",Jet,"9th, at Terrace plc",Desert City,CO,00123
 
   .. tab-content:: tab2-csv-table
     :title: rendered: HTML
 
     .. div:: html-box
 
-      :raw-html:`<table class="colwidths-given docutils" id="id34" border="1">`
-      :raw-html:`<caption><span class="caption-text">This is a CSV Table imported from a file.</span><a class="headerlink" href="#id34" title="Permalink to this table">¶</a></caption>`
-      :raw-html:`<colgroup>`
-      :raw-html:`<col width="23%">`
-      :raw-html:`<col width="54%">`
-      :raw-html:`<col width="23%">`
-      :raw-html:`</colgroup>`
-      :raw-html:`<thead valign="bottom">`
-      :raw-html:`<tr class="row-odd"><th class="head">Header a</th>`
-      :raw-html:`<th class="head">Header B</th>`
-      :raw-html:`<th class="head">Header C</th>`
-      :raw-html:`</tr>`
-      :raw-html:`</thead>`
-      :raw-html:`<tbody valign="top">`
-      :raw-html:`<tr class="row-even"><td>Item 1a</td>`
-      :raw-html:`<td>Item 1b</td>`
-      :raw-html:`<td>None</td>`
-      :raw-html:`</tr>`
-      :raw-html:`<tr class="row-odd"><td>Item 1b</td>`
-      :raw-html:`<td>Item 2b</td>`
-      :raw-html:`<td>None</td>`
-      :raw-html:`</tr>`
-      :raw-html:`<tr class="row-even"><td>&nbsp;</td>`
-      :raw-html:`<td>Item 2c</td>`
-      :raw-html:`<td>None</td>`
-      :raw-html:`</tr>`
-      :raw-html:`</tbody>`
-      :raw-html:`</table>`
+      .. rst-class:: table table-secondary table-striped
 
-      :raw-html:`<table class="colwidths-given docutils" id="id29" border="1"><caption><span class="caption-text">CSV table extracted from the people.sc.fsu.edu</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption><colgroup><col width="25%"><col width="25%"><col width="15%"><col width="15%"><col width="10%"><col width="10%"></colgroup><thead valign="bottom"><tr class="row-odd"><th class="head">Firsr Name</th><th class="head">Last Name</th><th class="head">Street</th><th class="head">County</th><th class="head">State</th><th class="head">Postal Code</th></tr></thead><tbody valign="top"><tr class="row-even"><td>John</td><td>Doe</td><td>120 Jefferson st.</td><td>Riverside</td><td>NJ</td><td>08075</td></tr><tr class="row-odd"><td>Jack</td><td>McGinnis</td><td>220 hobo Av.</td><td>Phila</td><td>PA</td><td>09119</td></tr><tr class="row-even"><td>John “Da Man”</td><td>Repici</td><td>120 Jefferson St.</td><td>Riverside</td><td>NJ</td><td>08075</td></tr><tr class="row-odd"><td>Stephen</td><td>Tyler</td><td>7452 Terrace “At the Plaza” road</td><td>SomeTown</td><td>SD</td><td>91234</td></tr><tr class="row-even"><td>Anne</td><td>Blankman</td><td>&nbsp;</td><td>SomeTown</td><td>SD</td><td>00298</td></tr><tr class="row-odd"><td>Joan “the bone”</td><td>Jet</td><td>9th, at Terrace plc</td><td>Desert City</td><td>CO</td><td>00123</td></tr></tbody></table>`
+        .. csv-table:: This is a CSV Table imported from a file.
+          :file: ../course_material/file.csv
+          :widths: 30, 70, 30
+          :header-rows: 1
 
-.. rst-class:: pull-right
+      .. rst-class:: table table-bordered table-hover table-striped-columns
+
+        .. csv-table:: CSV table extracted from the people.sc.fsu.edu
+          :header: "First Name", "Last Name", "Street", "County", "State", "Postal Code"
+          :widths: 25, 25, 15, 15, 10, 10
+
+          John,Doe,120 Jefferson st.,Riverside, NJ, 08075
+          Jack,McGinnis,220 hobo Av.,Phila, PA,09119
+          "John ""Da Man""",Repici,120 Jefferson St.,Riverside, NJ,08075
+          Stephen,Tyler,"7452 Terrace ""At the Plaza"" road",SomeTown,SD, 91234
+          Anne, Blankman,,SomeTown, SD, 00298
+          "Joan ""the bone""",Jet,"9th, at Terrace plc",Desert City,CO,00123
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `CSV tables <https://docutils.sourceforge.io/docs/ref/rst/directives.html#csv-table>`_.
 
@@ -625,54 +608,34 @@ All of this is possible thanks to the built-in options of the ``code-block`` dir
 
     .. div:: html-box
 
-      :raw-html:`<div class="highlight-rst"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>`
-      :raw-html:`1`
-      :raw-html:`2`
-      :raw-html:`3`
-      :raw-html:`4`
-      :raw-html:`5`
-      :raw-html:`6`
-      :raw-html:`7`
-      :raw-html:`8`
-      :raw-html:`9`
-      :raw-html:`10`
-      :raw-html:`11`
-      :raw-html:`12`
-      :raw-html:`13`
-      :raw-html:`14`
-      :raw-html:`15`
-      :raw-html:`16`
-      :raw-html:`17`
-      :raw-html:`18`
-      :raw-html:`19`
-      :raw-html:`20`
-      :raw-html:`21`
-      :raw-html:`22`
-      :raw-html:`</pre></div></td><td class="code"><div class="highlight"><pre><span></span>ethernet_devices = [1, [7], [2], [8374163], [84302738]]`
-      :raw-html:`usb_devices = [1, [7], [1], [2314567], [0]]`
-      :raw-html:`&nbsp;`
-      :raw-html:`# The long way`
-      :raw-html:`all_devices = [`
-      :raw-html:`&nbsp;   ethernet_devices[0] + usb_devices[0],`
-      :raw-html:`&nbsp;   ethernet_devices[1] + usb_devices[1],`
-      :raw-html:`&nbsp;   ethernet_devices[2] + usb_devices[2],`
-      :raw-html:`&nbsp;   ethernet_devices[3] + usb_devices[3],`
-      :raw-html:`&nbsp;   ethernet_devices[4] + usb_devices[4]`
-      :raw-html:`]`
-      :raw-html:`&nbsp;`
-      :raw-html:`# Some comprehension magic`
-      :raw-html:`<span class="hll">all_devices = [x + y for x, y in zip(ethernet_devices, usb_devices)]`
-      :raw-html:`</span>`
-      :raw-html:`# Let's use maps`
-      :raw-html:`import operator`
-      :raw-html:`<span class="hll">all_devices = list(map(operator.add, ethernet_devices, usb_devices))`
-      :raw-html:`</span>`
-      :raw-html:`# We can't forget our favorite computation library`
-      :raw-html:`import numpy as np`
-      :raw-html:`<span class="hll">all_devices = np.add(ethernet_devices, usb_devices)`
-      :raw-html:`</span></pre></div></td></tr></tbody></table></div>`
+      .. code-block:: python
+        :linenos:
+        :emphasize-lines: 14,18,22
 
-.. rst-class:: pull-right
+        ethernet_devices = [1, [7], [2], [8374163], [84302738]]
+        usb_devices = [1, [7], [1], [2314567], [0]]
+
+        # The long way
+        all_devices = [
+            ethernet_devices[0] + usb_devices[0],
+            ethernet_devices[1] + usb_devices[1],
+            ethernet_devices[2] + usb_devices[2],
+            ethernet_devices[3] + usb_devices[3],
+            ethernet_devices[4] + usb_devices[4]
+        ]
+
+        # Some comprehension magic
+        all_devices = [x + y for x, y in zip(ethernet_devices, usb_devices)]
+
+        # Let's use maps
+        import operator
+        all_devices = list(map(operator.add, ethernet_devices, usb_devices))
+
+        # We can't forget our favorite computation library
+        import numpy as np
+        all_devices = np.add(ethernet_devices, usb_devices)
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `code block <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-code-block>`_.
 
@@ -738,57 +701,21 @@ The literalinclude :important:`syntax` consists of the directive name, the filep
 
     .. div:: html-box
 
-      :raw-html:`<div class="literal-block-wrapper docutils container" id="id27"><div class="code-block-caption"><span class="caption-text">Python diff example</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div><div class="highlight-udiff"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>`
-      :raw-html:`1`
-      :raw-html:`2`
-      :raw-html:`3`
-      :raw-html:`4`
-      :raw-html:`5`
-      :raw-html:`6`
-      :raw-html:`7`
-      :raw-html:`8`
-      :raw-html:`9`
-      :raw-html:`10`
-      :raw-html:`11`
-      :raw-html:`12`
-      :raw-html:`13`
-      :raw-html:`14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gd">--- /compile/course_material/python_examples/example.py.orig</span>`
-      :raw-html:`<span class="gi">+++ /compile/course_material/python_examples/example.py</span>`
-      :raw-html:`<span class="gu">@@ -1,7 +1,9 @@</span>`
-      :raw-html:`&nbsp;def merge_two_dicts(a, b):`
-      :raw-html:`<span class="gd">-    c = a.copy()   </span>`
-      :raw-html:`<span class="gd">-    c.update(b)    </span>`
-      :raw-html:`<span class="gi">+    c = a.copy()   # make a copy of a </span>`
-      :raw-html:`<span class="gi">+    c.update(b)    # modify keys and values of a with the ones from b</span>`
-      :raw-html:`&nbsp;    return c`
-      :raw-html:`<span class="gi">+</span>`
-      :raw-html:`&nbsp;`
-      :raw-html:`&nbsp;a = { 'x': 1, 'y': 2}`
-      :raw-html:`&nbsp;b = { 'y': 3, 'z': 4}`
-      :raw-html:`<span class="gi">+print(merge_two_dicts(a, b)) # {'y': 3, 'x': 1, 'z': 4}</span>`
-      :raw-html:`</pre></div></td></tr></tbody></table></div></div><div class="literal-block-wrapper docutils container" id="id28"><div class="code-block-caption"><span class="caption-text">Python example</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div><div class="highlight-python"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>`
-      :raw-html:`1`
-      :raw-html:`2`
-      :raw-html:`3`
-      :raw-html:`4`
-      :raw-html:`5`
-      :raw-html:`6`
-      :raw-html:`7`
-      :raw-html:`8`
-      :raw-html:`9`
-      :raw-html:`10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Prepended comment</span>`
-      :raw-html:`<span class="k">def</span> <span class="nf">merge_two_dicts</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>`
-      :raw-html:`<span class="n">&nbsp;   c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>   <span class="c1"># make a copy of a </span>`
-      :raw-html:`<span class="n">&nbsp;   c</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># modify keys and values of a with the ones from b</span>`
-      :raw-html:`<span class="k">&nbsp;   return</span> <span class="n">c</span>`
-      :raw-html:`&nbsp;`
-      :raw-html:`<span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>`
-      :raw-html:`<span class="n">b</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'y'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>`
-      :raw-html:`<span class="k">print</span><span class="p">(</span><span class="n">merge_two_dicts</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># {'y': 3, 'x': 1, 'z': 4}</span>`
-      :raw-html:`<span class="c1"># Appended comment</span>`
-      :raw-html:`</pre></div></td></tr></tbody></table></div></div>`
+      .. literalinclude:: /course_material/python_examples/example.py
+        :caption: Python diff example
+        :language: python
+        :linenos:
+        :diff: /course_material/python_examples/example.py.orig
 
-.. rst-class:: pull-right
+      .. literalinclude:: /course_material/python_examples/example.py
+        :caption: Python example
+        :language: python
+        :prepend: # Prepended comment
+        :append: # Appended comment
+        :linenos:
+        :lines: 1-5,7-11
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `literal include <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude>`_.
 
@@ -854,7 +781,7 @@ Cross-referencing :important:`syntax` consists of the ``:ref:`` or ``:doc:`` rol
       :raw-html:`<p>It refers to the section itself, see <a href="#id1" class="reference internal">Examples</a>.</p>`
       :raw-html:`<p>In addition, see the chapter <a data-aplus-chapter="yes" href="../../questionnaires/questionnaires" class="reference internal">questionnaires</a>.</p>`
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `cross-referencing <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role>`_.
 
@@ -885,12 +812,6 @@ In case of implementing links, the underscore should be added at the end.
 On the other hand, the :important:`syntax` for the substitution definition consists of two consecutive dots followed by a whitespace,
 the reference name wrapped in vertical bars, followed by some directive type and the data.
 
-.. |RST| replace:: reStructuredText
-.. _RST: http://docutils.sourceforge.net/rst.html
-
-|RST|_ is the best
-
-
 :glyphicon-console:`\ ` Code example
 ''''''''''''''''''''''''''''''''''''
 .. rst-tabs::
@@ -910,9 +831,12 @@ the reference name wrapped in vertical bars, followed by some directive type and
 
     .. div:: html-box
 
-      :raw-html:`<p><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> is the best</p>`
+      .. |RST| replace:: reStructuredText
+      .. _RST: http://docutils.sourceforge.net/rst.html
 
-.. rst-class:: pull-right
+      |RST|_ is the best
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `substitution references <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#substitution-references>`_.
 
@@ -943,9 +867,9 @@ Code example
 
     .. div:: html-box
 
-      :raw-html:`<p>The following <a href="http://localhost:8080/static/default/_downloads/6bc52a79122de11a1ea430ad7d4a4c62/example_file.txt" class="reference download internal">file</a> can be downloaded.</p>`
+      The following :download:`file </course_material/example_file.txt>` can be downloaded.
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `download <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-download>`_.
 
@@ -996,7 +920,7 @@ Have you tried the :term:`Sublime Text` editor yet?
       You'll love the slick user interface, extraordinary features and amazing performance.
 
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `term <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-term>`_ and `glossary <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-glossary>`_.
 

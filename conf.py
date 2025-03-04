@@ -59,15 +59,15 @@ rst_prolog = '''.. |enroll-js-script| raw:: html
 
 rst_prolog += '''
 .. role:: glyphicon-info-sign
-  :class: glyphicon glyphicon-info-sign
+  :class: bi-info-circle-fill
 .. role:: raw-html(raw)
    :format: html
 .. role:: glyphicon-pencil
-  :class: glyphicon glyphicon-pencil
+  :class: bi-pencil
 .. role:: glyphicon-certificate
-  :class: glyphicon glyphicon-certificate
+  :class: bi-award-fill
 .. role:: glyphicon-console
-  :class: glyphicon glyphicon-console
+  :class: bi-terminal-fill
 .. role:: important
   :class: important
 '''

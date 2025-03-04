@@ -116,520 +116,533 @@ POI with columns
 
 Columns can have two options `width` and `column-class`.
 
-**Width** can have values between 1 to 12. Where 12 is the whole width of the available space. These are relative widths.
+**Width** can be set to any value from 1 to 12, with 12 representing the full width of the available space. These values are relative widths.
 
-**column-class** can have any bootstrap class. You can set background color or align text for instance.
+**column-class** can contain any Bootstrap classes. You can, for example, set background color, add padding, or align text.
 
-To find out more about the classes you can use: `Bootstrap documentation <https://getbootstrap.com/docs/3.4/css/#helper-classes-backgrounds>`_.
+To find out more about the available classes, see Bootstrap 5 documentation for example on:
+  - `Background colors <https://getbootstrap.com/docs/5.2/helpers/color-background/>`_.
+  - `Columns <https://getbootstrap.com/docs/5.2/layout/columns/>`_.
+  - `Spacing <https://getbootstrap.com/docs/5.2/utilities/spacing/>`_.
 
-In the examples below you can see some use cases.
+You can see some use cases in the examples below.
+
+**Note**: with Bootstrap 5, you are no longer required to explicitly specify the width for each column. However, if the content does not fit into the cells in a row, some columns will flow into the next row. If this is not acceptable, you still need to specify the width of each column. In very narrow screens (xs), columns are always collapsed into one.
 
 **POI with two columns**
 
 .. code-block:: none
 
-    .. point-of-interest:: POI with columns
+  .. point-of-interest:: POI with two columns
 
-        .. row::
-
-            .. column::
-               :width: 12
-               :column-class: bg-warning text-center
-
-               First row with the width of 12. This has background color set to bg-warning which is red and text is aligned to center.
-
-        .. row::
-
-            .. column::
-              :width: 6
-              :column-class: bg-light text-center
-
-              .. math::
-
-                 (a + b)^2 = a^2 + 2ab + b^2
-
-                 (a - b)^2 = a^2 - 2ab + b^2
-
-            .. column::
-              :width: 6
-              :column-class:
-
-              This second row is split between two columns, each have width of 6. 6 + 6 = 12 which is maximum value in the row.
-
-**Result**
-
-.. point-of-interest:: POI with columns
-
-    .. row::
+      .. row::
 
         .. column::
-           :width: 12
-           :column-class: bg-warning text-center
+          :column-class: bg-warning-subtle p-3 text-center
 
-           First row with the width of 12. This has background color set to bg-warning which is red and text is aligned to center.
+          The first row has only one column (without a width definition), so it gets a width of 12 relative units (100%). It has background color set to bg-warning-subtle (orange), medium padding (p-3 = 1rem by default in Bootstrap). Text is centered.
 
-    .. row::
+      .. row::
 
         .. column::
-          :width: 6
-          :column-class: bg-light text-center
+          :column-class: text-bg-light p-3 text-center
 
           .. math::
 
-             (a + b)^2 = a^2 + 2ab + b^2
+            (a + b)^2 = a^2 + 2ab + b^2
 
-             (a - b)^2 = a^2 - 2ab + b^2
+            (a - b)^2 = a^2 - 2ab + b^2
 
         .. column::
-          :width: 6
-          :column-class:
+          :column-class: p-3 text-center
 
-          This second row is split between two columns, each have width of 6. 6 + 6 = 12 which is maximum value in the row.
+          This second row is split evenly between two columns. You do not need to enter explicit widths when all the columns in the row are the same width, but do note that columns may flow into the next row if the content does not fit.
+
+**Result**
+
+.. point-of-interest:: POI with two columns
+
+    .. row::
+
+      .. column::
+        :column-class: bg-warning-subtle p-3 text-center
+
+        The first row has only one column (without a width definition), so it gets a width of 12 relative units (100%). It has background color set to bg-warning-subtle (orange), medium padding (p-3 = 1rem by default in Bootstrap). Text is centered.
+
+    .. row::
+
+      .. column::
+        :column-class: text-bg-light p-3 text-center
+
+        .. math::
+
+          (a + b)^2 = a^2 + 2ab + b^2
+
+          (a - b)^2 = a^2 - 2ab + b^2
+
+      .. column::
+        :column-class: p-3 text-center
+
+        This second row is split evenly between two columns. You do not need to enter explicit widths when all the columns in the row are the same width, but do note that columns may flow into the next row if the content does not fit.
 
 
-**POI with nested columns**
+**POI with nested columns and uneven widths**
 
 .. code-block:: none
 
-    .. point-of-interest:: Making nested columns
+  .. point-of-interest:: Making nested columns
+
+    .. row::
+
+      .. column::
+        :width: 8
+        :column-class: bg-warning-subtle pt-3 pl-3 pr-3 pb-1 text-center
+
+        This column has a width of 8/12. It has medium padding (3) on each side, but only a very small (1) padding in the bottom to illustrate how the nested row is contained by it. Be careful with the RST indentation.
 
         .. row::
 
             .. column::
-              :width: 8
-              :column-class: bg-warning text-center
+              :width: 5
+              :column-class: text-bg-light p-2
 
-              See how width of 12 is separated between columns which are on the same row. Be careful with the indentation.
-
-                .. row::
-
-                    .. column::
-                      :width: 6
-                      :column-class: bg-light
-
-                      This column has width of 6.
-
-                    .. column::
-                      :width: 6
-                      :column-class: bg-secondary
-
-                      This column also has width of 6.
-                      See again how width is spread with columns 6 + 6 = 12
+              This column in a nested row has a width of 5/12, and a small padding (p-2)
 
             .. column::
-              :width: 4
-              :column-class:
+              :width: 7
+              :column-class: text-bg-secondary p-5
 
-              This is nested. This first row is split between two columns, first have a width of 8 and this has 4.
-              8 + 4 = 12 which is maximum value in the row.
+              This column in a nested row has a width of 7/12, and a very large padding (p-5).
+
+      .. column::
+        :width: 4
+        :column-class:
+
+        This first row is split between two columns. The first column has a width of 8/12, and this one has 4/12.
 
 **Result**
 
-.. point-of-interest:: Making nested columns
+.. point-of-interest:: Making nested rows/columns with uneven widths
 
-    .. row::
+  .. row::
 
-        .. column::
-          :width: 8
-          :column-class: bg-warning text-center
+    .. column::
+      :width: 8
+      :column-class: bg-warning-subtle pt-3 pl-3 pr-3 pb-1 text-center
 
-          See how width of 12 is separated between columns which are on the same row. Be careful with the indentation.
+      This column has a width of 8/12. It has medium padding (3) on each side, but only a very small (1) padding in the bottom to illustrate how the nested row is contained by it. Be careful with the RST indentation.
 
-            .. row::
+      .. row::
 
-                .. column::
-                  :width: 6
-                  :column-class: bg-light
+          .. column::
+            :width: 5
+            :column-class: text-bg-light p-2
 
-                  This column has width of 6.
+            This column in a nested row has a width of 5/12, and a small padding (p-2)
 
-                .. column::
-                  :width: 6
-                  :column-class: bg-secondary
+          .. column::
+            :width: 7
+            :column-class: text-bg-secondary p-5
 
-                  This column also has width of 6.
-                  See again how width is spread with columns 6 + 6 = 12
+            This column in a nested row has a width of 7/12, and a very large padding (p-5).
 
-        .. column::
-          :width: 4
-          :column-class:
+    .. column::
+      :width: 4
+      :column-class:
 
-          This is nested. This first row is split between two columns, first have a width of 8 and this has 4.
-          8 + 4 = 12 which is maximum value in the row.
+      This first row is split between two columns. The first column has a width of 8/12, and this one has 4/12.
 
 
 **POI with multiple rows and columns**
 
 .. code-block:: none
 
-    .. point-of-interest:: Testing column widths
+  .. point-of-interest:: Testing column widths
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 12
-              :column-class: bg-warning text-center
+      .. column::
+        :column-class: bg-warning-subtle text-center
 
-              See how width of 12 is separated between columns which are on the same row. Be careful with the indentation.
+        See how width of 12 is separated between columns on the same row. Note how the "width of 1" columns overflow when making the browser window more narrow. To prevent this, set each column width explicitly.
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 6
-              :column-class: bg-light text-center
+      .. column::
+        :column-class: text-bg-light text-center
 
-              This column has width of 6.
+        This column has width of 6.
 
-            .. column::
-              :width: 6
-              :column-class: bg-secondary text-center
+      .. column::
+        :column-class: text-bg-secondary text-center
 
-              This column also has width of 6.
-              See again how width is spread with columns 6 + 6 = 12
+        This column also has width of 6.
+        See again how width is spread with columns 6 + 6 = 12
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 4
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 4
+        width of 4
 
-            .. column::
-              :width: 4
-              :column-class: text-center bg-dark
+      .. column::
+        :column-class: text-center text-bg-dark
 
-              width of 4
+        width of 4
 
-            .. column::
-              :width: 4
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 4
+        width of 4
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 3
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 3
+        width of 3
 
-            .. column::
-              :width: 3
-              :column-class: text-center bg-danger
+      .. column::
+        :column-class: text-center bg-danger-subtle
 
-              width of 3
+        width of 3
 
-            .. column::
-              :width: 3
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 3
+        width of 3
 
-            .. column::
-              :width: 3
-              :column-class: text-center bg-danger
+      .. column::
+        :column-class: text-center bg-danger-subtle
 
-              width of 3
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-            .. column::
-              :width: 2
-              :column-class: text-center bg-success
+      .. column::
+        :column-class: text-center bg-success-subtle
 
-              width of 2
+        width of 2
 
-        .. row::
+    .. row::
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center bg-info
+      .. column::
+        :column-class: text-center bg-info-subtle
 
-              width of 1
+        width of 1
 
-            .. column::
-              :width: 1
-              :column-class: text-center
+      .. column::
+        :column-class: text-center
 
-              width of 1
+        width of 1
 
 **Result**
 
 .. point-of-interest:: Testing column widths
 
+  .. row::
+
+    .. column::
+      :column-class: bg-warning-subtle text-center
+
+      See how width of 12 is separated between columns on the same row. Note how the "width of 1" columns overflow when making the browser window more narrow. To prevent this, set each column width explicitly.
+
+  .. row::
+
+    .. column::
+      :column-class: text-bg-light text-center
+
+      This column has width of 6.
+
+    .. column::
+      :column-class: text-bg-secondary text-center
+
+      This column also has width of 6.
+      See again how width is spread with columns 6 + 6 = 12
+
+  .. row::
+
+    .. column::
+      :column-class: text-center
+
+      width of 4
+
+    .. column::
+      :column-class: text-center text-bg-dark
+
+      width of 4
+
+    .. column::
+      :column-class: text-center
+
+      width of 4
+
+  .. row::
+
+    .. column::
+      :column-class: text-center
+
+      width of 3
+
+    .. column::
+      :column-class: text-center bg-danger-subtle
+
+      width of 3
+
+    .. column::
+      :column-class: text-center
+
+      width of 3
+
+    .. column::
+      :column-class: text-center bg-danger-subtle
+
+
+  .. row::
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+    .. column::
+      :column-class: text-center bg-success-subtle
+
+      width of 2
+
+  .. row::
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+    .. column::
+      :column-class: text-center bg-info-subtle
+
+      width of 1
+
+    .. column::
+      :column-class: text-center
+
+      width of 1
+
+
+**POI with column offsets**
+
+.. code-block:: none
+
+  .. point-of-interest:: Column offsets
+
     .. row::
 
-        .. column::
-          :width: 12
-          :column-class: bg-warning text-center
+      .. column::
+        :width: 4
+        :column-class: offset-sm-4 text-bg-danger
 
-          See how width of 12 is separated between columns which are on the same row. Be careful with the indentation.
-
-    .. row::
-
-        .. column::
-          :width: 6
-          :column-class: bg-light text-center
-
-          This column has width of 6.
-
-        .. column::
-          :width: 6
-          :column-class: bg-secondary text-center
-
-          This column also has width of 6.
-          See again how width is spread with columns 6 + 6 = 12
+        This column has a width of 4 and offset of 4.
 
     .. row::
 
-        .. column::
-          :width: 4
-          :column-class: text-center
+      .. column::
+        :column-class: text-bg-danger p-2
 
-          width of 4
+        This column has no width set, resulting in a width of 12/3 = 4.
 
-        .. column::
-          :width: 4
-          :column-class: text-center bg-dark
+      .. column::
+        :column-class: text-danger-emphasis bg-danger-subtle p-2
 
-          width of 4
+        This column uses the text-danger-emphasis and bg-danger-subtle classes.
 
-        .. column::
-          :width: 4
-          :column-class: text-center
+      .. column::
+        :column-class: text-bg-danger p-2
 
-          width of 4
+        This column has no width set, resulting in a width of 12/3 = 4.
 
     .. row::
 
-        .. column::
-          :width: 3
-          :column-class: text-center
+      .. column::
+        :width: 4
+        :column-class: offset-sm-4 text-bg-danger p-2
 
-          width of 3
+        This column has a width of 4 and offset of 4.
 
-        .. column::
-          :width: 3
-          :column-class: text-center bg-danger
+**Result**
 
-          width of 3
+.. point-of-interest:: Column offsets
 
-        .. column::
-          :width: 3
-          :column-class: text-center
+  .. row::
 
-          width of 3
+    .. column::
+      :width: 4
+      :column-class: offset-sm-4 text-bg-danger
 
-        .. column::
-          :width: 3
-          :column-class: text-center bg-danger
+      This column has a width of 4 and offset of 4.
 
-          width of 3
+  .. row::
 
-    .. row::
+    .. column::
+      :column-class: text-bg-danger p-2
 
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
+      This column has no width set, resulting in a width of 12/3 = 4.
 
-          width of 2
+    .. column::
+      :column-class: text-danger-emphasis bg-danger-subtle p-2
 
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
+      This column uses the text-danger-emphasis and bg-danger-subtle classes.
 
-          width of 2
+    .. column::
+      :column-class: text-bg-danger p-2
 
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
+      This column has no width set, resulting in a width of 12/3 = 4.
 
-          width of 2
+  .. row::
 
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
+    .. column::
+      :width: 4
+      :column-class: offset-sm-4 text-bg-danger p-2
 
-          width of 2
-
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
-
-          width of 2
-
-        .. column::
-          :width: 2
-          :column-class: text-center bg-success
-
-          width of 2
-
-    .. row::
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center bg-info
-
-          width of 1
-
-        .. column::
-          :width: 1
-          :column-class: text-center
-
-          width of 1
-
+      This column has a width of 4 and offset of 4.
 
 **Making columns with ::newcol (Deprecated)**
 
@@ -638,9 +651,9 @@ The ``::newcol`` separator in points-of-interest is deprecated and you should us
 .. code-block:: none
 
     .. point-of-interest:: Testing newcol
-      :columns: 1 1 1
+      :columns: 3 1 1
 
-      This is on the first column. In this case columns option sets each column to be equal width. You could set it to any ratio like 3 1 1.
+      This is on the first column. In this case columns option sets each column to be equal width. You could set it to any ratio like 1 1 1.
 
       ::newcol
 
@@ -653,9 +666,9 @@ The ``::newcol`` separator in points-of-interest is deprecated and you should us
 **Result**
 
 .. point-of-interest:: Testing newcol
-  :columns: 1 1 1
+  :columns: 3 1 1
 
-  This is on the first column. In this case columns option sets each column to be equal width. You could set it to any ratio like 3 1 1.
+  This is on the first column. In this case columns option sets each column to be equal width. You could set it to any ratio like 1 1 1.
 
   ::newcol
 

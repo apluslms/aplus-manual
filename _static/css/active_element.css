@@ -61,9 +61,9 @@
 }
 
 .poi-container.poi-content {
-  border: 1px solid  #e7f2fa;
-  border-top: 2px solid #3c763d;
-  border-bottom: 2px solid #3c763d;
-  background: #ebf5e7;
+  border: 1px solid  var(--bs-border-color, #e7f2fa);
+  border-top: 2px solid var(--bs-success-border-subtle, #3c763d);
+  border-bottom: 2px solid var(--bs-success-border-subtle, #3c763d);
+  background: var(--bs-success-bg-subtle, #ebf5e7);
 }
 

@@ -53,7 +53,7 @@ of this manual.
   #. *RST* directives and roles are case-insensitive.
 
 
-  .. rst-class:: pull-right
+  .. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `RST syntax
   <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#syntax-details>`_
@@ -153,7 +153,7 @@ suggested in the table below.
     :raw-html:`<h4>Section subsubtitle</h4>`
     :raw-html:`<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada nulla ut eleifend placerat. Curabitur sit amet nibh convallis, facilisis.</p>`
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `titles <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`_
 
@@ -206,11 +206,13 @@ should be surrounded by blank lines.
   .. tab-content:: tab2-ruler
     :title: rendered: HTML
 
-    :raw-html:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate felis vel bibendum dignissim. Nunc et pretium lacus. Phasellus lorem tortor, suscipit sed aliquet sit amet, tempor sit amet purus. Cras efficitur fermentum tellus sit amet aliquam. Aliquam sed turpis faucibus, aliquam augue ut, malesuada orci. Nunc ultricies malesuada risus scelerisque tristique. Mauris scelerisque nisl purus, id lobortis velit facilisis a.`
-    :raw-html:`<hr>`
-    :raw-html:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate felis vel bibendum dignissim. Nunc et pretium lacus. Phasellus lorem tortor, suscipit sed aliquet sit amet, tempor sit amet purus. Cras efficitur fermentum tellus sit amet aliquam. Aliquam sed turpis faucibus, aliquam augue ut, malesuada orci. Nunc ultricies malesuada risus scelerisque tristique. Mauris scelerisque nisl purus, id lobortis velit facilisis a.`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        :raw-html:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate felis vel bibendum dignissim. Nunc et pretium lacus. Phasellus lorem tortor, suscipit sed aliquet sit amet, tempor sit amet purus. Cras efficitur fermentum tellus sit amet aliquam. Aliquam sed turpis faucibus, aliquam augue ut, malesuada orci. Nunc ultricies malesuada risus scelerisque tristique. Mauris scelerisque nisl purus, id lobortis velit facilisis a.`
+        :raw-html:`<hr>`
+        :raw-html:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate felis vel bibendum dignissim. Nunc et pretium lacus. Phasellus lorem tortor, suscipit sed aliquet sit amet, tempor sit amet purus. Cras efficitur fermentum tellus sit amet aliquam. Aliquam sed turpis faucibus, aliquam augue ut, malesuada orci. Nunc ultricies malesuada risus scelerisque tristique. Mauris scelerisque nisl purus, id lobortis velit facilisis a.`
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `transitions <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#transitions>`_.
 
@@ -273,7 +275,7 @@ Paragraphs :important:`syntax` consists of plain text and `Inline markup`_ eleme
     venenatis ac, consequat lobortis tortor. Maecenas iaculis est quis justo
     facilisis, et elementum velit venenatis.</div>`
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `paragraphs <https://docutils.sourceforge.io/docs/ref/rst/directives.html#paragraphs>`_
 
@@ -324,9 +326,11 @@ Remember that the directive argument is required for the sidebar.
   .. tab-content:: tab2-sidebar
     :title: rendered: HTML
 
-    :raw-html:`<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tincidunt felis. Suspendisse convallis semper faucibus.</div></br><div class="sidebar"><p class="first sidebar-title">Sidebar Title</p><p    class="sidebar-subtitle">Optional Sidebar Subtitle</p><p   class="last">Subsequent indented lines comprise the body of the sidebar, and     are interpreted as body elements.</p></div><div>Lorem ipsum dolor sit amet,     consectetur adipiscing elit. Praesent cursus tincidunt felis. Suspendisse     convallis semper faucibus. In eleifend nisl sit amet enim mollis, vitae     eleifend orci euismod. Mauris vel nibh diam. Quisque laoreet elit ac est    fermentum auctor. Phasellus massa tortor, interdum eu porta sed, malesuada    sed erat. Morbi magna turpis, efficitur a venenatis ac, consequat lobortis   tortor. Maecenas iaculis est quis justo facilisis, et elementum velit    venenatis. Phasellus sit amet lobortis magna. Cras fermentum nulla eros, id   vestibulum felis feugiat ac. Mauris eget libero ut ex mollis scelerisque sit     amet vel lectus.</div>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      :raw-html:`<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tincidunt felis. Suspendisse convallis semper faucibus.</div></br><div class="sidebar"><p class="first sidebar-title">Sidebar Title</p><p class="sidebar-subtitle">Optional Sidebar Subtitle</p><p class="last">Subsequent indented lines comprise the body of the sidebar, and are interpreted as body elements.</p></div><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tincidunt felis. Suspendisse convallis semper faucibus. In eleifend nisl sit amet enim mollis, vitae eleifend orci euismod. Mauris vel nibh diam. Quisque laoreet elit ac estfermentum auctor. Phasellus massa tortor, interdum eu porta sed, malesuadased erat. Morbi magna turpis, efficitur a venenatis ac, consequat lobortis tortor. Maecenas iaculis est quis justo facilisis, et elementum velitvenenatis. Phasellus sit amet lobortis magna. Cras fermentum nulla eros, id vestibulum felis feugiat ac. Mauris eget libero ut ex mollis scelerisque sit amet vel lectus.</div>`
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `sidebars <https://docutils.sourceforge.io/docs/ref/rst/directives.html#sidebar>`_
 
@@ -377,26 +381,28 @@ whitespace instead of the vertical bar.
   .. tab-content:: tab2-line-block
     :title: rendered: HTML
 
-    :raw-html:`<div class="line-block">`
-    :raw-html:`<div class="line"><strong>NAME</strong>     top</div>`
-    :raw-html:`<div class="line"><br></div>`
-    :raw-html:`<div class="line-block">`
-    :raw-html:`<div class="line">man - an interface to the system reference manuals</div>`
-    :raw-html:`<div class="line"><br></div>`
-    :raw-html:`</div>`
-    :raw-html:`<div class="line"><strong>SYNOPSIS</strong>    top</div>`
-    :raw-html:`<div class="line"><br></div>`
-    :raw-html:`<div class="line-block">`
-    :raw-html:`<div class="line">man [man options] [[section] page …] …</div>`
-    :raw-html:`<div class="line">man -k [apropos options] regexp …</div>`
-    :raw-html:`<div class="line">man -K [man options] [section] term …</div>`
-    :raw-html:`<div class="line">man -f [whatis options] page …</div>`
-    :raw-html:`<div class="line">man -l [man options] file …</div>`
-    :raw-html:`<div class="line">man -w|-W [man options] page …</div>`
-    :raw-html:`</div>`
-    :raw-html:`</div>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      :raw-html:`<div class="line-block">`
+      :raw-html:`<div class="line"><strong>NAME</strong>     top</div>`
+      :raw-html:`<div class="line"><br></div>`
+      :raw-html:`<div class="line-block">`
+      :raw-html:`<div class="line">man - an interface to the system reference manuals</div>`
+      :raw-html:`<div class="line"><br></div>`
+      :raw-html:`</div>`
+      :raw-html:`<div class="line"><strong>SYNOPSIS</strong>    top</div>`
+      :raw-html:`<div class="line"><br></div>`
+      :raw-html:`<div class="line-block">`
+      :raw-html:`<div class="line">man [man options] [[section] page …] …</div>`
+      :raw-html:`<div class="line">man -k [apropos options] regexp …</div>`
+      :raw-html:`<div class="line">man -K [man options] [section] term …</div>`
+      :raw-html:`<div class="line">man -f [whatis options] page …</div>`
+      :raw-html:`<div class="line">man -l [man options] file …</div>`
+      :raw-html:`<div class="line">man -w|-W [man options] page …</div>`
+      :raw-html:`</div>`
+      :raw-html:`</div>`
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `line blocks <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#line-blocks>`_
 
@@ -440,14 +446,15 @@ Block quote :important:`syntax` consist of an indented text block (quoted text),
   .. tab-content:: tab2-blockquote
     :title: rendered: HTML
 
-    :raw-html:`<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tincidunt felis.</p>`
-    :raw-html:`<blockquote>`
-    :raw-html:`<div>`
-    :raw-html:`<p>“It is my business to know things. That is my trade.”</p><p>—Sherlock Holmes<p>`
-    :raw-html:`</div>`
-    :raw-html:`</blockquote>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tincidunt felis.
+
+        "It is my business to know things. That is my trade."
+
+          -- Sherlock Holmes
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `blocks quotes <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#block-quotes>`_
 
@@ -484,13 +491,15 @@ directive does not take any arguments, only content.
   .. tab-content:: tab2-epigraph
     :title: rendered: HTML
 
-    :raw-html:`<blockquote>`
-    :raw-html:`<div>`
-    :raw-html:`<p>“ No matter where you go, there you are.”</p><p>—Buckaroo Banzai</p>`
-    :raw-html:`</div>`
-    :raw-html:`</blockquote>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      .. epigraph::
+
+        No matter where you go, there you are.
+
+        -- Buckaroo Banzai
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `epigraphs <https://docutils.sourceforge.io/docs/ref/rst/directives.html#epigraph>`_
 
@@ -561,12 +570,18 @@ several enumerated literals, as you can see in the table below.
   .. tab-content:: tab2-ol
     :title: rendered: HTML
 
-    :raw-html:`<ol class="arabic simple"><li>First Item</li><li>Second Item</li></ol>`
-    :raw-html:`</br>`
-    :raw-html:`<ol class="upperalpha simple"><li>First Item</li><li>Second Item</li></ol>`
-    :raw-html:`<ol class="loweralpha simple"><li>First Item</li><li>Second Item</li></ol>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      1. First Item
+      2. Second Item
+
+      A. First Item
+      B. Second Item
+
+      a. First Item
+      b. Second Item
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `enumerated lists
   <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#enumerated-lists>`_
@@ -606,10 +621,15 @@ lists use different literals, among the bullet literal we can find the following
   .. tab-content:: tab2-ul
     :title: rendered: HTML
 
-    :raw-html:`<ul class="simple"><li>First Item</li><li>Second Item</li></ul>`
-    :raw-html:`<ul class="simple"><li>First Item</li><li>Second Item</li></ul>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      * First Item
+      * Second Item
+
+      - First Item
+      - Second Item
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `bullet lists <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#bullet-lists>`_
 
@@ -657,20 +677,23 @@ the term, and may contain multiple paragraphs and other body elements.
   .. tab-content:: tab2-definition-list
     :title: rendered: HTML
 
-    :raw-html:`<dl class="docutils">`
-    :raw-html:`<dt>term 1</dt>`
-    :raw-html:`<dd>Definition 1.</dd>`
-    :raw-html:`<dt>term 2</dt>`
-    :raw-html:`<dd><p class="first">Definition 2, paragraph 1.</p>`
-    :raw-html:`<p class="last">Definition 2, paragraph 2.</p>`
-    :raw-html:`</dd>`
-    :raw-html:`<dt>term 3 <span class="classifier-delimiter">:</span> <span class="classifier">classifier</span></dt>`
-    :raw-html:`<dd>Definition 3.</dd>`
-    :raw-html:`<dt>term 4 <span class="classifier-delimiter">:</span> <span class="classifier">classifier one</span> <span class="classifier-delimiter">:</span> <span class="classifier">classifier two</span></dt>`
-    :raw-html:`<dd>Definition 4.</dd>`
-    :raw-html:`</dl>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      term 1
+          Definition 1.
+
+      term 2
+          Definition 2, paragraph 1.
+
+          Definition 2, paragraph 2.
+
+      term 3 : classifier
+          Definition 3.
+
+      term 4 : classifier one : classifier two
+          Definition 4.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `definition lists <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#definition-lists>`_
 
@@ -716,8 +739,8 @@ your table, each individual cell is considered a miniature document.
 
     .. code-block:: rst
 
-
       .. table:: Grid table example
+        :class: table table-secondary table-bordered table-striped table-hover
         :widths: auto
         :name: grid-table-example
 
@@ -727,40 +750,31 @@ your table, each individual cell is considered a miniature document.
         | Item 1a  | Item 1b  | None     |
         +----------+----------+----------+
         | Item 1b  | Item 2b  | None     |
-        |          +---------+----------+
+        |          +----------+----------+
         |          | Item 2c  | None     |
         +----------+----------+----------+
 
   .. tab-content:: tab2-grid-table
     :title: rendered: HTML
 
-    :raw-html:`<table border="1" class="colwidths-auto docutils" id="grid-table-example">`
-    :raw-html:`<caption><span class="caption-text">Grid table example</span></caption>`
-    :raw-html:`<colgroup>`
-    :raw-html:`<col>`
-    :raw-html:`<col>`
-    :raw-html:`<col>`
-    :raw-html:`</colgroup>`
-    :raw-html:`<tbody valign="top">`
-    :raw-html:`<tr class="row-odd"><td>Header A</td>`
-    :raw-html:`<td>Header B</td>`
-    :raw-html:`<td>Header C</td>`
-    :raw-html:`</tr>`
-    :raw-html:`<tr class="row-even"><td>Item 1a</td>`
-    :raw-html:`<td>Item 1b</td>`
-    :raw-html:`<td>None</td>`
-    :raw-html:`</tr>`
-    :raw-html:`<tr class="row-odd"><td rowspan="2">Item 1b</td>`
-    :raw-html:`<td>Item 2b</td>`
-    :raw-html:`<td>None</td>`
-    :raw-html:`</tr>`
-    :raw-html:`<tr class="row-even"><td>Item 2c</td>`
-    :raw-html:`<td>None</td>`
-    :raw-html:`</tr>`
-    :raw-html:`</tbody>`
-    :raw-html:`</table>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      .. table:: Grid table example
+        :class: table table-secondary table-bordered table-striped table-hover
+        :widths: auto
+        :name: grid-table-example
+
+        +----------+----------+----------+
+        | Header A | Header B | Header C |
+        +----------+----------+----------+
+        | Item 1a  | Item 1b  | None     |
+        +----------+----------+----------+
+        | Item 1b  | Item 2b  | None     |
+        |          +----------+----------+
+        |          | Item 2c  | None     |
+        +----------+----------+----------+
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `grid tables <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#grid-tables>`_
 
@@ -790,7 +804,7 @@ Simple table :important:`syntax` is determined by the use of the ASCII character
     .. code-block:: rst
 
       .. table:: Simple table example
-        :class: table-striped table-bordered table-hover
+        :class: table table-striped table-bordered table-hover
         :widths: auto
         :name: simple-table-example
 
@@ -804,24 +818,21 @@ Simple table :important:`syntax` is determined by the use of the ASCII character
   .. tab-content:: tab2-simple-table
     :title: rendered: HTML
 
-    :raw-html:`<table border="1" class="colwidths-auto table-striped table-bordered table-hover docutils" id="simple-table-example">`
-    :raw-html:`<caption><span class="caption-text">Simple table example</span></caption>`
-    :raw-html:`<thead valign="bottom">`
-    :raw-html:`<tr class="row-odd"><th class="head">A</th>`
-    :raw-html:`<th class="head">not A</th>`
-    :raw-html:`</tr>`
-    :raw-html:`</thead>`
-    :raw-html:`<tbody valign="top">`
-    :raw-html:`<tr class="row-even"><td>False</td>`
-    :raw-html:`<td>True</td>`
-    :raw-html:`</tr>`
-    :raw-html:`<tr class="row-odd"><td>True</td>`
-    :raw-html:`<td>False</td>`
-    :raw-html:`</tr>`
-    :raw-html:`</tbody>`
-    :raw-html:`</table>`
+    .. div:: html-box
 
-.. rst-class:: pull-right
+      .. table:: Simple table example
+        :class: table table-striped table-bordered table-hover
+        :widths: auto
+        :name: simple-table-example
+
+        =====  =====
+          A    not A
+        =====  =====
+        False  True
+        True   False
+        =====  =====
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `simple tables <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#simple-tables>`_
 
@@ -897,36 +908,40 @@ indented snippet of code.
   .. tab-content:: tab2-highlight
     :title: rendered: HTML
 
-    :raw-html:`<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tellus sapien. Morbi fermentum`
-    :raw-html:`in libero at porta. Curabitur sed accumsan dolor. Proin tortor turpis, dictum at libero quis,`
-    :raw-html:`pretium dapibus mi. Aliquam nec congue libero. Cras auctor ultrices ante, eget euismod velit`
-    :raw-html:`lobortis sit amet. Mauris facilisis odio ultrices, fringilla tellus ut, lacinia neque. Vestibulum ut`
-    :raw-html:`velit porta, viverra urna semper, blandit sem. In efficitur sodales eleifend. Donec ex est, fringilla`
-    :raw-html:`vitae mattis vel, aliquam ut tellus. Donec dapibus laoreet magna sed porta.</p>`
-    :raw-html:`<div class="highlight-rst"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1`
-    :raw-html:`2`
-    :raw-html:`3`
-    :raw-html:`4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gh">Title</span>`
-    :raw-html:`<span class="gh">=====</span>`
-    :raw-html:`First snippet of code.`
-    :raw-html:`</pre></div>`
-    :raw-html:`</td></tr></tbody></table></div>`
-    :raw-html:`<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tellus sapien. Morbi fermentum`
-    :raw-html:`in libero at porta. Curabitur sed accumsan dolor. Proin tortor turpis, dictum at libero quis,`
-    :raw-html:`pretium dapibus mi. Aliquam nec congue libero. Cras auctor ultrices ante, eget euismod velit`
-    :raw-html:`lobortis sit amet. Mauris facilisis odio ultrices, fringilla tellus ut, lacinia neque. Vestibulum ut`
-    :raw-html:`velit porta, viverra urna semper, blandit sem. In efficitur sodales eleifend. Donec ex est, fringilla`
-    :raw-html:`vitae mattis vel, aliquam ut tellus. Donec dapibus laoreet magna sed porta.</p>`
-    :raw-html:`<div class="highlight-rst"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>1`
-    :raw-html:`2`
-    :raw-html:`3`
-    :raw-html:`4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gh">Title</span>`
-    :raw-html:`<span class="gh">=====</span>`
-    :raw-html:`Second snippet of code.`
-    :raw-html:`</pre></div>`
-    :raw-html:`</td></tr></tbody></table></div>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        .. highlight:: rst
+          :linenothreshold: 1
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tellus sapien. Morbi fermentum
+        in libero at porta. Curabitur sed accumsan dolor. Proin tortor turpis, dictum at libero quis,
+        pretium dapibus mi. Aliquam nec congue libero. Cras auctor ultrices ante, eget euismod velit
+        lobortis sit amet. Mauris facilisis odio ultrices, fringilla tellus ut, lacinia neque. Vestibulum ut
+        velit porta, viverra urna semper, blandit sem. In efficitur sodales eleifend. Donec ex est, fringilla
+        vitae mattis vel, aliquam ut tellus. Donec dapibus laoreet magna sed porta.
+
+        ::
+
+          Title
+          =====
+
+          First snippet of code.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tellus sapien. Morbi fermentum
+        in libero at porta. Curabitur sed accumsan dolor. Proin tortor turpis, dictum at libero quis,
+        pretium dapibus mi. Aliquam nec congue libero. Cras auctor ultrices ante, eget euismod velit
+        lobortis sit amet. Mauris facilisis odio ultrices, fringilla tellus ut, lacinia neque. Vestibulum ut
+        velit porta, viverra urna semper, blandit sem. In efficitur sodales eleifend. Donec ex est, fringilla
+        vitae mattis vel, aliquam ut tellus. Donec dapibus laoreet magna sed porta.
+
+        ::
+
+          Title
+          =====
+
+          Second snippet of code.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `the highlight directive <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-highlight>`_
 
@@ -987,11 +1002,21 @@ admonition content.
   .. tab-content:: tab2-specific
     :title: rendered: HTML
 
-    :raw-html:`<div class="admonition warning"><p class="first admonition-title">Warning</p><p class="last">This is a warning</p></div>`
-    :raw-html:`<div class="admonition note"><p class="first admonition-title">Note</p><p class="last">This is a note</p></div>`
-    :raw-html:`<div class="admonition hint"><p class="first admonition-title">Hint</p><p class="last">This is a hint</p></div>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        .. warning::
+
+          This is a warning
+
+        .. note::
+
+          This is a note
+
+        .. hint::
+
+          This is a hint
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `specific admonitions <https://docutils.sourceforge.io/docs/ref/rst/directives.html#specific-admonitions>`_
 
@@ -1024,11 +1049,16 @@ admonition content.
   .. tab-content:: tab2-generic
     :title: rendered: HTML
 
-    :raw-html:`<div class="meta admonition">`
-    :raw-html:`<p class="first admonition-title">reStructuredText</p>`
-    :raw-html:`<p class="last">reStructuredText is plaintext that uses simple and intuitive constructs to indicate the structure of a document. These constructs are equally easy to read in raw and processed forms</p></div>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        .. admonition:: reStructuredText
+          :class: meta
+
+          reStructuredText is plaintext that uses simple and intuitive constructs to indicate the
+          structure of a document. These constructs are equally easy to read in raw and processed
+          forms.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about**  `generic admonitions <https://docutils.sourceforge.io/docs/ref/rst/directives.html#generic-admonition>`_
 
@@ -1068,11 +1098,13 @@ the ``<strong>``, ``<em>`` and ``<code>`` tags, respectively.
   .. tab-content:: tab2-inline
     :title: rendered: HTML
 
-    :raw-html:`<em>emphasis</em><br>`
-    :raw-html:`<strong>strong emphasis</strong><br>`
-    :raw-html:`<code>inline literals</code>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        *emphasis*
+        **strong emphasis**
+        ``inline literals``
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `inline markup <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#inline-markup>`_.
 
@@ -1102,9 +1134,11 @@ leave a whitespace, and then use parentheses to enclose the definition of the te
   .. tab-content:: tab2-abbreviation
     :title: rendered: HTML
 
-    :raw-html:`<p>I can use abbreviations to define <abbr title="This is a term definition">terms</abbr> on the fly</p>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        I can use abbreviations to define :abbr:`terms (This is a term definition)` on the fly.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `abbreviations <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html?highlight=abbreviation#role-abbr>`_.
 
@@ -1130,10 +1164,12 @@ the role content, you should place the keystroke you want to represent.
 
   .. tab-content:: tab2-kbd
     :title: rendered: HTML
+    
+      .. div:: html-box
 
-    :raw-html:`<p>Press the following keys in your keyboard. <code class="kbd docutils literal"><span class="pre">Ctrl</span></code> + <code class="kbd docutils literal"><span class="pre">s</span></code></p>`
+        Press the following keys in your keyboard. :kbd:`Ctrl` + :kbd:`s`
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `kbd <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html?highlight=abbreviation#role-kbd>`_.
 
@@ -1169,15 +1205,19 @@ sign ``>``, the closing backtick and finally an underscore.
     .. code-block:: rst
 
       This is a standalone link https://docutils.sourceforge.io/docs/.
+
       This is a link with an `alias <https://docutils.sourceforge.io/docs/>`_.
 
   .. tab-content:: tab2-links
     :title: rendered: HTML
 
-    :raw-html:`<p>This is a standalone link <a class="reference external" href="https://docutils.sourceforge.io/docs/">https://docutils.sourceforge.io/docs/</a>.</p>`
-    :raw-html:`<p>This is a link with an <a class="reference external" href="https://docutils.sourceforge.io/docs/">alias</a>.</p>`
+      .. div:: html-box
 
-.. rst-class:: pull-right
+        This is a standalone link https://docutils.sourceforge.io/docs/.
+        
+        This is a link with an `alias <https://docutils.sourceforge.io/docs/>`_.
+
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** `hyperlinks <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#hyperlink-references>`_.
 

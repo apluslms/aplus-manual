@@ -153,23 +153,25 @@ equivalent representation in HTML.
   .. tab-content:: tab-html-render
     :title: rendered: HTML
 
-    :raw-html:`<h1>Chapter Title</h1>`
-    :raw-html:`<h2>First Section</h2>`
-    :raw-html:`<p>This is the first paragraph. It is tiny.</p>`
-    :raw-html:`</br>`
-    :raw-html:`<p>This is the second paragraph. Note that paragraphs can span multiple lines, but they are still
-    rendered as one block after compilation. Italics and boldface are produced this way.</p>`
-    :raw-html:`<h3>First Sub-Section¶</h3>`
-    :raw-html:`<p>This is a link to the <a class="reference external" href="http://www.aalto.fi">Aalto website</a>.
-    In RST you can also include images or files. The following image is taken from the internet, but you could include
-    images located in your course folder.</p>`
-    :raw-html:`<img alt="https://geekyshacklebolt.files.wordpress.com/2018/07/rest.jpg" class="img-responsive align-center"
-    src="https://geekyshacklebolt.files.wordpress.com/2018/07/rest.jpg">`
-    :raw-html:`<h2>Second Section</h2>`
-    :raw-html:`<p>Lists can also be made in RST.</p>`
-    :raw-html:`<ul class="simple"><li>Lists do not require much markup.</li><li>Create lists is intuitive.</li>
-    <li>Notice the lack of markup compared to HTML</li></ul>`
-    :raw-html:`<p>Almost everything that exists in HTML can also be produced with RST.</p>`
+    .. div:: html-box
+
+      :raw-html:`<h1>Chapter Title</h1>`
+      :raw-html:`<h2>First Section</h2>`
+      :raw-html:`<p>This is the first paragraph. It is tiny.</p>`
+      :raw-html:`</br>`
+      :raw-html:`<p>This is the second paragraph. Note that paragraphs can span multiple lines, but they are still
+      rendered as one block after compilation. Italics and boldface are produced this way.</p>`
+      :raw-html:`<h3>First Sub-Section¶</h3>`
+      :raw-html:`<p>This is a link to the <a class="reference external" href="http://www.aalto.fi">Aalto website</a>.
+      In RST you can also include images or files. The following image is taken from the internet, but you could include
+      images located in your course folder.</p>`
+      :raw-html:`<img alt="https://geekyshacklebolt.files.wordpress.com/2018/07/rest.jpg" class="img-responsive align-center"
+      src="https://geekyshacklebolt.files.wordpress.com/2018/07/rest.jpg">`
+      :raw-html:`<h2>Second Section</h2>`
+      :raw-html:`<p>Lists can also be made in RST.</p>`
+      :raw-html:`<ul class="simple"><li>Lists do not require much markup.</li><li>Create lists is intuitive.</li>
+      <li>Notice the lack of markup compared to HTML</li></ul>`
+      :raw-html:`<p>Almost everything that exists in HTML can also be produced with RST.</p>`
 
 .. admonition:: :glyphicon-pencil:`\ ` Task
   :class: success
@@ -184,7 +186,7 @@ text editor on your computer. The :doc:`Text editors and integrated development 
 for creating course content. Using the recommended IDEs help develop course content more efficiently
 and make the experience of creating such courses more enjoyable and less error-prone.
 
-.. rst-class:: pull-right
+.. rst-class:: text-end
 
 | :glyphicon-info-sign:`\ ` **Read more about** RST in the `official documentation
   <https://docutils.sourceforge.io/docs/ref/rst/introduction.html>`_
