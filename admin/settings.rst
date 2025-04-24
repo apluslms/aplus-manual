@@ -24,6 +24,20 @@ Course settings
 The course settings page in A+
 ------------------------------
 
+.. admonition:: Course settings in production
+  :class: warning
+
+  Some of the settings on the course settings page (accessible via
+  **Edit course** link in the course menu) are for *local testing*
+  and for getting familiar with the options.
+  These settings may be overridden by a recompilation of the
+  course content.
+  The preferred way of setting, e.g., course start times
+  and module deadlines using RST keywords
+  is described `here <https://github.com/apluslms/a-plus-rst-tools?tab=readme-ov-file#a-course-settings>`_,
+  while other options can be configured in the course's
+  `conf.py file <https://github.com/apluslms/a-plus-rst-tools#special-sphinx-configurations-confpy>`_.
+
 A+ has a *Course settings page* which is only visible to the teacher. Log in
 with an account having teacher privileges. If you want to test this with
 aplus-manual, this is the username ``root`` and password ``root``. Next click
