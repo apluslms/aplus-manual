@@ -14,5 +14,6 @@ Programming exercises
   ajax_exercise
   submit_from_git
   grader_lti_params
+  grader_submission_tags
   designing
   questions_about_learners_code
