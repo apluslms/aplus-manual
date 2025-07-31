@@ -3,7 +3,7 @@ Setting submission tags in grading containers
 
 Submission tags are used to categorize or label submissions in A+.
 These tags can be set either manually in A+ or automatically by grading containers based on
-`grading-base <https://github.com/apluslms/grading-base>`_ version 4.11 or newer.
+`grading-base <https://github.com/apluslms/grading-base>`_ version 4.12 or newer.
 
 In grading containers, the submission tags can be set by outputting them directly or by writing them to a file.
 Below are the detailed methods for setting submission tags.
