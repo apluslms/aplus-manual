@@ -1,6 +1,6 @@
 {% extends 'access/exercise_frame.html' %}
 {% block exercise %}
-{% if not result.error %}    
+{% if not result.error %}
 <form method="post" action="{{ post_url }}" data-grade="{% if LANGUAGE_CODE == "fi" %}Arvostele vastaukset{% else %}Grade the answers{% endif %}">
 {% if request.POST.qlc %}
 <script type="application/json" data-id="qlc-data">{% autoescape off %}{{ request.POST.qlc }}{% endautoescape %}</script>
@@ -37,11 +37,9 @@ function qlcViewAnswers(evt) {
 </p>
 {% else %}
 <p>{% if LANGUAGE_CODE == "fi" %}Voit aloittaa tämän tehtävään sen jälkeen, kun ohjelmointitehtävä on läpäisty.{% else %}You can start this exercise after the programming exercise is successfully completed.{% endif %}</p>
-<p>
-<button class="qlc-generate">
+<button class="qlc-generate btn btn-primary">
    {% if LANGUAGE_CODE == "fi" %}Luo minulle kysely{% else %}Generate my questionnaire{% endif %}
 </button>
-</p>
 {% endif %}
 </form>
 {% endif %}

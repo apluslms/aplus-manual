@@ -23,7 +23,7 @@ function FollowUpInit(exDiv) {
       100% {
         transform: rotate(360deg);
       }
-    }        
+    }
   `;
   let initialized = false;
   let loading = false;
@@ -64,10 +64,10 @@ function FollowUpInit(exDiv) {
       showAlert(isSilent, 'danger', errors.location);
       return null;
     }
-    let prLinks = prDiv.querySelectorAll(linkSelect('has(.badge-success)'));
+    let prLinks = prDiv.querySelectorAll(linkSelect('has(.badge):has(.text-bg-success)'));
     let isMissingPoints = false;
     if (prLinks.length == 0) {
-      prLinks = prDiv.querySelectorAll(linkSelect('has(.badge-warning'));
+      prLinks = prDiv.querySelectorAll(linkSelect('has(.badge):has(.text-bg-warning)'));
       isMissingPoints = true;
       if (prLinks.length == 0) {
         showAlert(isSilent, 'warning', errors.missing);
@@ -109,7 +109,7 @@ function FollowUpInit(exDiv) {
   function showAlert(silent, lvl, msg) {
     if (!silent) {
       exForm.querySelectorAll('.alert').forEach(e => e.remove());
-      exForm.append(mkElement('div', {class: `alert alert-${lvl}`}, msg));
+      exForm.append(mkElement('div', {class: `alert alert-${lvl} mt-3 mb-0`}, msg));
     }
   }
 
@@ -185,20 +185,20 @@ function FollowUpInit(exDiv) {
       .q-wrap .q-item label {
         display: block;
         margin: 2px 0;
-        border: 1px solid lightgrey;
+        border: 1px solid var(--bs-border-color);
         border-radius: 4px;
         cursor: pointer;
       }
       .q-wrap .q-item label:hover {
-        background-color: gainsboro;
+        background-color: var(--bs-secondary-bg);
       }
       .q-wrap .q-item label.incorrect {
-        background-color: salmon;
-        color: darkred;
+        background-color: var(--bs-danger-bg-subtle);
+        color: var(--bs-danger-text-emphasis);
       }
       .q-wrap .q-item label.correct {
-        background-color: springgreen;
-        color: green;
+        background-color: var(--bs-success-bg-subtle);
+        color: var(--bs-success-text-emphasis);
       }
       .q-wrap .q-item label .info {
         margin-left: 2em;
@@ -291,7 +291,7 @@ function FollowUpInit(exDiv) {
         const label = mkElement(
           'label',
           {},
-          `<input type="${qState.many ? 'checkbox' : 'radio'}" name="q${q}" value="${encodeURIComponent(oSpec.answer)}"${qState.selected[o] ? ' checked="checked"' : ''}> ${oSpec.answer}`
+          `<input class="form-check-input ms-1" type="${qState.many ? 'checkbox' : 'radio'}" name="q${q}" value="${encodeURIComponent(oSpec.answer)}"${qState.selected[o] ? ' checked="checked"' : ''}> ${oSpec.answer}`
         );
         label.querySelector('input').addEventListener('change', evt => {
           selectOption(q, o, evt.target.checked);
