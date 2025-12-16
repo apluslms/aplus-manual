@@ -1,19 +1,31 @@
 {% extends feedback_template %}
 
-{# Inject plotting libraries #}
+{# Inject plotting library #}
 {% block feedback_start %}
   <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.8.1.min.js" crossorigin="anonymous"></script>
 {% endblock feedback_start %}
 
+{# grader_tests creates a Bokeh plot in JSON format, available through result.userData.item_text #}
 {% block result_panel_after_output %}
   {% if result.userData and result.userData.item_text %}
+  <div class="mt-2" id="plot-placeholder">
+    <pre>Drawing plot... (Please refresh the submission feedback, if the plot does not appear)</pre>
+  </div>
   <script>
     var item = JSON.parse({{ result.userData.item_text | tojson }});
-    Bokeh.embed.embed_item(item, "myplot");
+    function embedWhenReady() {
+      if (typeof Bokeh !== "undefined" && document.getElementById("myplot")) {
+        Bokeh.embed.embed_item(item, "myplot");
+        document.getElementById("plot-placeholder").hidden = true;
+      } else {
+        setTimeout(embedWhenReady, 10);
+      }
+    }
+    embedWhenReady();
   </script>
   {% endif %}
 {% endblock %}
 
 {% block feedback_end %}
-  <div id="myplot"></div>
+  <div class="d-flex justify-content-center mt-3" id="myplot"></div>
 {% endblock feedback_end %}
