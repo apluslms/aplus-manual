@@ -11,7 +11,7 @@ files:
     name: functions.py
 
 container:
-  image: apluslms/grade-python:3.11-4.9-4.9u1
+  image: apluslms/grade-python:3.13-5.0-4.13
   mount: exercises/qlc_python
   cmd: qlc_wrap /exercise/run.sh
 
