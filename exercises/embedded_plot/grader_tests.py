@@ -22,7 +22,7 @@ class Test(unittest.TestCase):
             correct_count += value_is_in_band
         # If a TestCase patches itself with a user_data dictionary, graderutils will extract and serialize it into the feedback JSON.
         # The contents of the dictionary can then be accessed in the feedback template
-        self.user_data = {"plotScript": plot_helpers.make_html_plot(figure)}
+        self.user_data = {"item_text": plot_helpers.make_html_plot(figure)}
         # Fail the test if we found too few values
         self.assertGreaterEqual(correct_count, 80,
             "Found {} correct values, while 80 is required.".format(correct_count)

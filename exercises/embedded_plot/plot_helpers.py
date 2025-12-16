@@ -1,3 +1,5 @@
+import json
+
 import bokeh.plotting as bokeh_plt
 import bokeh.embed
 from bokeh.models.ranges import Range1d
@@ -24,6 +26,5 @@ def make_html_plot(figure):
     """
     Wrap the bokeh figure into an embeddable HTML element, containing a function that can be called to draw the plot.
     """
-    script, div = bokeh.embed.components(figure, wrap_script=False)
-    script = "<script>;var _runBokehPlot = function() {\n" + script + "\n};\n</script>"
-    return script + "\n" + div
+    item_text = json.dumps(bokeh.embed.json_item(figure))
+    return item_text
