@@ -70,6 +70,10 @@ rst_prolog += '''
   :class: bi-terminal-fill
 .. role:: important
   :class: important
+
+.. This comment prevents the last role directive above from consuming
+   the first indented content of RST source files as directive content
+   (a Sphinx 7 stricter parsing behaviour).
 '''
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -112,7 +116,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index'
+root_doc = 'index'
 
 # General information about the project.
 project = 'Aplus manual'
