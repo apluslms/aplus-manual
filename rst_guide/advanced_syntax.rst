@@ -149,6 +149,49 @@ Toctree :important:`syntax` consists of the ``toctree`` directive, optional dire
 
 |
 
+It is possible to include a module introduction in the ``toctree`` directive by including the ``aplusmeta`` directive with the ``introduction`` option. Other options are documented `here <https://github.com/apluslms/a-plus-rst-tools#6-meta-exercise-round-settings>`_.
+
+:glyphicon-console:`\ ` Code example
+''''''''''''''''''''''''''''''''''''
+
+.. rst-tabs::
+
+  .. tab-content:: tab1-aplusmeta
+    :title: input: RST
+
+    .. code-block:: rst
+      :caption: The following example is an index.rst file with the ``introduction`` option.
+
+      Acos server
+      ===========
+
+      .. toctree::
+
+        introduction
+        create_acos_exercises
+        demo_exercises
+
+      .. aplusmeta::
+        :introduction: <h3>Acos Server</h3>
+          <p>In this section we will cover the following topics</p>
+
+  .. tab-content:: tab2-aplusmeta
+    :title: rendered: HTML
+
+    .. div:: html-box
+
+      :raw-html:`<div><h3><p>Acos server</p></h3>`
+      :raw-html:`<p>In this section we will cover the following topics</p>`
+      :raw-html:`<ul class="toc">`
+      :raw-html:`<li><a href="/def/current/acos/introduction/">7.1 Acos - Advanced Content Server</a></li>`
+      :raw-html:`<li><a href="/def/current/acos/create_acos_exercises/">7.2 Create Acos exercises</a></li>`
+      :raw-html:`<li><a href="/def/current/acos/demo_exercises/">7.3 Examples of Acos exercises</a></li>`
+      :raw-html:`</ul></div>`
+
+.. rst-class:: text-end
+
+|
+
 Container
 .........
 

@@ -30,7 +30,7 @@ with the format ``:option: possible value``:
 
 - ``submissions``: max submissions
 - ``points-to-pass``: points to pass
-- ``feedback``: If set, assumes the defaults for a feedback questionnaire
+- ``feedback``: If set, assumes the defaults for a feedback questionnaire. More information about feedback questionnaires can be found `here <https://github.com/apluslms/a-plus-rst-tools#3-feedback-questionnaire>`_.
 - ``title``: exercise title
 - ``no-override``: If set, the conf.py override setting is ignored
 - ``pick-randomly``: integer. The questionnaire selects N questions randomly for the
@@ -43,6 +43,7 @@ with the format ``:option: possible value``:
   after each attempt.
 - ``category``: exercise category. If you do not define a category the default value will be used. For questionnaires
   the default ``category`` is **questionnaire**.
+- ``status``: exercise status, defaults to **"unlisted"**. See available statuses `here <https://github.com/apluslms/a-plus-rst-tools#list-of-exercise-statuses>`_.
 - ``reveal-model-at-max-submissions``: The questionnaire feedback reveals the model
   solution after the user has consumed all submission attempts. Can be set true or false.
   The feedback may reveal the model solution even before the exercise deadline.
@@ -56,6 +57,12 @@ with the format ``:option: possible value``:
   Can be set to true or false. Overrides any options set in the conf.py or config.yaml files.
 - ``allow-assistant-grading``: Allows assistants to grade the submissions of the students.
   Can be set to true or false. Overrides any options set in the conf.py or config.yaml files.
+- ``reveal-submission-feedback``: Rule for revealing submission feedback. See `instructions <https://github.com/apluslms/a-plus-rst-tools#defining-reveal-rules>`_.
+- ``reveal-model-solutions``: Rule for revealing model solutions. See `instructions <https://github.com/apluslms/a-plus-rst-tools#defining-reveal-rules>`_.
+- ``hide-correctness``: Show total points earned, but hide which questions were correct/incorrect. Can be set to true or false.
+- ``grading-mode``: which submission determines the final score for this exercise ("best" or "last"). Defaults to "best". If delayed feedback is used (``reveal-submission-feedback`` is set to something other than "immediate"), defaults to "last".
+- ``autosave``: If set, autosave is enabled for this exercise. A draft is saved periodically while a student types their answer, and the latest draft is automatically restored if the student leaves the exercise page and comes back later. A draft does not count as a submission and does not affect grading. Autosave can also be enabled for the entire course in conf.py.
+- ``disable-duplicate-check``: If set, do not display a confirmation dialog when attempting to submit identical/duplicate answers to a questionnaire.
 
 **Instructions:** Questionnaire instructions or description can be set below the question title as part of the directive
 content.
@@ -102,6 +109,7 @@ following snippet of code illustrates how can we use of the labels to link the a
 
 As we can see in the snippet above, the regular format for the hints is ``label used by the answer § feedback text or hint``.
 Hints may also be prepended with ``!`` in order to show the feedback when the student did not select that specific answer.
+The special value ``%100%`` can be used to show the hint when the student answers the question correctly.
 In freetext questions, the label may be prepended with ``regexp``: in order to use regular expressions for matching
 the student's submission. Hints are displayed after the student has clicked the submit button and are used to help
 students while solving the questionnaire.
@@ -131,12 +139,27 @@ The ``pick-any`` directive has following options in addition to the common quest
   is randomly selected for the user. The random selection changes after the
   user submits, but persists when the user just reloads the web page. The value of the
   option is an integer, which is the number of choices to randomly select from all of
-  the defined answer choices in the question. The option correct-count should be also
+  the defined answer choices in the question. The option ``correct-count`` should be also
   set when this option is used.
 - ``correct-count``: The number of correct answer options (checkboxes) to randomly select in the
-  randomized pick-any question. This option is used with the randomized option.
-- ``preserve-questions-between-attempts``: If set, the answer choices in a randomized
+  randomized ``pick-any`` question. This option is used with the ``randomized`` option.
+- ``structured-randomized``: When this option is used, a subset of the answer choices
+  (checkboxes) is randomly selected for the user, based on the provided structure.
+  The random selection changes after the user submits, but persists when the user just
+  reloads the web page. The value of the option is a string expression of the format
+  ``(pick X answer-choice-1 answer-choice-2 ...) (pick Y answer-choice-3 answer-choice-4 ...) ...``,
+  where ``X`` and ``Y`` are the number of choices to randomly select from their respective
+  groups of answer choices. Example: ``(pick 1 a b) (pick 2 c d e f) (pick 1 g h)``.
+  The string expression may also include nested ``pick`` groups, e.g.,
+  ``(pick 3 a b (pick 1 c d) e f)``. In this example, one of ``c`` or ``d`` is randomly
+  picked first, and then three answer choices are randomly picked from the pool
+  of ``a``, ``b``, ``c``, ``e``, and ``f`` or ``a``, ``b``, ``d``, ``e``, and ``f``, depending how the choice between ``c``
+  and ``d`` played out. The option ``correct-count`` should not be set when this option
+  is used, since the number of correct answer choices can be controlled using
+  the structure.
+- ``preserve-questions-between-attempts``: If set, the answer choices in a ``randomized``
   question are preserved between submission attempts (instead of being resampled after each attempt).
+- ``checkbox-feedback``: If set, the feedback for a selected checkbox is rendered under the checkbox instead of the list under the question. This makes it obvious to the student which checkbox triggered the feedback. Even if this is set, the inverse feedback (!a, when option is not selected) is still rendered under the question after all checkboxes. By default, all feedback is rendered under the question.
 
 Example: Single and multiple choices questionnaire
 ..................................................
@@ -325,12 +348,12 @@ the common question options:
   Due to an old issue in the platform,
   the ``length`` option is effectively ignored and it does not change anything.
 
-**Instructions and correct answer:** The body of the freetext question is
+**Instructions and correct answer:** The body of the ``freetext`` question is
 expected to be its model solution. However, the question instructions can be
 written inside the body before the model answer. The instructions and the
 model solution must be separated with an empty line.
 
-Note that if the questionnaire has the ``feedback`` option set, freetext questions
+Note that if the questionnaire has the ``feedback`` option set, ``freetext`` questions
 may not have a model solution and the body of the question is shown as the
 question instructions.
 
@@ -341,7 +364,13 @@ For instance ``freetext:: 5 int``.
 The different comparison methods are ``int``, ``float``, ``string``,
 ``subdiff``, ``regexp`` or ``unsortedchars`` (unsorted character set). The ``regexp``
 compare method takes the correct answer as a regular expression and tries to
-match the submission with it. ``subdiff``: works almost like the string method,
+match the submission with it. It is possible to provide a separate display model solution that is shown to the students in the model solution. Otherwise, the students would be shown the whole regular expression. The display model solution is added after the model regular expression with the special characters ``°=°``. For example,
+
+.. code-block::
+
+  /cat|dog/ °=° dog
+
+The ``subdiff`` method works almost like the ``string`` method,
 but it can have multiple correct answers separated with ``|`` and if the answer is
 incorrect, it shows the difference of the answer to each correct answer as a hint.
 For example, when the correct answer is *'cat'* and the student answers *'car'*,
@@ -648,6 +677,59 @@ Example: Regex questionnaire
           ``3.141`` and zero or more digits after that.
 
           ^3\.141\d*$
+
+Feedback questionnaires
+-----------------------
+
+A feedback questionnaire is almost like a graded questionnaire. When the ``feedback`` option is set, the questionnaire uses the feedback category and CSS class by default. Feedback questionnaires always grant full points if all of the required questions are answered. The questionnaire options ``chapter-feedback``, ``weekly-feedback``, ``appendix-feedback``, and ``course-feedback`` use a different CSS class (with the same name as the option). If points are not specified, they are set to zero. The ``feedback`` option can be set only to one questionnaire in an RST file because the exercise key is then hardcoded to ``feedback``.
+
+The freetext questions are not expected to have a model solution, in essence the body of the freetext question will be shown as the question instructions.
+
+The question directives ``agree-item`` and ``agree-item-generate`` create questions with a 1-5 Likert scale. They take a title as the only positional argument and they accept the options ``key``, ``required``, and ``class`` like the other question directives. ``Agree-item-generate`` also requires the option ``config`` that defines the path to a config.yaml file. It is used to generate multiple agree items. See the example below. (The agree item directives are quite limited and you could just use the pick-one directive instead.)
+
+Note that the `<mooc-jutut service https://github.com/apluslms/mooc-jutut/>`_ provides a more advanced method for reading and responding to feedback. In order to use it, you still define the feedback questionnaire in RST, but you must also set the service URL of the questionnaire exercise to the mooc-jutut server. The URL can be set by using the override option in the project conf.py file. For example:
+
+.. code-block:: python
+
+  override = {
+    'feedback': {
+        'url': 'https://jutut-server.org/feedback/coursekey/{key}',
+    },
+  }
+
+.. code-block:: rst
+
+  .. questionnaire::
+    :feedback:
+
+    Please fill in this feedback questionnaire.
+
+    .. freetext::
+      :required:
+      :length: 100
+      :height: 4
+      :class: my-input-class
+
+      What do you think now?
+
+    .. agree-item:: Did it work for you?
+
+    .. agree-item-generate:: Generated agree item with $title
+      :config: path/to/config.yaml
+
+The ``config.yaml`` file used by agree-item-generate may use the following keys:
+
+.. code-block:: yaml
+
+  - title: My title 1
+    info: Additional information 1 here
+    image_url: http://localhost:8080/static/default/_images/myimage.png
+  - title: My title 2
+    info: Additional information 2 here
+    image_url: http://localhost:8080/static/default/_images/myimage.png
+  - title: My title 3
+    info: Additional information 3 here
+    image_url: http://localhost:8080/static/default/_images/myimage.png
 
 Additional information
 ----------------------
