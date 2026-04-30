@@ -86,7 +86,15 @@ Lab Queue
 
    **Lab Queue** (Neuvontajono) is a service used during computer exercise
    sessions, which students use to request help from a teaching assistant
-   at the session.
+   at the session. Instructions are available in the `Lab Queue README <https://github.com/apluslms/neuvontajono/blob/master/docs/README.md>`_.
+
+
+Code Vault
+..........
+
+.. figure:: /images/gallery/code_vault.png
+
+   **Code Vault** (Koodisäilö) is a service that allows students to save their code for a short period and continue working on it later, or share a link to it with course staff members. Course staff can use the service for storing public snippets, which logged-in students can view. Teachers can configure per-course settings, such as course name and programming language, from Code Vault. For more info, see the `Code Vault README <https://github.com/apluslms/koodisailo/blob/master/docs/README.md>`_.
 
 
 Essay grading
