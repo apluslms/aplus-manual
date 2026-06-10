@@ -8,3 +8,4 @@ How to set up the course for students?
   create_new_instance
   setup
   settings
+  teacher_graded_exercises

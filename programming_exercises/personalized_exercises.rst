@@ -217,7 +217,7 @@ inside the mooc-grader container looks like this:
 
   The apluslms/run-mooc-grader container has the following software:
 
-  - minimal `Debian <https://www.debian.org>_` ("slim" version)
+  - minimal `Debian <https://www.debian.org>`_ ("slim" version)
 
     * shells: bash, dash, sh
 

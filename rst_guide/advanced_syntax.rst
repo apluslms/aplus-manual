@@ -23,8 +23,8 @@ Advanced Syntax
     #. A basic environment set-up, as detailed in :doc:`Module 2 </set_up_environment/first_steps>`.
     #. Prior understanding about *RST*, as detailed in :doc:`Chapter 3.1 </rst_guide/get_started>`.
 
-  Estimated reading time:
-    60 min.
+  Labouriousness:
+    Around an hour of reading
 
 ::::
 
@@ -170,7 +170,7 @@ Code example
 
     .. code-block:: rst
 
-      .. container:: admonition success 
+      .. container:: admonition success
 
         .. div:: row
 

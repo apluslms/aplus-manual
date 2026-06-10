@@ -1,0 +1,21 @@
+---
+title: Teacher-graded essay exercise
+description: A teacher-graded essay exercise where students cannot submit directly and grading is handled through the API
+max_points: 50
+
+view_type: access.types.stdsync.noSubmission
+
+instructions: |
+  <h2></h2>
+  <p>
+    This is a teacher-graded exercise. You cannot submit your answer directly through
+    this interface. Your essay will be collected and graded by the course staff.
+  </p>
+  <p>
+    Please follow these instructions:
+  </p>
+  <ul>
+    <li>Write a 2-3 page essay on the given topic</li>
+    <li>Use proper academic formatting and citations</li>
+    <li>Submit your essay through email to the course staff</li>
+  </ul>
