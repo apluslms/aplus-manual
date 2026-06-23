@@ -34,7 +34,12 @@ function init($, exerciseDiv) {
         const answer = form.find('[name="submission"]').val();
         let points = 0;
         const maxPoints = 10;
-        const graderUrl = form.find('[name="grader_url"]').val();
+        let graderUrl = form.find('[name="grader_url"]').val();
+
+        // Adjust the port dynamic to support local dev vs e2e tests
+        if (window.location.port === "8010") {
+            graderUrl = graderUrl.replace(":8080", ":8081");
+        }
 
         // In this example, the submission "abc" receives full points.
         // Otherwise, zero points are granted.
