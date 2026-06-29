@@ -55,7 +55,7 @@ inspect the results in the Radar service.
 .. _Radar: https://github.com/apluslms/radar
 
 Dolos integration
-----------------
+-----------------
 
 Dolos is a modern service for generating similarity reports for source code. It is open source
 and the code is available `here <https://github.com/dodona-edu/dolos>`_. A local Dolos instance is running

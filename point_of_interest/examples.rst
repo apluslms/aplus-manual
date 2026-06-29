@@ -472,7 +472,6 @@ You can see some use cases in the examples below.
     .. column::
       :column-class: text-center bg-danger-subtle
 
-
   .. row::
 
     .. column::
@@ -765,4 +764,3 @@ Use ``:no_poi_box:`` option if you want to create POI that does not pop up from 
   :no_poi_box:
 
   This content is blended with the rest of the content in the A+ course material.
-

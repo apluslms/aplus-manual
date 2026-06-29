@@ -644,7 +644,7 @@ All of this is possible thanks to the built-in options of the ``code-block`` dir
 Literal include
 ...............
 
-The ``literalinclude`` directive allows you to include code files and show then as snippets of code within the course content.
+The ``literalinclude`` directive allows you to include code files and show them as snippets of code within the course content.
 This is ideal for showing code examples stored in external files.
 In addition, this directive allows to emulate file comparison.
 
@@ -693,7 +693,7 @@ The literalinclude :important:`syntax` consists of the directive name, the filep
         :prepend: # Prepended comment
         :append: # Appended comment
         :linenos:
-        :lines: 1-5,7-11
+        :lines: 1-5,7-9
 
 
   .. tab-content:: tab2-include
@@ -713,7 +713,7 @@ The literalinclude :important:`syntax` consists of the directive name, the filep
         :prepend: # Prepended comment
         :append: # Appended comment
         :linenos:
-        :lines: 1-5,7-11
+        :lines: 1-5,7-9
 
 .. rst-class:: text-end
 
