@@ -172,3 +172,17 @@ be copied to ``_static`` before recompiling the course! For faster CSS design,
 one might want to try the `Firefox Developer Edition
 <https://www.mozilla.org/en-US/firefox/developer/>`_ which has a builtin
 CSS editor.
+
+CSS styles for dark theme
+-------------------------
+
+To add dark theme specific custom CSS styles, you can use the attribute selector ``[data-bs-theme=dark]``. For example:
+
+.. code-block:: css
+
+   [data-bs-theme=dark] h2 {
+       color: white;
+   }
+
+You should consider using this whenever you change colours with your custom CSS or add new elements to your course which
+might conflict with the dark theme.
