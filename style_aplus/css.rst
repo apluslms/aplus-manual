@@ -173,16 +173,25 @@ one might want to try the `Firefox Developer Edition
 <https://www.mozilla.org/en-US/firefox/developer/>`_ which has a builtin
 CSS editor.
 
-CSS styles for dark theme
--------------------------
+CSS styles for dark/light theme
+-------------------------------
 
-To add dark theme specific custom CSS styles, you can use the attribute selector ``[data-bs-theme=dark]``. For example:
+A+ uses Bootstrap 5 for styling, so CSS variables should be used when possible for maximum compatability and consistency between the dark and light themes. You can use these variables as values for selector properties:
 
 .. code-block:: css
 
-   [data-bs-theme=dark] h2 {
-       color: white;
-   }
+    .my-selector {
+        color: var(--bs-body-color);
+        background-color: var(--bs-body-bg);
+        border-radius: var(--bs-border-radius);
+    }
 
-You should consider using this whenever you change colours with your custom CSS or add new elements to your course which
-might conflict with the dark theme.
+A detailed list of the variables and A+ CSS styles can be found in the `main.css <https://plus.cs.aalto.fi/static/css/main.css>`_ file.
+
+To add dark theme (or light theme) specific custom CSS styles, you can use the attribute selector ``[data-bs-theme=dark]``. For example:
+
+.. code-block:: css
+
+    [data-bs-theme=dark] h2 {
+        color: var(--bs-white);
+    }
