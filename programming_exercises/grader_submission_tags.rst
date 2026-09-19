@@ -9,29 +9,31 @@ In grading containers, the submission tags can be set by outputting them directl
 Below are the detailed methods for setting submission tags.
 
 1. **Setting submission tags by output**:
-  - This method involves printing the submission tags along with the points and maximum points.
-  - Example (in Python unittests):
 
-    .. code-block:: python
+   - This method involves printing the submission tags along with the points and maximum points.
+   - Example (in Python unittests):
 
-      ...
-      submission_tags = "tag1slug,tag2slug"
-      print(f"TotalPoints: {result.points}\nMaxPoints: {result.max_points}\nSubmissionTags: {submission_tags}")
+     .. code-block:: python
+
+       ...
+       submission_tags = "tag1slug,tag2slug"
+       print(f"TotalPoints: {result.points}\nMaxPoints: {result.max_points}\nSubmissionTags: {submission_tags}")
 
 2. **Setting submission tags by writing to a file**:
-  - This method requires writing the submission tags to a specific file (`/feedback/submission_tags`) and is typically used when tests are run with root user permissions.
-  - Example (in Python unittests):
 
-    .. code-block:: python
+   - This method requires writing the submission tags to a specific file (`/feedback/submission_tags`) and is typically used when tests are run with root user permissions.
+   - Example (in Python unittests):
 
-      ...
-      submission_tags = "tag1slug,tag2slug"
-      with open("/feedback/points", "w") as f:
-        f.write(f"{result.points}/{result.max_points}")
-      with open("/feedback/submission_tags", "w") as f:
-        f.write(submission_tags)
+     .. code-block:: python
 
-  - Ensure that the tests are executed with the necessary permissions to write to the `/feedback` directory.
+       ...
+       submission_tags = "tag1slug,tag2slug"
+       with open("/feedback/points", "w") as f:
+         f.write(f"{result.points}/{result.max_points}")
+       with open("/feedback/submission_tags", "w") as f:
+         f.write(submission_tags)
+
+   - Ensure that the tests are executed with the necessary permissions to write to the `/feedback` directory.
 
 **Important notes**:
 
