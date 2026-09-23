@@ -342,12 +342,6 @@ the common question options:
 - ``height``: If greater than 1, the textarea HTML element is used. Otherwise,
   a text input is used.
 
-.. admonition:: ``Length`` does not work
-  :class: error
-
-  Due to an old issue in the platform,
-  the ``length`` option is effectively ignored and it does not change anything.
-
 **Instructions and correct answer:** The body of the ``freetext`` question is
 expected to be its model solution. However, the question instructions can be
 written inside the body before the model answer. The instructions and the
