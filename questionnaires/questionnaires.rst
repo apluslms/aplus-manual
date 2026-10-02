@@ -43,7 +43,7 @@ with the format ``:option: possible value``:
   after each attempt.
 - ``category``: exercise category. If you do not define a category the default value will be used. For questionnaires
   the default ``category`` is **questionnaire**.
-- ``status``: exercise status, defaults to **"unlisted"**. See available statuses `here <https://github.com/apluslms/a-plus-rst-tools#list-of-exercise-statuses>`_.
+- ``status``: exercise status, defaults to **"unlisted"**. See the available `statuses <https://github.com/apluslms/a-plus-rst-tools#list-of-exercise-statuses>`_.
 - ``reveal-model-at-max-submissions``: The questionnaire feedback reveals the model
   solution after the user has consumed all submission attempts. Can be set true or false.
   The feedback may reveal the model solution even before the exercise deadline.
@@ -429,7 +429,6 @@ Example: Free-text questionnaire
       submitted 3 times), the correct answers are indicated below each question.
 
       .. freetext:: 5
-        :length: 5
 
         This is the most basic free text questionnaire. The correct answer is
         ``test``. You can write at most 10 characters into the box. When defining the question
@@ -447,7 +446,6 @@ Example: Free-text questionnaire
         textbox
 
       .. freetext:: 5
-        :length: 10
         :required:
 
         If the question has ``required`` set like here, the questionnaire submission is not
@@ -456,7 +454,6 @@ Example: Free-text questionnaire
         required
 
       .. freetext:: 5 int
-        :length: 7
 
         The answer can be a number, an integer. What is :math:`3 + 8`?
 
@@ -464,7 +461,6 @@ Example: Free-text questionnaire
         !11 § Hint to be shown when the student's answer is not 11.
 
       .. freetext:: 2 float
-        :length: 7
 
         The answer can also be a decimal number (floating point number).
         What is :math:`3 / 8` in decimal? (When the question uses the float type,
@@ -474,7 +470,6 @@ Example: Free-text questionnaire
         !0.375 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
 
       .. freetext:: 3 float
-        :length: 7
         :float-rel-tol: 0.05
 
         What is :math:`3 / 8` in decimal?
@@ -499,7 +494,6 @@ Example: Free-text questionnaire
         submitted 3 times), the correct answers are indicated below each question.
 
         .. freetext:: 5
-          :length: 5
 
           This is the most basic free text questionnaire. The correct answer is
           ``test``. You can write at most 10 characters into the box. When defining the question
@@ -517,7 +511,6 @@ Example: Free-text questionnaire
           textbox
 
         .. freetext:: 5
-          :length: 10
           :required:
 
           If the question has ``required`` set like here, the questionnaire submission is not
@@ -526,7 +519,6 @@ Example: Free-text questionnaire
           required
 
         .. freetext:: 5 int
-          :length: 7
 
           The answer can be a number, an integer. What is :math:`3 + 8`?
 
@@ -534,24 +526,22 @@ Example: Free-text questionnaire
           !11 § Hint to be shown when the student's answer is not 11.
 
         .. freetext:: 2 float
-          :length: 7
 
           The answer can also be a decimal number (floating point number).
           What is :math:`3 / 8` in decimal? (When the question uses the float type,
           the grader accepts also answers that slightly differ from the model solution.)
 
-          0.378
-          !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+          0.375
+          !0.375 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
 
         .. freetext:: 3 float
-          :length: 7
           :float-rel-tol: 0.05
 
           What is :math:`3 / 8` in decimal?
           (Now the accepted relative tolerance is 5% and the accepted range of correct answers is quite wide.)
 
-          0.378
-          !0.378 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
+          0.375
+          !0.375 § Hint: the answer is between 0 and 1. Use the decimal point and write three first decimals, for example, ``0.375``.
 
 .. rst-tabs::
 
@@ -559,6 +549,7 @@ Example: Free-text questionnaire
     :title: HTML visualisation
 
     .. questionnaire:: questionnaire_text_demo_2 10
+      :title: Questionnaire with modifiers
 
       .. freetext:: 5 string-ignorews-ignorequotes
         :length: 10
@@ -570,7 +561,7 @@ Example: Free-text questionnaire
         !anothertest § Check the correct answer given in the description
 
       .. freetext:: 5 unsortedchars-ignorews
-        :length: 7
+        :length: 10
 
         An ``unsortedchars`` example. What are the unique vovels in the word
         "cacophonic"? Correct answers are: aio, aoi, iao, ioa, oai, oia, and
@@ -585,6 +576,7 @@ Example: Free-text questionnaire
     .. code-block:: rst
 
       .. questionnaire:: questionnaire_text_demo_2 10
+        :title: Questionnaire with modifiers
 
         .. freetext:: 5 string-ignorews-ignorequotes
           :length: 10
@@ -596,7 +588,7 @@ Example: Free-text questionnaire
           !anothertest § Check the correct answer given in the description
 
         .. freetext:: 5 unsortedchars-ignorews
-          :length: 7
+          :length: 10
 
           An ``unsortedchars`` example. What are the unique vovels in the word
           "cacophonic"? Correct answers are: aio, aoi, iao, ioa, oai, oia, and
@@ -628,14 +620,12 @@ Example: Regex questionnaire
       numbers beginning with 0.014, 0.015, or 0.016.
 
       .. freetext:: 10 regexp
-        :length: 7
 
         Type either "cat" or "dog".
 
         ^(cat|dog)$ °=° cat
 
       .. freetext:: 10 regexp
-        :length: 7
 
         What is the value of :math:`\pi` with four most significant digits?
         This will accept ``3.141``, ``3.1415``, ``3.1416``, ``3.14159``, that is,
@@ -663,14 +653,12 @@ Example: Regex questionnaire
         numbers beginning with 0.014, 0.015, or 0.016.
 
         .. freetext:: 10 regexp
-          :length: 7
 
           Type either "cat" or "dog".
 
           ^(cat|dog)$ °=° cat
 
         .. freetext:: 10 regexp
-          :length: 7
 
           What is the value of :math:`\pi` with four most significant digits?
           This will accept ``3.141``, ``3.1415``, ``3.1416``, ``3.14159``, that is,
@@ -706,7 +694,6 @@ Note that the `<mooc-jutut service https://github.com/apluslms/mooc-jutut/>`_ pr
 
     .. freetext::
       :required:
-      :length: 100
       :height: 4
       :class: my-input-class
 

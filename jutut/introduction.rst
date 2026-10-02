@@ -204,8 +204,6 @@ Example feedback questionnaire
   .. freetext:: 0 int
     :required:
     :key: timespent
-    :height: 1
-    :length: 20
     :class: time-usage-question
     :extra: minimum=6;validationMessage=Please enter the time in minutes.
 
@@ -231,7 +229,6 @@ Example feedback questionnaire
     :main-feedback:
     :required:
     :key: mainfeedback
-    :length: 100
     :height: 8
 
     Give feedback on the chapter.

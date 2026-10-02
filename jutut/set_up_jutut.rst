@@ -24,8 +24,6 @@ A typical feedback exercise might look like this:
       .. freetext:: 0 int
         :required:
         2«:key: timespent»
-        :height: 1
-        :length: 20
         :class: time-usage-question
         :extra: minimum=6;validationMessage=Please enter the time in minutes.
 
@@ -51,7 +49,6 @@ A typical feedback exercise might look like this:
         3«:main-feedback:»
         :required:
         :key: mainfeedback
-        :length: 100
         :height: 8
 
         Give feedback on the chapter.
