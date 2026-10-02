@@ -273,7 +273,6 @@ When filtering using student tags, the same things apply as described for filter
   .. freetext::
     :main-feedback:
     :key: comments
-    :length: 100
     :height: 8
 
     Does something seem unclear? Should something be expanded or clarified?
