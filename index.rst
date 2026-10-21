@@ -31,6 +31,7 @@ Other content is not visible in A+.
   style_aplus/index
   questionnaires/index
   programming_exercises/index
+  early_submission_bonus/index
   acos/index
   jutut/index
   interactive_code/index
